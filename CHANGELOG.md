@@ -9,6 +9,14 @@
 > in one bolded line of its own (e.g. **Database v46 · Backup v24 · Breaking**). The detail — what,
 > why, files and verification — belongs in the commit message, never here.
 
+## core-1.0.67 — unreleased
+
+### 🐛 Fixes
+
+- **🔑 A backup that can't be opened no longer asks again for a password that was right**
+- **📲 A backup cut off on its way from the phone is refused instead of failing as a wrong password**
+- **💾 Opening a large backup needs less memory**
+
 ## core-1.0.66 — 2026-10-10
 
 ### ✨ New features
