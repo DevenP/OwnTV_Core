@@ -9,6 +9,30 @@
 > in one bolded line of its own (e.g. **Database v46 · Backup v24 · Breaking**). The detail — what,
 > why, files and verification — belongs in the commit message, never here.
 
+## core-1.0.66 — 2026-10-10
+
+### ✨ New features
+
+- **🔊 ExoPlayer plays DTS, TrueHD, MP2 and other sound the TV can't decode (FFmpeg from the mpv engine)**
+
+### 🐛 Fixes
+
+- **🎧 "Stereo only" now sends two channels on ExoPlayer too**
+- **📺 Channels whose sound exceeds what the decoder advertises stay on ExoPlayer instead of moving to mpv**
+- **🔇 A film whose sound ExoPlayer can't play goes to mpv instead of playing silent**
+- **🔈 Sound switches between passthrough and decoding when a soundbar wakes up mid-play**
+- **📊 Stream info shows a film's real bitrate on ExoPlayer instead of 0 Mbps**
+- **⏱️ Live latency Low / Stable / Custom now takes effect on mpv**
+- **🔊 mpv sends only the surround layouts the TV or receiver really plays**
+- **⏳ "Pre-buffer" no longer makes mpv restart a channel that is still filling up**
+- **📡 mpv gives up on a dead live connection in 10 s instead of 60, and retries a busy panel (458) without a black screen**
+- **🌙 Night mode's limiter on mpv stops just below full scale**
+- **📺 Live DASH channels keep their picture through a short outage**
+- **🎬 ExoPlayer finds DTS in Blu-ray (.m2ts) files and plays TS channels without access-unit markers**
+- **📱 Background playback keeps Wi-Fi awake while ExoPlayer plays**
+- **⏯️ The remote's Play/Pause key works when the TV sends only the key release**
+- **🔎 Search finds "Spider-Man" from "Spider-M" and lists every match, not the first 40**
+
 ## core-1.0.65 — 2026-10-09
 
 ### ✨ New features
