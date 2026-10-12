@@ -9,7 +9,7 @@
 > in one bolded line of its own (e.g. **Database v46 · Backup v24 · Breaking**). The detail — what,
 > why, files and verification — belongs in the commit message, never here.
 
-## core-1.0.67 — unreleased
+## core-1.0.67 — 2026-10-12
 
 **Database v48**
 
@@ -22,7 +22,7 @@
 - **💬 A failed download says why**
 - **📺 Watch or keep downloading on a one-stream playlist**
 - **🗂️ Downloads and recordings whose file is gone say "File missing"**
-- **🌍 Basque added to the translation catalogue**
+- **🌍 Basque**
 
 ### 🐛 Fixes
 
