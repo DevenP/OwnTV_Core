@@ -11,6 +11,10 @@
 
 ## core-1.0.67 — unreleased
 
+### ✨ New features
+
+- **🔐 ClearKey channels whose playlist carries the key itself play**
+
 ### 🐛 Fixes
 
 - **🔑 A backup that can't be opened no longer asks again for a password that was right**
