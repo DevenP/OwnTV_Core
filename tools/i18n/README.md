@@ -64,7 +64,7 @@ demand) locks Weblate, has it push its pending work, then runs `sync_translation
    languages exactly as Weblate has them. Weblate fast-forwards to it, so it never has a commit to
    replay and cannot hit a merge conflict.
 3. `ready` / `promote` — a language that reaches the threshold gets one pull request,
-   `translations/promote-<id>`, which adds its files and marks it tier 1, packaged and visible.
+   `promote-translation-<id>`, which adds its files and marks it tier 1, packaged and visible.
    Merging that pull request is the one manual step.
 
 If any gate fails, nothing is committed anywhere, Weblate is unlocked, and an issue says why.

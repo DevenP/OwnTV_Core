@@ -162,7 +162,9 @@ jobs:
                 || GH_TOKEN=$ISSUE_TOKEN gh issue create --title "$title" --body "Weblate's \`$id\` is $pct% translated, above the readiness threshold, but it is not in tools/i18n/locales.json, so it cannot be promoted automatically. Add its catalogue entry; the next sync opens the promotion pull request."
               continue
             fi
-            branch="translations/promote-$id"
+            # Not "translations/…": the `translations` branch exists, and Git cannot also have a
+            # branch inside it as if it were a folder ("directory file conflict").
+            branch="promote-translation-$id"
             git checkout -q -B "$branch" origin/main
             python tools/i18n/sync_translations.py promote "$id"
             python tools/i18n/gen_supported_locales.py
