@@ -462,6 +462,9 @@
     <string name="settings_hardware_decoding">Decodificação por hardware</string>
     <string name="settings_hardware_decoding_description">Use o decodificador por hardware da TV. Desative se algumas transmissões engasgarem ou exibirem artefatos.</string>
     <string name="settings_hardware_decoding_description_mobile">Use o decodificador por hardware do dispositivo. Desative se algumas transmissões engasgarem ou exibirem artefatos.</string>
+    <string name="settings_software_decode_above_1080p">Decodificação por software acima de 1080p</string>
+    <string name="settings_software_decode_above_1080p_description">Reproduz por software vídeo 4K e outros acima de 1080p quando o decodificador por hardware da TV está desativado ou falha. Exige um processador rápido: na maioria das TVs, a reprodução engasga.</string>
+    <string name="settings_software_decode_above_1080p_description_mobile">Reproduz por software vídeo 4K e outros acima de 1080p quando o decodificador por hardware do dispositivo está desativado ou falha. Exige um processador rápido: em muitos dispositivos, a reprodução engasga.</string>
     <string name="settings_movies_series_player">Reprodutor de filmes e séries</string>
     <string name="settings_live_tv_player">Reprodutor de TV ao vivo</string>
     <string name="settings_engine_order"><xliff:g id="first">%1$s</xliff:g>, depois <xliff:g id="second">%2$s</xliff:g></string>
@@ -1458,6 +1461,13 @@
     <string name="settings_nav_widen_desc">Fixo e compacto: mostra os nomes sobre o conteúdo enquanto o menu está em foco</string>
     <string name="settings_nav_menu_items">Itens do menu</string>
     <string name="settings_nav_menu_items_desc">Dinâmico: segue o conteúdo da playlist · Estático: você escolhe</string>
+    <string name="settings_nav_bar">Barra</string>
+    <string name="settings_nav_labels">Rótulos</string>
+    <string name="settings_nav_icons_only">Só ícones</string>
+    <string name="settings_nav_hide_scrolling">Ocultar ao rolar</string>
+    <string name="settings_nav_hide_scrolling_desc">A barra some ao rolar para baixo e volta ao rolar para cima</string>
+    <string name="settings_sheet_counts">Mostrar contagens</string>
+    <string name="settings_sheet_counts_desc">Número de canais e títulos nos painéis</string>
     <string name="settings_search_keywords_navigation">barra, barra lateral, menu, navegação, ocultar, flutuante, fixa, tamanho, compacta, larga, comprimento, altura total</string>
     <string name="settings_breadcrumb_eyebrow"><xliff:g id="section">%1$s</xliff:g> · <xliff:g id="group">%2$s</xliff:g></string>
     <string name="settings_nav_size_desc">Compacta: ícones · Normal: nomes · Larga: nomes e contagens · Extra larga: com detalhes</string>

@@ -82,6 +82,8 @@ class LiveTuneController(
         suspend fun timeshiftResumeMode(): SettingsRepository.ResumeMode = SettingsRepository.ResumeMode.ASK
         /** N11 — Settings → Maximum video quality, for the variant a buffer saves; null for none. */
         suspend fun maxVideoHeight(): Int? = null
+        /** A download is using the only stream [sourceId] allows, so the preview pane must not take it. */
+        fun downloadHoldsOnlyStream(sourceId: Long): Boolean = false
     }
 
     /**
@@ -104,7 +106,8 @@ class LiveTuneController(
 
     private val _previewBlocked = MutableStateFlow(false)
 
-    /** True while the preview pane is held back because its panel allows one stream and mpv has it. */
+    /** True while the preview pane is held back because its panel allows one stream and mpv — or a
+     *  download — has it. */
     val previewBlockedSingleSession: StateFlow<Boolean> = _previewBlocked.asStateFlow()
 
     private val recall = ChannelRecall()
@@ -291,14 +294,14 @@ class LiveTuneController(
                 }
                 val url = host.resolve(source!!, channel.streamUrl) ?: return@launch
                 if (_liveOnExo.value) return@launch // promoted to full-screen while resolving
-                if (blockedBySingleSession(url)) return@launch
+                if (blockedBySingleSession(url, channel)) return@launch
                 exoStalkerCmd = channel.streamUrl
                 setReconnect(channel, source)
                 engines.exoPlay(url, muted, request(channel, source))
                 return@launch
             }
             val url = exoUrlFor(channel, source)
-            if (blockedBySingleSession(url)) return@launch
+            if (blockedBySingleSession(url, channel)) return@launch
             if (engines.exoUrl == url && !engines.exoFailed) {
                 engines.exoSetMuted(muted) // already previewing it (a re-focus) — just re-apply the mute
                 return@launch
@@ -860,8 +863,9 @@ class LiveTuneController(
 
     private fun isStillMpv(channel: ChannelEntity): Boolean = !_liveOnExo.value && isCurrent(channel)
 
-    private fun blockedBySingleSession(url: String): Boolean {
-        val blocked = engines.mpvHasStream && LiveStreamQuirks.isSingleSession(url)
+    private fun blockedBySingleSession(url: String, channel: ChannelEntity): Boolean {
+        val blocked = (engines.mpvHasStream && LiveStreamQuirks.isSingleSession(url)) ||
+            host.downloadHoldsOnlyStream(channel.sourceId)
         _previewBlocked.value = blocked
         return blocked
     }
@@ -940,11 +944,15 @@ class LiveTuneController(
         private val sourceLookup: (suspend (Long) -> SourceEntity?)? = null,
         private val engineStarted: () -> Unit = {},
         private val backToLiveEdge: () -> Unit = {},
+        /** Core's `DownloadWatchGuard.holdsOnlyStream`; see [Host.downloadHoldsOnlyStream]. */
+        private val downloadHolds: (Long) -> Boolean = { false },
     ) : Host {
         override suspend fun sourceOf(sourceId: Long): SourceEntity? =
             sourceLookup?.invoke(sourceId) ?: sourceDao.getById(sourceId)
 
         override fun needsResolve(source: SourceEntity?): Boolean = resolver.needsResolve(source)
+
+        override fun downloadHoldsOnlyStream(sourceId: Long): Boolean = downloadHolds(sourceId)
 
         override suspend fun resolve(source: SourceEntity, cmd: String): String? =
             runCatching { resolver.resolve(source, cmd) }

@@ -9,6 +9,37 @@
 > in one bolded line of its own (e.g. **Database v46 · Backup v24 · Breaking**). The detail — what,
 > why, files and verification — belongs in the commit message, never here.
 
+## core-1.0.67 — unreleased
+
+**Database v48**
+
+### ✨ New features
+
+- **🔐 ClearKey channels whose playlist carries the key itself play**
+- **🔎 Search filter buttons: Live TV, TV Shows, Movies, Series**
+- **🎞️ Software decoding above 1080p (Video player switch)**
+- **⚡ Faster downloads over several connections**
+- **💬 A failed download says why**
+- **📺 Watch or keep downloading on a one-stream playlist**
+- **🗂️ Downloads and recordings whose file is gone say "File missing"**
+- **🌍 Basque added to the translation catalogue**
+
+### 🐛 Fixes
+
+- **🔑 A backup that can't be opened no longer asks again for a password that was right**
+- **📲 A backup cut off on its way from the phone is refused instead of failing as a wrong password**
+- **💾 Opening a large backup needs less memory**
+- **🔗 A provider's get.php M3U link is added as Xtream, so movies and series land in their own sections (#238)**
+- **🧽 M3U links copied from a web page with "&amp;" work**
+- **📺 Shows with a Season 0 load all their episodes on Xtream**
+- **📂 Xtream seasons sent in other layouts no longer lose their episodes**
+- **🔢 Xtream episodes with no number are numbered in order instead of all showing E0**
+- **🔁 A show's episode list retries once when the provider drops the connection**
+- **▶️ Play on a new show starts at Season 1 Episode 1; Specials come after the last season**
+- **🔤 M3U episodes named "Season 1 Episode 5", "S2019E05" or with four-digit episode numbers are recognised**
+- **🧾 One translation-readiness issue per language instead of a new one each day**
+- **💾 Big downloads to a FAT32 USB stick fail with a clear reason**
+
 ## core-1.0.66 — 2026-10-10
 
 ### ✨ New features

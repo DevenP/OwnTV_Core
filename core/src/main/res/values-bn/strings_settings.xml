@@ -460,6 +460,9 @@
     <string name="settings_hardware_decoding">হার্ডওয়্যার ডিকোডিং</string>
     <string name="settings_hardware_decoding_description">TV-এর হার্ডওয়্যার ডিকোডার ব্যবহার করুন। কিছু স্ট্রিম আটকে গেলে বা বিকৃত ছবি দেখালে এটি বন্ধ করুন।</string>
     <string name="settings_hardware_decoding_description_mobile">ডিভাইসের হার্ডওয়্যার ডিকোডার ব্যবহার করুন। কিছু স্ট্রিম আটকে গেলে বা বিকৃত ছবি দেখালে এটি বন্ধ করুন।</string>
+    <string name="settings_software_decode_above_1080p">1080p-এর বেশি সফটওয়্যার ডিকোডিং</string>
+    <string name="settings_software_decode_above_1080p_description">TV-এর হার্ডওয়্যার ডিকোডার বন্ধ থাকলে বা ব্যর্থ হলে 4K এবং 1080p-এর বেশি অন্যান্য ভিডিও সফটওয়্যারে চালায়। দ্রুত প্রসেসর দরকার: বেশিরভাগ TV-তে এটি আটকে যায়।</string>
+    <string name="settings_software_decode_above_1080p_description_mobile">ডিভাইসের হার্ডওয়্যার ডিকোডার বন্ধ থাকলে বা ব্যর্থ হলে 4K এবং 1080p-এর বেশি অন্যান্য ভিডিও সফটওয়্যারে চালায়। দ্রুত প্রসেসর দরকার: অনেক ডিভাইসে এটি আটকে যায়।</string>
     <string name="settings_movies_series_player">সিনেমা ও সিরিজের প্লেয়ার</string>
     <string name="settings_live_tv_player">লাইভ টিভির প্লেয়ার</string>
     <string name="settings_engine_order"><xliff:g id="first">%1$s</xliff:g>, তারপর <xliff:g id="second">%2$s</xliff:g></string>
@@ -1432,6 +1435,13 @@
     <string name="settings_nav_widen_desc">ডক করা ও কমপ্যাক্ট: রেলে ফোকাস থাকলে কনটেন্টের উপর নাম দেখায়</string>
     <string name="settings_nav_menu_items">মেনু আইটেম</string>
     <string name="settings_nav_menu_items_desc">গতিশীল: প্লেলিস্টে যা আছে তা অনুসরণ করে · স্থির: আপনি নিজে বেছে নিন</string>
+    <string name="settings_nav_bar">বার</string>
+    <string name="settings_nav_labels">নাম</string>
+    <string name="settings_nav_icons_only">শুধু আইকন</string>
+    <string name="settings_nav_hide_scrolling">স্ক্রল করার সময় লুকান</string>
+    <string name="settings_nav_hide_scrolling_desc">নিচে স্ক্রল করলে বারটি সরে যায়, উপরে স্ক্রল করলে ফিরে আসে</string>
+    <string name="settings_sheet_counts">সংখ্যা দেখান</string>
+    <string name="settings_sheet_counts_desc">প্যানেলে চ্যানেল ও শিরোনামের সংখ্যা</string>
     <string name="settings_search_keywords_navigation">রেল, সাইডবার, মেনু, নেভিগেশন, লুকান, ভাসমান, ডক, আকার, কমপ্যাক্ট, চওড়া, দৈর্ঘ্য, পুরো উচ্চতা</string>
     <string name="settings_breadcrumb_eyebrow"><xliff:g id="section">%1$s</xliff:g> · <xliff:g id="group">%2$s</xliff:g></string>
     <string name="settings_nav_size_desc">কমপ্যাক্ট: আইকন · সাধারণ: নাম · চওড়া: নাম ও সংখ্যা · অতিরিক্ত চওড়া: বিস্তারিতসহ</string>

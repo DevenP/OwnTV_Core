@@ -43,7 +43,7 @@
     <string name="search_movie">Film</string>
     <string name="search_series">Série</string>
     <string name="search_channels">Chaînes</string>
-    <string name="search_on_tv">À la télé</string>
+    <string name="search_on_tv">Émissions TV</string>
     <string name="search_go_to_channel">Aller à la chaîne</string>
     <string name="search_go_to_movie">Aller au film</string>
     <string name="search_clear_recent">Effacer les recherches récentes</string>
@@ -190,6 +190,7 @@
     <string name="home_trending_trailer">Bande-annonce</string>
     <string name="home_trending_more_details">Plus de détails</string>
     <string name="home_trending_all_versions">Toutes les versions</string>
+    <string name="home_trending_why_menu">Pourquoi ce titre est ici</string>
     <string name="home_trending_previous">Précédent</string>
     <string name="home_trending_pause">Pause</string>
     <string name="home_trending_resume">Reprendre</string>

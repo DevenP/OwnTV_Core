@@ -464,6 +464,9 @@
     <string name="settings_hardware_decoding">Dekodowanie sprzętowe</string>
     <string name="settings_hardware_decoding_description">Używaj dekodera sprzętowego telewizora. Wyłącz, jeśli niektóre strumienie się zacinają lub wyświetlają artefakty.</string>
     <string name="settings_hardware_decoding_description_mobile">Używaj dekodera sprzętowego urządzenia. Wyłącz, jeśli niektóre strumienie się zacinają lub wyświetlają artefakty.</string>
+    <string name="settings_software_decode_above_1080p">Dekodowanie programowe powyżej 1080p</string>
+    <string name="settings_software_decode_above_1080p_description">Odtwarza programowo wideo 4K i inne powyżej 1080p, gdy dekoder sprzętowy telewizora jest wyłączony lub zawodzi. Wymaga szybkiego procesora: na większości telewizorów obraz się zacina.</string>
+    <string name="settings_software_decode_above_1080p_description_mobile">Odtwarza programowo wideo 4K i inne powyżej 1080p, gdy dekoder sprzętowy urządzenia jest wyłączony lub zawodzi. Wymaga szybkiego procesora: na wielu urządzeniach obraz się zacina.</string>
     <string name="settings_movies_series_player">Odtwarzacz filmów i seriali</string>
     <string name="settings_live_tv_player">Odtwarzacz telewizji na żywo</string>
     <string name="settings_engine_order"><xliff:g id="first">%1$s</xliff:g>, potem <xliff:g id="second">%2$s</xliff:g></string>
@@ -1484,6 +1487,13 @@
     <string name="settings_nav_widen_desc">Zadokowany i kompaktowy: pokazuje nazwy nad treścią, gdy pasek ma fokus</string>
     <string name="settings_nav_menu_items">Elementy menu</string>
     <string name="settings_nav_menu_items_desc">Dynamiczne: według zawartości playlisty · Stałe: wybierasz sam</string>
+    <string name="settings_nav_bar">Pasek</string>
+    <string name="settings_nav_labels">Etykiety</string>
+    <string name="settings_nav_icons_only">Tylko ikony</string>
+    <string name="settings_nav_hide_scrolling">Ukrywaj podczas przewijania</string>
+    <string name="settings_nav_hide_scrolling_desc">Pasek chowa się przy przewijaniu w dół i wraca przy przewijaniu w górę</string>
+    <string name="settings_sheet_counts">Pokazuj liczby</string>
+    <string name="settings_sheet_counts_desc">Liczba kanałów i tytułów w panelach</string>
     <string name="settings_search_keywords_navigation">pasek, pasek boczny, menu, nawigacja, ukryj, pływający, przypięty, rozmiar, kompaktowy, szeroki, długość, pełna wysokość</string>
     <string name="settings_breadcrumb_eyebrow"><xliff:g id="section">%1$s</xliff:g> · <xliff:g id="group">%2$s</xliff:g></string>
     <string name="settings_nav_size_desc">Kompaktowy: ikony · Normalny: nazwy · Szeroki: nazwy i liczby · Bardzo szeroki: ze szczegółami</string>

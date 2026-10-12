@@ -462,6 +462,9 @@
     <string name="settings_hardware_decoding">Descodificação por hardware</string>
     <string name="settings_hardware_decoding_description">Utilizar o descodificador por hardware da TV. Desative esta opção se algumas transmissões tiverem interrupções ou apresentarem artefactos.</string>
     <string name="settings_hardware_decoding_description_mobile">Utilizar o descodificador por hardware do dispositivo. Desative esta opção se algumas transmissões tiverem interrupções ou apresentarem artefactos.</string>
+    <string name="settings_software_decode_above_1080p">Descodificação por software acima de 1080p</string>
+    <string name="settings_software_decode_above_1080p_description">Reproduz por software vídeo 4K e outros acima de 1080p quando o descodificador por hardware da TV está desativado ou falha. Requer um processador rápido: na maioria das TVs, a reprodução tem interrupções.</string>
+    <string name="settings_software_decode_above_1080p_description_mobile">Reproduz por software vídeo 4K e outros acima de 1080p quando o descodificador por hardware do dispositivo está desativado ou falha. Requer um processador rápido: em muitos dispositivos, a reprodução tem interrupções.</string>
     <string name="settings_movies_series_player">Leitor de filmes e séries</string>
     <string name="settings_live_tv_player">Leitor de TV em direto</string>
     <string name="settings_engine_order"><xliff:g id="first">%1$s</xliff:g>, depois <xliff:g id="second">%2$s</xliff:g></string>
@@ -1458,6 +1461,13 @@
     <string name="settings_nav_widen_desc">Fixo e compacto: mostra os nomes sobre o conteúdo enquanto o menu tem o foco</string>
     <string name="settings_nav_menu_items">Itens do menu</string>
     <string name="settings_nav_menu_items_desc">Dinâmico: segue o conteúdo da lista · Estático: escolhe o utilizador</string>
+    <string name="settings_nav_bar">Barra</string>
+    <string name="settings_nav_labels">Etiquetas</string>
+    <string name="settings_nav_icons_only">Só ícones</string>
+    <string name="settings_nav_hide_scrolling">Ocultar ao deslocar</string>
+    <string name="settings_nav_hide_scrolling_desc">A barra desaparece ao deslocar para baixo e volta ao deslocar para cima</string>
+    <string name="settings_sheet_counts">Mostrar contagens</string>
+    <string name="settings_sheet_counts_desc">Número de canais e títulos nos painéis</string>
     <string name="settings_search_keywords_navigation">barra, barra lateral, menu, navegação, ocultar, flutuante, fixa, tamanho, compacta, larga, comprimento, altura total</string>
     <string name="settings_breadcrumb_eyebrow"><xliff:g id="section">%1$s</xliff:g> · <xliff:g id="group">%2$s</xliff:g></string>
     <string name="settings_nav_size_desc">Compacta: ícones · Normal: nomes · Larga: nomes e contagens · Extra larga: com detalhes</string>

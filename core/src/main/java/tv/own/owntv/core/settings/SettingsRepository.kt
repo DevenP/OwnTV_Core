@@ -438,6 +438,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         val RECORD_WHAT_IM_WATCHING = booleanPreferencesKey("record_what_im_watching")
         // Video Player Settings
         val HW_DECODING = booleanPreferencesKey("hw_decoding")
+        val SOFTWARE_DECODE_ABOVE_1080P = booleanPreferencesKey("software_decode_above_1080p")
         val VOD_PREFER_EXO = booleanPreferencesKey("vod_prefer_exo") // legacy; read for migration only
         val LIVE_ENGINE = stringPreferencesKey("live_engine")
         val VOD_ENGINE = stringPreferencesKey("vod_engine")
@@ -521,6 +522,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         val DATA_SAVER = booleanPreferencesKey("data_saver")
         val GESTURE_SENSITIVITY_PCT = intPreferencesKey("gesture_sensitivity_pct")
         val DOWNLOADS_WIFI_ONLY = booleanPreferencesKey("downloads_wifi_only")
+        val DOWNLOAD_WATCH_CHOICE = stringPreferencesKey("download_watch_choice")
         // The mobility layer, all of it touch-host only: a window that floats over another app, a
         // screen that switches itself off, and a data plan that gets billed. A television has none of
         // the three, so every default below is what a TV does today — nothing.
@@ -582,6 +584,11 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         val NAV_WIDEN = stringPreferencesKey("nav_widen")
         // In-app logos: the play triangle in the user's accent instead of the icon's own colour.
         val BRAND_ACCENT_TRIANGLE = booleanPreferencesKey("brand_accent_triangle")
+        // Phone bottom bar (not the TV rail keys — a different control): names under the icons, and
+        // whether it slides away while a list scrolls down. Plus counts in the browse sheets.
+        val PHONE_NAV_LABELS = booleanPreferencesKey("phone_nav_labels")
+        val PHONE_NAV_HIDE_ON_SCROLL = booleanPreferencesKey("phone_nav_hide_on_scroll")
+        val SHEET_COUNTS = booleanPreferencesKey("sheet_counts")
         // CH+- key paging for browse panels (Live/Movies/Series: category rail + item list/grid).
         // Master toggle + a per-direction skip count (CH+ toward first, CH− toward last). Counts are
         // clamped to [1, CH_NAV_HARD_MAX] on write; the UI warns above CH_NAV_WARN_THRESHOLD.
@@ -1237,6 +1244,27 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         context.dataStore.edit { it[Keys.NAV_WIDEN] = size?.name ?: NAV_WIDEN_OFF }
     }
 
+    /** Phone bottom bar: names under the icons (default) or icons only. */
+    val phoneNavLabels: Flow<Boolean> = prefsFlow { it[Keys.PHONE_NAV_LABELS] ?: true }
+
+    suspend fun setPhoneNavLabels(on: Boolean) {
+        context.dataStore.edit { it[Keys.PHONE_NAV_LABELS] = on }
+    }
+
+    /** Phone bottom bar: slides away while a list scrolls down, back on the way up (default on). */
+    val phoneNavHideOnScroll: Flow<Boolean> = prefsFlow { it[Keys.PHONE_NAV_HIDE_ON_SCROLL] ?: true }
+
+    suspend fun setPhoneNavHideOnScroll(on: Boolean) {
+        context.dataStore.edit { it[Keys.PHONE_NAV_HIDE_ON_SCROLL] = on }
+    }
+
+    /** Channel and title counts in the phone's browse sheets: playlists, categories (default on). */
+    val sheetCounts: Flow<Boolean> = prefsFlow { it[Keys.SHEET_COUNTS] ?: true }
+
+    suspend fun setSheetCounts(on: Boolean) {
+        context.dataStore.edit { it[Keys.SHEET_COUNTS] = on }
+    }
+
     /** In-app logos: the play triangle in the accent (default) or in the chosen icon's own colour. */
     val brandAccentTriangle: Flow<Boolean> = prefsFlow { it[Keys.BRAND_ACCENT_TRIANGLE] ?: true }
 
@@ -1433,6 +1461,21 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         context.dataStore.edit { it[Keys.DOWNLOADS_WIFI_ONLY] = enabled }
     }
 
+    /**
+     * What playing something does to a running download when the playlist allows one stream: ask
+     * (the default), pause the download, or keep downloading. "Don't ask again" in that question
+     * writes the other two.
+     */
+    enum class DownloadWatchChoice { ASK, PAUSE, KEEP }
+
+    val downloadWatchChoice: Flow<DownloadWatchChoice> = prefsFlow { prefs ->
+        prefs[Keys.DOWNLOAD_WATCH_CHOICE]?.let { runCatching { DownloadWatchChoice.valueOf(it) }.getOrNull() } ?: DownloadWatchChoice.ASK
+    }
+
+    suspend fun setDownloadWatchChoice(choice: DownloadWatchChoice) {
+        context.dataStore.edit { it[Keys.DOWNLOAD_WATCH_CHOICE] = choice.name }
+    }
+
     /** Read once, for a caller that has to answer before it can start — the queue and the player. */
     suspend fun downloadsWifiOnlyNow(): Boolean = downloadsWifiOnly.first()
     suspend fun dataSaverNow(): Boolean = dataSaver.first()
@@ -1533,6 +1576,18 @@ class SettingsRepository(private val context: Context, private val localeStore: 
 
     suspend fun setHwDecoding(enabled: Boolean) {
         context.dataStore.edit { it[Keys.HW_DECODING] = enabled }
+    }
+
+    /**
+     * Let software decoding play video above 1080p. Off by default: a TV-class CPU usually cannot keep
+     * up with 4K in software, so playback above 1080p is stopped there with an honest error instead.
+     * On, for devices with the CPU for it, the software rescue and the "Hardware decoding = Off"
+     * path are allowed at any resolution.
+     */
+    val softwareDecodeAbove1080p: Flow<Boolean> = prefsFlow { it[Keys.SOFTWARE_DECODE_ABOVE_1080P] ?: false }
+
+    suspend fun setSoftwareDecodeAbove1080p(enabled: Boolean) {
+        context.dataStore.edit { it[Keys.SOFTWARE_DECODE_ABOVE_1080P] = enabled }
     }
 
     /**
@@ -3069,7 +3124,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
             Keys.LIVE_ENGINE, Keys.VOD_ENGINE,
             Keys.MAIN_FONT_FAMILY, Keys.POPUP_FONT_FAMILY,
             Keys.PREF_AUDIO_LANG, Keys.PREF_SUB_LANG, Keys.SUB_SEARCH_LANGS, Keys.SORT_LIVE, Keys.SORT_GUIDE, Keys.SORT_MOVIES,
-            Keys.SORT_SERIES, Keys.RESUME_MODE, Keys.TIMESHIFT_RESUME_MODE, Keys.CATCHUP_TZ, Keys.CATCHUP_PLAYER, Keys.ANIMATION_LEVEL, Keys.VOD_VIEW_MODE, Keys.GUIDE_VIEW,
+            Keys.SORT_SERIES, Keys.RESUME_MODE, Keys.TIMESHIFT_RESUME_MODE, Keys.DOWNLOAD_WATCH_CHOICE, Keys.CATCHUP_TZ, Keys.CATCHUP_PLAYER, Keys.ANIMATION_LEVEL, Keys.VOD_VIEW_MODE, Keys.GUIDE_VIEW,
             Keys.EPISODE_VIEW_MODE, Keys.VOD_LAYOUT, Keys.LIVE_LAYOUT, Keys.LIVE_VIEW, Keys.REMINDER_MODE,
             Keys.WEATHER_LOCATION, Keys.RECENT_SEARCHES,
             Keys.CLOCK_TIME_COLOR, Keys.CLOCK_DATE_COLOR, Keys.CLOCK_WEATHER_COLOR,
@@ -3145,7 +3200,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
             Keys.TIMESHIFT_WINDOW_MINUTES)
         val bools = listOf(
             Keys.GUIDE_SHOW_EMPTY, Keys.GUIDE_PREVIEW,
-            Keys.LIVE_PREVIEW, Keys.LIVE_PREVIEW_AUDIO, Keys.HERO_PREVIEW, Keys.HDR_ENABLED, Keys.AUTO_FRAME_RATE, Keys.AFR_MATCH_RESOLUTION, Keys.AUTO_FRAME_RATE_PROMPTED, Keys.ANDROID_TV_HOME, Keys.HW_DECODING,
+            Keys.LIVE_PREVIEW, Keys.LIVE_PREVIEW_AUDIO, Keys.HERO_PREVIEW, Keys.HDR_ENABLED, Keys.AUTO_FRAME_RATE, Keys.AFR_MATCH_RESOLUTION, Keys.AUTO_FRAME_RATE_PROMPTED, Keys.ANDROID_TV_HOME, Keys.HW_DECODING, Keys.SOFTWARE_DECODE_ABOVE_1080P,
             Keys.VOD_PREFER_EXO, Keys.MEASURED_STREAM_STATS, Keys.DETAILED_DIAGNOSTICS, Keys.DIRECT_TUNE, Keys.LIVE_LEFT_RIGHT_REWINDS, Keys.EXTERNAL_PLAYER,
             Keys.EXTERNAL_PLAYER_LIVE, Keys.EXTERNAL_PLAYER_MOVIES, Keys.EXTERNAL_PLAYER_SERIES, Keys.UPDATE_CHECK_ON_START, Keys.SURROUND_SOUND, Keys.AUTO_PLAY_NEXT, Keys.PROXY_ENABLED,
             Keys.WEATHER_ENABLED, Keys.WEATHER_FAHRENHEIT, Keys.RESUME_LAST_CHANNEL, Keys.METADATA_ENABLED, Keys.CH_NAV_ENABLED,
@@ -3159,6 +3214,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
             // Touch-host settings. They travel even though a television has no row for them: a phone
             // restored from a phone must keep them, and a television simply ignores what it never reads.
             Keys.BACKGROUND_PLAYBACK, Keys.PIP_ENABLED, Keys.DATA_SAVER, Keys.DOWNLOADS_WIFI_ONLY,
+            Keys.PHONE_NAV_LABELS, Keys.PHONE_NAV_HIDE_ON_SCROLL, Keys.SHEET_COUNTS,
             Keys.PIP_ON_BACK, Keys.PIP_SNAP, Keys.AUDIO_ON_SCREEN_OFF, Keys.AUDIO_ON_MOBILE_DATA,
             Keys.AUDIO_PER_CHANNEL,
             Keys.MULTIVIEW_ENABLED, Keys.MULTIVIEW_WARNING_ACCEPTED,
@@ -3241,7 +3297,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
      * Android 11 box's values were simply copied onto whatever the backup was restored to.
      */
     private val deviceSpecificSettings: Set<String> = listOf(
-        Keys.LIVE_ENGINE, Keys.VOD_ENGINE, Keys.VOD_PREFER_EXO, Keys.HW_DECODING, Keys.AUTO_FRAME_RATE,
+        Keys.LIVE_ENGINE, Keys.VOD_ENGINE, Keys.VOD_PREFER_EXO, Keys.HW_DECODING, Keys.SOFTWARE_DECODE_ABOVE_1080P, Keys.AUTO_FRAME_RATE,
         Keys.AFR_PAUSE_SECS, Keys.AFR_MATCH_RESOLUTION,
         Keys.HDR_ENABLED, Keys.SURROUND_MODE, Keys.SURROUND_SOUND, Keys.AUDIO_PASSTHROUGH,
         Keys.TUNNELED_PLAYBACK,

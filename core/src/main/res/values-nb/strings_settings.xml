@@ -460,6 +460,9 @@
     <string name="settings_hardware_decoding">Maskinvaredekoding</string>
     <string name="settings_hardware_decoding_description">Bruk TV-ens maskinvaredekoder. Slå av hvis enkelte strømmer hakker eller viser bildefeil.</string>
     <string name="settings_hardware_decoding_description_mobile">Bruk enhetens maskinvaredekoder. Slå av hvis enkelte strømmer hakker eller viser bildefeil.</string>
+    <string name="settings_software_decode_above_1080p">Programvaredekoding over 1080p</string>
+    <string name="settings_software_decode_above_1080p_description">Spiller av 4K og annen video over 1080p i programvare når TV-ens maskinvaredekoder er slått av eller svikter. Krever en rask prosessor: på de fleste TV-er hakker det.</string>
+    <string name="settings_software_decode_above_1080p_description_mobile">Spiller av 4K og annen video over 1080p i programvare når enhetens maskinvaredekoder er slått av eller svikter. Krever en rask prosessor: på mange enheter hakker det.</string>
     <string name="settings_movies_series_player">Avspiller for filmer og serier</string>
     <string name="settings_live_tv_player">Avspiller for direkte-TV</string>
     <string name="settings_engine_order"><xliff:g id="first">%1$s</xliff:g>, deretter <xliff:g id="second">%2$s</xliff:g></string>
@@ -1432,6 +1435,13 @@
     <string name="settings_nav_widen_desc">Festet og kompakt: viser navnene over innholdet mens menyen har fokus</string>
     <string name="settings_nav_menu_items">Menyelementer</string>
     <string name="settings_nav_menu_items_desc">Dynamisk: følger innholdet i spillelisten · Fast: du velger selv</string>
+    <string name="settings_nav_bar">Linje</string>
+    <string name="settings_nav_labels">Navn</string>
+    <string name="settings_nav_icons_only">Bare ikoner</string>
+    <string name="settings_nav_hide_scrolling">Skjul under rulling</string>
+    <string name="settings_nav_hide_scrolling_desc">Linjen glir bort når du ruller ned, og kommer tilbake når du ruller opp</string>
+    <string name="settings_sheet_counts">Vis antall</string>
+    <string name="settings_sheet_counts_desc">Antall kanaler og titler i panelene</string>
     <string name="settings_search_keywords_navigation">linje, sidelinje, meny, navigasjon, skjul, svevende, fast, størrelse, kompakt, bred, lengde, full høyde</string>
     <string name="settings_breadcrumb_eyebrow"><xliff:g id="section">%1$s</xliff:g> · <xliff:g id="group">%2$s</xliff:g></string>
     <string name="settings_nav_size_desc">Kompakt: ikoner · Normal: navn · Bred: navn og antall · Ekstra bred: med detaljer</string>
