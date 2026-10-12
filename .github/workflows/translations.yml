@@ -157,7 +157,8 @@ jobs:
           python tools/i18n/sync_translations.py ready | while read -r id pct name; do
             if [ "$name" = "NOT-IN-CATALOGUE" ]; then
               title="Language $id reached $pct% on Weblate - needs a locales.json entry"
-              GH_TOKEN=$ISSUE_TOKEN gh issue list --state open --search "$title in:title" --json number | jq -e 'length > 0' >/dev/null \
+              # Matched without the percentage, which moves between runs: one open issue per language.
+              GH_TOKEN=$ISSUE_TOKEN gh issue list --state open --search "\"Language $id reached\" \"needs a locales.json entry\" in:title" --json number | jq -e 'length > 0' >/dev/null \
                 || GH_TOKEN=$ISSUE_TOKEN gh issue create --title "$title" --body "Weblate's \`$id\` is $pct% translated, above the readiness threshold, but it is not in tools/i18n/locales.json, so it cannot be promoted automatically. Add its catalogue entry; the next sync opens the promotion pull request."
               continue
             fi
