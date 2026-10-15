@@ -11,10 +11,33 @@
 
 ## Unreleased
 
+**Database v49**
+
+### ✨ New features
+
+- **🕒 Catch-up time zone "Automatic": the Xtream panel's own zone**
+- **▶️ External player starts a film or episode where you left it**
+- **🎞️ Film buffer follows the seconds you choose (#31)**
+- **⚡ Faster zapping on one-session panels (#32)**
+
 ### 🐛 Fixes
 
 - **📡 Pause and rewind live TV: a channel comes back by itself after a network outage**
 - **▶️ External player picker offers Always again, so one player can be the default**
+- **📺 Live TV falls back from mpv to ExoPlayer and gives up on time again**
+- **🔊 Opening a previewed channel keeps its volume; unmute returns to the level before**
+- **🔈 Changing sound settings during a film on ExoPlayer no longer starts a second copy**
+- **🗣️ Audio language and the episode queue survive a reload and the screensaver**
+- **🚫 A dead film link shows its error in seconds**
+- **📱 Films on mpv keep playing with the phone's screen off**
+- **⏪ M3U catch-up: every Kodi/TiviMate placeholder, catch-up-correction and timeshift="N"**
+- **⏱️ Xtream rewind counter matches the clock in the picture**
+- **🔁 Stalker catch-up Retry gets a fresh link; catch-up remembers player and zoom per channel**
+- **🧩 Pause-and-rewind no longer skips segments with signed links**
+- **🧠 Memory-pressure trim works on Android 14 and newer**
+- **🏷️ Categories keep their country ("UK|") when a list mixes countries**
+- **🔁 Retry works after a live channel gives up**
+- **👤 "Account already in use" says so, instead of loading forever on a film**
 
 ## core-1.0.67 — 2026-10-12
 
