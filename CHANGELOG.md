@@ -14,6 +14,7 @@
 ### 🐛 Fixes
 
 - **📡 Pause and rewind live TV: a channel comes back by itself after a network outage**
+- **▶️ External player picker offers Always again, so one player can be the default**
 
 ## core-1.0.67 — 2026-10-12
 
