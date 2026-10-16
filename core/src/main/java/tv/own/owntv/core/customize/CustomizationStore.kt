@@ -10,8 +10,6 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
-import org.json.JSONArray
-import org.json.JSONObject
 import java.util.UUID
 import tv.own.owntv.core.database.entity.CategoryEntity
 import tv.own.owntv.core.epg.EpgMatcher
@@ -166,14 +164,14 @@ class CustomizationStore(private val context: Context) {
 
     fun observe(profileId: Long, type: MediaType): Flow<SectionCustomizations> =
         context.customizeStore.data
-            .map { prefs -> parse(prefs[key(profileId, type)]) }
+            .map { prefs -> CustomizationJson.parse(prefs[key(profileId, type)]) }
             .distinctUntilChanged()
 
     suspend fun update(profileId: Long, type: MediaType, transform: (SectionCustomizations) -> SectionCustomizations) {
         context.customizeStore.edit { prefs ->
             val k = key(profileId, type)
-            val next = transform(parse(prefs[k]))
-            if (next.isEmpty) prefs.remove(k) else prefs[k] = serialize(next)
+            val next = transform(CustomizationJson.parse(prefs[k]))
+            if (next.isEmpty) prefs.remove(k) else prefs[k] = CustomizationJson.serialize(next)
         }
     }
 
@@ -310,68 +308,6 @@ class CustomizationStore(private val context: Context) {
         if (entries.isEmpty()) return
         context.customizeStore.edit { prefs ->
             entries.forEach { (k, v) -> if (k.startsWith("cust_")) prefs[stringPreferencesKey(k)] = v }
-        }
-    }
-
-    // --- JSON (org.json, matching BackupManager's style) ---
-
-    private fun parse(raw: String?): SectionCustomizations {
-        if (raw.isNullOrBlank()) return SectionCustomizations()
-        return runCatching {
-            val o = JSONObject(raw)
-            SectionCustomizations(
-                hiddenCategories = o.optJSONArray("hiddenCats").toStringSet(),
-                hiddenItems = o.optJSONObject("hiddenItems").toStringMap(),
-                categoryNames = o.optJSONObject("catNames").toStringMap(),
-                itemNames = o.optJSONObject("itemNames").toStringMap(),
-                categoryOrder = o.optJSONArray("catOrder").toStringList(),
-                epgMatches = o.optJSONObject("epgMatch").toStringMap(),
-                epgShifts = o.optJSONObject("epgShift").toStringMap(),
-                customCategories = o.optJSONArray("customCats").toCustomCategories(),
-                movedFromOrigin = o.optJSONObject("movedFrom").toStringMap(),
-            )
-        }.getOrDefault(SectionCustomizations())
-    }
-
-    private fun serialize(c: SectionCustomizations): String = JSONObject().apply {
-        put("hiddenCats", JSONArray(c.hiddenCategories.toList()))
-        put("hiddenItems", JSONObject(c.hiddenItems as Map<*, *>))
-        put("catNames", JSONObject(c.categoryNames as Map<*, *>))
-        put("itemNames", JSONObject(c.itemNames as Map<*, *>))
-        put("catOrder", JSONArray(c.categoryOrder))
-        put("epgMatch", JSONObject(c.epgMatches as Map<*, *>))
-        put("epgShift", JSONObject(c.epgShifts as Map<*, *>))
-        put("movedFrom", JSONObject(c.movedFromOrigin as Map<*, *>))
-        put(
-            "customCats",
-            JSONArray(c.customCategories.map {
-                JSONObject().put("id", it.id).put("name", it.name).put("icon", it.icon)
-            }),
-        )
-    }.toString()
-
-    private fun JSONArray?.toStringList(): List<String> =
-        if (this == null) emptyList() else (0 until length()).map { getString(it) }
-
-    private fun JSONArray?.toStringSet(): Set<String> = toStringList().toSet()
-
-    private fun JSONObject?.toStringMap(): Map<String, String> {
-        if (this == null) return emptyMap()
-        val out = HashMap<String, String>()
-        keys().forEach { k -> out[k] = getString(k) }
-        return out
-    }
-
-    private fun JSONArray?.toCustomCategories(): List<CustomCategory> {
-        if (this == null) return emptyList()
-        return (0 until length()).mapNotNull { i ->
-            val o = optJSONObject(i) ?: return@mapNotNull null
-            val id = o.optString("id").takeIf { it.isNotEmpty() } ?: return@mapNotNull null
-            CustomCategory(
-                id = id,
-                name = o.optString("name"),
-                icon = o.optString("icon").ifEmpty { null },
-            )
         }
     }
 }

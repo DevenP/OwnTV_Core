@@ -474,20 +474,25 @@
 1	sql	core/src/main/java/tv/own/owntv/core/content/SearchReader.kt	$it*
 1	technical	core/src/main/java/tv/own/owntv/core/content/SearchReader.kt	[^\\p{L}\\p{Nd}]+
 1	empty	core/src/main/java/tv/own/owntv/core/customize/BulkRenameSession.kt	\0
+2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationJson.kt	catNames
+2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationJson.kt	catOrder
+2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationJson.kt	customCats
+2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationJson.kt	epgMatch
+2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationJson.kt	epgShift
+2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationJson.kt	hiddenCats
+2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationJson.kt	hiddenItems
+2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationJson.kt	icon
+2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationJson.kt	id
+2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationJson.kt	itemNames
+2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationJson.kt	movedFrom
+2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationJson.kt	name
 1	empty	core/src/main/java/tv/own/owntv/core/customize/CustomizationStore.kt	\0
 1	technical	core/src/main/java/tv/own/owntv/core/customize/CustomizationStore.kt	${c.sourceId}:${c.remoteId ?: c.name}
 1	technical	core/src/main/java/tv/own/owntv/core/customize/CustomizationStore.kt	${ch.sourceId}:${ch.remoteId ?: ch.name}
 1	technical	core/src/main/java/tv/own/owntv/core/customize/CustomizationStore.kt	${m.sourceId}:${m.remoteId ?: m.name}
 1	technical	core/src/main/java/tv/own/owntv/core/customize/CustomizationStore.kt	${s.sourceId}:${s.remoteId ?: s.name}
-2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationStore.kt	catNames
-2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationStore.kt	catOrder
 2	technical	core/src/main/java/tv/own/owntv/core/customize/CustomizationStore.kt	cust_
 1	preference-key	core/src/main/java/tv/own/owntv/core/customize/CustomizationStore.kt	cust_${profileId}_${type.name}
-2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationStore.kt	epgMatch
-2	preference-key	core/src/main/java/tv/own/owntv/core/customize/CustomizationStore.kt	epgShift
-2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationStore.kt	hiddenCats
-2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationStore.kt	hiddenItems
-2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationStore.kt	itemNames
 1	technical	core/src/main/java/tv/own/owntv/core/customize/CustomizationStore.kt	owntv_customizations
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/BulkInsertHelper.kt	\0
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/BulkInsertHelper.kt	$msg — no canonical indexes for ${state.table}, indexes were dropped and NOT restored
