@@ -791,6 +791,26 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         }
     }
 
+    // --- Sports: one blob per profile, like Home's (see [tv.own.owntv.core.sports.SportsConfig]). ---
+    private fun sportsConfigKey(profileId: Long) = stringPreferencesKey("$SPORTS_CONFIG_PREFIX$profileId")
+
+    fun sportsConfig(profileId: Long): Flow<tv.own.owntv.core.sports.SportsConfig> =
+        parsedFlow(sportsConfigKey(profileId)) { tv.own.owntv.core.sports.SportsConfig.fromJson(it) }
+
+    /** The active profile's sports settings, following profile switches. */
+    val activeSportsConfig: Flow<tv.own.owntv.core.sports.SportsConfig> = context.dataStore.data
+        .map { it[sportsConfigKey(it[Keys.ACTIVE_PROFILE] ?: -1L)] }
+        .distinctUntilChanged()
+        .map { tv.own.owntv.core.sports.SportsConfig.fromJson(it) }
+
+    suspend fun updateSportsConfig(profileId: Long, transform: (tv.own.owntv.core.sports.SportsConfig) -> tv.own.owntv.core.sports.SportsConfig) {
+        context.dataStore.edit { prefs ->
+            val key = sportsConfigKey(profileId)
+            val next = transform(tv.own.owntv.core.sports.SportsConfig.fromJson(prefs[key]))
+            if (next == tv.own.owntv.core.sports.SportsConfig()) prefs.remove(key) else prefs[key] = next.toJson().toString()
+        }
+    }
+
     // --- Startup: auto-open the last-watched live channel (default OFF) — legacy, now migrated to startupMode ---
     val resumeLastChannel: Flow<Boolean> = prefsFlow { it[Keys.RESUME_LAST_CHANNEL] ?: false }
     suspend fun setResumeLastChannel(enabled: Boolean) {
@@ -3548,6 +3568,35 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         }
     }
 
+    // --- Backup: per-profile sports settings (dynamic "sports_config_<id>" keys) ---
+
+    /** Exports all per-profile sports blobs as { "<profileId>": { ... } }. */
+    suspend fun exportSportsConfigs(): org.json.JSONObject {
+        val out = org.json.JSONObject()
+        context.dataStore.data.first().asMap().forEach { (k, v) ->
+            if (k.name.startsWith(SPORTS_CONFIG_PREFIX) && v is String) {
+                val blob = runCatching { org.json.JSONObject(v) }.getOrNull() ?: return@forEach
+                out.put(k.name.removePrefix(SPORTS_CONFIG_PREFIX), blob)
+            }
+        }
+        return out
+    }
+
+    /**
+     * Restores sports blobs only for profile ids in [existingProfileIds] (others are dropped safely).
+     * Each blob is read through [tv.own.owntv.core.sports.SportsConfig.fromJson] and written back, so
+     * the import rules apply and a value this build does not know is left out.
+     */
+    suspend fun importSportsConfigs(o: org.json.JSONObject, existingProfileIds: Set<Long>) {
+        context.dataStore.edit { prefs ->
+            o.keys().forEach { key ->
+                val pid = key.toLongOrNull()?.takeIf { it in existingProfileIds } ?: return@forEach
+                val blob = o.optJSONObject(key) ?: return@forEach
+                prefs[sportsConfigKey(pid)] = tv.own.owntv.core.sports.SportsConfig.fromJson(blob.toString()).toJson().toString()
+            }
+        }
+    }
+
     // --- Backup: per-profile preferred languages (dynamic "pref_audio_lang_<id>" / "pref_sub_lang_<id>") ---
 
     /** Exports { "<profileId>": { "a": "<audio>", "s": "<subtitle>" } }; a side the profile never chose is absent. */
@@ -3727,6 +3776,9 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         }
     }
 }
+
+/** Per-profile sports settings blob; the profile id follows. */
+internal const val SPORTS_CONFIG_PREFIX = "sports_config_"
 
 /** Per-profile preferred-language keys (N13); the profile id follows. */
 internal const val PREF_AUDIO_LANG_PREFIX = "pref_audio_lang_"

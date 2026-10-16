@@ -11,10 +11,17 @@
 
 ## Unreleased
 
-**Database v49**
+**Database v49 · Backup v25**
 
 ### ✨ New features
 
+- **🏆 Sports Hub: live scores, fixtures and match details from ESPN, with the channels in your guide that show each match**
+- **🔎 Find channels for a match, from 30 minutes before kick-off to 30 minutes after the end**
+- **📺 Broadcasts: who shows a match, from your guide and from ESPN**
+- **🔁 Sports data rebuilt on a schedule you choose, or by hand**
+- **⭐ My teams, followed leagues, and your own order of sports and leagues**
+- **🔔 Goal alerts and match reminders**
+- **🏠 Sports row on Home**
 - **🕒 Catch-up time zone "Automatic": the Xtream panel's own zone**
 - **▶️ External player starts a film or episode where you left it**
 - **🎞️ Film buffer follows the seconds you choose (#31)**
