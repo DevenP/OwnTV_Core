@@ -145,6 +145,18 @@ class EspnParserTest {
     }
 
     @Test
+    fun `cricket summary - score and overs read as on the header feed`() {
+        val board = EspnParser.cricketHeader(League(Sport.CRICKET, "all", "Cricket"), fixture("header_cricket.json")).first()
+        val m = EspnParser.summary(board.copy(id = "1555117", leagueSlug = "10931"), fixture("summary_cricket.json")).match
+        assertEquals("87/3", m.competitors.single { it.team.name == "Bangladesh" }.score!!.text)
+        assertEquals(87, m.competitors.single { it.team.name == "Bangladesh" }.score!!.value)
+        assertEquals("271/8", m.competitors.single { it.team.name == "Zimbabwe" }.score!!.text)
+        assertEquals("14", m.clock!!.overs)
+        assertEquals(MatchState.IN, m.state)
+        assertEquals("Bangladesh require 185 runs", m.statusText)
+    }
+
+    @Test
     fun `soccer summary - timeline, stats and line-ups`() {
         val board = EspnParser.scoreboard(bundesliga, fixture("scoreboard_soccer_ger1.json")).single { it.id == "401884774" }
         val summary = EspnParser.summary(board, fixture("summary_soccer_ger1.json"))
