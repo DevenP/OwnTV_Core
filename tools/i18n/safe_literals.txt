@@ -2319,6 +2319,19 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/M3uParser.kt	url-tvg
 2	protocol	core/src/main/java/tv/own/owntv/core/parser/M3uParser.kt	vod
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/M3uParser.kt	x-tvg-url
+1	technical	core/src/main/java/tv/own/owntv/core/parser/ProgressiveVideoUrl.kt	://
+1	protocol	core/src/main/java/tv/own/owntv/core/parser/ProgressiveVideoUrl.kt	avi
+1	protocol	core/src/main/java/tv/own/owntv/core/parser/ProgressiveVideoUrl.kt	file
+1	protocol	core/src/main/java/tv/own/owntv/core/parser/ProgressiveVideoUrl.kt	http
+1	protocol	core/src/main/java/tv/own/owntv/core/parser/ProgressiveVideoUrl.kt	https
+1	protocol	core/src/main/java/tv/own/owntv/core/parser/ProgressiveVideoUrl.kt	m4v
+1	protocol	core/src/main/java/tv/own/owntv/core/parser/ProgressiveVideoUrl.kt	mkv
+1	protocol	core/src/main/java/tv/own/owntv/core/parser/ProgressiveVideoUrl.kt	mov
+1	protocol	core/src/main/java/tv/own/owntv/core/parser/ProgressiveVideoUrl.kt	mp4
+1	protocol	core/src/main/java/tv/own/owntv/core/parser/ProgressiveVideoUrl.kt	mpeg
+1	protocol	core/src/main/java/tv/own/owntv/core/parser/ProgressiveVideoUrl.kt	mpg
+1	protocol	core/src/main/java/tv/own/owntv/core/parser/ProgressiveVideoUrl.kt	webm
+1	protocol	core/src/main/java/tv/own/owntv/core/parser/ProgressiveVideoUrl.kt	wmv
 1	technical	core/src/main/java/tv/own/owntv/core/parser/XmltvDetails.kt	$s $v
 1	technical	core/src/main/java/tv/own/owntv/core/parser/XmltvDetails.kt	E${episode + 1}
 1	technical	core/src/main/java/tv/own/owntv/core/parser/XmltvDetails.kt	S${season + 1}
