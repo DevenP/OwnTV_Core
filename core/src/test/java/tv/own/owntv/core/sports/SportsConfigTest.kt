@@ -34,7 +34,7 @@ class SportsConfigTest {
     )
 
     @Test
-    fun `defaults - the mockup's values, alerts off`() {
+    fun `defaults - the documented values, alerts off`() {
         val d = SportsConfig.fromJson(null)
         assertEquals(SportsConfig(), d)
         assertEquals(emptyList<String>(), d.leagues)

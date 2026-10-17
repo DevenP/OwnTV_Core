@@ -142,7 +142,7 @@ data class SourceEntity(
     val maxConnectionsProbedAt: Long = 0,
     val createdAt: Long = System.currentTimeMillis(),
     val lastSyncAt: Long? = null,
-    // --- v44: four more per-playlist overrides (owner decision 12). Each `null` = follow the global
+    // --- v44: four more per-playlist overrides. Each `null` = follow the global
     // setting, which is what every existing row reads as after the upgrade.
     /** Catch-up time zone for this provider's archive, as a `SettingsRepository.CatchupTimezone` name. */
     val catchupTimezone: String? = null,

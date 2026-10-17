@@ -142,7 +142,7 @@ enum class RecordingFailure {
      * Refused for the same reason as [ENCRYPTED] and one more: the CDM decrypts only *into a secure
      * decoder for immediate display*, so there is no point at which this app could obtain the frames
      * to write down. Attempting it would spend the account's connection for the whole programme and
-     * produce a file that cannot play — the outcome §1.5 exists to prevent.
+     * produce a file that cannot play — the outcome this refusal exists to prevent.
      */
     DRM_PROTECTED,
 

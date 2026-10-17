@@ -823,7 +823,7 @@
     <!-- Translators: Description of that row under Layout → Home rows. -->
     <string name="sports_home_row_description">Followed matches, while one is live or about to start</string>
 
-    <!-- Sports Hub: Redesign R1 -->
+    <!-- Sports Hub: hub states and settings -->
     <!-- Translators: Hub empty state on a profile that follows no sport or league yet (new users follow nothing). -->
     <string name="sports_empty_nothing_followed">No sports or leagues chosen yet</string>
     <!-- Translators: Under that title: where to choose them. Use the same names as the menus (the Settings tab, the Sports page, its Sports and leagues row). -->

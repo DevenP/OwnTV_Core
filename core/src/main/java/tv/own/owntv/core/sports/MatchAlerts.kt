@@ -6,13 +6,13 @@ import tv.own.owntv.core.sports.model.MatchEvent
 import tv.own.owntv.core.sports.model.MatchState
 import tv.own.owntv.core.sports.model.Sport
 
-/** Something worth telling the user about a match (README §7.6). [teamId] is the side it happened to. */
+/** Something worth telling the user about a match. [teamId] is the side it happened to. */
 data class MatchAlert(val kind: Kind, val match: Match, val teamId: String? = null, val player: String? = null) {
     enum class Kind { KICKOFF, GOAL, WICKET, RED_CARD, HALF_TIME, FULL_TIME, POSTPONED, CORRECTED }
 }
 
 /**
- * What the last check saw of a match — the "tiny file" of README §7.6, one entry per match. Scores
+ * What the last check saw of a match — the "tiny file" behind goal alerts, one entry per match. Scores
  * are the numeric values; cricket's wickets come from its text ("86/4" → 4).
  */
 data class AlertSnapshot(

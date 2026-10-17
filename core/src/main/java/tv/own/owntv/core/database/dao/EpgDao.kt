@@ -151,7 +151,7 @@ interface EpgDao {
 
     /**
      * Every programme *starting* in `[from, to)` and still running after [minStop] — the Sports hub's
-     * one read per kick-off slot (README §7.3), and its "on now" read with `minStop = now`.
+     * one read per kick-off slot, and its "on now" read with `minStop = now`.
      *
      * A range seek on the `(startMs, stopMs)` index. The stop condition is written `+stopMs` on
      * purpose: the unary plus stops SQLite from choosing the single-column `stopMs` index instead,

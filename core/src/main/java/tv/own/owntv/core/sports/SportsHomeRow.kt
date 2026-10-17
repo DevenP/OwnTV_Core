@@ -4,13 +4,13 @@ import tv.own.owntv.core.sports.model.Match
 import tv.own.owntv.core.sports.model.MatchState
 
 /**
- * Home's "Live sports" row (mockup T7, PLAN 2.8). The row exists **only while a followed match is live
+ * Home's "Live sports" row. The row exists **only while a followed match is live
  * or kicks off within the hour**; then it lists every followed match still to come or under way —
- * live first, then by kick-off, the user's teams ahead of their leagues — so T7's "Sat" and
+ * live first, then by kick-off, the user's teams ahead of their leagues — so a "Sat" and
  * "Tomorrow" cards ride along behind the live one. Off otherwise: an empty list.
  *
- * The board comes from [SportsRepository] under [Demand.HomeRow]. The row's `HomeRow` constant arrives
- * with its first consumer in Phase 3 (WORK C14), because both apps' Home `when`s are exhaustive.
+ * The board comes from [SportsRepository] under [Demand.HomeRow]. Both apps' Home `when`s are
+ * exhaustive, so a new `HomeRow` constant needs a branch in each.
  */
 object SportsHomeRow {
 

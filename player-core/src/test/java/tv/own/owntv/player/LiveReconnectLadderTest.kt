@@ -8,9 +8,9 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 /**
- * Phase 1 — the two decisions that keep a live channel alive through a provider hiccup:
- * how long we wait between reconnects (X3), and whether an early END_FILE means "corrupt file"
- * or "live stream being live" (P1).
+ * The two decisions that keep a live channel alive through a provider hiccup:
+ * how long we wait between reconnects, and whether an early END_FILE means "corrupt file"
+ * or "live stream being live".
  */
 class LiveReconnectLadderTest {
 

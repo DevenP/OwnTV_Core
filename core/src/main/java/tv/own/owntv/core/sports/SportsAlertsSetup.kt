@@ -8,7 +8,7 @@ import tv.own.owntv.core.settings.SettingsRepository
 import tv.own.owntv.core.sports.model.Match
 
 /**
- * What the apps call from Settings → Sports → Goal alerts and from a match's "Remind me" (PLAN 2.7).
+ * What the apps call from Settings → Sports → Goal alerts and from a match's "Remind me".
  */
 class SportsAlertsSetup(
     private val context: Context,
@@ -30,8 +30,8 @@ class SportsAlertsSetup(
     /**
      * "Remind me" on a match. With a channel showing it, this is a programme reminder on the best one
      * — the guide's own path: the in-app prompt while the app is open, the phone's own notification while
-     * it is not. Only without a channel does the phone post a sports notification at the lead time
-     * (mockup P7), so one reminder never arrives twice (owner, WORK O3). Returns false when neither applies:
+     * it is not. Only without a channel does the phone post a sports notification at the lead time,
+     * so one reminder never arrives twice. Returns false when neither applies:
      * a TV with no channel for the match yet ("Guide not out yet").
      */
     suspend fun remind(profileId: Long, match: Match, channels: List<WatchOption>, leadMinutes: Int): Boolean {

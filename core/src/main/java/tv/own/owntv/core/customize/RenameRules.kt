@@ -95,7 +95,7 @@ object RenameRules {
         rule.value.split(SEPARATOR).map { it.trim() }.filter { it.isNotEmpty() }
 
     /**
-     * The ✨ Auto cleanup preset (plan §2.6): country tags, quality tags, emoji — each emitted
+     * The ✨ Auto cleanup preset: country tags, quality tags, emoji — each emitted
      * twice (PREFIX + SUFFIX) because tags hang off both ends of names ("DE | FUSS-TV 3 [HD]").
      * Space collapse comes from [Options.trimLeftovers], on by default.
      */

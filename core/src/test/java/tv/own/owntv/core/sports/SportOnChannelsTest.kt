@@ -14,7 +14,7 @@ import tv.own.owntv.core.sports.model.MatchState
 import tv.own.owntv.core.sports.model.Sport
 import tv.own.owntv.core.sports.model.Team
 
-/** Layer B works from the guide and the playlist alone — the fake has no ESPN anywhere (PLAN 2.5). */
+/** Layer B works from the guide and the playlist alone — the fake has no ESPN anywhere. */
 class SportOnChannelsTest {
 
     private val now = 1_760_000_000_000L
@@ -42,7 +42,7 @@ class SportOnChannelsTest {
         override suspend fun channelsNamingAll(words: List<String>) = emptyList<ChannelEntity>()
     }
 
-    @Test fun `mockup T1 middle row - handball, darts, snooker, grouped by sport`() = runBlocking {
+    @Test fun `the hub's middle row - handball, darts, snooker, grouped by sport`() = runBlocking {
         val row = SportOnChannels(fake(
             p(1, "dyn1", "THW Kiel – SC Magdeburg", "Sport;Handball"),
             p(2, "dazn2", "Darts: European Championship"),

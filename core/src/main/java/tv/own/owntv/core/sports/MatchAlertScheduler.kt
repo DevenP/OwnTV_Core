@@ -34,7 +34,7 @@ import tv.own.owntv.core.sports.model.MatchState
 import java.io.File
 
 /**
- * The tiny file behind goal alerts (README §7.6): the matches being watched in the background, the
+ * The tiny file behind goal alerts: the matches being watched in the background, the
  * last state seen of each, and the match reminders due. Pure JSON in and out, so it is unit-tested.
  */
 data class AlertState(
@@ -78,7 +78,7 @@ data class AlertState(
 }
 
 /**
- * Goal alerts with the app closed (PLAN 2.7, README §7.6): one alarm per followed match at kick-off,
+ * Goal alerts with the app closed: one alarm per followed match at kick-off,
  * then a short [MatchAlertWorker] check about every minute until full time. Same clock as
  * [tv.own.owntv.core.reminder.ReminderScheduler]: exact when the user allows it, inexact otherwise.
  *

@@ -124,7 +124,7 @@ class LiveEpgReader(
                 }
             }
 
-            // 2) Provider short-EPG API fallback (Xtream get_short_epg / Stalker get_short_epg, Phase E §5.5).
+            // 2) Provider short-EPG API fallback (Xtream get_short_epg / Stalker get_short_epg).
             val entries = providerEntries(ch, shift) ?: return@withContext null
             // A gap in the provider's own guide data around "now" (nothing covers this instant) must leave
             // current null — picking the next entry that simply hasn't ended yet would mislabel an upcoming
@@ -443,7 +443,7 @@ class LiveArchiveUrls(
     suspend fun forProgramme(ch: ChannelEntity, programme: EpgProgrammeEntity): String? =
         withContext(Dispatchers.IO) {
             val source = sourceDao.getById(ch.sourceId) ?: return@withContext null
-            // Stalker archive URLs are minted per-play via create_link (Phase E §5.6); the others
+            // Stalker archive URLs are minted per-play via create_link; the others
             // are pure string templates handled by CatchupUrl.
             if (source.type == SourceType.STALKER) {
                 ch.remoteId?.let { rid ->
@@ -518,7 +518,7 @@ class LiveArchiveUrls(
                 tz,
                 ch.catchupCorrectionMin,
             )
-            // Stalker rewind = the same per-play archive create_link as catch-up (Phase E §5.6).
+            // Stalker rewind = the same per-play archive create_link as catch-up.
             SourceType.STALKER -> ch.remoteId?.let { rid ->
                 runCatching { streamUrlResolver.resolveCatchup(source, rid, startMs, startMs + durationMin * 60_000L) }
                     .onFailure { Log.w(LOG_TAG, "Stalker rewind resolve failed channelId=${ch.id}", it) }

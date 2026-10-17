@@ -29,7 +29,7 @@ data class DownloadStorageInfo(
 )
 
 /**
- * Phase 12 — downloads movies & series episodes for offline playback. Files go under the user-chosen
+ * Downloads movies & series episodes for offline playback. Files go under the user-chosen
  * download folder, organised as `Movies/<name>.<ext>` and `Series/<show>/Season N/<episode>.<ext>`.
  *
  * This is the queue-control half only: it writes [DownloadDao] rows and hands the actual transfers

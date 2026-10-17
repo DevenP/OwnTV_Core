@@ -35,7 +35,7 @@ import java.util.concurrent.ConcurrentHashMap
 
 /**
  * The byte pump behind live recording: [tv.own.owntv.core.download.DownloadEngine]'s shape, with the
- * four differences a live stream forces (§1.3).
+ * four differences a live stream forces.
  *
  * 1. **A time-based stop.** A live `.ts` URL never returns end-of-body, so the recording ends at
  *    `stopMs` and nowhere else.
@@ -359,7 +359,7 @@ class RecordingEngine(
      *
      * **AES-128 segments are decrypted as they are written** (#243): the key is a public URL every
      * player fetches, so the file on disk is clear MPEG-TS. **Anything else encrypted is refused, not
-     * attempted** (§1.5) — SAMPLE-AES written out unchanged produces a file of exactly the right size
+     * attempted** — SAMPLE-AES written out unchanged produces a file of exactly the right size
      * that will not play, and a recording the user only discovers is worthless when they sit down to
      * watch it is worse than one that said no at the start.
      */

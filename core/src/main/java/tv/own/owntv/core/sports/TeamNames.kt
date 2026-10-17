@@ -4,7 +4,7 @@ import java.text.Normalizer
 import tv.own.owntv.core.sports.model.Team
 
 /**
- * Team-name matching for "where is it live" (README §4): ESPN says "Bayern Munich", a German guide says
+ * Team-name matching for "where is it live": ESPN says "Bayern Munich", a German guide says
  * "FC Bayern München – 1. FC Köln". Both sides reduce to *distinctive tokens*: accents folded, club
  * prefixes and numbers dropped, city exonyms mapped to one spelling, doubled letters collapsed (Nassr ↔
  * Nasr). A team is found in a title when every token of one of its name variants is present.

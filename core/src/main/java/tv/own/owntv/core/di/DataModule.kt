@@ -30,7 +30,7 @@ import tv.own.owntv.core.sync.work.EpgSyncScheduler
 import tv.own.owntv.core.weather.WeatherRepository
 import java.util.concurrent.TimeUnit
 
-/** Networking, parsers, sync engine, and repositories (Phase 5). */
+/** Networking, parsers, sync engine, and repositories. */
 val dataModule = module {
     // Live snapshot of the global proxy. Backs OkHttp's ProxySelector/Authenticator AND mpv's http-proxy,
     // so the proxy can be toggled at runtime without rebuilding the singleton OkHttpClient below.
@@ -104,7 +104,7 @@ val dataModule = module {
     single { tv.own.owntv.core.epg.EpgMigration(get(), get(), get()) }
     single { M3uParser() }
     single { XtreamClient(get()) }
-    // Stalker portal (plan Phase A/B): protocol client on the shared OkHttpClient + in-memory sessions.
+    // Stalker portal: protocol client on the shared OkHttpClient + in-memory sessions.
     single { tv.own.owntv.core.stalker.StalkerClient(get()) }
     single { tv.own.owntv.core.stalker.StalkerAuthManager(get()) }
     single { tv.own.owntv.core.stalker.StreamUrlResolver(get(), get()) }
@@ -116,7 +116,7 @@ val dataModule = module {
     single { tv.own.owntv.core.live.ConnectionProbe(get()) }
     single { tv.own.owntv.core.live.ProbeChannelSource(get(), get(), get(), get(), get()) }
     single { tv.own.owntv.core.live.ConnectionLimits(get(), get(), get(), get()) }
-    // TMDB metadata enrichment (plan §4): one provider, three tiers resolved from SettingsRepository.
+    // TMDB metadata enrichment: one provider, three tiers resolved from SettingsRepository.
     // Opaque per-install id sent to the default Worker only, so one abusive install can be capped
     // without blocking the IP address a whole household/carrier NAT shares.
     single { tv.own.owntv.core.metadata.OwnTVClientId(androidContext()) }
@@ -126,16 +126,16 @@ val dataModule = module {
     single<tv.own.owntv.core.metadata.MetadataProvider> {
         tv.own.owntv.core.metadata.TmdbProvider(get(), get(), get(), get())
     }
-    // provider, metadataDao, settings, overrideStore — the on-demand resolve + cache orchestrator (plan §7, §11.2 U5b).
+    // provider, metadataDao, settings, overrideStore — the on-demand resolve + cache orchestrator.
     single { tv.own.owntv.core.metadata.MetadataRepository(get(), get(), get(), get(), get()) }
     single { tv.own.owntv.core.metadata.OriginalLanguageLookup(get(), get(), get()) }
     // Gates the TMDB Trending download to once every 5–8 days per playlist and holds the shared
     // candidate list; deliberately DataStore, not Room (derived state, no migration, no backup).
     single { tv.own.owntv.core.trending.TrendingScheduleStore(androidContext()) }
     single { tv.own.owntv.core.trending.TrendingRepository(get(), get(), get(), get(), get(), get(), get(), get(), get()) }
-    // Per-content TMDB name overrides (plan §11.2 U5b): DataStore side-store, no Room schema change.
+    // Per-content TMDB name overrides: DataStore side-store, no Room schema change.
     single { tv.own.owntv.core.metadata.MetadataOverrideStore(androidContext()) }
-    // OpenSubtitles (subtitle plan Phase 1): Worker-proxied REST client + Keystore-sealed
+    // OpenSubtitles: Worker-proxied REST client + Keystore-sealed
     // per-profile sessions + the sign-in/out orchestrator with one-shot silent re-login.
     single { tv.own.owntv.core.subtitles.OpenSubtitlesClient(get(), get(), get()) }
     single { tv.own.owntv.core.subtitles.OpenSubtitlesAuthStore(androidContext()) }
@@ -182,7 +182,7 @@ val dataModule = module {
     single { tv.own.owntv.core.player.VodEngineStore(androidContext(), get()) }
     // Remote (companion) add-source LAN server — one shared instance for Setup + Settings.
     single { tv.own.owntv.core.companion.CompanionController(androidContext(), get()) }
-    // Local sync between two OwnTV devices on the same Wi-Fi (Plan 4 Phase 12). The payload is a
+    // Local sync between two OwnTV devices on the same Wi-Fi. The payload is a
     // backup container, the listener is the companion server, and the merge is the restore path —
     // what is new here is the client, the pairing and the discovery.
     single { tv.own.owntv.core.sync.local.PairedDeviceStore(androidContext()) }
@@ -244,7 +244,7 @@ val dataModule = module {
         )
     }
     // App-wide "sync running" signal for the shell status pill (every sync funnels through SyncManager).
-    // Which VOD category the user is looking at, so the lazy-catalogue drain serves it first (N1c).
+    // Which VOD category the user is looking at, so the lazy-catalogue drain serves it first.
     single { tv.own.owntv.core.sync.CatalogPriority(get(), get()) }
     single { tv.own.owntv.core.sync.SyncActivityTracker() }
     // Same idea for EPG: EpgSyncWorker reports started/progress/finished here so the pill also reflects

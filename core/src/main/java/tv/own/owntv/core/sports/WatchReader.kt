@@ -45,8 +45,8 @@ interface WatchData {
 }
 
 /**
- * Ranks the user's channels for matches (PLAN 2.3, README §4 / §7.3), and caches the answer. It runs
- * only when a screen asks — the match page's Find channels (WORK C16) — never for a whole board.
+ * Ranks the user's channels for matches, and caches the answer. It runs
+ * only when a screen asks — the match page's Find channels — never for a whole board.
  *
  * Matches are grouped by kick-off: one guide read per slot, however many matches start then. The
  * cache is keyed by match and by [WatchData.fingerprint], so a score refresh — a new [Match] object
@@ -242,7 +242,7 @@ class RoomWatchData(
     }
 
     private companion object {
-        /** A very large guide's slot is ~20k rows (README §7.3); the cap only guards a malformed one. */
+        /** A very large guide's slot is ~20k rows; the cap only guards a malformed one. */
         const val MAX_PROGRAMMES = 30_000
         const val MAX_CHANNELS = 300
         const val KEY_CHUNK = 400

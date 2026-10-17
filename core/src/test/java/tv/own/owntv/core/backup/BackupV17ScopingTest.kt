@@ -144,7 +144,7 @@ class BackupV17ScopingTest {
             // is the same wherever it is restored. The merge prefers whatever this device measured
             // itself.
             "maxConnections", "maxConnectionsProbedAt",
-            // v44: the four per-playlist overrides of owner decision 12 (five columns).
+            // v44: the four per-playlist overrides (five columns).
             "catchupTimezone", "catchupOffsetMin", "vodEnginePreference", "liveTuneTimeoutSecs", "httpReferer",
         )
         // v49 `serverTimeZone`: the Xtream panel's own report, re-read at EVERY sync (unlike a measured

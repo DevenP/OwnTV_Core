@@ -277,7 +277,7 @@ internal fun shouldScheduleTrendingRefresh(
     metadataEnabled: Boolean,
     trendingVisible: Boolean,
     /**
-     * True while a lazily-added Stalker catalogue is still draining (plan N1f-2).
+     * True while a lazily-added Stalker catalogue is still draining.
      *
      * Trending is a *snapshot* sitting behind a multi-day timer, so one taken while the source holds
      * a few per cent of its titles is wrong for days. `CatalogBackfillWorker` takes it instead, once

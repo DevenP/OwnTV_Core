@@ -536,7 +536,7 @@ class OwnTVDatabaseMigrationTest {
     }
 
     /**
-     * v43 → v44 (plan P5), from the published baseline (core-1.0.57 ships v43). Additive only: the
+     * v43 → v44, from the published baseline (core-1.0.57 ships v43). Additive only: the
      * remembered zoom / volume / delay a user already has must survive untouched and read as
      * "no playlist known" (`sourceId = -1`) until the startup step fills it in; the new table and
      * every new column must exist, and a new quirk row must be writable.
@@ -1081,9 +1081,9 @@ class OwnTVDatabaseMigrationTest {
     /**
      * A driver connection to the test database file.
      *
-     * Phase B configures a SQLiteDriver, and `RoomDatabase.openHelper` throws once one is set — so
-     * this test can no longer reach the file that way, and it should not want to: the whole point
-     * of the phase is that the driver path is the one users run. Room's public `useWriterConnection`
+     * Production configures a SQLiteDriver, and `RoomDatabase.openHelper` throws once one is set — so
+     * this test can no longer reach the file that way, and it should not want to: the driver path
+     * is the one users run. Room's public `useWriterConnection`
      * hands back a `Transactor`, which is not a `SQLiteConnection`, so the schema assertions open
      * their own connection to the same file instead.
      */

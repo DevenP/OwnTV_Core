@@ -93,7 +93,7 @@ import tv.own.owntv.core.database.dao.SubtitleDao
         // Live recordings and the standing rules that create them (v39). Never synced, never
         // backed up — D6.
         RecordingEntity::class,
-        // Stalker outstanding-page plan (N1b)
+        // Stalker outstanding pages
         CatalogBackfillEntity::class,
         RecordingRuleEntity::class,
         // Programme reminders (v47, Stage G2). Never synced, never backed up — they last hours or days.
@@ -103,13 +103,13 @@ import tv.own.owntv.core.database.dao.SubtitleDao
         // EPG
         EpgChannelEntity::class,
         EpgProgrammeEntity::class,
-        // TMDB metadata enrichment cache (plan §7)
+        // TMDB metadata enrichment cache
         MetadataCacheEntity::class,
         MetadataMatchEntity::class,
         // Source-scoped, locally matched TMDB Trending showcase cache (v30).
         TrendingSnapshotEntity::class,
         TrendingItemEntity::class,
-        // External subtitles (OpenSubtitles / local files) — subtitle plan Phase 2
+        // External subtitles (OpenSubtitles / local files)
         SubtitleCacheEntity::class,
         SubtitleSelectionEntity::class,
         SubtitleTimingEntity::class,
@@ -120,7 +120,7 @@ import tv.own.owntv.core.database.dao.SubtitleDao
         SeriesFtsEntity::class,
         EpisodeFtsEntity::class,
     ],
-    version = 49, // v7: content_order (Move). v8: contentHash + browse/unique indexes. v9: EPG contentHash + natural key. v10: TMDB metadata cache. v11: movies/series rating-sort indexes. v12: metadata_cache trailerKey. v13: metadata_cache logoPath. v14: sources.mac (Stalker portal). v15: external-subtitle cache/selection/timing tables. v16: subtitle_link (downloaded-sub ↔ content). v17: sources.syncLive/Movies/Series (skip-sync enabledScope). v18: series.episodesSyncedAt (episode-cache freshness, S8). v19: epg_channels.iconUrl (XMLTV channel logos). v20: channels (sourceId, number) index for direct tune. v21: series.addedAt + date-added sort indexes. v22: series_sort_order (per-series season/episode order). v23: sources.hlsSupported and sources.preferHls. v24: custom_category_members (user custom categories, #87). v25: sources.livePrerollSecs (per-playlist "Pre-buffer"). v26: channels.catchupType + channels.httpHeaders (M3U catch-up styles + per-channel HTTP headers). v27: sources.maxConnections (Xtream session limit read at sync). v28: movies.httpHeaders + episodes.httpHeaders (per-item M3U HTTP headers). v29: optional Stalker serial/device IDs/signature. v30: source-scoped Now Trending snapshots. v31: indexed provider-title metadata and persistent Trending attempt state. v32: playback_prefs (per-item zoom + volume, keyed by the P6 stable content key). v33: channels/movies/episodes drmConfig (M3U Widevine/ClearKey licence details, #115). v34: sources.liveEnginePreference + sources.liveLatencyMode/liveLatencyCustomSecs (per-playlist Live TV engine and Live latency). v35: playback_prefs.audioDelayMs (per-item A/V-sync memory). v36: user_data_tombstones (deleted favorites/history/resume/memberships, so local sync propagates a deletion instead of undoing it). v37: episodes.airDateMs + metadata_cache.airDate (when an episode first aired — the provider's date, with TMDB's as the fallback) profiles.avatarPath (a picture of the user's own instead of a drawn tile). v38: sources.importPortalEpg (whether a Stalker portal's own guide may be imported). v39: recordings + recording_rules (live recording and its standing "record every showing" rules; never synced, never backed up). v40: sources.maxConnectionsProbedAt (when the app measured how many streams the provider really allows, for the providers that never say). v41: epg_channels.normName/normId (the matcher's normalized forms, stored at sync instead of recomputed per keystroke) and an epg_programmes (startMs, stopMs) index for time-bounded guide reads. v42: catalog_backfill (the Stalker VOD pages setup deliberately did not fetch, drained in the background — plan N1b). v43: channels/movies/episodes manifestType (the container an M3U entry declares via #KODIPROP:…manifest_type) and channels.directSource (the Xtream panel’s own URL, kept as a last-resort retry only). v44: playback_quirks (what a stream needs, shared by all profiles), playback_prefs.sourceId/audioLang/subtitleLang, and five per-playlist overrides on sources (catch-up zone/offset, VOD engine, tune timeout, Referer). v45: metadata_cache.originalLanguage (TMDB's original language, for the "Original language" audio choice). v46: playback_quirks.softwareDecode dropped (never written). v47: epg_programmes details (categories, year, rating, lengthMin, episode — the XMLTV details line) and programme_reminders (Stage G2). v48: downloads.reason/httpCode (why a download failed, waits or was paused). v49: sources.serverTimeZone (the Xtream panel's own zone, catch-up Automatic) and channels.catchupCorrectionMin (M3U catchup-correction).
+    version = 49, // v7: content_order (Move). v8: contentHash + browse/unique indexes. v9: EPG contentHash + natural key. v10: TMDB metadata cache. v11: movies/series rating-sort indexes. v12: metadata_cache trailerKey. v13: metadata_cache logoPath. v14: sources.mac (Stalker portal). v15: external-subtitle cache/selection/timing tables. v16: subtitle_link (downloaded-sub ↔ content). v17: sources.syncLive/Movies/Series (skip-sync enabledScope). v18: series.episodesSyncedAt (episode-cache freshness, S8). v19: epg_channels.iconUrl (XMLTV channel logos). v20: channels (sourceId, number) index for direct tune. v21: series.addedAt + date-added sort indexes. v22: series_sort_order (per-series season/episode order). v23: sources.hlsSupported and sources.preferHls. v24: custom_category_members (user custom categories, #87). v25: sources.livePrerollSecs (per-playlist "Pre-buffer"). v26: channels.catchupType + channels.httpHeaders (M3U catch-up styles + per-channel HTTP headers). v27: sources.maxConnections (Xtream session limit read at sync). v28: movies.httpHeaders + episodes.httpHeaders (per-item M3U HTTP headers). v29: optional Stalker serial/device IDs/signature. v30: source-scoped Now Trending snapshots. v31: indexed provider-title metadata and persistent Trending attempt state. v32: playback_prefs (per-item zoom + volume, keyed by the P6 stable content key). v33: channels/movies/episodes drmConfig (M3U Widevine/ClearKey licence details, #115). v34: sources.liveEnginePreference + sources.liveLatencyMode/liveLatencyCustomSecs (per-playlist Live TV engine and Live latency). v35: playback_prefs.audioDelayMs (per-item A/V-sync memory). v36: user_data_tombstones (deleted favorites/history/resume/memberships, so local sync propagates a deletion instead of undoing it). v37: episodes.airDateMs + metadata_cache.airDate (when an episode first aired — the provider's date, with TMDB's as the fallback) profiles.avatarPath (a picture of the user's own instead of a drawn tile). v38: sources.importPortalEpg (whether a Stalker portal's own guide may be imported). v39: recordings + recording_rules (live recording and its standing "record every showing" rules; never synced, never backed up). v40: sources.maxConnectionsProbedAt (when the app measured how many streams the provider really allows, for the providers that never say). v41: epg_channels.normName/normId (the matcher's normalized forms, stored at sync instead of recomputed per keystroke) and an epg_programmes (startMs, stopMs) index for time-bounded guide reads. v42: catalog_backfill (the Stalker VOD pages setup deliberately did not fetch, drained in the background). v43: channels/movies/episodes manifestType (the container an M3U entry declares via #KODIPROP:…manifest_type) and channels.directSource (the Xtream panel’s own URL, kept as a last-resort retry only). v44: playback_quirks (what a stream needs, shared by all profiles), playback_prefs.sourceId/audioLang/subtitleLang, and five per-playlist overrides on sources (catch-up zone/offset, VOD engine, tune timeout, Referer). v45: metadata_cache.originalLanguage (TMDB's original language, for the "Original language" audio choice). v46: playback_quirks.softwareDecode dropped (never written). v47: epg_programmes details (categories, year, rating, lengthMin, episode — the XMLTV details line) and programme_reminders (Stage G2). v48: downloads.reason/httpCode (why a download failed, waits or was paused). v49: sources.serverTimeZone (the Xtream panel's own zone, catch-up Automatic) and channels.catchupCorrectionMin (M3U catchup-correction).
 
     exportSchema = true,
 )
@@ -337,7 +337,7 @@ abstract class OwnTVDatabase : RoomDatabase() {
         }
 
         /**
-         * v9 → v10: TMDB metadata enrichment cache (plan §7). Two additive, purely-cache tables; no
+         * v9 → v10: TMDB metadata enrichment cache. Two additive, purely-cache tables; no
          * existing table is touched, so this is a safe additive migration.
          */
         val MIGRATION_9_10 = object : androidx.room.migration.Migration(9, 10) {
@@ -391,7 +391,7 @@ abstract class OwnTVDatabase : RoomDatabase() {
         }
 
         /**
-         * v11 → v12: nullable `trailerKey` on the metadata_cache table (in-app YouTube trailers, plan §7.3).
+         * v11 → v12: nullable `trailerKey` on the metadata_cache table (in-app YouTube trailers).
          * Additive column on a pure cache table; existing rows get NULL and simply re-fetch on next refresh.
          */
         val MIGRATION_11_12 = object : androidx.room.migration.Migration(11, 12) {
@@ -429,7 +429,7 @@ abstract class OwnTVDatabase : RoomDatabase() {
         }
 
         /**
-         * v14 → v15: external subtitles (subtitle plan Phase 2). Three additive tables — a device-wide
+         * v14 → v15: external subtitles. Three additive tables — a device-wide
          * `subtitle_cache` of downloaded/imported files, per-profile `subtitle_selection`, and
          * per-subtitle `subtitle_timing`. No existing table is touched, so all user data is preserved.
          *
@@ -490,7 +490,7 @@ abstract class OwnTVDatabase : RoomDatabase() {
 
         /**
          * v15 → v16: `subtitle_link` — ties each downloaded subtitle to the movie/episode it was
-         * fetched for (subtitle plan §11), so a title's subtitles re-list on replay and the
+         * fetched for, so a title's subtitles re-list on replay and the
          * "Delete subtitles" surfaces can browse by Movies/Series. Additive.
          */
         val MIGRATION_15_16 = object : androidx.room.migration.Migration(15, 16) {
@@ -974,7 +974,7 @@ abstract class OwnTVDatabase : RoomDatabase() {
         }
 
         /**
-         * v38 → v39: `recordings` and `recording_rules` — live recording (Plan D, Feature A).
+         * v38 → v39: `recordings` and `recording_rules` — live recording.
          *
          * Two new empty tables and nothing else. No existing table is altered, no existing row is
          * rewritten, and an app whose owner never records simply never writes to either — which is
@@ -1157,7 +1157,7 @@ abstract class OwnTVDatabase : RoomDatabase() {
         }
 
         /**
-         * v42 — `catalog_backfill`: the Stalker VOD pages setup deliberately did not fetch (plan N1b).
+         * v42 — `catalog_backfill`: the Stalker VOD pages setup deliberately did not fetch.
          *
          * Pure `CREATE TABLE IF NOT EXISTS`; nothing existing is touched and there is nothing to
          * backfill. An upgrading device simply has an empty plan, which reads as "no catalogue is
@@ -1314,7 +1314,7 @@ abstract class OwnTVDatabase : RoomDatabase() {
         }
 
         /**
-         * v43 → v44: per-stream memory and per-playlist settings (plan P5). Additive only — one new
+         * v43 → v44: per-stream memory and per-playlist settings. Additive only — one new
          * table, new nullable columns, indexes — so an upgraded install behaves exactly as before:
          * an absent quirk row or a null column means "follow the settings". Moving the existing
          * pins, audio-only marks and audio delays into `playback_quirks` is a separate, idempotent

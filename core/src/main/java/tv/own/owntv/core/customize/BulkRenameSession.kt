@@ -20,7 +20,7 @@ data class BulkPreviewRow(
     val duplicate: Boolean,
 )
 
-/** How many rows one bulk rename may carry (plan §2.7); above that the flow refuses. */
+/** How many rows one bulk rename may carry; above that the flow refuses. */
 const val BULK_RENAME_MAX_ROWS = 2000
 
 /**
@@ -115,7 +115,7 @@ class BulkRenameSession(
 
     fun dismissRefused() { close() }
 
-    /** Computes the preview on Dispatchers.Default — never the main thread (plan §2.5). */
+    /** Computes the preview on Dispatchers.Default — never the main thread. */
     private fun computePreview() {
         scope.launch(Dispatchers.Default) {
             // Rows the user already applied stay applied when they choose "Edit rules". Re-running

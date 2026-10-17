@@ -10,7 +10,7 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 
 /**
- * Phase 4 / E2 — [parseXmltvTime] replaces two per-call `SimpleDateFormat` constructions in the
+ * [parseXmltvTime] replaces two per-call `SimpleDateFormat` constructions in the
  * hottest loop of EPG import (~200,000 of them on a 100k-programme guide).
  *
  * The risk in this change is entirely timezone semantics: the no-offset form means **UTC**, and

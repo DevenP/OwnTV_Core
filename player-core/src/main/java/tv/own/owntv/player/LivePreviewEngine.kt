@@ -682,7 +682,7 @@ class LivePreviewEngine(
 
     /**
      * Reconnect URL provider — set ONLY when the current item's URL is short-lived and must be
-     * re-minted on reconnect (Stalker live, plan §5.4.1). Before a reconnect/HUD-retry reload, the
+     * re-minted on reconnect (Stalker live). Before a reconnect/HUD-retry reload, the
      * engine awaits this; a null provider or null result → replay [currentUrl] as-is (M3U/Xtream,
      * whose URLs are stable). Installed/cleared by `LiveViewModel` on each tune.
      */
@@ -1914,7 +1914,7 @@ class LivePreviewEngine(
      *  (then the HUD's Retry button takes over).
      *  tune.retryCount is reset to 0 as soon as playback goes healthy again (STATE_READY).
      *
-     *  For an expiring-URL source (Stalker, plan §5.4.1) the reconnect must NOT replay the now-dead
+     *  For an expiring-URL source (Stalker) the reconnect must NOT replay the now-dead
      *  resolved URL — a [reconnectUrlProvider] mints a fresh one first (null/absent → replay as-is,
      *  which is correct for M3U/Xtream and direct-URL Stalker portals). */
     private fun reconnect(reason: String, fastHlsHttpRecovery: Boolean = false, immediate: Boolean = false) {
@@ -2564,7 +2564,7 @@ class LivePreviewEngine(
         }, DECODER_REBUILD_DELAY_MS)
     }
 
-    // --- Audio Mode (Audio Mode plan §5): keep audio playing, release the video surface ---
+    // --- Audio Mode: keep audio playing, release the video surface ---
     private val _audioOnly = MutableStateFlow(false)
     override val audioOnly: StateFlow<Boolean> = _audioOnly.asStateFlow()
 
@@ -2716,7 +2716,7 @@ class LivePreviewEngine(
             play(request.copy(url = fresh ?: url))
         }
     }
-    // --- Remembered audio / subtitle language (playback_prefs, v44, owner decision 11). Same rules as
+    // --- Remembered audio / subtitle language (playback_prefs, v44). Same rules as
     // OwnTVPlayer: each half applied once per tune, when the database answer and that track list are
     // both in; a pick by the user closes that half and is remembered by its language.
 

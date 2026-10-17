@@ -269,7 +269,7 @@ class EpgRepository(
         SourceType.M3U -> source.epgUrl?.takeIf { it.isNotBlank() }
         SourceType.LOCAL_BACKUP -> null
         // Stalker: user-pasted XMLTV, or the portal-advertised one adopted into epgUrl at sync
-        // (StalkerSyncer.adoptPortalXmltvUrl, Phase E §5.5) — and failing both, the portal's OWN
+        // (StalkerSyncer.adoptPortalXmltvUrl) — and failing both, the portal's OWN
         // guide, addressed by the marker URL below — unless the user has switched that off for this
         // playlist. A portal that offers no XMLTV is the common case, and it used to mean no guide and
         // no catch-up at all.
@@ -346,7 +346,7 @@ class EpgRepository(
         var parseCompleted = false
         var removedProgrammes = 0
         var removedChannels = 0
-        // Phase 0 trace: the download/parse and the DB writes are interleaved, so "write" is summed as
+        // Timing trace: the download/parse and the DB writes are interleaved, so "write" is summed as
         // it happens and "parse" is what is left of the wall clock once it is taken out.
         var writeMs = 0L
         var pruneMs = 0L
@@ -557,8 +557,8 @@ class EpgRepository(
     }
 
     /**
-     * Crawl a Stalker portal's own guide into the tables keyed by [storeId] (Phase E, replacing
-     * "bulk get_epg_info is never used"). Written in batches as it parses, so the payload is never
+     * Crawl a Stalker portal's own guide into the tables keyed by [storeId] (bulk `get_epg_info`
+     * is still never used). Written in batches as it parses, so the payload is never
      * held; rows are keyed by the portal's channel id, which is what `StalkerSyncer` gives a portal
      * channel that has no XMLTV id of its own.
      *

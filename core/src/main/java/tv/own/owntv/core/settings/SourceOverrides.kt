@@ -7,7 +7,7 @@ import java.util.SimpleTimeZone
 import java.util.TimeZone
 
 /**
- * The v44 per-playlist overrides (owner decision 12), read the same way everywhere.
+ * The v44 per-playlist overrides, read the same way everywhere.
  *
  * Every column is nullable and `null` means "follow the global setting", so each function here returns
  * null for "no override" and the caller falls back to its own global value. An unreadable stored value

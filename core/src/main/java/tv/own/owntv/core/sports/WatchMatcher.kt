@@ -6,7 +6,7 @@ import tv.own.owntv.core.epg.EpgMatcher
 import tv.own.owntv.core.live.ProviderTags
 import tv.own.owntv.core.sports.model.Match
 
-/** Why a channel is listed under "Watch live" (README §4), best first. */
+/** Why a channel is listed under "Watch live", best first. */
 enum class WatchTier { GUIDE, EVENT, REMEMBERED, LIKELY }
 
 /**
@@ -54,7 +54,7 @@ data class WatchOption(
 )
 
 /**
- * The pure half of "where is it live" (README §4, §7.3): which guide titles and channel names name a
+ * The pure half of "where is it live": which guide titles and channel names name a
  * match, and how the hits rank. [WatchReader] does the reads; everything here is unit-tested.
  */
 object WatchMatcher {

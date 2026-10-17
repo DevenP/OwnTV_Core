@@ -102,7 +102,7 @@ interface PlaybackQuirkDao {
     @Query("UPDATE OR IGNORE playback_quirks SET contentKey = :stableKey, sourceId = :sourceId WHERE contentKey = :legacyKey")
     suspend fun migrateKey(legacyKey: String, stableKey: String, sourceId: Long)
 
-    /** A deleted playlist takes what was remembered for its items with it (owner decision 13). */
+    /** A deleted playlist takes what was remembered for its items with it. */
     @Query("DELETE FROM playback_quirks WHERE sourceId = :sourceId")
     suspend fun deleteBySource(sourceId: Long)
 

@@ -105,7 +105,7 @@ interface ChannelDao {
     suspend fun epgChannelIdsWithoutProgrammes(sourceId: Long): List<String>
 
     /** Every catch-up channel, across every source — the ones whose past programmes can still be
-     *  replayed, and therefore the only ones whose history is worth keeping (guide plan S4). */
+     *  replayed, and therefore the only ones whose history is worth keeping. */
     @Query("SELECT * FROM channels WHERE catchup = 1")
     suspend fun allCatchupChannels(): List<ChannelEntity>
 
@@ -181,7 +181,7 @@ interface ChannelDao {
     suspend fun contentHashesForSource(sourceId: Long): List<ContentHashProjection>
 
     /**
-     * Write only the position of a row whose content did not change (plan A2).
+     * Write only the position of a row whose content did not change.
      *
      * The whole point is what it does *not* touch. Room's `@Update` writes every column and, on
      * this table's insert path, re-derives the provider-catalogue metadata from the title — all for
@@ -198,7 +198,7 @@ interface ChannelDao {
     }
 
     /**
-     * Shift every row of this source whose position lies in a span (plan A3).
+     * Shift every row of this source whose position lies in a span.
      *
      * Removing two channels near the top of a 30,000-channel list moves all 30,000 below them by
      * exactly -2. That is one statement, not 30,000 writes. The caller has already proved that the

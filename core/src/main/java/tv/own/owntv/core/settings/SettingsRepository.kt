@@ -45,7 +45,7 @@ import tv.own.owntv.core.theme.UiFontScale
 import tv.own.owntv.core.theme.UiZoom
 import tv.own.owntv.core.timeshift.TimeshiftRules
 
-/** Per-profile startup landing (Phase 3 / v4.0.0). LAST_CHANNEL also covers "auto-play my channel" since
+/** Per-profile startup landing. LAST_CHANNEL also covers "auto-play my channel" since
  *  it's always the one you last watched. */
 enum class StartupMode {
     HOME, LAST_CHANNEL, FAVORITES, SPECIFIC_CHANNEL
@@ -297,8 +297,8 @@ object SeekSteps {
 }
 
 /**
- * Persists app-level preferences. Phase 1 only needs the theme selection; this will grow to hold
- * UI zoom, custom user-agent, refresh-on-start, etc. in later phases.
+ * Persists app-level preferences: global ones in the settings file, per-profile ones under keys that
+ * carry the profile id.
  */
 class SettingsRepository(private val context: Context, private val localeStore: LocaleStore) {
 
@@ -415,12 +415,12 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         val AUTO_FRAME_RATE_PROMPTED = booleanPreferencesKey("auto_frame_rate_prompted")
         val ANDROID_TV_HOME = booleanPreferencesKey("android_tv_home")
 
-        // Multiview: watching up to four live channels at once (Plan D, feature B).
+        // Multiview: watching up to four live channels at once.
         val MULTIVIEW_ENABLED = booleanPreferencesKey("multiview_enabled")
         val MULTIVIEW_TILES = intPreferencesKey("multiview_tiles")
         /** The "3 or 4 tiles may be more than this device or your provider can do" warning was accepted. */
         val MULTIVIEW_WARNING_ACCEPTED = booleanPreferencesKey("multiview_warning_accepted")
-        // Recording (Plan D, feature A). Recordings and multiview spend the same connections (D11).
+        // Recording. Recordings and multiview spend the same connections (D11).
         val RECORDING_RESERVE_CONNECTION = booleanPreferencesKey("recording_reserve_connection")
         val RECORDING_PRE_ROLL_MINUTES = intPreferencesKey("recording_pre_roll_minutes")
         val RECORDING_POST_ROLL_MINUTES = intPreferencesKey("recording_post_roll_minutes")
@@ -541,7 +541,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         val CLOCK_TIME_COLOR = stringPreferencesKey("clock_time_color")
         val CLOCK_DATE_COLOR = stringPreferencesKey("clock_date_color")
         val CLOCK_WEATHER_COLOR = stringPreferencesKey("clock_weather_color")
-        // TMDB metadata enrichment (see extras/future-plan/tmdb-metadata-plan.md). Master toggle + the two
+        // TMDB metadata enrichment. Master toggle + the two
         // advanced tiers (own key / self-host URL). Blank tier fields = use the default caching Worker.
         val METADATA_ENABLED = booleanPreferencesKey("metadata_enabled") // legacy; migrated to METADATA_MODE
         val METADATA_MODE = stringPreferencesKey("metadata_mode")
@@ -634,7 +634,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
 
         /** Written while browsing, so kept in their own store rather than the settings file (S14). */
         val POSITIONS: List<Preferences.Key<*>> = listOf(LAST_LIVE_CHANNEL, LAST_LIVE_CATEGORY, LAST_MOVIES_CATEGORY, LAST_SERIES_CATEGORY)
-        // Background image (Glass effect). bg_image_path holds the absolute path of the image we
+        // Background picture (Glass & background). bg_image_path holds the absolute path of the image we
         // COPIED into app-private storage (so a USB unplug or source-folder delete never blanks it);
         // blank = no background (feature off, panels stay solid). glass_scope is Glass on (any bit set,
         // see GlassConfig.ON_BITS) or off (0); glass_alpha is the fill alpha in 0..100.
@@ -934,11 +934,11 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         context.dataStore.edit { it[key] = value.trim() }
     }
 
-    // --- TMDB metadata enrichment (plan §4) ---
+    // --- TMDB metadata enrichment ---
     // One provider, three configs. Enrichment is opt-outable via the master toggle; the two advanced
     // fields (own key / self-host URL) override the default caching Worker when set.
 
-    /** Metadata source mode (plan §4.1). Defaults to Provider+TMDB; back-compat: an old boolean master
+    /** Metadata source mode. Defaults to Provider+TMDB; back-compat: an old boolean master
      *  toggle maps false→Provider, true→Provider+TMDB when no explicit mode is stored yet. */
     val metadataMode: Flow<tv.own.owntv.core.metadata.MetadataMode> = prefsFlow { p ->
         parseMetadataMode(p)
@@ -2429,7 +2429,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         }
     }
 
-    // --- Recording (Plan D, Feature A) -----------------------------------------------------------
+    // --- Recording ------------------------------------------------------------------------------
 
     /**
      * Keep one of the playlist's connections back so the user can always watch something, rather
@@ -2791,7 +2791,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
 
     /**
      * The TV app's Stage UI starts everyone on its own defaults, once (owner, 2026-10-02): the rail
-     * Docked · Compact · Fit (the old UI's navigation choices mean nothing in the new one), glass on
+     * Docked · Compact · Fit (navigation choices stored by older versions do not apply), glass on
      * every surface at 50%, and the Stage background — a stored picture is removed. Movies & Series keep
      * the layout an update had (SEPARATE, the old default, where none was stored); a fresh install —
      * no active profile yet — gets the CINEMATIC default. TV only: the phone has its own look.
@@ -2905,7 +2905,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         context.dataStore.edit { it[Keys.FOCUS_HIGHLIGHT_WIDTH] = dp }
     }
 
-    // --- Glass effect: background image + which surfaces go translucent + how translucent ---
+    // --- Glass & background: background picture, Glass on/off and opacity ---
     /** Absolute path to the user's background image (copied into app-private storage); blank = off. */
     val bgImagePath: Flow<String> = prefsFlow { it[Keys.BG_IMAGE_PATH] ?: "" }
 

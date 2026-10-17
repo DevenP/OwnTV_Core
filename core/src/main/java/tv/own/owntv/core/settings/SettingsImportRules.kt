@@ -42,7 +42,7 @@ internal object SettingsImportRules {
 
     // --- Settings → Sports (per-profile `sports_config_<id>`, read through these on every load) ---
 
-    /** Live refresh: 30, 60, 90 or 120 s; anything else is the default (WORK C16). */
+    /** Live refresh: 30, 60, 90 or 120 s; anything else is the default. */
     fun sportsLiveRefresh(v: Int): Int = SportsRefreshPolicy.liveSeconds(v)
 
     fun sportsReminderLead(v: Int): Int =

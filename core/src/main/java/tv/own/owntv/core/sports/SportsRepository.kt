@@ -90,7 +90,7 @@ class SportsActivityTracker {
     val rebuiltAt = MutableStateFlow<Long?>(null)
 }
 
-/** Whether Find channels may run for a match now (owner, 2026-10-16, WORK C21). */
+/** Whether Find channels may run for a match now. */
 sealed interface WatchWindow {
     data object Open : WatchWindow
     data class TooEarly(val opensAt: Long) : WatchWindow
@@ -117,7 +117,7 @@ sealed interface WatchWindow {
 }
 
 /**
- * Which matches the stored board keeps (WORK C16): one starting within [AHEAD_MS], a live one always, a
+ * Which matches the stored board keeps: one starting within [AHEAD_MS], a live one always, a
  * finished one until [KEEP_AFTER_END_MS] after its end; postponed and cancelled ones never.
  */
 object SportsWindow {
@@ -152,8 +152,8 @@ object SportsWindow {
 }
 
 /**
- * The single owner of sports data (README §7.2). The board is built by [rebuild] and stored in
- * `filesDir/sports/` until the next one (WORK C16), so a cold start shows it at once. A rebuild runs by
+ * The single owner of sports data. The board is built by [rebuild] and stored in
+ * `filesDir/sports/` until the next one, so a cold start shows it at once. A rebuild runs by
  * itself as the Auto rebuild setting says ([appStarted], or while a screen is open); live matches are
  * refreshed only while a screen collects [observe]. When the last screen stops, polling stops, and five
  * minutes later the board is dropped from memory.
@@ -229,7 +229,7 @@ class SportsRepository(
 
     /**
      * [match] fetched afresh now (its summary), for a page that must judge it on current data — Find
-     * channels' window (WORK C21). Updates the board; null when the fetch fails (the caller keeps the copy it has).
+     * channels' window. Updates the board; null when the fetch fails (the caller keeps the copy it has).
      */
     suspend fun refetch(match: Match): Match? = try {
         val summary = permits.withPermit { source.summary(match) }
@@ -243,7 +243,7 @@ class SportsRepository(
     }
 
     /**
-     * Builds the board again (WORK C16): today's and tomorrow's scoreboard of every followed league,
+     * Builds the board again: today's and tomorrow's scoreboard of every followed league,
      * each two-team match's details and each league's table, kept to [SportsWindow], then swapped in at
      * once. A league or a match whose fetch fails keeps what the board had; a finished match ESPN's new
      * day no longer lists stays its 12 hours. One at a time: a call while one runs is ignored.

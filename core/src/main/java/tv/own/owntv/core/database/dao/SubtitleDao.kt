@@ -25,7 +25,7 @@ data class LinkedSubtitle(
     val addedAt: Long,
 )
 
-/** Data access for the external-subtitle tables (subtitle plan Phase 2, §11). */
+/** Data access for the external-subtitle tables. */
 @Dao
 interface SubtitleDao {
 
@@ -41,7 +41,7 @@ interface SubtitleDao {
     @Query("SELECT * FROM subtitle_cache WHERE id = :id LIMIT 1")
     suspend fun cacheById(id: Long): SubtitleCacheEntity?
 
-    /** Local-file dedupe (§7.4/§10): re-importing the same file reuses the managed copy. */
+    /** Local-file dedupe: re-importing the same file reuses the managed copy. */
     @Query("SELECT * FROM subtitle_cache WHERE source = 'LOCAL' AND fileName = :fileName LIMIT 1")
     suspend fun findLocalByFileName(fileName: String): SubtitleCacheEntity?
 
@@ -59,7 +59,7 @@ interface SubtitleDao {
     @Query("SELECT * FROM subtitle_selection WHERE profileId = :profileId AND contentKey = :contentKey LIMIT 1")
     suspend fun selection(profileId: Long, contentKey: String): SubtitleSelectionEntity?
 
-    // --- timing (per profile + content + exact subtitle, §8.4) ---
+    // --- timing (per profile + content + exact subtitle) ---
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsertTiming(timing: SubtitleTimingEntity)
@@ -67,7 +67,7 @@ interface SubtitleDao {
     @Query("SELECT offsetMs FROM subtitle_timing WHERE profileId = :profileId AND contentKey = :contentKey AND subtitleKey = :subtitleKey LIMIT 1")
     suspend fun timingOffset(profileId: Long, contentKey: String, subtitleKey: String): Int?
 
-    // --- links (cached subtitle ↔ movie/episode, §11) ---
+    // --- links (cached subtitle ↔ movie/episode) ---
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertLink(link: SubtitleLinkEntity)

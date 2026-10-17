@@ -22,7 +22,7 @@ import tv.own.owntv.core.stalker.StalkerClient
 import tv.own.owntv.core.settings.SettingsRepository
 
 /**
- * Phase 12 — backup & restore of the painful-to-re-enter setup: **profiles** (name/avatar/kids/PIN),
+ * Backup & restore of the painful-to-re-enter setup: **profiles** (name/avatar/kids/PIN),
  * **sources** (URLs + credentials + per-source UA) and their profile links, plus per-profile
  * **customizations** (hidden/renamed/reordered categories & channels), favorites, watch history,
  * resume positions and manual Move positions — as a JSON file. The user picks which [Section]s to
@@ -44,7 +44,7 @@ class BackupManager(
     private val tmdbOverrides: tv.own.owntv.core.metadata.MetadataOverrideStore,
     private val metadataDao: tv.own.owntv.core.database.dao.MetadataDao,
     private val openSubAuth: tv.own.owntv.core.subtitles.OpenSubtitlesAuthStore,
-    /** `filesDir/backgrounds` — where the Glass effect wallpaper lives, so a backup can carry it. */
+    /** `filesDir/backgrounds` — where the background picture lives, so a backup can carry it. */
     private val backgroundsDir: File,
     /** `filesDir/subtitles` — the shared subtitle file cache (see SubtitleRepository), carried too. */
     private val subtitlesDir: File,
@@ -69,7 +69,7 @@ class BackupManager(
      * Writes the chosen [sections] into [folder] as `owntv-backup.own`; returns the file path.
      *
      * The output is a [BackupContainer]: the same backup JSON this class has always produced, plus
-     * the Glass effect wallpaper's actual bytes when one is set. Exporting bare `.json` is gone (the
+     * the background picture's actual bytes when one is set. Exporting bare `.json` is gone (the
      * path in it was device-local and its contents were readable to anyone) — restore still accepts
      * old `.json` files, and always will.
      *
@@ -479,7 +479,7 @@ class BackupManager(
             .getOrNull()
     }
 
-    /** The current Glass effect background as a container asset, or null when unset/missing/oversized. */
+    /** The current background picture as a container asset, or null when unset/missing/oversized. */
     private suspend fun currentWallpaper(): BackupContainer.Asset? {
         val path = settings.bgImagePath.first().trim()
         if (path.isEmpty()) return null
@@ -802,7 +802,7 @@ class BackupManager(
          * The user asked for the hardware settings of *another* device (decoder, engines, frame rate,
          * HDR, surround) and its per-channel engine pins. A restore of this device's own
          * backup applies them anyway; a file from elsewhere — a restore or a local sync alike — keeps
-         * this device's unless this is true (owner decision 9, extended to sync on 2026-09-23).
+         * this device's unless this is true. Local sync follows the same rule.
          */
         deviceSettings: Boolean = false,
     ): Result<ImportSummary> = withContext(Dispatchers.IO) {

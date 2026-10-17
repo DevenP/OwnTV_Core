@@ -10,7 +10,7 @@ import tv.own.owntv.core.sports.model.Sport
  * on 2026-10-16. Competition names are the competitions' own brand names and are not translated.
  *
  * Cricket is one entry, `cricket/all`: ESPN's cricket header carries every series of the day, and a
- * series lasts weeks, so following series by slug would go stale (WORK C6).
+ * series lasts weeks, so following series by slug would go stale.
  */
 object SportsCatalog {
 

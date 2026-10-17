@@ -443,7 +443,7 @@ internal object EspnParser {
     private fun time(s: String): Long = OffsetDateTime.parse(s, DateTimeFormatter.ISO_OFFSET_DATE_TIME).toInstant().toEpochMilli()
 
     /**
-     * Crests through ESPN's own resizer at 96 px: 7 KB instead of 80 KB at full size (README §7.5).
+     * Crests through ESPN's own resizer at 96 px: 7 KB instead of 80 KB at full size.
      * Anything not on ESPN's image host is passed through as it is.
      */
     internal fun logo(url: String): String? {

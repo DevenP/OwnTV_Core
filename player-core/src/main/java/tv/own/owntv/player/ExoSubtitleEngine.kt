@@ -85,9 +85,9 @@ class ExoSubtitleEngine(
     private var pendingSubLang: String? = null
     private var pendingSubTypeIndex: Int = -1
     private var subtitleApplied = false
-    // Side-loaded external subtitle files (OpenSubtitles/local — subtitle plan §6.5/§10). ExoPlayer
+    // Side-loaded external subtitle files (OpenSubtitles/local). ExoPlayer
     // can't attach a subtitle to a playing item, so each add/restore re-prepares the same URL with
-    // SubtitleConfigurations at the current position (the plan's "seamless re-prepare").
+    // SubtitleConfigurations at the current position (a seamless re-prepare).
     private data class ExternalSubCfg(
         val path: String,
         val title: String,
@@ -98,7 +98,7 @@ class ExoSubtitleEngine(
     private val externalSubs = ArrayList<ExternalSubCfg>()
     // Label of a just-added external sub to select once its track appears in onTracksChanged.
     private var pendingExternalLabel: String? = null
-    // Subtitle-timing offset for the active external sub (§8): applied by side-loading a
+    // Subtitle-timing offset for the active external sub: applied by side-loading a
     // timestamp-shifted copy of that file on the next (re-)prepare.
     private var subDelayMs = 0
     private var delayLabel: String? = null
@@ -342,7 +342,7 @@ class ExoSubtitleEngine(
     fun start(
         url: String, positionMs: Long, surface: Surface, subLang: String?, subTypeIndex: Int,
         fallback: Boolean = false,
-        // External subtitle files to side-load from the first prepare (engine toggle carry-over, §10);
+        // External subtitle files to side-load from the first prepare (engine toggle carry-over);
         // [selectExternalLabel] names the one to select, or null to attach them all unselected.
         sideloadSubs: List<OwnTVPlayer.ExternalSub> = emptyList(),
         selectExternalLabel: String? = null,
@@ -440,7 +440,7 @@ class ExoSubtitleEngine(
         }
         if (externalSubs.isNotEmpty()) {
             builder.setSubtitleConfigurations(externalSubs.map { s ->
-                // Timing offset for the active external sub: side-load a timestamp-shifted copy (§8).
+                // Timing offset for the active external sub: side-load a timestamp-shifted copy.
                 // X2 — never generate it here (main thread); setSubtitleDelayMs prepares the copy off
                 // the main thread and only re-prepares once it is in the cache. The original is the
                 // fallback, which is also what shiftedCopy itself returns on a parse/IO failure.
@@ -463,7 +463,7 @@ class ExoSubtitleEngine(
         else -> androidx.media3.common.MimeTypes.APPLICATION_SUBRIP
     }
 
-    /** Attach + select an external subtitle file (plan §6.5): re-prepare the same URL with the sub
+    /** Attach + select an external subtitle file: re-prepare the same URL with the sub
      *  side-loaded, at the same position, and select it by label once its track appears. */
     fun addExternalSubtitle(
         path: String,
@@ -479,8 +479,8 @@ class ExoSubtitleEngine(
         reprepareKeepingPosition(p, url)
     }
 
-    /** Re-attach previously downloaded subtitles WITHOUT changing the current selection (plan §9 —
-     *  they show in the Subtitles list; the user re-picks). No-op when nothing new to attach. */
+    /** Re-attach previously downloaded subtitles WITHOUT changing the current selection (they
+     *  show in the Subtitles list; the user re-picks). No-op when nothing new to attach. */
     fun restoreExternalSubtitles(subs: List<OwnTVPlayer.ExternalSub>) {
         val p = player ?: return
         val url = currentUrl ?: return
@@ -509,7 +509,7 @@ class ExoSubtitleEngine(
         reprepareKeepingPosition(p, url)
     }
 
-    /** Apply a subtitle-timing offset to the active external sub [activeLabel] (§8): re-prepare with a
+    /** Apply a subtitle-timing offset to the active external sub [activeLabel]: re-prepare with a
      *  shifted copy of its file at the same position, then re-select it. The caller debounces. */
     fun setSubtitleDelayMs(ms: Int, activeLabel: String) {
         val p = player ?: return

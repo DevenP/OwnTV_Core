@@ -6,7 +6,7 @@ package tv.own.owntv.core.timeshift
  */
 object TimeshiftRules {
 
-    /** Owner decision 25: whatever the window, at least this much of the device stays free. */
+    /** Whatever the window, at least this much of the device stays free. */
     const val FREE_FLOOR_BYTES = 1024L * 1024 * 1024
 
     /** Not worth starting at all below the floor plus this: the buffer would only ever hold seconds. */

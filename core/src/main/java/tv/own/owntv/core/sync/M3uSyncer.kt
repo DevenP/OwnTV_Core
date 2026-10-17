@@ -32,7 +32,7 @@ import tv.own.owntv.core.network.StreamHeaders
 import tv.own.owntv.core.parser.M3uParser
 
 /**
- * The M3U import flow (split out of SyncManager, Phase 0 of the Stalker plan). M3U playlists carry
+ * The M3U import flow (split out of SyncManager). M3U playlists carry
  * no provider item ids, so a stable key is synthesized per item — `name|group` (with an `#n` suffix
  * for in-playlist duplicates) stored in `remoteId` — and resyncs run the same hash-diffed stable
  * upsert as Xtream/Stalker: unchanged rows are skipped, changed rows keep their local id (so

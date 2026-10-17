@@ -39,7 +39,7 @@ internal fun episodeLoadFailure(e: Exception): String =
     if (e is HttpClient.HttpStatusException) "HTTP ${e.code}" else e.javaClass.simpleName.ifEmpty { e.javaClass.name }
 
 /** Loads a series' seasons/episodes on demand (Xtream `get_series_info`; Stalker paged
- *  `get_ordered_list&movie_id=` season rows, plan D-2). Episodes carry their season number
+ *  `get_ordered_list&movie_id=` season rows). Episodes carry their season number
  *  directly, so no separate Season rows are needed for browsing. */
 class SeriesRepository(
     private val seriesDao: SeriesDao,
@@ -134,7 +134,7 @@ class SeriesRepository(
     }
 
     /**
-     * Stalker (plan D-2): the show's seasons come from paged `get_ordered_list&movie_id=<remoteId>`,
+     * Stalker: the show's seasons come from paged `get_ordered_list&movie_id=<remoteId>`,
      * each row carrying a `series` array of episode numbers. Every episode stores the SEASON cmd as
      * its streamUrl (the item's identity); the playable per-episode URL is minted at play time via
      * `create_link&type=vod&series=<episode>` (StreamUrlResolver) — never at listing time, the links

@@ -21,10 +21,10 @@ import tv.own.owntv.core.parser.XtreamClient
 import kotlin.coroutines.CoroutineContext
 
 /**
- * The Xtream import flow (split out of SyncManager, Phase 0 of the Stalker plan): re-syncs preserve
+ * The Xtream import flow (split out of SyncManager): re-syncs preserve
  * existing rows until a phase succeeds — rows are matched by provider remote id, unchanged rows are
  * skipped, changed rows keep their local id, and stale rows are pruned only after the full phase
- * completes. Series episodes are intentionally fetched lazily later (Phase 9), not during sync.
+ * completes. Series episodes are intentionally fetched lazily on open, not during sync.
  */
 internal class XtreamSyncer(
     private val xtream: XtreamClient,
@@ -301,7 +301,7 @@ internal class XtreamSyncer(
                 streams.byCategory(cat, add)
             }
             Log.i(TAG, "$label fallback end sourceId=${s.id} unique=${total[0]} ms=${SystemClock.elapsedRealtime() - fallbackStart}")
-            // Plan N2d. Until now this path produced "Success" and nothing else: a ten-minute sync
+            // Until now this path produced "Success" and nothing else: a ten-minute sync
             // recovering from a dropped connection looked exactly like a clean thirty-second one.
             // The warning carries where the cut fell and whether the fallback made it whole.
             stats.addWarning(
@@ -331,7 +331,7 @@ internal class XtreamSyncer(
      * That is not just caution about partial failures: a per-category request can never return an
      * item that has no category, so a source-wide prune here would delete every uncategorized row.
      * Scoping also gives partial pruning for free — a run where half the categories failed still
-     * cleans the half that succeeded. The Phase 0 catalog-shrink guard applies on top, with the
+     * cleans the half that succeeded. The catalog-shrink guard applies on top, with the
      * scoped row count as its denominator.
      */
     private suspend fun <T> pruneAfterFallback(

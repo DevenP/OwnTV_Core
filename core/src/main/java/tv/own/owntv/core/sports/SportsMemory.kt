@@ -4,11 +4,11 @@ import tv.own.owntv.core.database.entity.ChannelEntity
 import tv.own.owntv.core.sports.model.League
 import tv.own.owntv.core.sports.model.Match
 
-/** One line of "Suggested from what you watch" (mockup P6): a team, or a competition ([team] null). */
+/** One line of "Suggested from what you watch": a team, or a competition ([team] null). */
 data class SportsSuggestion(val key: String, val name: String, val abbreviation: String, val plays: Int, val team: FollowedTeam?)
 
 /**
- * What the profile's sports settings remember from use (PLAN 2.6): the channel chosen per competition
+ * What the profile's sports settings remember from use: the channel chosen per competition
  * ("Always use for Bundesliga"), plays from the hub, and the suggestions made of them. Pure
  * functions on [SportsConfig]; the caller writes the result with `updateSportsConfig(pid) { … }`.
  * Nothing here ever follows anything — a suggestion is only offered.
@@ -22,7 +22,7 @@ object SportsMemory {
     fun competitionKey(match: Match): String = League.keyOf(match.sport, match.leagueSlug)
 
     /**
-     * "Always use for <competition>": stores [channel] by its portable name and country (WORK C3),
+     * "Always use for <competition>": stores [channel] by its portable name and country,
      * never its Room id, so it survives a re-sync, a restore on another device and a provider change.
      */
     fun remember(config: SportsConfig, match: Match, channel: ChannelEntity): SportsConfig {

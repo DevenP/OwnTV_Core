@@ -73,7 +73,7 @@ class PlayerControlsTest {
 
     @Test
     fun `the match tools follow previous channel, in the media cluster, on both apps`() {
-        // Mockup T4b: Other channels and Match sit right after the channel-history tools.
+        // Other channels and Match sit right after the channel-history tools.
         listOf(true, false).forEach { tv ->
             val media = PlayerControl.clusterFor(tv, ControlCluster.MEDIA)
             val i = media.indexOf(PlayerControl.PREVIOUS_CHANNEL)
@@ -97,7 +97,7 @@ class PlayerControlsTest {
     }
 
     @Test
-    fun `the controls Plan D added are in the shared order, not bolted on per app`() {
+    fun `the Multiview and Record controls are in the shared order, not bolted on per app`() {
         // H4's whole purpose: the alignment has to have held through the features built before it.
         assertTrue(PlayerControl.RECORD.onTv && PlayerControl.RECORD.onMobile)
         assertTrue(PlayerControl.MULTIVIEW.onTv && PlayerControl.MULTIVIEW.onMobile)

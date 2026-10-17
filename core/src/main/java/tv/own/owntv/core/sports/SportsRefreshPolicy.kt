@@ -47,7 +47,7 @@ data class FeedState(
 data class RefreshPlan(val fetch: Set<Feed>, val nextWakeAt: Long?, val paused: Boolean = false)
 
 /**
- * The live refresh of R1 (WORK C16), as a pure function of what is on screen, what is followed and what
+ * The live refresh, as a pure function of what is on screen, what is followed and what
  * the board holds. The board itself is built by a rebuild; this only keeps what is live up to date.
  * No clock and no timer of its own: the repository asks it after every change and sleeps until
  * [RefreshPlan.nextWakeAt].

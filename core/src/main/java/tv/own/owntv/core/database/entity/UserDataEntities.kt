@@ -157,14 +157,14 @@ data class PlaybackPrefsEntity(
 )
 
 /**
- * What a **stream** needs, whoever is watching (v44, owner decision 10). [playback_prefs][PlaybackPrefsEntity]
+ * What a **stream** needs, whoever is watching (v44). [playback_prefs][PlaybackPrefsEntity]
  * is what a *person* prefers — zoom and volume — and stays per profile; the facts here belong to the
  * stream and the device's output, so they are shared: the engine a channel only plays on, whether it is
  * sound only, its lip-sync correction.
  *
  * Keyed by [tv.own.owntv.core.player.enginePinKey] like every per-item store. Replaces the DataStore
  * sets `ForceMpvStore` / `VodEngineStore` / `AudioOnlyStore`, which are copied in once at startup and
- * kept readable for one release (owner decision 14). [sourceId] lets a playlist's rows go with it.
+ * kept readable for one release. [sourceId] lets a playlist's rows go with it.
  */
 @Entity(
     tableName = "playback_quirks",

@@ -7,7 +7,7 @@ import androidx.room.Query
 import tv.own.owntv.core.database.entity.MetadataCacheEntity
 import tv.own.owntv.core.database.entity.MetadataMatchEntity
 
-/** DAO for the TMDB enrichment cache (plan §7). Both tables are pure caches. */
+/** DAO for the TMDB enrichment cache. Both tables are pure caches. */
 @Dao
 interface MetadataDao {
 

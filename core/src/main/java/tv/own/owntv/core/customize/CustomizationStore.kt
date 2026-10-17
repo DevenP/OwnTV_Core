@@ -421,7 +421,7 @@ fun List<CategoryEntity>.applyCustomizationsWithCustoms(
     val visibleCats =
         if (c.hiddenCategories.isEmpty()) this
         else filter { CustomizeKeys.category(it) !in c.hiddenCategories }
-    // User folders lead the natural rail order, matching the agreed mockup. Explicit manual order
+    // User folders lead the natural rail order. Explicit manual order
     // still wins through categoryOrder below.
     val entries = customs.filter { it.id !in c.hiddenCategories }.map { cc ->
         CustomizedCategory(

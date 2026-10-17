@@ -17,12 +17,12 @@ import java.io.File
 import java.io.IOException
 
 /**
- * Orchestrates external subtitles end to end (subtitle plan Phase 2): OpenSubtitles search, the
- * cache-first download flow (review R3), the managed on-disk cache, and the remembered
- * selection/timing per profile + content. The player layer (Phase 2c) calls [resolveForPlayback] to
+ * Orchestrates external subtitles end to end: OpenSubtitles search, the
+ * cache-first download flow, the managed on-disk cache, and the remembered
+ * selection/timing per profile + content. The player layer calls [resolveForPlayback] to
  * get a ready-to-load local file path for a chosen or remembered subtitle.
  *
- * Quota rule (review R2/R3): [downloadAndCache] only calls OpenSubtitles `/download` — which spends
+ * Quota rule: [downloadAndCache] only calls OpenSubtitles `/download` — which spends
  * one quota unit — when the exact file_id is NOT already cached on this device.
  */
 class SubtitleRepository(
@@ -46,21 +46,21 @@ class SubtitleRepository(
         val source: String,
         val openSubFileId: Long?,
     ) {
-        /** Stable key for per-subtitle timing memory (§8.4). */
+        /** Stable key for per-subtitle timing memory. */
         val subtitleKey: String
             get() = openSubFileId?.let { "opensub:$it" } ?: "local:$cacheId"
     }
 
-    /** Raw OpenSubtitles search passthrough (Phase 2b builds the query per §6.2 / review R7). */
+    /** Raw OpenSubtitles search passthrough; the caller builds the query. */
     suspend fun search(query: Map<String, String>): JSONObject = client.search(query)
 
     /**
-     * Cache-first OpenSubtitles download (review R3). Returns the cached, ready-to-load subtitle, or
-     * throws for the caller's §14 error handling. On a cache hit the file is verified to still exist
+     * Cache-first OpenSubtitles download. Returns the cached, ready-to-load subtitle, or
+     * throws for the caller's error handling. On a cache hit the file is verified to still exist
      * before skipping `/download`; a corrupt/missing cached file falls through to a fresh download.
      *
      * [onQuota] reports the provider's post-download `remaining`/`reset_time` so the caller can update
-     * the allowance display (§5.3) — not invoked on a cache hit (no quota spent).
+     * the allowance display — not invoked on a cache hit (no quota spent).
      */
     suspend fun downloadAndCache(
         profileId: Long,
@@ -123,11 +123,11 @@ class SubtitleRepository(
     }
 
     /**
-     * Imports a user-picked local subtitle file (plan §7, Phase 3): normalises the charset to UTF-8
-     * (review R6 — Windows-125x/ISO-8859 files must render correctly), keeps a managed copy in the
-     * subtitle cache dir (§7.4 — playback never depends on the original path staying alive), and
+     * Imports a user-picked local subtitle file: normalises the charset to UTF-8
+     * (Windows-125x/ISO-8859 files must render correctly), keeps a managed copy in the
+     * subtitle cache dir (playback never depends on the original path staying alive), and
      * records a LOCAL cache row. Re-importing a file with the same name reuses the existing copy so
-     * an engine switch or replay never piles up duplicates (§10).
+     * an engine switch or replay never piles up duplicates.
      */
     suspend fun importLocalFile(file: File): ResolvedSubtitle = withContext(Dispatchers.IO) {
         if (!file.isFile) throw IOException()
@@ -163,7 +163,7 @@ class SubtitleRepository(
         entity.copy(id = id).toResolved()
     }
 
-    /** Remembers [cacheId] as the active subtitle for this profile + content (§9). */
+    /** Remembers [cacheId] as the active subtitle for this profile + content. */
     suspend fun rememberSelection(profileId: Long, contentKey: String, cacheId: Long) {
         dao.upsertSelection(
             SubtitleSelectionEntity(profileId, contentKey, cacheId = cacheId, off = false, updatedAt = now()),
@@ -171,7 +171,7 @@ class SubtitleRepository(
     }
 
     /**
-     * The remembered subtitle for this profile + content, ready to reload on resume (§9), or null
+     * The remembered subtitle for this profile + content, ready to reload on resume, or null
      * when there's no external choice or the cached file is gone (caller falls back to auto-select).
      * Never triggers a network call.
      */
@@ -184,7 +184,7 @@ class SubtitleRepository(
         return cached.toResolved()
     }
 
-    // --- content links (downloaded sub ↔ movie/episode, §11) ---
+    // --- content links (downloaded sub ↔ movie/episode) ---
 
     /** Record that [cacheId] was downloaded for this movie/episode (drives replay re-list + delete UI). */
     suspend fun linkDownload(profileId: Long, contentKey: String, cacheId: Long, mediaType: String, contentTitle: String) {
@@ -192,8 +192,8 @@ class SubtitleRepository(
     }
 
     /**
-     * Every subtitle this profile downloaded for [contentKey], ready to re-list in the player on replay
-     * (§9). Missing files are skipped (and their stale rows dropped). Never selects — the user re-picks.
+     * Every subtitle this profile downloaded for [contentKey], ready to re-list in the player on replay.
+     * Missing files are skipped (and their stale rows dropped). Never selects — the user re-picks.
      */
     suspend fun restoreForContent(profileId: Long, contentKey: String): List<ResolvedSubtitle> =
         withContext(Dispatchers.IO) {
@@ -247,7 +247,7 @@ class SubtitleRepository(
         }
     }
 
-    // --- timing (§8.4) ---
+    // --- timing ---
 
     suspend fun timingOffset(profileId: Long, contentKey: String, subtitleKey: String): Int =
         dao.timingOffset(profileId, contentKey, subtitleKey) ?: 0

@@ -173,7 +173,7 @@ class DownloadEngine(
         // process death — instead of only after an explicit pause. retry() deletes the file first,
         // so a deliberate restart still starts from zero.
         if (target.exists() && target.length() == 0L) target.truncate()
-        // Attempt loop (plan D-3): a Stalker `create_link` URL dies after ~2-4 h, so a long download
+        // Attempt loop: a Stalker `create_link` URL dies after ~2-4 h, so a long download
         // can fail mid-stream. Each attempt re-resolves a FRESH URL from the stored cmd and resumes
         // with an HTTP Range from the bytes already written; a server that ignores Range restarts the
         // file from 0. M3U/Xtream pass through the resolver unchanged, so for them the loop is just a

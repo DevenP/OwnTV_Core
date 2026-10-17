@@ -15,8 +15,8 @@ import tv.own.owntv.core.sync.SyncManager
 import tv.own.owntv.core.sync.SyncResult
 
 /**
- * Adds/links sources to a profile and runs imports. The setup wizard (Phase 6) and playlist screen
- * (Phase 13) drive this; the actual parsing/inserting lives in [SyncManager].
+ * Adds/links sources to a profile and runs imports. The setup wizard and the playlist screen
+ * drive this; the actual parsing/inserting lives in [SyncManager].
  */
 class SourceRepository(
     private val sourceDao: SourceDao,
@@ -81,7 +81,7 @@ class SourceRepository(
     }
 
     /**
-     * Deletes the playlist and everything remembered for its items (owner decision 13): engine pins,
+     * Deletes the playlist and everything remembered for its items: engine pins,
      * sound-only marks, audio delays, and every profile's zoom, volume and track choices. Those rows
      * are keyed by content, not by a foreign key, so without this they outlived the playlist forever.
      */
@@ -166,7 +166,7 @@ class SourceRepository(
         syncManager.getLastSyncStats(sourceId)
 
     /**
-     * Is this source's catalogue whole, or is a lazy add still filling it in? (Plan N1f-4.)
+     * Is this source's catalogue whole, or is a lazy add still filling it in?
      *
      * Not the same question as "has it synced" — a lazily-added Stalker source is stamped synced
      * while only its first page per category is stored.

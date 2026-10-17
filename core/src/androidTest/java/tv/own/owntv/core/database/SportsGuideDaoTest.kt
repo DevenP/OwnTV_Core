@@ -12,7 +12,7 @@ import org.junit.runner.RunWith
 import tv.own.owntv.core.database.entity.EpgProgrammeEntity
 
 /**
- * The Sports hub's two guide reads (PLAN 2.2): what they return, and that the slot read seeks the
+ * The Sports hub's two guide reads: what they return, and that the slot read seeks the
  * `(startMs, stopMs)` index rather than the `stopMs` one — the difference between a few thousand rows
  * and every future programme in the guide.
  */

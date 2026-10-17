@@ -108,14 +108,14 @@ enum class PlayerControl(
     AUDIO_ONLY(ControlCluster.TOOLS, ControlHost.BOTH, R.string.player_tool_audio_only),
 
     /**
-     * Turn this channel into the first tile of the grid (Plan D, Feature B). Opt-in, live only.
+     * Turn this channel into the first tile of the grid. Opt-in, live only.
      *
      * Beside the mini-player button because that is its nearest relative: both take the one picture
      * you are watching and put it somewhere else.
      */
     MULTIVIEW(ControlCluster.TOOLS, ControlHost.BOTH, R.string.multiview_button),
 
-    /** Record the channel already playing (Plan D, D3). Only exists once the setting is on. */
+    /** Record the channel already playing. Only exists once the setting is on. */
     RECORD(ControlCluster.TOOLS, ControlHost.BOTH, R.string.recording_record),
 
     /**
