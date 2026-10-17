@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="common_something_went_wrong">Nešto nije u redu</string>
     <string name="shell_no_source">Bez izvora</string>
     <string name="common_never">Nikad</string>
     <string name="common_clear">Očisti</string>
@@ -13,7 +12,6 @@
     <string name="common_start_over">Kreni ispočetka</string>
     <string name="common_search_hint">Pretraži…</string>
     <string name="common_nav_live_tv">TV prenos uživo</string>
-    <string name="common_move_instructions">▲/▼ da se bira · OK da se sačuva · Back da se otkaže</string>
     <string name="common_nav_movies">Filmovi</string>
     <string name="shell_now_playing">Trenutno se prikazuje</string>
     <string name="common_nav_downloads">Preuzeto</string>
@@ -83,9 +81,6 @@
     <string name="sync_status_trending_detail_received">TMDB kandidati · Filmovi: <xliff:g id="filmovi">%1$d</xliff:g> · Serije: <xliff:g id="serije">%2$d</xliff:g></string>
     <string name="sync_status_trending_detail_preparing">Provajder indeks naslova · <xliff:g id="obrađeno">%1$d</xliff:g> / <xliff:g id="ukupno">%2$d</xliff:g></string>
     <string name="sync_status_trending_detail_movies">Provera filma: <xliff:g id="provereno">%1$d</xliff:g>/<xliff:g id="kandidati">%2$d</xliff:g> · odgovarati: <xliff:g id="odgovarati">%3$d</xliff:g>/<xliff:g id="cilj">%4$d</xliff:g></string>
-    <string name="common_weather_fahrenheit"><xliff:g id="temperatura">%1$d</xliff:g>°F</string>
-    <string name="common_weather_celsius"><xliff:g id="temperatura">%1$d</xliff:g>°C</string>
-    <string name="common_weather_city"><xliff:g id="temperatura">%1$s</xliff:g> · <xliff:g id="grad">%2$s</xliff:g></string>
     <string name="sync_status_trending_preparing">Priprema naziva pružalaca usluga za brzo uparivanje</string>
     <plurals name="sync_warning_page_failures">
         <item quantity="one"><xliff:g id="broj">%1$d</xliff:g> učitavanje izvorne stranice nije uspelo; deo sadržaja možda nedostaje do sledeće sinhronizacije.</item>
