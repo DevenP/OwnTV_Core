@@ -18,7 +18,7 @@ import tv.own.owntv.core.recording.HlsMediaPlaylist
 import java.io.InputStream
 
 /**
- * The one connection of a timeshift buffer (N4, decision 25): the channel is downloaded here, once, and
+ * The one connection of a timeshift buffer: the channel is downloaded here, once, and
  * every player watches the saved copy. It keeps downloading while the player is paused — that is the
  * whole point — and it is the only thing that talks to the provider while timeshift is on.
  *
@@ -361,7 +361,7 @@ class TimeshiftDownloader(
 /**
  * [uri] resolved against [base]. OkHttp's resolver first: signed CDN tokens carry characters such as
  * `|`, `^` and spaces that `java.net.URI` refuses outright, which silently dropped every segment of
- * such a stream (L9). `URI` stays as the fallback for a base OkHttp cannot parse.
+ * such a stream. `URI` stays as the fallback for a base OkHttp cannot parse.
  */
 internal fun resolveSegmentUrl(base: String, uri: String): String? =
     base.toHttpUrlOrNull()?.resolve(uri)?.toString()

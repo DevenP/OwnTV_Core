@@ -1,7 +1,7 @@
 package tv.own.owntv.core.sports
 
 /**
- * The "Watch live" filter (mockup T3 / P3). Empty [languages], [countries] or [sourceIds] means any.
+ * The "Watch live" filter. Empty [languages], [countries] or [sourceIds] means any.
  * A language is an upper-case ISO 639-1 code, [UNKNOWN] for a channel whose name carries none; a
  * country is the provider's prefix ("DE", "UK"). [onlyConfirmed] keeps the guide's and the event
  * channels and hides "likely" and remembered ones. Unknown picture quality never hides a channel:
@@ -48,7 +48,7 @@ data class WatchFilter(
     }
 }
 
-/** What "Watch live" shows: the [shown] rows, how many [hidden], and the counts beside each choice (T3). */
+/** What "Watch live" shows: the [shown] rows, how many [hidden], and the counts beside each choice. */
 data class WatchList(
     val shown: List<WatchOption>,
     val total: Int,

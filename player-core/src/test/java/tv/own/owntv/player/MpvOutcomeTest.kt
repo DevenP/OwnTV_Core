@@ -12,7 +12,7 @@ import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
 import org.junit.Test
 
-/** H1 — when the live ladder may call an mpv tune opened, against the same combine [EnginePair] runs. */
+/** When the live ladder may call an mpv tune opened, against the same combine [EnginePair] runs. */
 @OptIn(ExperimentalCoroutinesApi::class)
 class MpvOutcomeTest {
 

@@ -6,7 +6,7 @@ import tv.own.owntv.core.sports.model.Match
 import tv.own.owntv.core.sports.model.MatchState
 import tv.own.owntv.core.sports.model.Sport
 
-/** Find channels' window (WORK C21): 30 min before kick-off until 30 min after the real end. */
+/** Find channels' window: 30 min before kick-off until 30 min after the real end. */
 class WatchWindowTest {
 
     private val min = 60_000L

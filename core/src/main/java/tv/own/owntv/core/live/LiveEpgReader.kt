@@ -124,11 +124,11 @@ class LiveEpgReader(
                 }
             }
 
-            // 2) Provider short-EPG API fallback (Xtream get_short_epg / Stalker get_short_epg, Phase E §5.5).
+            // 2) Provider short-EPG API fallback (Xtream get_short_epg / Stalker get_short_epg).
             val entries = providerEntries(ch, shift) ?: return@withContext null
             // A gap in the provider's own guide data around "now" (nothing covers this instant) must leave
             // current null — picking the next entry that simply hasn't ended yet would mislabel an upcoming
-            // programme as live (issue #68). "Next"/"Later" are computed independently below, so a genuine
+            // programme as live. "Next"/"Later" are computed independently below, so a genuine
             // gap correctly shows no "Now" while the upcoming programme still appears as "Next".
             val current = entries.firstOrNull { it.startMs <= now && it.stopMs > now }
             val future = entries.filter { it.startMs > (current?.startMs ?: now) }.sortedBy { it.startMs }
@@ -443,7 +443,7 @@ class LiveArchiveUrls(
     suspend fun forProgramme(ch: ChannelEntity, programme: EpgProgrammeEntity): String? =
         withContext(Dispatchers.IO) {
             val source = sourceDao.getById(ch.sourceId) ?: return@withContext null
-            // Stalker archive URLs are minted per-play via create_link (Phase E §5.6); the others
+            // Stalker archive URLs are minted per-play via create_link; the others
             // are pure string templates handled by CatchupUrl.
             if (source.type == SourceType.STALKER) {
                 ch.remoteId?.let { rid ->
@@ -457,7 +457,7 @@ class LiveArchiveUrls(
         }
 
     /**
-     * L4 — a Stalker archive URL is a single-use `create_link`, so a Retry or a stall reconnect that
+     * A Stalker archive URL is a single-use `create_link`, so a Retry or a stall reconnect that
      * replays it gets nothing. For a Stalker channel this mints a fresh one for the same [programme];
      * null for every other source, whose archive URL can simply be replayed.
      */
@@ -467,13 +467,13 @@ class LiveArchiveUrls(
     }
 
     /** An archive URL, the wall-clock instant it really starts at, and — for Stalker — how to mint a
-     *  fresh URL for the same start (L4, see [reconnectFor]). */
+     *  fresh URL for the same start (see [reconnectFor]). */
     data class Timeshift(val url: String, val startMs: Long, val reconnect: ReconnectUrlProvider? = null)
 
     /**
      * The rolling-archive URL for watching [ch] [offsetSec] behind the live edge, asked to start at
      * [startMs]. The returned start is the one the archive will really begin at, and the one every
-     * "behind live" counter must be measured from (M8): an Xtream timeshift start is written to the
+     * "behind live" counter must be measured from: an Xtream timeshift start is written to the
      * minute, so the panel serves from the minute's start — up to 59 s earlier than asked.
      */
     suspend fun forTimeshift(
@@ -518,7 +518,7 @@ class LiveArchiveUrls(
                 tz,
                 ch.catchupCorrectionMin,
             )
-            // Stalker rewind = the same per-play archive create_link as catch-up (Phase E §5.6).
+            // Stalker rewind = the same per-play archive create_link as catch-up.
             SourceType.STALKER -> ch.remoteId?.let { rid ->
                 runCatching { streamUrlResolver.resolveCatchup(source, rid, startMs, startMs + durationMin * 60_000L) }
                     .onFailure { Log.w(LOG_TAG, "Stalker rewind resolve failed channelId=${ch.id}", it) }

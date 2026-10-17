@@ -23,7 +23,7 @@ import tv.own.owntv.core.sports.model.Team
 
 /**
  * Our own slim JSON for the stored board — not ESPN's, which is 10–50 times bigger. It holds what the
- * last rebuild built (WORK C16): the scoreboards, every match's details and every league's table, kept
+ * last rebuild built: the scoreboards, every match's details and every league's table, kept
  * until the next rebuild. A file that does not parse, or an entry in it that does not, is dropped.
  */
 internal object SportsCacheJson {

@@ -25,7 +25,6 @@
     <string name="profiles_kids_badge">أطفال</string>
     <string name="profiles_add">إضافة ملف شخصي</string>
     <string name="profiles_title">الملفات الشخصية</string>
-    <string name="profiles_add_button">إضافة ملف شخصي</string>
     <string name="profiles_delete_title">حذف «<xliff:g id="name">%1$s</xliff:g>»؟</string>
     <string name="profiles_delete_message">يؤدي هذا إلى حذف الملف الشخصي وعناصره المفضّلة وسجل مشاهدته. ستبقى المصادر.</string>
     <string name="profiles_kids_tag">أطفال</string>
@@ -33,10 +32,7 @@
     <string name="search_title">بحث</string>
     <string name="search_continue">متابعة المشاهدة</string>
     <string name="search_unwatched">غير مُشاهَد</string>
-    <string name="search_hint">ابحث في القنوات والأفلام والمسلسلات…</string>
     <string name="search_recent">عمليات البحث الأخيرة</string>
-    <string name="search_recent_empty">ستظهر عمليات البحث الأخيرة هنا.</string>
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> — لا توجد نتائج.</string>
     <string name="search_nothing_in_list">لا شيء في <xliff:g id="list">%1$s</xliff:g> حتى الآن.</string>
     <string name="search_clear">مسح</string>
     <string name="search_jump_to">الانتقال إلى</string>
@@ -193,12 +189,7 @@
     </plurals>
     <string name="home_trending_movie">فيلم</string>
     <string name="home_trending_series">مسلسل</string>
-    <string name="home_trending_section_label">الرائج الآن · لقطة المزامنة</string>
     <string name="home_trending_provider_match">تطابق لدى المزوّد</string>
-    <string name="home_trending_language_choice">اختيار اللغة <xliff:g id="language">%1$s</xliff:g></string>
-    <string name="home_trending_english_fallback">اختيار الإنجليزية الاحتياطي</string>
-    <string name="home_trending_untagged_fallback">اختيار غير الموسوم الاحتياطي</string>
-    <string name="home_trending_other_fallback">اختيار <xliff:g id="language">%1$s</xliff:g> الاحتياطي</string>
     <string name="home_trending_why_label">سبب ظهور هذا العنصر</string>
     <string name="home_trending_reason_title">ترتيب TMDB رقم <xliff:g id="rank">%1$d</xliff:g> <xliff:g id="media_type">%2$s</xliff:g> + تطابق لدى المزوّد</string>
     <string name="home_trending_reason_preferred">يُفضَّل إصدار المزوّد المحدّد باللغة <xliff:g id="language">%1$s</xliff:g> على الإدخالات بلغة أخرى.</string>
@@ -219,10 +210,7 @@
     <string name="home_trending_more_details">مزيد من التفاصيل</string>
     <string name="home_trending_all_versions">جميع الإصدارات</string>
     <string name="home_trending_why_menu">لماذا يظهر هذا العنوان هنا</string>
-    <string name="home_trending_previous">السابق</string>
     <string name="home_trending_pause">إيقاف مؤقت</string>
-    <string name="home_trending_resume">متابعة</string>
-    <string name="home_trending_next">التالي</string>
     <string name="home_trending_unavailable">لم يعد هذا الإصدار متاحًا</string>
     <string name="recording_notification_title">جارٍ التسجيل</string>
     <string name="recording_failed_no_space">توقّف: لا توجد مساحة كافية</string>
@@ -233,7 +221,6 @@
     <string name="recording_failed_channel_gone">لم تعد هذه القناة في قائمة التشغيل</string>
     <string name="recording_failed_unknown">لم يتم التسجيل</string>
     <string name="recording_title">التسجيلات</string>
-    <string name="recording_description">بث مباشر محفوظ على هذا الجهاز.</string>
     <string name="recording_empty">لم يُسجَّل شيء بعد. اضغط تسجيل على برنامج في دليل التلفزيون، أو اضغط مطولًا على قناة لتسجيلها أو لجدولة وقت.</string>
     <string name="recording_group_now">يسجّل الآن</string>
     <string name="recording_group_scheduled">مجدول</string>
@@ -286,7 +273,6 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> تسجيل</item>
     </plurals>
     <string name="settings_recording_mobile_data">التسجيل عبر بيانات الهاتف</string>
-    <string name="settings_recording_mobile_data_description">عند الإيقاف، يُتخطّى أي تسجيل يحين خارج شبكة Wi-Fi بدل الانتظار — فالبرنامج المباشر لا يتكرر.</string>
     <string name="settings_record_watching">تسجيل ما أشاهده</string>
     <string name="settings_record_watching_description">يضيف إلى المشغّل زر تسجيل يحفظ القناة التي تشاهدها. يجلب القناة بنفسه، فيستهلك أحد اتصالات مزوّدك أثناء عمله، ويواصل التسجيل بعد تغيير القناة أو مغادرة المشغّل.</string>
     <string name="settings_record_watching_warning_title">اتصال واحد فقط</string>

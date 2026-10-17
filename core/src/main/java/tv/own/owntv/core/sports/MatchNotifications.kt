@@ -22,7 +22,7 @@ import tv.own.owntv.core.sports.model.MatchState
  * The host app's part in goal alerts — assigned in its `onCreate` **before Koin starts**, like
  * [AppIconSwitcher.mainActivityClass]. The phone sets [backgroundAllowed]; the television never does,
  * so it schedules nothing in the background even when a profile synced from the phone has "alerts
- * when OwnTV is closed" on (README §7.6: a TV that is off has nobody to tell).
+ * when OwnTV is closed" on (a TV that is off has nobody to tell).
  */
 object MatchAlertHost {
     @Volatile var backgroundAllowed: Boolean = false
@@ -34,7 +34,7 @@ object MatchAlertHost {
     @Volatile var requestNotificationPermission: (() -> Unit)? = null
 }
 
-/** The three notification channels (README §7.6) and every sports notification. */
+/** The three notification channels and every sports notification. */
 class MatchNotifications(private val context: Context, private val localeStore: LocaleStore) {
 
     private fun localized(): Context = AppLocale.wrap(context, localeStore.currentTag.value)
@@ -91,7 +91,7 @@ class MatchNotifications(private val context: Context, private val localeStore: 
         }
     }
 
-    /** Mockup P7's reminder: "Kick-off in 10 min: Frankfurt – Köln" / "On Sky Sport Bundesliga 1 and 6 more". */
+    /** The match reminder: "Kick-off in 10 min: Frankfurt – Köln" / "On Sky Sport Bundesliga 1 and 6 more". */
     fun postReminder(match: Match, leadMinutes: Int, channelNames: List<String>) {
         if (!canPost()) return
         val l = localized()
@@ -113,7 +113,7 @@ class MatchNotifications(private val context: Context, private val localeStore: 
         notify(manager, "${match.key}#reminder".hashCode(), n)
     }
 
-    /** Mockup P7's live card: the score, the minute, Watch and Stop updates. Ongoing, silent. */
+    /** The live score card: the score, the minute, Watch and Stop updates. Ongoing, silent. */
     fun liveCard(match: Match, stop: PendingIntent): Notification {
         val l = localized()
         ensureChannels(l)

@@ -22,12 +22,12 @@ import tv.own.owntv.core.sports.model.Match
 import android.app.NotificationManager
 
 /**
- * The live score card (mockup P7, README §7.6 point 4): an ongoing notification for one match, which
+ * The live score card: an ongoing notification for one match, which
  * the user starts from that match. It reads the score through [SportsRepository] as a
  * [Demand.PlayerScore], so the refresh policy polls that one league every 30 s while the match is
  * live, and the card stops itself at full time or on "Stop updates".
  *
- * **Foreground service type `dataSync`** (WORK C13): it keeps a network sync of one match's score
+ * **Foreground service type `dataSync`**: it keeps a network sync of one match's score
  * running while the app is closed, which is what the type describes. Android 15 caps `dataSync` at six
  * hours a day, and a match fits; if the cap is ever reached, [onTimeout] ends the card cleanly.
  * `specialUse` would need a Play policy declaration, and `mediaPlayback` would be untrue.

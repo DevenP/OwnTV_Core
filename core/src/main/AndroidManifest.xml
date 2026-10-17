@@ -136,7 +136,7 @@
             </intent-filter>
         </receiver>
 
-        <!-- Programme reminders (Stage G2): the same pair as recordings, for the same reasons. -->
+        <!-- Programme reminders: the same pair as recordings, for the same reasons. -->
         <receiver
             android:name="tv.own.owntv.core.reminder.ReminderAlarmReceiver"
             android:exported="false">
@@ -154,7 +154,7 @@
             </intent-filter>
         </receiver>
 
-        <!-- Sports goal alerts (phone, README §7.6): a match check or a match reminder is due. Not
+        <!-- Sports goal alerts (phone): a match check or a match reminder is due. Not
              exported, like the reminder pair above; the boot half re-arms after a reboot or update. -->
         <receiver
             android:name="tv.own.owntv.core.sports.MatchAlertReceiver"
@@ -173,7 +173,7 @@
             </intent-filter>
         </receiver>
 
-        <!-- The live score card (mockup P7). dataSync: it keeps one match's score in sync while the
+        <!-- The live score card. dataSync: it keeps one match's score in sync while the
              app is closed; a match fits Android 15's six-hour daily dataSync allowance, and the
              service ends itself in onTimeout if it is ever reached. Started only by the user, from a
              match, with the app in front. -->

@@ -1,7 +1,7 @@
 package tv.own.owntv.core.player
 
 /**
- * P6 — the stable identity a per-item engine pin ([ForceMpvStore] live "compatibility mode",
+ * The stable identity a per-item engine pin ([ForceMpvStore] live "compatibility mode",
  * [VodEngineStore] VOD gear toggle) is keyed on.
  *
  * Both stores originally keyed on the item's stream URL, which is stable for M3U and Xtream but
@@ -23,7 +23,7 @@ fun enginePinKey(sourceId: Long, mediaType: String, remoteId: String?): String? 
     remoteId?.takeIf { it.isNotBlank() }?.let { "$sourceId:$mediaType:$it" }
 
 /**
- * L5 — the one key for everything played out of [channel]'s archive, catch-up programmes and live
+ * The one key for everything played out of [channel]'s archive, catch-up programmes and live
  * rewinds alike. Their URLs carry the time (and the credentials), so a pin or a remembered zoom/volume
  * keyed on the URL never matched again and piled up. Its own media type, `CATCHUP`, rather than the
  * channel's `LIVE` key: live and film-style pins share one table and are told apart by that type, so

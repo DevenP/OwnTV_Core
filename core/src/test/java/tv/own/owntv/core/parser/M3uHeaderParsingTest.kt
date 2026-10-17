@@ -7,7 +7,7 @@ import org.junit.Test
 import tv.own.owntv.core.network.StreamHeaders
 
 /**
- * F16 — per-channel HTTP options. Playlists that need a UA/Referer per entry returned 403 in OwnTV
+ * Per-channel HTTP options. Playlists that need a UA/Referer per entry returned 403 in OwnTV
  * and played fine in VLC/TiviMate, because every `#EXTVLCOPT`/`#EXTHTTP`/`#KODIPROP` line and the
  * `url|Key=Value` suffix were dropped on the floor.
  */
@@ -117,7 +117,7 @@ class M3uHeaderParsingTest {
         assertEquals(7, entries[0].catchupDays)
     }
 
-    /** M7 — `catchup-correction` is hours (fractional, signed); the `#EXTM3U` value is the default. */
+    /** `catchup-correction` is hours (fractional, signed); the `#EXTM3U` value is the default. */
     @Test
     fun catchupCorrectionIsReadPerEntryWithTheHeaderAsDefault() {
         val entries = parse(
@@ -137,7 +137,7 @@ class M3uHeaderParsingTest {
         assertEquals(0, parse("#EXTM3U\n#EXTINF:-1,Plain\nhttp://host/d.ts")[0].catchupCorrectionMin)
     }
 
-    /** M7 — legacy SIPTV `timeshift="N"` is `catchup="shift"` with N days; the newer attributes win. */
+    /** Legacy SIPTV `timeshift="N"` is `catchup="shift"` with N days; the newer attributes win. */
     @Test
     fun legacyTimeshiftAttributeMeansShiftCatchup() {
         val entries = parse(

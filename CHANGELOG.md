@@ -11,7 +11,7 @@
 
 ## Unreleased
 
-**Database v49 · Backup v25**
+**Database v49 · Backup v25 · Breaking (glass settings)**
 
 ### ✨ New features
 
@@ -49,6 +49,8 @@
 - **🏷️ Categories keep their country ("UK|") when a list mixes countries**
 - **🔁 Retry works after a live channel gives up**
 - **👤 "Account already in use" says so, instead of loading forever on a film**
+- **🔢 First Xtream import counts a film listed in two categories once**
+- **🪟 Glass keeps only on/off and opacity; the old fine-tuning settings are gone**
 
 ## core-1.0.67 — 2026-10-12
 

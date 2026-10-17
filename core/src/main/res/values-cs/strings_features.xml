@@ -25,7 +25,6 @@
     <string name="profiles_kids_badge">DĚTI</string>
     <string name="profiles_add">Přidat profil</string>
     <string name="profiles_title">Profily</string>
-    <string name="profiles_add_button">Přidat profil</string>
     <string name="profiles_delete_title">Odstranit „<xliff:g id="name">%1$s</xliff:g>“?</string>
     <string name="profiles_delete_message">Odstraní tento profil spolu s jeho oblíbenými položkami a historií. Zdroje zůstanou zachovány.</string>
     <string name="profiles_kids_tag">Dětský</string>
@@ -33,10 +32,7 @@
     <string name="search_title">Vyhledávání</string>
     <string name="search_continue">Pokračovat ve sledování</string>
     <string name="search_unwatched">Nezhlédnuté</string>
-    <string name="search_hint">Hledat kanály, filmy a seriály…</string>
     <string name="search_recent">Nedávná vyhledávání</string>
-    <string name="search_recent_empty">Zde se zobrazí vaše nedávná vyhledávání.</string>
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> — žádné výsledky.</string>
     <string name="search_nothing_in_list">V <xliff:g id="list">%1$s</xliff:g> zatím nic není.</string>
     <string name="search_clear">Vymazat</string>
     <string name="search_jump_to">Přejít na</string>
@@ -177,12 +173,7 @@
     </plurals>
     <string name="home_trending_movie">Film</string>
     <string name="home_trending_series">Seriál</string>
-    <string name="home_trending_section_label">PRÁVĚ POPULÁRNÍ · SNÍMEK SYNCHRONIZACE</string>
     <string name="home_trending_provider_match">Shoda s poskytovatelem</string>
-    <string name="home_trending_language_choice">Volba jazyka <xliff:g id="language">%1$s</xliff:g></string>
-    <string name="home_trending_english_fallback">Náhradní volba v angličtině</string>
-    <string name="home_trending_untagged_fallback">Náhradní volba bez jazykového označení</string>
-    <string name="home_trending_other_fallback">Náhradní volba <xliff:g id="language">%1$s</xliff:g></string>
     <string name="home_trending_why_label">PROČ SE TATO POLOŽKA ZOBRAZUJE</string>
     <string name="home_trending_reason_title">Pořadí TMDB #<xliff:g id="rank">%1$d</xliff:g> <xliff:g id="media_type">%2$s</xliff:g> + shoda s poskytovatelem</string>
     <string name="home_trending_reason_preferred">Vybraná verze poskytovatele v jazyce <xliff:g id="language">%1$s</xliff:g> má přednost před položkami v jiném jazyce.</string>
@@ -201,10 +192,7 @@
     <string name="home_trending_more_details">Další podrobnosti</string>
     <string name="home_trending_all_versions">Všechny verze</string>
     <string name="home_trending_why_menu">Proč je tento titul tady</string>
-    <string name="home_trending_previous">Předchozí</string>
     <string name="home_trending_pause">Pozastavit</string>
-    <string name="home_trending_resume">Pokračovat</string>
-    <string name="home_trending_next">Další</string>
     <string name="home_trending_unavailable">Tato verze již není dostupná</string>
     <string name="recording_notification_title">Nahrávání</string>
     <string name="recording_failed_no_space">Zastaveno: nedostatek místa</string>
@@ -215,7 +203,6 @@
     <string name="recording_failed_channel_gone">Tento kanál už není ve vašem seznamu</string>
     <string name="recording_failed_unknown">Nenahrálo se</string>
     <string name="recording_title">Nahrávky</string>
-    <string name="recording_description">Živé vysílání uložené v tomto zařízení.</string>
     <string name="recording_empty">Zatím nic nenahráno. Stiskněte Nahrát u pořadu v TV průvodci, nebo dlouze stiskněte kanál a nahrajte ho či naplánujte čas.</string>
     <string name="recording_group_now">Právě se nahrává</string>
     <string name="recording_group_scheduled">Naplánováno</string>
@@ -264,7 +251,6 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> nahrávek</item>
     </plurals>
     <string name="settings_recording_mobile_data">Nahrávat přes mobilní data</string>
-    <string name="settings_recording_mobile_data_description">Vypnuto: nahrávání, které vyjde mimo Wi-Fi, se přeskočí místo čekání — živý pořad se neopakuje.</string>
     <string name="settings_record_watching">Nahrát to, co právě sleduji</string>
     <string name="settings_record_watching_description">Přidá do přehrávače tlačítko nahrávání, které uloží sledovaný kanál. Kanál si stahuje sám, takže po dobu nahrávání zabírá jedno z připojení vašeho poskytovatele, a nahrává dál i po přepnutí kanálu nebo opuštění přehrávače.</string>
     <string name="settings_record_watching_warning_title">Jen jedno připojení</string>

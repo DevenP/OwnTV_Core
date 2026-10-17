@@ -18,7 +18,7 @@ enum class GuideSport {
     COMBAT, AMERICAN_FOOTBALL, BASEBALL, GOLF, RUGBY, VOLLEYBALL, ATHLETICS, WINTER, OTHER,
 }
 
-/** One card in "Sport on your channels now" (mockup T1's middle row): a programme and every channel showing it. */
+/** One card in "Sport on your channels now" (the hub's middle row): a programme and every channel showing it. */
 data class GuideSportItem(
     val sport: GuideSport,
     val title: String,
@@ -28,7 +28,7 @@ data class GuideSportItem(
 )
 
 /**
- * Layer B (README §4, PLAN 2.5): what is on now, or starting within [SOON_MS], on the user's channels
+ * What is on now, or starting within [SOON_MS], on the user's channels
  * that is sport — by the guide's category, by a sport word in the title, or as a fixture ("Kiel –
  * Magdeburg") on a sports channel. Local only: the guide and the playlist, no network, so it keeps
  * working when ESPN is unreachable. Programmes the guide already confirmed for one of [observe]'s

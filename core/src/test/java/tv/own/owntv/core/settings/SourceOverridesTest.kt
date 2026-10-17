@@ -32,7 +32,7 @@ class SourceOverridesTest {
         assertEquals(90 * 60_000, tz.rawOffset)
     }
 
-    /** M6 — Automatic is the panel's reported zone when there is one, else the device's. */
+    /** Automatic is the panel's reported zone when there is one, else the device's. */
     @Test fun automaticCatchupZoneUsesThePanelZone() {
         val panel = source(tz = "AUTOMATIC").copy(serverTimeZone = "Asia/Kolkata")
         assertEquals("Asia/Kolkata", SourceOverrides.catchupTimeZoneOf(panel)!!.id)

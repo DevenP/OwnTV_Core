@@ -12,7 +12,7 @@ import tv.own.owntv.core.sports.model.Match
 import tv.own.owntv.core.sports.model.MatchState
 import tv.own.owntv.core.sports.model.Sport
 
-/** One test per row of the policy's table (R1.3), then the rebuild schedule. */
+/** One test per row of the policy's table, then the rebuild schedule. */
 class SportsRefreshPolicyTest {
 
     private val policy = SportsRefreshPolicy()

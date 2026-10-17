@@ -25,7 +25,6 @@
     <string name="profiles_kids_badge">শিশুদের</string>
     <string name="profiles_add">প্রোফাইল যোগ করুন</string>
     <string name="profiles_title">প্রোফাইলগুলো</string>
-    <string name="profiles_add_button">প্রোফাইল যোগ করুন</string>
     <string name="profiles_delete_title">“<xliff:g id="name">%1$s</xliff:g>” মুছবেন?</string>
     <string name="profiles_delete_message">এই প্রোফাইল এবং এর পছন্দেরগুলো ও ইতিহাস মুছে যাবে। উৎসগুলো রাখা হবে।</string>
     <string name="profiles_kids_tag">শিশুদের</string>
@@ -33,10 +32,7 @@
     <string name="search_title">অনুসন্ধান</string>
     <string name="search_continue">দেখা চালিয়ে যান</string>
     <string name="search_unwatched">না-দেখা</string>
-    <string name="search_hint">চ্যানেল, সিনেমা ও সিরিজ অনুসন্ধান করুন…</string>
     <string name="search_recent">সাম্প্রতিক অনুসন্ধান</string>
-    <string name="search_recent_empty">আপনার সাম্প্রতিক অনুসন্ধানগুলো এখানে দেখা যাবে।</string>
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> — কোনো ফলাফল নেই।</string>
     <string name="search_nothing_in_list"><xliff:g id="list">%1$s</xliff:g>-এ এখনো কিছু নেই।</string>
     <string name="search_clear">মুছুন</string>
     <string name="search_jump_to">সরাসরি যান</string>
@@ -161,12 +157,7 @@
     </plurals>
     <string name="home_trending_movie">চলচ্চিত্র</string>
     <string name="home_trending_series">সিরিজ</string>
-    <string name="home_trending_section_label">এখন ট্রেন্ডিং · সিঙ্ক স্ন্যাপশট</string>
     <string name="home_trending_provider_match">প্রোভাইডারের সঙ্গে মিল</string>
-    <string name="home_trending_language_choice"><xliff:g id="language">%1$s</xliff:g> ভাষার পছন্দ</string>
-    <string name="home_trending_english_fallback">ইংরেজি ফলব্যাক পছন্দ</string>
-    <string name="home_trending_untagged_fallback">ভাষা-ট্যাগবিহীন ফলব্যাক পছন্দ</string>
-    <string name="home_trending_other_fallback"><xliff:g id="language">%1$s</xliff:g> ফলব্যাক পছন্দ</string>
     <string name="home_trending_why_label">এই আইটেমটি কেন দেখানো হচ্ছে</string>
     <string name="home_trending_reason_title">TMDB র‍্যাঙ্ক #<xliff:g id="rank">%1$d</xliff:g> <xliff:g id="media_type">%2$s</xliff:g> + প্রোভাইডারের সঙ্গে মিল</string>
     <string name="home_trending_reason_preferred">অন্য ভাষার এন্ট্রির আগে নির্বাচিত <xliff:g id="language">%1$s</xliff:g> প্রোভাইডার সংস্করণটি বেছে নেওয়া হয়েছে।</string>
@@ -183,10 +174,7 @@
     <string name="home_trending_more_details">আরও বিস্তারিত</string>
     <string name="home_trending_all_versions">সব সংস্করণ</string>
     <string name="home_trending_why_menu">এই শিরোনামটি এখানে কেন</string>
-    <string name="home_trending_previous">আগেরটি</string>
     <string name="home_trending_pause">বিরতি</string>
-    <string name="home_trending_resume">আবার চালান</string>
-    <string name="home_trending_next">পরেরটি</string>
     <string name="home_trending_unavailable">এই সংস্করণটি আর পাওয়া যাচ্ছে না</string>
     <string name="recording_notification_title">রেকর্ড করা হচ্ছে</string>
     <string name="recording_failed_no_space">থেমে গেছে: জায়গা বাকি নেই</string>
@@ -197,7 +185,6 @@
     <string name="recording_failed_channel_gone">সেই চ্যানেলটি আর আপনার প্লেলিস্টে নেই</string>
     <string name="recording_failed_unknown">রেকর্ড হয়নি</string>
     <string name="recording_title">রেকর্ডিং</string>
-    <string name="recording_description">এই ডিভাইসে সংরক্ষিত লাইভ টিভি।</string>
     <string name="recording_empty">এখনও কিছু রেকর্ড হয়নি। টিভি গাইডে কোনো অনুষ্ঠানে রেকর্ড চাপুন, অথবা কোনো চ্যানেলে দীর্ঘক্ষণ চেপে সেটি রেকর্ড করুন বা সময় নির্ধারণ করুন।</string>
     <string name="recording_group_now">এখন রেকর্ড হচ্ছে</string>
     <string name="recording_group_scheduled">নির্ধারিত</string>
@@ -242,7 +229,6 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g>টি রেকর্ডিং</item>
     </plurals>
     <string name="settings_recording_mobile_data">মোবাইল ডেটায় রেকর্ড করুন</string>
-    <string name="settings_recording_mobile_data_description">বন্ধ থাকলে, Wi-Fi ছাড়া সময়ে পড়া রেকর্ডিং অপেক্ষা না করে বাদ পড়ে — সরাসরি অনুষ্ঠান আর ফিরে আসে না।</string>
     <string name="settings_record_watching">যা দেখছি তা রেকর্ড করুন</string>
     <string name="settings_record_watching_description">প্লেয়ারে একটি রেকর্ড বোতাম যোগ করে, যা আপনার দেখা চ্যানেলটি সংরক্ষণ করে। এটি চ্যানেলটি নিজেই আনে, তাই চলাকালীন আপনার সরবরাহকারীর একটি সংযোগ ব্যবহার করে, এবং চ্যানেল বদলালে বা প্লেয়ার ছাড়লেও রেকর্ডিং চলতে থাকে।</string>
     <string name="settings_record_watching_warning_title">মাত্র একটি সংযোগ</string>

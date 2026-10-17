@@ -2,7 +2,7 @@ package tv.own.owntv.core.sports.model
 
 /**
  * A sport as ESPN files it. [path] is the segment in ESPN's URLs (`/sports/<path>/<league>/…`).
- * Declaration order is the hub's chip order (mockup T1): the eight shown first, then the rest behind "+N".
+ * Declaration order is the hub's chip order: the eight shown first, then the rest behind "+N".
  */
 enum class Sport(val path: String) {
     SOCCER("soccer"),

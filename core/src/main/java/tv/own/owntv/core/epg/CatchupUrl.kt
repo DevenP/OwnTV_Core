@@ -8,7 +8,7 @@ import tv.own.owntv.core.parser.XtreamClient
 import java.util.TimeZone
 
 /**
- * Builds catch-up / archive playback URLs for a past programme (#13 / Catch-up TV).
+ * Builds catch-up / archive playback URLs for a past programme.
  *
  * Two provider conventions:
  *  - **M3U** carries a `catchup-source` URL *template* with placeholders (`${start}`, `{utc}`,
@@ -26,7 +26,7 @@ object CatchupUrl {
     private val END_TOKENS = setOf("end", "utcend", "end-timestamp", "stop")
 
     /** "Now", in unix seconds. `catchup-source="…?utc={utc}&lutc={lutc}"` is one of the most common
-     *  templates in the wild, and an unsubstituted `{lutc}` reached the provider verbatim (F17).
+     *  templates in the wild, and an unsubstituted `{lutc}` reached the provider verbatim.
      *  `timestamp` is now as well — Kodi documents `${timestamp}` as "same as `{lutc}`", and TiviMate
      *  agrees; it used to be sent as the programme start. */
     private val NOW_TOKENS = setOf("lutc", "now", "timenow", "currenttime", "timestamp")
@@ -127,7 +127,7 @@ object CatchupUrl {
                 // together made "Prefer HLS" silently break catch-up for accounts whose live TV was fine.
                 xtream.timeshiftUrl(source, streamId, programme.startMs, durationMin, tz, "ts")
             }
-            // F17 — the catch-up TYPE is now persisted, so `append` (and the templateless styles)
+            // The catch-up TYPE is now persisted, so `append` (and the templateless styles)
             // finally reach [forM3u]; it used to be hardcoded to null here.
             SourceType.M3U -> forM3u(
                 channel.streamUrl,
@@ -165,7 +165,7 @@ object CatchupUrl {
      *
      * Four conventions, in the order playlists use them:
      *  - **append** — the template is a query fragment joined onto the [liveUrl] (the most common form,
-     *    and previously unreachable because the type was never stored, F17).
+     *    and previously unreachable because the type was never stored).
      *  - **shift / timeshift** — usually typeless: append the standard `?utc=…&lutc=…` pair.
      *  - **flussonic** — no template at all; the archive lives at a different path on the same server.
      *  - **xc** — an Xtream panel behind an M3U playlist: rebuild the URL as `timeshift.php`.

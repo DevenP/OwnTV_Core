@@ -7,7 +7,7 @@
 package tv.own.owntv.core.i18n
 
 /**
- * One supported locale, as consumed by the in-app language picker (Phase 2) and the locale
+ * One supported locale, as consumed by the in-app language picker and the locale
  * runtime. Mirrors ``tools/i18n/locales.json`` exactly; ``coverage`` is computed from the
  * actual resource files by the generator, never stored.
  */
@@ -676,7 +676,7 @@ object SupportedLocales {
             tier = 1,
             packaged = true,
             pickerVisible = true,
-            coverage = 86,
+            coverage = 85,
         ),
     )
 

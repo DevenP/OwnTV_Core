@@ -21,7 +21,7 @@ data class FormGame(val startMs: Long, val result: String, val opponent: String,
 
 /**
  * Everything the match page shows beyond the board's card: the timeline, the stats, the line-ups, and
- * each side's last games by team id ([form]; ESPN gives no head-to-head, WORK O9).
+ * each side's last games by team id ([form]; ESPN gives no head-to-head).
  */
 data class MatchSummary(
     val match: Match,

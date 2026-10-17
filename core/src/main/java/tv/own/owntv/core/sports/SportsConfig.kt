@@ -13,13 +13,13 @@ data class FollowedTeam(val sport: Sport, val id: String, val name: String, val 
 /**
  * A channel remembered for a competition ("Always use for Bundesliga"), stored by its portable name —
  * the channel name without provider tags, plus its country — never by Room id, which every sync
- * recreates (WORK C3). It is resolved against the current playlists when a match is ranked.
+ * recreates. It is resolved against the current playlists when a match is ranked.
  */
 data class RememberedChannel(val name: String, val country: String? = null)
 
 /**
  * How often the profile played a team's (or a competition's) matches from the hub — what "Suggested
- * from what you watch" (mockup P6) is made of. [name] is kept so a suggestion can be shown without a
+ * from what you watch" is made of. [name] is kept so a suggestion can be shown without a
  * network call.
  */
 data class Played(val name: String, val abbreviation: String = "", val count: Int = 0)
@@ -32,7 +32,7 @@ enum class AutoRebuild { H1, H2, H4, H8, APP_START, MANUAL }
 
 enum class AlertKind { GOALS, KICKOFF_FULL_TIME, HALF_TIME, RED_CARDS }
 
-/** Settings → Sports → Goal alerts (mockup P8). Off until the user turns it on. */
+/** Settings → Sports → Goal alerts. Off until the user turns it on. */
 data class GoalAlerts(
     val enabled: Boolean = false,
     val whenClosed: Boolean = false,
@@ -43,15 +43,15 @@ data class GoalAlerts(
 )
 
 /**
- * One profile's sports settings (Settings → Sports, mockup T6 / P5). Stored as one JSON blob per
+ * One profile's sports settings (Settings → Sports). Stored as one JSON blob per
  * profile, `sports_config_<id>`, the way Home's config is, and backed up in the same way.
  *
- * A new profile follows nothing ([leagues] empty, WORK C16). [languages] is null until the user
+ * A new profile follows nothing ([leagues] empty). [languages] is null until the user
  * first changes it: until then the app's own language is ranked first ([preferredLanguages]). Every read goes through [SettingsImportRules], so a value from another
  * build or a hand-edited backup can never be out of range.
  */
 data class SportsConfig(
-    /** A List, not a Set: a Set equals itself in any order, so a reorder alone never reached anyone (owner). */
+    /** A List, not a Set: a Set equals itself in any order, so a reorder alone never reached anyone. */
     val leagues: List<String> = emptyList(),
     /** Sport buttons: true = every catalogue league is fetched, false = only [leagues]. */
     val allSports: Boolean = false,
@@ -136,7 +136,7 @@ data class SportsConfig(
         /** Most-played teams and leagues kept per profile. */
         const val MAX_PLAYED = 60
 
-        /** The Match reminders lead times (mockup T6: "10 min"). */
+        /** The Match reminders lead times. */
         val REMINDER_LEAD_CHOICES = listOf(5, 10, 15, 30)
 
         fun fromJson(raw: String?): SportsConfig {

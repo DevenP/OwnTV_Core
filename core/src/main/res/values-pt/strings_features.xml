@@ -25,7 +25,6 @@
     <string name="profiles_kids_badge">INFANTIL</string>
     <string name="profiles_add">Adicionar perfil</string>
     <string name="profiles_title">Perfis</string>
-    <string name="profiles_add_button">Adicionar perfil</string>
     <string name="profiles_delete_title">Excluir “<xliff:g id="name">%1$s</xliff:g>”?</string>
     <string name="profiles_delete_message">Remove este perfil, seus favoritos e seu histórico. As fontes são mantidas.</string>
     <string name="profiles_kids_tag">Infantil</string>
@@ -33,10 +32,7 @@
     <string name="search_title">Pesquisa</string>
     <string name="search_continue">Continuar assistindo</string>
     <string name="search_unwatched">Não assistidos</string>
-    <string name="search_hint">Pesquisar canais, filmes e séries…</string>
     <string name="search_recent">Pesquisas recentes</string>
-    <string name="search_recent_empty">Suas pesquisas recentes aparecerão aqui.</string>
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> — nenhum resultado.</string>
     <string name="search_nothing_in_list">Ainda não há nada em <xliff:g id="list">%1$s</xliff:g>.</string>
     <string name="search_clear">Limpar</string>
     <string name="search_jump_to">Ir para</string>
@@ -169,12 +165,7 @@
     </plurals>
     <string name="home_trending_movie">Filme</string>
     <string name="home_trending_series">Série</string>
-    <string name="home_trending_section_label">EM ALTA AGORA · RETRATO DA SINCRONIZAÇÃO</string>
     <string name="home_trending_provider_match">Correspondência do provedor</string>
-    <string name="home_trending_language_choice">Opção no idioma <xliff:g id="language">%1$s</xliff:g></string>
-    <string name="home_trending_english_fallback">Opção alternativa em inglês</string>
-    <string name="home_trending_untagged_fallback">Opção alternativa sem identificação de idioma</string>
-    <string name="home_trending_other_fallback">Opção alternativa em <xliff:g id="language">%1$s</xliff:g></string>
     <string name="home_trending_why_label">POR QUE ESTE ITEM APARECE</string>
     <string name="home_trending_reason_title">Posição nº <xliff:g id="rank">%1$d</xliff:g> no TMDB <xliff:g id="media_type">%2$s</xliff:g> + correspondência do provedor</string>
     <string name="home_trending_reason_preferred">A versão selecionada do provedor em <xliff:g id="language">%1$s</xliff:g> tem prioridade sobre as opções em outro idioma.</string>
@@ -192,10 +183,7 @@
     <string name="home_trending_more_details">Mais detalhes</string>
     <string name="home_trending_all_versions">Todas as versões</string>
     <string name="home_trending_why_menu">Por que este título está aqui</string>
-    <string name="home_trending_previous">Anterior</string>
     <string name="home_trending_pause">Pausar</string>
-    <string name="home_trending_resume">Retomar</string>
-    <string name="home_trending_next">Próximo</string>
     <string name="home_trending_unavailable">Esta versão não está mais disponível</string>
     <string name="recording_notification_title">Gravando</string>
     <string name="recording_failed_no_space">Interrompido: sem espaço livre</string>
@@ -206,7 +194,6 @@
     <string name="recording_failed_channel_gone">Esse canal não está mais na sua lista</string>
     <string name="recording_failed_unknown">Não foi gravado</string>
     <string name="recording_title">Gravações</string>
-    <string name="recording_description">TV ao vivo salva neste dispositivo.</string>
     <string name="recording_empty">Nada gravado ainda. Toque em Gravar num programa do guia de TV ou mantenha um canal pressionado para gravá-lo ou agendar um horário.</string>
     <string name="recording_group_now">Gravando agora</string>
     <string name="recording_group_scheduled">Agendada</string>
@@ -253,7 +240,6 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> gravações</item>
     </plurals>
     <string name="settings_recording_mobile_data">Gravar usando dados móveis</string>
-    <string name="settings_recording_mobile_data_description">Desativado: uma gravação que cai fora do Wi-Fi é ignorada em vez de esperar — um programa ao vivo não passa de novo.</string>
     <string name="settings_record_watching">Gravar o que estou assistindo</string>
     <string name="settings_record_watching_description">Adiciona ao player um botão de gravação que salva o canal que você está assistindo. Ele busca o canal por conta própria, então usa uma das conexões do seu provedor enquanto roda, e continua gravando depois que você troca de canal ou sai do player.</string>
     <string name="settings_record_watching_warning_title">Apenas uma conexão</string>

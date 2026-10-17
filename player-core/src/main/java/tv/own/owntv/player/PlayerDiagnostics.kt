@@ -116,7 +116,7 @@ sealed interface PlaybackFailure {
     /**
      * The device has no video decoder left to give — every hardware instance is already in use. Not
      * the same as [DecoderBusy]: waiting a moment does not help, because something else on screen is
-     * holding the decoder. This is what a fourth Multiview tile hits on cheap TV silicon (D5: the
+     * holding the decoder. This is what a fourth Multiview tile hits on cheap TV silicon (the
      * tile explains itself, the grid stays up).
      */
     data object DecoderExhausted : PlaybackFailure

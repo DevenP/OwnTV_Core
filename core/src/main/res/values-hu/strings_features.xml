@@ -25,7 +25,6 @@
     <string name="profiles_kids_badge">GYEREK</string>
     <string name="profiles_add">Profil hozzáadása</string>
     <string name="profiles_title">Profilok</string>
-    <string name="profiles_add_button">Profil hozzáadása</string>
     <string name="profiles_delete_title">Törlöd ezt: „<xliff:g id="name">%1$s</xliff:g>”?</string>
     <string name="profiles_delete_message">Eltávolítja ezt a profilt, valamint a hozzá tartozó kedvenceket és előzményeket. A források megmaradnak.</string>
     <string name="profiles_kids_tag">Gyerek</string>
@@ -33,10 +32,7 @@
     <string name="search_title">Keresés</string>
     <string name="search_continue">Folytatás</string>
     <string name="search_unwatched">Meg nem tekintett</string>
-    <string name="search_hint">Csatornák, filmek és sorozatok keresése…</string>
     <string name="search_recent">Legutóbbi keresések</string>
-    <string name="search_recent_empty">A legutóbbi kereséseid itt jelennek meg.</string>
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> — nincs találat.</string>
     <string name="search_nothing_in_list">Még nincs semmi itt: <xliff:g id="list">%1$s</xliff:g>.</string>
     <string name="search_clear">Törlés</string>
     <string name="search_jump_to">Ugrás ide</string>
@@ -161,12 +157,7 @@
     </plurals>
     <string name="home_trending_movie">Film</string>
     <string name="home_trending_series">Sorozat</string>
-    <string name="home_trending_section_label">MOST FELKAPOTT · SZINKRONIZÁLÁS ÁLLAPOTA</string>
     <string name="home_trending_provider_match">Szolgáltatói egyezés</string>
-    <string name="home_trending_language_choice"><xliff:g id="language">%1$s</xliff:g> nyelvi választás</string>
-    <string name="home_trending_english_fallback">Angol tartalék</string>
-    <string name="home_trending_untagged_fallback">Címkézetlen tartalék</string>
-    <string name="home_trending_other_fallback"><xliff:g id="language">%1$s</xliff:g> tartalék</string>
     <string name="home_trending_why_label">MIÉRT LÁTOD EZT A CÍMET</string>
     <string name="home_trending_reason_title">TMDB-helyezés #<xliff:g id="rank">%1$d</xliff:g> <xliff:g id="media_type">%2$s</xliff:g> + szolgáltatói egyezés</string>
     <string name="home_trending_reason_preferred">A kiválasztott <xliff:g id="language">%1$s</xliff:g> nyelvű szolgáltatói változat elsőbbséget élvez a más nyelvű tételekkel szemben.</string>
@@ -183,10 +174,7 @@
     <string name="home_trending_more_details">További részletek</string>
     <string name="home_trending_all_versions">Összes változat</string>
     <string name="home_trending_why_menu">Miért van itt ez a cím</string>
-    <string name="home_trending_previous">Előző</string>
     <string name="home_trending_pause">Szünet</string>
-    <string name="home_trending_resume">Folytatás</string>
-    <string name="home_trending_next">Következő</string>
     <string name="home_trending_unavailable">Ez a változat már nem érhető el</string>
     <string name="recording_notification_title">Felvétel</string>
     <string name="recording_failed_no_space">Leállt: nincs több hely</string>
@@ -197,7 +185,6 @@
     <string name="recording_failed_channel_gone">Ez a csatorna már nincs a lejátszási listádon</string>
     <string name="recording_failed_unknown">Nem készült felvétel</string>
     <string name="recording_title">Felvételek</string>
-    <string name="recording_description">Az eszközre mentett élő TV.</string>
     <string name="recording_empty">Még nincs felvétel. Nyomd meg a Felvétel gombot egy műsoron a műsorújságban, vagy tartsd nyomva egy csatornát a felvételhez vagy egy időpont ütemezéséhez.</string>
     <string name="recording_group_now">Most rögzít</string>
     <string name="recording_group_scheduled">Ütemezve</string>
@@ -242,7 +229,6 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> felvétel</item>
     </plurals>
     <string name="settings_recording_mobile_data">Felvétel mobiladaton</string>
-    <string name="settings_recording_mobile_data_description">Kikapcsolva: a Wi-Fi-n kívülre eső felvétel kimarad ahelyett, hogy várna — egy élő műsor nem jön vissza.</string>
     <string name="settings_record_watching">Rögzítsd, amit nézek</string>
     <string name="settings_record_watching_description">Felvétel gombot tesz a lejátszóba, amely elmenti a nézett csatornát. Magát a csatornát tölti le, ezért közben lefoglalja a szolgáltató egyik kapcsolatát, és csatornaváltás vagy a lejátszó elhagyása után is tovább rögzít.</string>
     <string name="settings_record_watching_warning_title">Csak egy kapcsolat</string>

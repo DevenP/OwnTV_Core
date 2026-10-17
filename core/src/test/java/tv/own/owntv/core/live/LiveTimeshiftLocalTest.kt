@@ -14,7 +14,7 @@ import org.junit.Test
 import tv.own.owntv.core.database.entity.ChannelEntity
 
 /**
- * P16d — the rewind on a channel without catch-up, through its own saved copy (N4): the same offsets,
+ * The rewind on a channel without catch-up, through its own saved copy: the same offsets,
  * counter and live edge the apps already show for a provider archive.
  */
 class LiveTimeshiftLocalTest {

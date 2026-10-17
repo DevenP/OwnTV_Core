@@ -25,7 +25,6 @@
     <string name="profiles_kids_badge">HAURRAK</string>
     <string name="profiles_add">Gehitu profila</string>
     <string name="profiles_title">Profilak</string>
-    <string name="profiles_add_button">Gehitu profila</string>
     <string name="profiles_delete_title">Ezabatu “<xliff:g id="name">%1$s</xliff:g>”?</string>
     <string name="profiles_delete_message">Profil hau eta bere gogokoak eta historia kentzen ditu. Iturburuak mantentzen dira.</string>
     <string name="profiles_kids_tag">Haurrak</string>
@@ -33,10 +32,7 @@
     <string name="search_title">Bilatu</string>
     <string name="search_continue">Jarraitu ikusten</string>
     <string name="search_unwatched">Ikusi gabeak</string>
-    <string name="search_hint">Bilatu kanalak, filmak eta telesailak…</string>
     <string name="search_recent">Azken bilaketak</string>
-    <string name="search_recent_empty">Zure azken bilaketak hemen agertuko dira.</string>
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> — emaitzarik ez.</string>
     <string name="search_nothing_in_list">Oraindik ez dago ezer <xliff:g id="list">%1$s</xliff:g> zerrendan.</string>
     <string name="search_clear">Garbitu</string>
     <string name="search_jump_to">Joan hona</string>
@@ -101,12 +97,7 @@
     </plurals>
     <string name="home_trending_movie">Filma</string>
     <string name="home_trending_series">Telesaila</string>
-    <string name="home_trending_section_label">ORAIN JOERAN · SINKRONIZAZIOAREN SNAPSHOTA</string>
     <string name="home_trending_provider_match">Hornitzailearen parekatzea</string>
-    <string name="home_trending_language_choice"><xliff:g id="language">%1$s</xliff:g> hizkuntza aukeratuta</string>
-    <string name="home_trending_english_fallback">EN ordezko aukera</string>
-    <string name="home_trending_untagged_fallback">Etiketarik gabeko ordezko aukera</string>
-    <string name="home_trending_other_fallback"><xliff:g id="language">%1$s</xliff:g> ordezko aukera</string>
     <string name="home_trending_why_label">ZERGATIK AGERTZEN DEN ELEMENTU HAU</string>
     <string name="home_trending_reason_title">TMDB #<xliff:g id="rank">%1$d</xliff:g> postua <xliff:g id="media_type">%2$s</xliff:g> + hornitzailearen parekatzea</string>
     <string name="home_trending_reason_preferred">Hautatutako <xliff:g id="language">%1$s</xliff:g> hizkuntzako hornitzailearen bertsioak lehentasuna du beste hizkuntza bateko sarreren aurrean.</string>
@@ -122,10 +113,7 @@
     <string name="home_trending_trailer">Trailerra</string>
     <string name="home_trending_more_details">Xehetasun gehiago</string>
     <string name="home_trending_all_versions">Bertsio guztiak</string>
-    <string name="home_trending_previous">Aurrekoa</string>
     <string name="home_trending_pause">Pausatu</string>
-    <string name="home_trending_resume">Jarraitu</string>
-    <string name="home_trending_next">Hurrengoa</string>
     <string name="home_trending_unavailable">Bertsio hau ez dago eskuragarri jada</string>
     <string name="home_row_continue_movies_description">Posizioa gordeta duten filmak</string>
     <string name="home_row_continue_series_description">Jarraitzeko edo hurrengo erreproduzitzeko atalak</string>
@@ -169,7 +157,6 @@
     <string name="recording_failed_channel_gone">Kanal hori ez dago jada zure erreprodukzio-zerrendan</string>
     <string name="recording_failed_unknown">Ez da grabatu</string>
     <string name="recording_title">Grabazioak</string>
-    <string name="recording_description">Gailu honetan gordetako zuzeneko telebista.</string>
     <string name="recording_empty">Oraindik ez da ezer grabatu. Ireki telebista-gida, aukeratu programa bat eta sakatu Grabatu.</string>
     <string name="recording_group_now">Orain grabatzen</string>
     <string name="recording_group_scheduled">Programatuta</string>
@@ -201,7 +188,6 @@
     <string name="recording_failed_drm">Kanal hau DRM bidez babestuta dago, beraz ikusi daiteke baina ezin da grabatu. Babesa zure hornitzailearengandik dator, ez OwnTVtik.</string>
     <string name="recording_failed_metered">Ez da grabatu datu mugikorrekin</string>
     <string name="settings_recording_mobile_data">Grabatu datu mugikorrekin</string>
-    <string name="settings_recording_mobile_data_description">Desaktibatuta badago, Wi-Fi sarearen kanpoan egin beharreko grabazioa saltatu egiten da itxaron arazi beharrean — zuzeneko programa ez da berriro etortzen.</string>
     <string name="settings_record_watching">Grabatu ikusten ari naizena</string>
     <string name="settings_record_watching_description">Erreproduzigailuari grabatzeko botoi bat gehitzen dio, ikusten ari zaren kanala gordetzen duena. Kanala bere kabuz eskuratzen du, beraz zure hornitzailearen konexioetako bat erabiltzen du martxan dagoen bitartean, eta grabatzen jarraitzen du kanalez aldatu edo erreproduzigailua utzi ondoren ere.</string>
     <string name="settings_record_watching_warning_title">Konexio bakarra</string>

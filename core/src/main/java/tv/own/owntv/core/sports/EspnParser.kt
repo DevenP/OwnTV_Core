@@ -65,6 +65,17 @@ internal object EspnParser {
         val competition = root.optJSONObject("header")?.optJSONArray("competitions")?.optJSONObject(0)
         val fresh = competition?.let {
             runCatching { teamMatch(match.sport, match.feed, match.leagueSlug, match.leagueName, JSONObject().put("id", match.id).put("name", match.title), it) }.getOrNull()
+        }?.let { m ->
+            // The summary's cricket header is football-shaped: a zero-minute clock and the score as ESPN's
+            // full text. Read it the way the cricket header feed is read, so both pages show 87/3 and 14 ov.
+            if (m.sport != Sport.CRICKET) return@let m
+            val raw = m.competitors.map { it.score?.text.orEmpty() }
+            val status = competition?.optJSONObject("status")?.optString("summary").orEmpty()
+            m.copy(
+                competitors = m.competitors.zip(raw) { c, t -> c.copy(score = cricketScore(t)) },
+                clock = MatchClock("", m.clock?.period ?: 0, cricketOvers(raw)),
+                statusText = status.ifEmpty { m.statusText },
+            )
         }
         val updated = fresh?.copy(title = match.title, subtitle = match.subtitle, venue = match.venue, broadcasts = match.broadcasts, events = match.events) ?: match
         return MatchSummary(
@@ -238,11 +249,10 @@ internal object EspnParser {
                 ),
                 home = c.optString("homeAway") == "home",
                 winner = if (c.has("winner")) c.optBoolean("winner") else null,
-                score = text.takeIf { it.isNotEmpty() }?.let { Score(it.substringBefore(" (").trim(), RUNS.find(it)?.value?.toIntOrNull()) },
+                score = cricketScore(text),
             )
         }
-        // The side that is batting, or batted last, carries the overs: "86/4 (14.1/20 ov, target 84)".
-        val overs = e.optJSONArray("competitors")?.let { arr -> objects(arr).mapNotNull { OVERS.find(it.optString("score"))?.groupValues?.get(1) }.lastOrNull() }
+        val overs = cricketOvers(objects(e.optJSONArray("competitors")).map { it.optString("score") })
         val state = when (stateName) {
             "in" -> MatchState.IN
             "post" -> if (full?.optString("summary").orEmpty().contains("abandon", ignoreCase = true)) MatchState.CANCELLED else MatchState.POST
@@ -262,6 +272,13 @@ internal object EspnParser {
             competitors = competitors,
         )
     }
+
+    /** "87/3 (14.1/50 ov, target 272)" → "87/3", valued by its runs; null for no score yet. */
+    private fun cricketScore(text: String): Score? =
+        text.takeIf { it.isNotEmpty() }?.let { Score(it.substringBefore(" (").trim(), RUNS.find(it)?.value?.toIntOrNull()) }
+
+    /** The side that is batting, or batted last, carries the overs: "86/4 (14.1/20 ov, target 84)". */
+    private fun cricketOvers(scores: List<String>): String? = scores.mapNotNull { OVERS.find(it)?.groupValues?.get(1) }.lastOrNull()
 
     private fun competitor(c: JSONObject, sport: Sport): Competitor {
         val teamJson = c.optJSONObject("team")
@@ -443,7 +460,7 @@ internal object EspnParser {
     private fun time(s: String): Long = OffsetDateTime.parse(s, DateTimeFormatter.ISO_OFFSET_DATE_TIME).toInstant().toEpochMilli()
 
     /**
-     * Crests through ESPN's own resizer at 96 px: 7 KB instead of 80 KB at full size (README §7.5).
+     * Crests through ESPN's own resizer at 96 px: 7 KB instead of 80 KB at full size.
      * Anything not on ESPN's image host is passed through as it is.
      */
     internal fun logo(url: String): String? {

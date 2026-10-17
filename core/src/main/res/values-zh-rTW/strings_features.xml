@@ -25,7 +25,6 @@
     <string name="profiles_kids_badge">兒童</string>
     <string name="profiles_add">新增使用者檔案</string>
     <string name="profiles_title">使用者檔案</string>
-    <string name="profiles_add_button">新增使用者檔案</string>
     <string name="profiles_delete_title">刪除「<xliff:g id="name">%1$s</xliff:g>」？</string>
     <string name="profiles_delete_message">將移除此使用者檔案及其我的最愛和觀看記錄。來源會保留。</string>
     <string name="profiles_kids_tag">兒童</string>
@@ -33,10 +32,7 @@
     <string name="search_title">搜尋</string>
     <string name="search_continue">繼續觀看</string>
     <string name="search_unwatched">尚未觀看</string>
-    <string name="search_hint">搜尋頻道、電影和影集…</string>
     <string name="search_recent">最近的搜尋</string>
-    <string name="search_recent_empty">您最近的搜尋會顯示在這裡。</string>
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> — 找不到結果。</string>
     <string name="search_nothing_in_list"><xliff:g id="list">%1$s</xliff:g> 目前還沒有任何內容。</string>
     <string name="search_clear">清除</string>
     <string name="search_jump_to">前往</string>
@@ -153,12 +149,7 @@
     </plurals>
     <string name="home_trending_movie">電影</string>
     <string name="home_trending_series">影集</string>
-    <string name="home_trending_section_label">現正熱門 · 同步快照</string>
     <string name="home_trending_provider_match">供應商相符項目</string>
-    <string name="home_trending_language_choice"><xliff:g id="language">%1$s</xliff:g> 語言選擇</string>
-    <string name="home_trending_english_fallback">英文備用選擇</string>
-    <string name="home_trending_untagged_fallback">無標籤備用選擇</string>
-    <string name="home_trending_other_fallback"><xliff:g id="language">%1$s</xliff:g> 備用選擇</string>
     <string name="home_trending_why_label">此項目出現的原因</string>
     <string name="home_trending_reason_title">TMDB 排名第 <xliff:g id="rank">%1$d</xliff:g> 名 <xliff:g id="media_type">%2$s</xliff:g> + 供應商相符項目</string>
     <string name="home_trending_reason_preferred">所選的 <xliff:g id="language">%1$s</xliff:g> 供應商版本優先於其他語言的項目。</string>
@@ -174,10 +165,7 @@
     <string name="home_trending_more_details">更多詳細資料</string>
     <string name="home_trending_all_versions">所有版本</string>
     <string name="home_trending_why_menu">為什麼顯示此作品</string>
-    <string name="home_trending_previous">上一個</string>
     <string name="home_trending_pause">暫停</string>
-    <string name="home_trending_resume">繼續</string>
-    <string name="home_trending_next">下一個</string>
     <string name="home_trending_unavailable">此版本已無法使用</string>
     <string name="recording_notification_title">錄製中</string>
     <string name="recording_failed_no_space">已停止：儲存空間不足</string>
@@ -188,7 +176,6 @@
     <string name="recording_failed_channel_gone">該頻道已不在您的播放清單中</string>
     <string name="recording_failed_unknown">未能錄製</string>
     <string name="recording_title">錄影</string>
-    <string name="recording_description">儲存在本裝置上的直播電視。</string>
     <string name="recording_empty">尚無錄影。在電視節目表中對節目按錄影，或長按頻道來錄影或預約時間。</string>
     <string name="recording_group_now">正在錄影</string>
     <string name="recording_group_scheduled">已排程</string>
@@ -231,7 +218,6 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> 個錄影</item>
     </plurals>
     <string name="settings_recording_mobile_data">使用行動數據錄影</string>
-    <string name="settings_recording_mobile_data_description">關閉後，不在 Wi-Fi 下到點的錄影會被略過而不是等待——直播節目不會重來。</string>
     <string name="settings_record_watching">錄下我正在看的內容</string>
     <string name="settings_record_watching_description">在播放器中加入一個錄影按鈕，儲存你正在觀看的頻道。它會自行取得頻道，因此錄影期間會佔用供應商的一個連線，並且在你換台或離開播放器後繼續錄影。</string>
     <string name="settings_record_watching_warning_title">只有一條連線</string>

@@ -46,7 +46,7 @@ class CatchupUrlTest {
         assertNull(CatchupUrl.forM3u("http://x/live.ts", "vod", null, start, end))
     }
 
-    /** M7 — Kodi's rule: `catchup="default"` with no `catchup-source` appends the shift query. */
+    /** Kodi's rule: `catchup="default"` with no `catchup-source` appends the shift query. */
     @Test
     fun forM3u_defaultWithoutSourceAppendsTheShiftQuery() {
         val out = CatchupUrl.forM3u("http://x/live.ts", "default", null, start, end)
@@ -54,7 +54,7 @@ class CatchupUrlTest {
         assertTrue(out!!.startsWith("http://x/live.ts?utc=1609459200&lutc="))
     }
 
-    /** M7 — `${timestamp}` is now (Kodi: "same as {lutc}"), not the programme start. */
+    /** `${timestamp}` is now (Kodi: "same as {lutc}"), not the programme start. */
     @Test
     fun template_timestampIsNow() {
         val now = 1609466400_000L
@@ -62,7 +62,7 @@ class CatchupUrlTest {
         assertEquals("http://x/s?t=1609466400", CatchupUrl.fromTemplate("http://x/s?t={timestamp}", start, end, now))
     }
 
-    /** M7 — `{duration:X}` / `{offset:X}` divide by X seconds; a non-number argument is left alone. */
+    /** `{duration:X}` / `{offset:X}` divide by X seconds; a non-number argument is left alone. */
     @Test
     fun template_durationAndOffsetWithADivisor() {
         val now = start + 7_200_000L // two hours after the start
@@ -74,7 +74,7 @@ class CatchupUrlTest {
         assertEquals("http://x/{duration:0}", CatchupUrl.fromTemplate("http://x/{duration:0}", start, end, now))
     }
 
-    /** M7 — `{utc:FMT}` and friends format their own instant; only Y m d H M S are fields. */
+    /** `{utc:FMT}` and friends format their own instant; only Y m d H M S are fields. */
     @Test
     fun template_customFormats() {
         val s = 1609502461_000L // 2021-01-01 12:01:01 UTC
@@ -93,7 +93,7 @@ class CatchupUrlTest {
         assertEquals("http://x/{catchup-id:x}", CatchupUrl.fromTemplate("http://x/{catchup-id:x}", s, e, now))
     }
 
-    /** M7 — `catchup-correction` moves the programme's times before the URL is built, for every style. */
+    /** `catchup-correction` moves the programme's times before the URL is built, for every style. */
     @Test
     fun forM3u_correctionShiftsTheTimes() {
         assertEquals(
@@ -106,7 +106,7 @@ class CatchupUrlTest {
         )
     }
 
-    /** F17 — `{lutc}` used to survive into the request verbatim. */
+    /** `{lutc}` used to survive into the request verbatim. */
     @Test
     fun template_fillsNowTokens() {
         val now = 1609466400_000L

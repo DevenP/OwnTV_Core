@@ -223,7 +223,7 @@ class SportsRepositoryTest {
         assertFalse(Feed.Scoreboard(bl) in repo.board.value.failing)
     }
 
-    // --- auto rebuild (R1.3) ---
+    // --- auto rebuild ---
 
     @Test
     fun `app start - rebuilds once in app-start mode, never in manual, and an interval only when due`() = runTest {

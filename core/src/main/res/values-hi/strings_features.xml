@@ -25,7 +25,6 @@
     <string name="profiles_kids_badge">बच्चे</string>
     <string name="profiles_add">प्रोफ़ाइल जोड़ें</string>
     <string name="profiles_title">प्रोफ़ाइलें</string>
-    <string name="profiles_add_button">प्रोफ़ाइल जोड़ें</string>
     <string name="profiles_delete_title">“<xliff:g id="name">%1$s</xliff:g>” को हटाएँ?</string>
     <string name="profiles_delete_message">यह इस प्रोफ़ाइल और इसके पसंदीदा व इतिहास को हटा देता है। स्रोत रखे जाते हैं।</string>
     <string name="profiles_kids_tag">बच्चों की</string>
@@ -33,10 +32,7 @@
     <string name="search_title">खोज</string>
     <string name="search_continue">देखना जारी रखें</string>
     <string name="search_unwatched">नहीं देखा गया</string>
-    <string name="search_hint">चैनल, फ़िल्में और सीरीज़ खोजें…</string>
     <string name="search_recent">हाल की खोजें</string>
-    <string name="search_recent_empty">आपकी हाल की खोजें यहाँ दिखाई देंगी।</string>
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> — कोई परिणाम नहीं।</string>
     <string name="search_nothing_in_list"><xliff:g id="list">%1$s</xliff:g> में अभी कुछ नहीं है।</string>
     <string name="search_clear">साफ़ करें</string>
     <string name="search_jump_to">सीधे जाएँ</string>
@@ -161,12 +157,7 @@
     </plurals>
     <string name="home_trending_movie">फ़िल्म</string>
     <string name="home_trending_series">सीरीज़</string>
-    <string name="home_trending_section_label">अभी ट्रेंड में · सिंक स्नैपशॉट</string>
     <string name="home_trending_provider_match">प्रदाता से मेल</string>
-    <string name="home_trending_language_choice"><xliff:g id="language">%1$s</xliff:g> भाषा का विकल्प</string>
-    <string name="home_trending_english_fallback">अंग्रेज़ी फ़ॉलबैक विकल्प</string>
-    <string name="home_trending_untagged_fallback">बिना भाषा टैग वाला फ़ॉलबैक विकल्प</string>
-    <string name="home_trending_other_fallback"><xliff:g id="language">%1$s</xliff:g> फ़ॉलबैक विकल्प</string>
     <string name="home_trending_why_label">यह आइटम क्यों दिखाई दे रहा है</string>
     <string name="home_trending_reason_title">TMDB रैंक #<xliff:g id="rank">%1$d</xliff:g> <xliff:g id="media_type">%2$s</xliff:g> + प्रदाता से मेल</string>
     <string name="home_trending_reason_preferred">चुना गया <xliff:g id="language">%1$s</xliff:g> प्रदाता संस्करण दूसरी भाषा की प्रविष्टियों पर प्राथमिकता पाता है।</string>
@@ -183,10 +174,7 @@
     <string name="home_trending_more_details">अधिक जानकारी</string>
     <string name="home_trending_all_versions">सभी संस्करण</string>
     <string name="home_trending_why_menu">यह शीर्षक यहाँ क्यों है</string>
-    <string name="home_trending_previous">पिछला</string>
     <string name="home_trending_pause">रोकें</string>
-    <string name="home_trending_resume">फिर से शुरू करें</string>
-    <string name="home_trending_next">अगला</string>
     <string name="home_trending_unavailable">यह संस्करण अब उपलब्ध नहीं है</string>
     <string name="recording_notification_title">रिकॉर्ड हो रहा है</string>
     <string name="recording_failed_no_space">रुक गया: जगह नहीं बची</string>
@@ -197,7 +185,6 @@
     <string name="recording_failed_channel_gone">वह चैनल अब आपकी प्लेलिस्ट में नहीं है</string>
     <string name="recording_failed_unknown">रिकॉर्ड नहीं हुआ</string>
     <string name="recording_title">रिकॉर्डिंग</string>
-    <string name="recording_description">इस डिवाइस पर सहेजा गया लाइव टीवी।</string>
     <string name="recording_empty">अभी तक कुछ रिकॉर्ड नहीं हुआ। टीवी गाइड में किसी कार्यक्रम पर रिकॉर्ड करें दबाएँ, या किसी चैनल को देर तक दबाकर उसे रिकॉर्ड करें या समय शेड्यूल करें।</string>
     <string name="recording_group_now">अभी रिकॉर्ड हो रहा है</string>
     <string name="recording_group_scheduled">निर्धारित</string>
@@ -242,7 +229,6 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> रिकॉर्डिंग</item>
     </plurals>
     <string name="settings_recording_mobile_data">मोबाइल डेटा पर रिकॉर्ड करें</string>
-    <string name="settings_recording_mobile_data_description">बंद होने पर, Wi-Fi के बाहर पड़ने वाली रिकॉर्डिंग इंतज़ार करने के बजाय छोड़ दी जाती है — लाइव कार्यक्रम दोबारा नहीं आता।</string>
     <string name="settings_record_watching">जो देख रहा हूँ उसे रिकॉर्ड करें</string>
     <string name="settings_record_watching_description">प्लेयर में एक रिकॉर्ड बटन जोड़ता है, जो आपका देखा जा रहा चैनल सहेजता है। यह चैनल खुद लाता है, इसलिए चलते समय आपके प्रदाता का एक कनेक्शन लेता है, और चैनल बदलने या प्लेयर छोड़ने के बाद भी रिकॉर्ड करता रहता है।</string>
     <string name="settings_record_watching_warning_title">सिर्फ़ एक कनेक्शन</string>

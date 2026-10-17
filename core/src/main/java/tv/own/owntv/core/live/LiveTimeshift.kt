@@ -27,7 +27,7 @@ class LiveTimeshift(
     private val scope: CoroutineScope,
     private val playback: Playback,
     /** Open [ChannelEntity]'s archive starting at the given wall-clock instant, and return the instant
-     *  it really starts at (an Xtream archive starts on the minute — M8). Returns null when the URL
+     *  it really starts at (an Xtream archive starts on the minute). Returns null when the URL
      *  could not be built, or the user returned to live while it was being resolved. A null ends the
      *  rewind — see [scheduleLoad]. */
     private val loadArchive: suspend (ChannelEntity, Long, Int) -> Long?,
@@ -37,12 +37,12 @@ class LiveTimeshift(
     private val nowMs: () -> Long = { System.currentTimeMillis() },
     private val coalesceMs: Long = 350,
     private val tickMs: Long = 1_000,
-    /** N4 — the channel's own saved copy, for a channel with no provider archive; null where there is none. */
+    /** The channel's own saved copy, for a channel with no provider archive; null where there is none. */
     private val local: Local? = null,
 ) {
 
     /**
-     * N4 — a copy of the channel saved on this device while it is watched (see
+     * A copy of the channel saved on this device while it is watched (see
      * `tv.own.owntv.player.LiveTuneController`), rewound instead of the provider's archive when the
      * channel has none. Everything here is the copy of the channel on screen, so the answers are null
      * for any other channel and whenever there is no copy.
@@ -86,7 +86,7 @@ class LiveTimeshift(
      *  playback position, so one field serves the rewind and the guide catch-up paths alike. */
     private var archiveBaseWall: Long? = null
 
-    /** Whether [ch] can be rewound at all: a provider archive, or its own saved copy (N4). */
+    /** Whether [ch] can be rewound at all: a provider archive, or its own saved copy. */
     fun canRewind(ch: ChannelEntity): Boolean = ch.catchup || local?.windowSec(ch) != null
 
     /** How deep [ch]'s archive is, in seconds — the bound every jump and scrub is clamped to. A saved
@@ -159,7 +159,7 @@ class LiveTimeshift(
     /**
      * A provider archive is never asked for less than [CatchupJumps.MIN_OFFSET_SEC] behind live: one 30 s
      * rewind, floored to the current minute, asked the panel for a recording not yet written — a stream
-     * that starts with no picture (#229). Inside that last minute a step back lands on the minimum and a
+     * that starts with no picture. Inside that last minute a step back lands on the minimum and a
      * step forward goes live, so the forward key always reaches the edge. The saved copy has no such gap.
      */
     private fun archiveFloor(ch: ChannelEntity, offsetSec: Int, towardLive: Boolean): Int = when {
@@ -212,7 +212,7 @@ class LiveTimeshift(
     }
 
     /**
-     * The one 1 Hz ticker (P-F2). There used to be two — one for the rewind counter, one for the
+     * The one 1 Hz ticker. There used to be two — one for the rewind counter, one for the
      * watching clock — and they were not exclusive: jumping into a rewind from a catch-up programme
      * left the clock's loop running alongside the new one, both writing the same value every second.
      *
@@ -259,7 +259,7 @@ class LiveTimeshift(
         _watchingWallMs.value = archiveBaseWall?.let { it + playback.positionMs }
     }
 
-    // --- The saved copy (N4) -----------------------------------------------------------------------
+    // --- The saved copy -----------------------------------------------------------------------
 
     /** Until then a re-opened copy is still starting, so its position says nothing yet. */
     private var localSettleUntil = 0L

@@ -25,7 +25,6 @@
     <string name="profiles_kids_badge">BARN</string>
     <string name="profiles_add">Legg til profil</string>
     <string name="profiles_title">Profiler</string>
-    <string name="profiles_add_button">Legg til profil</string>
     <string name="profiles_delete_title">Slett «<xliff:g id="name">%1$s</xliff:g>»?</string>
     <string name="profiles_delete_message">Fjerner denne profilen samt tilhørende favoritter og historikk. Kildene beholdes.</string>
     <string name="profiles_kids_tag">Barn</string>
@@ -33,10 +32,7 @@
     <string name="search_title">Søk</string>
     <string name="search_continue">Fortsett å se</string>
     <string name="search_unwatched">Usett</string>
-    <string name="search_hint">Søk etter kanaler, filmer og serier…</string>
     <string name="search_recent">Nylige søk</string>
-    <string name="search_recent_empty">De nylige søkene dine vises her.</string>
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> – ingen resultater.</string>
     <string name="search_nothing_in_list">Ingenting i <xliff:g id="list">%1$s</xliff:g> ennå.</string>
     <string name="search_clear">Tøm</string>
     <string name="search_jump_to">Gå til</string>
@@ -161,12 +157,7 @@
     </plurals>
     <string name="home_trending_movie">Film</string>
     <string name="home_trending_series">Serier</string>
-    <string name="home_trending_section_label">POPULÆRT NÅ · ØYEBLIKKSBILDE FRA SYNKRONISERING</string>
     <string name="home_trending_provider_match">Leverandørtreff</string>
-    <string name="home_trending_language_choice"><xliff:g id="language">%1$s</xliff:g> språkvalg</string>
-    <string name="home_trending_english_fallback">Reservevalg på engelsk</string>
-    <string name="home_trending_untagged_fallback">Reservevalg uten språkkode</string>
-    <string name="home_trending_other_fallback"><xliff:g id="language">%1$s</xliff:g> reservevalg</string>
     <string name="home_trending_why_label">HVORFOR DETTE ELEMENTET VISES</string>
     <string name="home_trending_reason_title">TMDB-plassering #<xliff:g id="rank">%1$d</xliff:g> <xliff:g id="media_type">%2$s</xliff:g> + leverandørtreff</string>
     <string name="home_trending_reason_preferred">Den valgte leverandørversjonen på <xliff:g id="language">%1$s</xliff:g> prioriteres foran oppføringer på andre språk.</string>
@@ -183,10 +174,7 @@
     <string name="home_trending_more_details">Flere detaljer</string>
     <string name="home_trending_all_versions">Alle versjoner</string>
     <string name="home_trending_why_menu">Hvorfor denne tittelen er her</string>
-    <string name="home_trending_previous">Forrige</string>
     <string name="home_trending_pause">Pause</string>
-    <string name="home_trending_resume">Fortsett</string>
-    <string name="home_trending_next">Neste</string>
     <string name="home_trending_unavailable">Denne versjonen er ikke lenger tilgjengelig</string>
     <string name="recording_notification_title">Tar opp</string>
     <string name="recording_failed_no_space">Stoppet: ingen plass igjen</string>
@@ -197,7 +185,6 @@
     <string name="recording_failed_channel_gone">Kanalen finnes ikke lenger i spillelisten</string>
     <string name="recording_failed_unknown">Det ble ikke tatt opp</string>
     <string name="recording_title">Opptak</string>
-    <string name="recording_description">Direkte-TV lagret på denne enheten.</string>
     <string name="recording_empty">Ingenting tatt opp ennå. Trykk Ta opp på et program i TV-guiden, eller hold inne en kanal for å ta den opp eller planlegge et tidspunkt.</string>
     <string name="recording_group_now">Tar opp nå</string>
     <string name="recording_group_scheduled">Planlagt</string>
@@ -242,7 +229,6 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> opptak</item>
     </plurals>
     <string name="settings_recording_mobile_data">Ta opp på mobildata</string>
-    <string name="settings_recording_mobile_data_description">Av: et opptak som faller utenfor Wi-Fi hoppes over i stedet for å vente — et direktesendt program kommer ikke tilbake.</string>
     <string name="settings_record_watching">Ta opp det jeg ser på</string>
     <string name="settings_record_watching_description">Legger en opptaksknapp i spilleren som lagrer kanalen du ser på. Den henter kanalen selv, så den bruker en av leverandørens tilkoblinger mens den går, og fortsetter å ta opp når du bytter kanal eller forlater spilleren.</string>
     <string name="settings_record_watching_warning_title">Bare én tilkobling</string>

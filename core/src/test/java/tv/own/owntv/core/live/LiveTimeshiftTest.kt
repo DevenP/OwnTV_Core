@@ -161,7 +161,7 @@ class LiveTimeshiftTest {
     }
 
     /**
-     * M8 — an Xtream archive starts on the minute, up to 59 s before the instant asked for. Both counters
+     * An Xtream archive starts on the minute, up to 59 s before the instant asked for. Both counters
      * must be measured from where it really starts, or "behind live" and the HUD clock are a minute off.
      */
     @Test
@@ -180,7 +180,7 @@ class LiveTimeshiftTest {
         h.stop()
     }
 
-    /** M8 — which archives start on the minute: Xtream, and an M3U `xc` channel unless a template wins. */
+    /** Which archives start on the minute: Xtream, and an M3U `xc` channel unless a template wins. */
     @Test
     fun `xtream archives start on the minute`() {
         val xtream = tv.own.owntv.core.model.SourceType.XTREAM

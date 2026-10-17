@@ -80,7 +80,7 @@ data class MediaMeta(
     val subtitle: String? = null,
     val year: String? = null,
     val logoUrl: String? = null,
-    /** P6 — stable per-item identity for the VOD engine pin (see
+    /** Stable per-item identity for the VOD engine pin (see
      *  [tv.own.owntv.core.player.enginePinKey]). Null falls back to the stream URL, which is what
      *  every pin used to be keyed on and is still correct for M3U/Xtream. */
     val contentKey: String? = null,
@@ -89,8 +89,8 @@ data class MediaMeta(
     val episodeNumber: Int? = null,
     /** Semantic live-rewind start; formatted by the current HUD locale, never in the ViewModel. */
     val rewindStartMs: Long? = null,
-    /** v44 — what the remembered audio/subtitle language is keyed on: the SERIES for an episode (owner
-     *  decision 11), so every episode starts on the tracks last picked in that show. Null = [contentKey]. */
+    /** v44 — what the remembered audio/subtitle language is keyed on: the SERIES for an episode,
+     *  so every episode starts on the tracks last picked in that show. Null = [contentKey]. */
     val trackKey: String? = null,
 )
 
@@ -106,7 +106,7 @@ data class PlaylistItem(
     /** Per-item HTTP headers (M3U `#EXTVLCOPT`/`#EXTHTTP`/`#KODIPROP`), stored `Key: Value` per line.
      *  Applied to whichever engine loads this item; null = the source's own UA/headers only. */
     val httpHeaders: String? = null,
-    /** Widevine/ClearKey licence details (#115); non-null pins this item to ExoPlayer. */
+    /** Widevine/ClearKey licence details; non-null pins this item to ExoPlayer. */
     val drmConfig: String? = null,
     /** The container this item declares for itself (v43), as
      *  [tv.own.owntv.core.player.ManifestType.key]; null = infer from the URL. */
@@ -242,7 +242,7 @@ class OwnTVPlayer(
         /**
          * FFmpeg's short codec name from mpv's `video-codec`. Older mpv put the short name first
          * ("mpeg4 (MPEG-4 part 2)"); current mpv gives only FFmpeg's long description ("H.264 / AVC / …"),
-         * which read as "h.264" made every H.264 stream look unsupported (#229). A long description this
+         * which read as "h.264" made every H.264 stream look unsupported. A long description this
          * table does not know is null — unknown, never a definite no.
          */
         internal fun ffmpegCodecName(videoCodec: String?): String? {
@@ -263,7 +263,7 @@ class OwnTVPlayer(
             }
         }
 
-        // mpv's stock subtitle values, restored verbatim for every option of the custom look (#96)
+        // mpv's stock subtitle values, restored verbatim for every option of the custom look
         // that is left on "Default" — or whenever the master toggle is off.
         private const val MPV_DEFAULT_SUB_COLOR = "#FFFFFFFF"
         private const val MPV_DEFAULT_SUB_BACK_COLOR = "#00000000"
@@ -324,7 +324,7 @@ class OwnTVPlayer(
         // early enough that the tolerant reopen still gets several attempts before the error UI.
         const val TOLERANT_DEMUX_AFTER_RECONNECTS = 3
         const val LIVE_OPEN_TIMEOUT_MS = 10_000L // bound FFmpeg/network loops that never emit FILE_LOADED/END_FILE
-        // C-M2 — mpv's `network-timeout` for live (FFmpeg's connect and read wait). Films keep mpv's 60 s or
+        // mpv's `network-timeout` for live (FFmpeg's connect and read wait). Films keep mpv's 60 s or
         // their own setting; on live one hung HLS segment held the picture that long, where 10 s lets FFmpeg
         // skip it — the same bound the open timeout and the stall watchdog already put on a channel.
         const val LIVE_NETWORK_TIMEOUT_SECS = 10
@@ -337,7 +337,7 @@ class OwnTVPlayer(
             "reconnect=1,reconnect_streamed=1,reconnect_delay_max=8,reconnect_on_http_error=5xx"
 
         /**
-         * C-M3 — live raw TS also retries `458` ("account busy"), so the buffer holds the picture while a
+         * Live raw TS also retries `458` ("account busy"), so the buffer holds the picture while a
          * one-connection panel lets the old session go, instead of a full reload. A later key replaces the
          * earlier one in mpv, and `[…]` keeps FFmpeg's comma list in one value. FFmpeg retries on open too,
          * and its 0+1+3+7 s back-off would outlast [LIVE_OPEN_TIMEOUT_MS], so three retries (4 s) is the cap
@@ -377,7 +377,7 @@ class OwnTVPlayer(
          * network/decoder problem.
          *
          * Everything 4xx used to be treated as [HttpRefusal.HARD], which contradicted the ExoPlayer
-         * side over `458` (F29): Exo backs off and reconnects on a one-session panel while mpv gave up
+         * side over `458`: Exo backs off and reconnects on a one-session panel while mpv gave up
          * after a single repeat — the "mpv can't play what ExoPlayer plays" symptom on exactly the
          * panels where the first engine simply had not let go yet.
          *
@@ -411,7 +411,7 @@ class OwnTVPlayer(
             httpRefusalKind(mpvError) == HttpRefusal.HARD
 
         /**
-         * M4 — whether [rung] of the start-failure ladder can still help after mpv's last error. A hard
+         * Whether [rung] of the start-failure ladder can still help after mpv's last error. A hard
          * refusal means the server never sent the file, so demux tolerance and the decoder rescues — both
          * of which assume a delivered file — cannot; another User-Agent can turn a 401/403 round, never a
          * 404/410. A busy answer, or a failure that is not an HTTP status at all, keeps the whole ladder.
@@ -498,7 +498,7 @@ class OwnTVPlayer(
         // ESTIMATED. The longest of the release waits because it covers the full engine swap, where
         // the outgoing decoder is torn down and the incoming one is built immediately after.
         const val DECODER_RELEASE_MS = 600L        // outgoing engine's MediaCodec release (engine swap / next episode)
-        // MEASURED — 508 ms for the surface release to complete on the owner's Realtek box. This is the
+        // MEASURED — 508 ms for the surface release to complete on a Realtek box. This is the
         // one number here with a real observation behind it, and 500 is that observation rounded down
         // to the beat the rest of the file uses. Do not lower it on the grounds that it "looks like a
         // guess": the guess would be a shorter wait, and the shorter wait is what produced the black
@@ -511,7 +511,7 @@ class OwnTVPlayer(
         const val ARCHIVE_STALL_MS = 10_000L       // an archive "playing" with its clock stuck this long has stalled
         // The Exo position emit (500ms) and the fps-chip recheck (1,500ms) used to live here. Both now
         // ride [PlayerHeartbeat]'s shared 1 Hz beat, so neither has an interval of its own any more.
-        const val EXO_SUB_DELAY_DEBOUNCE_MS = 350L // settle time before a timing change re-prepares on Exo (§8)
+        const val EXO_SUB_DELAY_DEBOUNCE_MS = 350L // settle time before a timing change re-prepares on Exo
         const val FREEZE_MAX_W = 960               // capture width cap for the engine-swap freeze frame
         const val SURROUND_CHECK_MS = 7_000L       // wait before verifying surround audio actually produces sound
         // Window the audio clock is sampled over for the "sink accepted the format then played silence"
@@ -587,7 +587,7 @@ class OwnTVPlayer(
     private var mpv: MPVLib? = null
     private var initialized = false
 
-    /** N9/N10 on mpv: the newest `af` value from the settings. Kept even before mpv exists, and applied
+    /** Night mode and levelling on mpv: the newest `af` value from the settings. Kept even before mpv exists, and applied
      *  right after every init, so a setting that finishes loading while mpv starts is never lost. */
     @Volatile private var mpvAudioFilter = AudioDynamics.mpvFilter(AudioDynamics.nightMode, AudioDynamics.levelling)
 
@@ -608,19 +608,19 @@ class OwnTVPlayer(
             currentUrlField = value
             refreshActive()
         }
-    /** P6 — stable engine-pin key of the loaded item (see [MediaMeta.contentKey]); null = key on the URL. */
+    /** Stable engine-pin key of the loaded item (see [MediaMeta.contentKey]); null = key on the URL. */
     private var currentContentKey: String? = null
     private var currentSeasonNumber: Int? = null
     private var currentEpisodeNumber: Int? = null
     private var currentRewindStartMs: Long? = null
 
     /**
-     * Reconnect URL provider — set ONLY for an expiring-URL source (Stalker, plan §5.4.1). The live
+     * Reconnect URL provider — set ONLY for an expiring-URL source (Stalker). The live
      * stall-reconnect watchdogs and HUD Retry await it before reloading, so a stream that dies
      * mid-session gets a fresh create_link instead of looping on the dead resolved URL. Null
      * (default) → M3U/Xtream behavior unchanged (replay the stored URL).
      *
-     * **Lifetime is the load, not the player** (F12). Live tunes install/clear it through
+     * **Lifetime is the load, not the player**. Live tunes install/clear it through
      * `LiveViewModel`; every [play] resets it to what that item needs, so a movie can never inherit
      * the previous channel's provider and retry into a live stream. Stalker VOD passes its own
      * provider — a `create_link` URL expires in a couple of hours, which is well inside a film.
@@ -659,7 +659,7 @@ class OwnTVPlayer(
 
     /** Whether the mpv core itself holds [attachedSurface]. [surfaceAttached] says a surface exists; the
      *  engine handovers detach mpv from it on the worker and leave that true, so a later mpv load set a
-     *  video output on a core with no surface ("Missing surface pointer", #229). */
+     *  video output on a core with no surface ("Missing surface pointer"). */
     @Volatile private var mpvHasSurface = false
     private var pendingUrlField: String? = null
     private var pendingUrl: String?
@@ -680,10 +680,10 @@ class OwnTVPlayer(
     // null = use DEFAULT_USER_AGENT on first attempt, FALLBACK_USER_AGENT on suspicious failure.
     // non-null = always use the given UA, no automatic fallback.
     private var currentUserAgent: String? = null
-    // Per-channel HTTP headers for the item being played (M3U `#EXTVLCOPT`/`#EXTHTTP`/`#KODIPROP`,
-    // F16). A `User-Agent` in here overrides the per-source one — it is the more specific setting.
+    // Per-channel HTTP headers for the item being played (M3U `#EXTVLCOPT`/`#EXTHTTP`/`#KODIPROP`).
+    // A `User-Agent` in here overrides the per-source one — it is the more specific setting.
     private var currentHeaders: Map<String, String> = emptyMap()
-    /** This item's DRM licence details (#115), decoded once per load. Non-null means ExoPlayer is the
+    /** This item's DRM licence details, decoded once per load. Non-null means ExoPlayer is the
      *  only engine that can play it: libmpv has no CDM, so it cannot fetch a key from a licence
      *  server, and the ladder must never offer mpv. */
     private var currentDrm: tv.own.owntv.core.drm.DrmConfig? = null
@@ -746,9 +746,8 @@ class OwnTVPlayer(
     // is no upgrade that fixes this. Accepted: live on mpv keeps mild judder; ExoPlayer is the smooth
     // engine and mpv remains the fallback for streams ExoPlayer can't open.
 
+    /** True while the direct (decoder-to-surface) output is in use — zoom is skipped, the app draws subs. */
     private val _directRender = MutableStateFlow(false)
-    /** True while the direct (decoder-to-surface) output is in use — HUD hides zoom, app draws subs. */
-    val directRender: StateFlow<Boolean> = _directRender.asStateFlow()
 
     /** Hardware decoding effectively in use right now — the global setting, minus a per-item override
      *  forced on after the hardware decoder failed to start a stream. */
@@ -805,7 +804,7 @@ class OwnTVPlayer(
     }
 
     /**
-     * Deinterlacing follows the render path, not a setting (E13, owner decision 3). No video filter runs on
+     * Deinterlacing follows the render path, not a setting. No video filter runs on
      * the direct decoder-to-surface output — the TV's own processing deinterlaces there — so it is only
      * ever asked for while mpv renders the picture itself: hardware decoding off, the copy rung, or a
      * software rescue.
@@ -828,7 +827,7 @@ class OwnTVPlayer(
 
     /** mpv `audio-channels`: multichannel allowed → the layouts the current output's PCM really takes
      *  ([MpvAudioChannels]); Stereo only → force stereo. If a sink claims support but actually
-     *  mis-plays multichannel PCM (the "2× speed, no sound", #25) or goes silent, the failsafe latches
+     *  mis-plays multichannel PCM (the "2× speed, no sound") or goes silent, the failsafe latches
      *  [AudioOutputPolicy] and every engine forces stereo for the rest of the session. Always decoded
      *  PCM, so the audio clock stays alive. */
     private fun audioChannelsValue(): String =
@@ -882,11 +881,11 @@ class OwnTVPlayer(
         // forever during OPEN so the stream never starts. [streamLavfOptionsFor] owns that distinction and
         // is the single place stream-lavf-o is decided, for this path and the loadfile path alike.
         setPropertyString("stream-lavf-o", streamLavfOptionsFor(url, isLiveContent, effectiveHls))
-        // "Pre-buffer" (F07): mpv's own pre-roll gate — hold the picture until the cache
+        // "Pre-buffer": mpv's own pre-roll gate — hold the picture until the cache
         // holds N seconds, and do the same after an underrun (which is what "pause 3-4 s then play
         // makes it smooth" was doing by hand). Live only; 0 restores mpv's defaults.
         val prerollSecs = effectivePrerollSecs()
-        // N18 — a film's own buffer and network timeout (Settings; 0 = Auto = the values used before).
+        // A film's own buffer and network timeout (Settings; 0 = Auto = the values used before).
         // Set on every load, live included, so a channel after a film gets the device's values back.
         // demuxer-max-bytes follows the choice too (SmartBuffer): the tier's for live and Auto, a chosen
         // buffer's own size (within the device's film ceiling) for a film. Set on every load, so a channel
@@ -896,7 +895,7 @@ class OwnTVPlayer(
         val networkTimeout = if (isLiveContent) LIVE_NETWORK_TIMEOUT_SECS else FilmNetwork.mpvTimeoutSecs(film?.vodNetworkTimeoutSecs ?: 0)
         setPropertyString("network-timeout", networkTimeout.toString())
         playerBudget?.let { budget ->
-            // Live latency (#72): a choice sets mpv's readahead AND its cache — see [MpvLiveBuffer].
+            // Live latency: a choice sets mpv's readahead AND its cache — see [MpvLiveBuffer].
             val live = MpvLiveBuffer.resolve(effectiveLiveBufferSecs(), prerollSecs, budget)
             setPropertyString("demuxer-readahead-secs", if (isLiveContent) live.readahead else FilmNetwork.readaheadSecs(film?.vodBufferSecs ?: 0, budget))
             setPropertyString("cache-secs", if (isLiveContent) live.cache else FilmNetwork.bufferSecs(film?.vodBufferSecs ?: 0, budget).toString())
@@ -936,7 +935,7 @@ class OwnTVPlayer(
         // to the display's vsync and resample audio to match — which is what removes 24/25 fps judder.
         // On the direct `mediacodec_embed` path it is meaningless: frames go to the decoder's surface and
         // the display picks its own cadence, so the setting there stays `audio` and Auto frame rate is the
-        // only cure (F13).
+        // only cure.
         setPropertyString(
             "video-sync",
             when {
@@ -949,7 +948,7 @@ class OwnTVPlayer(
         // Never for a catch-up archive: it starts wherever the panel cut it, and a 1 MB / 1 s probe can end
         // before the first SPS ("Could not find codec parameters … unspecified size"). The hardware decoder
         // cannot open without it, and mpv then drops to software decode on its own, without a word to us —
-        // every catch-up on that panel ran in software (#229, the owner's Xtream panel). The full probe reads
+        // every catch-up on that panel ran in software. The full probe reads
         // on to the first keyframe; an archive is not zapped, so the extra second is not paid per press.
         val trim = rawTs && !item.forceFullProbe && !item.archiveThisItem
         usedTrimmedProbe = trim
@@ -1019,10 +1018,10 @@ class OwnTVPlayer(
 
     // Escape-hatch toggle: when off, no live fps/bitrate measuring runs at all (declared values only).
     private var measuredStreamStats = settings.measuredStreamStatsDefault
-    // Live latency (#72): mpv's live buffer seconds (see [MpvLiveBuffer]); null = keep the device budget
+    // Live latency: mpv's live buffer seconds (see [MpvLiveBuffer]); null = keep the device budget
     // default (Balanced). Applied per-load in applyProbeProfile (live only, so VOD is never affected).
     @Volatile private var liveBufferSecs: Int? = null
-    // "Pre-buffer" (F07): the global choice, plus the per-playlist override the current item
+    // "Pre-buffer": the global choice, plus the per-playlist override the current item
     // was opened with (null = follow the global one). Live only; applied per-load in applyProbeProfile.
     @Volatile private var livePrerollSecs: Int = 0
     @Volatile private var prerollOverrideSecs: Int? = null
@@ -1045,12 +1044,12 @@ class OwnTVPlayer(
     // eagerly mirrored so loadUrl can consult them synchronously.
     @Volatile private var vodPinnedMpv: Set<String> = emptySet()
     @Volatile private var vodPinnedExo: Set<String> = emptySet()
-    // N11 — the Settings limits (0 = none). Declared before init: its collector may run during construction.
+    // The Settings limits (0 = none). Declared before init: its collector may run during construction.
     @Volatile private var qualityMaxHeight = 0
     @Volatile private var qualityMobileMaxHeight = 0
-    private var surroundMode = SurroundMode.AUTO // see SettingsRepository.surroundMode (#25)
+    private var surroundMode = SurroundMode.AUTO // see SettingsRepository.surroundMode
     private var autoPlayNext = true
-    // Subtitle appearance (#96). While subStyleOn is false NOTHING here is pushed to mpv, so its own
+    // Subtitle appearance. While subStyleOn is false NOTHING here is pushed to mpv, so its own
     // defaults (and any ASS styling a file carries) stay exactly as they are today — and each option
     // left on its own "Default" value is likewise never pushed.
     private var subStyleOn = false
@@ -1060,7 +1059,7 @@ class OwnTVPlayer(
     private var subPosition = SubtitleStyle.Position.DEFAULT
     private var subBgOpacity = SubtitleStyle.OPACITY_DEFAULT
     private var audioDelaySec = 0.0
-    /** The same offset for the ExoPlayer film engine, which has no `audio-delay` of its own (N1). */
+    /** The same offset for the ExoPlayer film engine, which has no `audio-delay` of its own. */
     private val exoAudioDelay = AudioDelayClock()
     private var baseAudioDelayMs = 0 // the Settings audio-delay; each new file resets the in-player nudge to it
     private val _audioDelayMs = MutableStateFlow(0)
@@ -1070,10 +1069,10 @@ class OwnTVPlayer(
     /** Whether the current item has its own remembered A/V-sync offset (playback_prefs, DB v35). */
     val audioDelayRemembered: StateFlow<Boolean> = _audioDelayRemembered.asStateFlow()
     private val _subDelayMs = MutableStateFlow(0)
-    /** Subtitle-timing offset (ms) for the active subtitle (subtitle plan §8). Positive = shown later. */
+    /** Subtitle-timing offset (ms) for the active subtitle. Positive = shown later. */
     val subDelayMs: StateFlow<Int> = _subDelayMs.asStateFlow()
     private var exoSubDelayJob: Job? = null
-    /** Set by the subtitle layer (§8.4): fired when the ACTIVE subtitle changes so its remembered
+    /** Set by the subtitle layer: fired when the ACTIVE subtitle changes so its remembered
      *  timing can be applied. Identity: "path:&lt;file&gt;" external, "emb:&lt;ordinal&gt;:&lt;lang&gt;" embedded, null off. */
     var onActiveSubtitleChanged: ((identity: String?) -> Unit)? = null
     /** Set by the subtitle layer: fired after each USER timing change with the value to persist. */
@@ -1171,7 +1170,7 @@ class OwnTVPlayer(
 
     private fun consumePendingStopEndFile(): Boolean = pendingStopEndFiles.consume()
 
-    /** Every setting this engine reads, as one process-wide snapshot (S15) — see [PlaybackSettings]. */
+    /** Every setting this engine reads, as one process-wide snapshot — see [PlaybackSettings]. */
     private val playbackSettings = PlaybackSettings.of(settings)
 
     init {
@@ -1197,23 +1196,23 @@ class OwnTVPlayer(
             // A reload re-inits the audio chain so the new channel layout takes effect on the playing stream.
             if (initialized) {
                 mpvAsync {
-                    val sur = multichannelAllowed() // AUTO or Surround; see the #25 pin in ensureInit
+                    val sur = multichannelAllowed() // AUTO or Surround; see the surround pin in ensureInit
                     applyAudioChannels()
                     // Only ever pin, never "unpin": mpv's audio-format cannot be put back to automatic at
                     // runtime (it rejects both "" and "no"), and a 16-bit pin left on a stereo stream is
-                    // exactly what stereo output uses anyway (L1).
+                    // exactly what stereo output uses anyway.
                     if (sur) setPropertyString("audio-format", "s16")
                     setPropertyString("audio-samplerate", if (sur) "48000" else "0")
                 }
                 reloadCurrentInPlace()
             }
         }.launchIn(scope)
-        // N11 — mpv applies it to the file playing now; a handed-over film on its next start.
+        // mpv applies it to the file playing now; a handed-over film on its next start.
         playbackSettings.field { it.maxVideoHeight to it.mobileDataMaxVideoHeight }.onEach { (max, mobile) ->
             qualityMaxHeight = max; qualityMobileMaxHeight = mobile
             if (initialized && !exoActive) mpvAsync { applyMpvVideoQuality() }
         }.launchIn(scope)
-        // N11 — the mobile-data limit follows a Wi-Fi ⇄ mobile switch mid-play, on either engine.
+        // The mobile-data limit follows a Wi-Fi ⇄ mobile switch mid-play, on either engine.
         @OptIn(kotlinx.coroutines.ExperimentalCoroutinesApi::class)
         playbackSettings.field { it.mobileDataMaxVideoHeight > 0 }
             .flatMapLatest { on -> if (on) connectivity.isMetered.drop(1) else emptyFlow() }
@@ -1222,7 +1221,7 @@ class OwnTVPlayer(
                 else if (initialized) mpvAsync { applyMpvVideoQuality() }
             }
             .launchIn(scope)
-        // N9/N10 on mpv — live, on the file playing now (the filter chain is rebuilt in place).
+        // Night mode and levelling on mpv — live, on the file playing now (the filter chain is rebuilt in place).
         playbackSettings.field { AudioDynamics.mpvFilter(it.nightMode, it.volumeLevelling) }.onEach { af ->
             mpvAudioFilter = af
             if (initialized) applyMpvAudioFilter()
@@ -1257,7 +1256,7 @@ class OwnTVPlayer(
         }.launchIn(scope)
         vodEngineStore.mpvUrls.onEach { vodPinnedMpv = it }.launchIn(scope)
         vodEngineStore.exoUrls.onEach { vodPinnedExo = it }.launchIn(scope)
-        // Subtitle appearance (#96). Moving anything back to "Default" — or turning the master toggle
+        // Subtitle appearance. Moving anything back to "Default" — or turning the master toggle
         // OFF — has to actively restore mpv's own value: the properties were already set on the
         // running instance, so simply skipping the write would leave the last custom look on screen
         // until the next channel/file load.
@@ -1373,7 +1372,7 @@ class OwnTVPlayer(
 
     // Emitted with the new playlist index when the player ITSELF advances within an episode queue
     // (auto-next / HUD prev-next). The series ViewModel initiated neither, but owns per-episode state
-    // keyed to the playing item — the subtitle search/restore context (subtitle plan Phase 5) — so it
+    // keyed to the playing item — the subtitle search/restore context — so it
     // must be told. Index-based on purpose: Stalker queue items mint fresh URLs per load, so the
     // URL-matching used elsewhere can't identify the new episode.
     private val _queueItemChanged = kotlinx.coroutines.flow.MutableSharedFlow<Int>(extraBufferCapacity = 4)
@@ -1465,7 +1464,7 @@ class OwnTVPlayer(
             // The rolling diagnostic file follows a live stream across the ExoPlayer -> mpv fallback.
             // mpv can include the full stream URL here, so sanitize before storing or displaying it.
             LiveDiagnosticsLog.event("mpv level=$level $safe")
-            // No picture is coming on this load: run the decode check now rather than at its 4 s mark (#229).
+            // No picture is coming on this load: run the decode check now rather than at its 4 s mark.
             // Only once this load's file is open — a late line from the previous load must not cut the
             // next one's wait short before its decoder has even been chosen.
             if (load.fileLoaded && VIDEO_CHAIN_FAILED_RX.containsMatchIn(t)) videoChainFailed.complete(Unit)
@@ -1567,7 +1566,7 @@ class OwnTVPlayer(
 
     /**
      * Read from libmpv on [mpvExecutor] and suspend for the answer, instead of blocking the caller's
-     * thread across the JNI call (A-F1/A-F2). Same shape as [readVfFps], generalised.
+     * thread across the JNI call. Same shape as [readVfFps], generalised.
      *
      * Null when the core is gone, the read threw, or it did not come back promptly — a statistic is
      * never worth a stalled UI, and every caller here has a sane "unknown" rendering.
@@ -1669,7 +1668,7 @@ class OwnTVPlayer(
     private var exoTickJob: Job? = null
     private var pendingImageSub: TrackOption? = null
     // External subs attached during THIS item's playback (either engine). Re-seeded into the incoming
-    // engine on a manual engine toggle so they stay listed and the active one stays active (§10).
+    // engine on a manual engine toggle so they stay listed and the active one stays active.
     private val sessionExternalSubs = ArrayList<ExternalSub>()
     private val freezeHandler = android.os.Handler(android.os.Looper.getMainLooper())
 
@@ -1683,7 +1682,7 @@ class OwnTVPlayer(
     val freezeFrame: StateFlow<android.graphics.Bitmap?> = _freezeFrame.asStateFlow()
 
     /**
-     * Replace the freeze frame, recycling the one it replaces (A-F14).
+     * Replace the freeze frame, recycling the one it replaces.
      *
      * The bitmap is an `ARGB_8888` captured at up to [FREEZE_MAX_W] wide (~2 MB; it used to be captured
      * full-size, ~33 MB at 4K). It was recycled only on the PixelCopy failure branch, so every
@@ -1718,7 +1717,7 @@ class OwnTVPlayer(
     val exoActiveState: StateFlow<Boolean> = _exoActiveState.asStateFlow()
 
     init {
-        // M5 — ExoPlayer keeps Wi-Fi and the CPU awake itself (WAKE_MODE_NETWORK); mpv has no such mode,
+        // ExoPlayer keeps Wi-Fi and the CPU awake itself (WAKE_MODE_NETWORK); mpv has no such mode,
         // so with the screen off a film on mpv stalled where the same film on ExoPlayer played on.
         combine(_isPlaying, _exoActiveState, _error, playbackSettings.field { it.backgroundPlayback }) { playing, exo, error, background ->
             playing && !exo && error == null && background
@@ -1727,7 +1726,7 @@ class OwnTVPlayer(
 
     private val _exoSubtitleOn = MutableStateFlow(false)
     /**
-     * T16 — whether ExoPlayer has a subtitle track selected while it owns playback. The UI mounts the
+     * Whether ExoPlayer has a subtitle track selected while it owns playback. The UI mounts the
      * subtitle view only while this AND [exoActiveState] are true: a film handed to ExoPlayer with
      * subtitles off used to keep an empty view over the SurfaceView for its whole length, which can
      * knock the surface off direct scan-out on Realtek 4K. Set from ExoPlayer's own track selection, so
@@ -1750,7 +1749,7 @@ class OwnTVPlayer(
             updateStreamChips() // onVideoFps may never fire; don't wait on it for resolution/measured fps
             // A measured fps needs a rendered-frame window, so retry once one can have elapsed. Waiting on
             // the shared beat rather than a timer of its own: while Exo is active that beat is already
-            // running for the position readout, so this costs no wake-up at all (P-F1). Two beats, not
+            // running for the position readout, so this costs no wake-up at all. Two beats, not
             // one — the first may arrive immediately from the replay cache.
             val gen = loadGeneration
             scope.launch {
@@ -1765,8 +1764,8 @@ class OwnTVPlayer(
         }
         override fun onFirstFrame() {
             _buffering.value = false; setFreezeFrame(null)
-            // Exo owns this VOD as an engine (fallback/preferred): re-list previously downloaded subs
-            // (§9), same as mpv's FILE_LOADED hook. Re-fires after each side-load re-prepare, but the
+            // Exo owns this VOD as an engine (fallback/preferred): re-list previously downloaded subs,
+            // same as mpv's FILE_LOADED hook. Re-fires after each side-load re-prepare, but the
             // restore path no-ops when there's nothing new to attach.
             if (item.exoVodFallback && !isLiveContent) onVodFileLoaded?.invoke()
         }
@@ -1839,7 +1838,7 @@ class OwnTVPlayer(
         regularCodecInfos().any { info -> !info.isEncoder && info.supportedTypes.any { it.equals(mime, ignoreCase = true) } }
     }.getOrDefault(false)
 
-    // --- Video decode capability + rescue ladder (F08/F09/F10) --------------------------------
+    // --- Video decode capability + rescue ladder --------------------------------
 
     /** Map an mpv/FFmpeg video codec name to the Android MIME used to look up a device decoder. */
     private fun videoMimeFor(codec: String): String? = codec.lowercase().let { c ->
@@ -1857,7 +1856,7 @@ class OwnTVPlayer(
     }
 
     /**
-     * Does this TV have a HARDWARE decoder that covers [mime] at [w]×[h]? (F10)
+     * Does this TV have a HARDWARE decoder that covers [mime] at [w]×[h]?
      *
      * Many TV SoCs advertise 4K for HEVC/VP9/AV1 only and cap AVC at 1920×1080 — a queryable fact that
      * used to surface as a wrong error message ("ask your provider to re-encode"). `null` = unknown
@@ -1958,7 +1957,7 @@ class OwnTVPlayer(
         item.forceSoftwareThisLoad = true
         android.util.Log.w(TAG, "$reason — rescue rung 2: software decode")
         // Worth a log line even though playback recovers: a stream that only plays on rung 2 is the
-        // exact "it stutters on my box but not yours" report that used to arrive with no evidence (F26).
+        // exact "it stutters on my box but not yours" report that used to arrive with no evidence.
         PlaybackErrorLog.event(
             context, "mpv", isLiveContent,
             reason = PlayerFailureReason.SOFTWARE_FALLBACK,
@@ -2119,7 +2118,7 @@ class OwnTVPlayer(
         trackRecall?.audioDone = false
         engine.prefAudioLang = TrackLanguages.forEngine(prefAudioLang)
         engine.prefSubLang = prefSubLang
-        // Carry this item's request identity across the handoff (F16) — a stream that needs a custom
+        // Carry this item's request identity across the handoff — a stream that needs a custom
         // UA/Referer on mpv needs exactly the same on ExoPlayer.
         engine.userAgent = currentUserAgent
         engine.httpHeaders = currentHeaders
@@ -2161,7 +2160,7 @@ class OwnTVPlayer(
         item.pendingExoExternalSelect = null
         engine.start(
             url, pos, surface, sub?.lang, sub?.typeIndex ?: -1, fallback = item.exoVodFallback,
-            // Re-seed this session's external subs so they stay listed across the engine switch (§10);
+            // Re-seed this session's external subs so they stay listed across the engine switch;
             // only when Exo owns playback as a VOD engine (the HUD shows Exo's track list then).
             sideloadSubs = if (item.exoVodFallback) sessionExternalSubs.toList() else emptyList(),
             selectExternalLabel = extSelect?.title,
@@ -2171,7 +2170,7 @@ class OwnTVPlayer(
             preferSoftware = item.forceSoftwareThisLoad,
             isArchive = item.archiveThisItem,
         )
-        // Re-apply the carried subtitle's remembered timing (§8.4) on the incoming engine.
+        // Re-apply the carried subtitle's remembered timing on the incoming engine.
         if (extSelect != null) onActiveSubtitleChanged?.invoke("path:${extSelect.path}")
         else if (sub != null && !sub.image) onActiveSubtitleChanged?.invoke("emb:${sub.typeIndex}:${sub.lang ?: ""}")
         engine.setVolume(_volume.value) // carry the current HUD volume into ExoPlayer
@@ -2325,7 +2324,7 @@ class OwnTVPlayer(
             // (which would turn a later mpv failure into the combined error) and re-arm the auto-fallback.
             android.util.Log.i(TAG, "HUD engine toggle: ExoPlayer → mpv")
             val pos = engineSwitchResumePos()
-            // Carry the active subtitle across the switch (§10): an external sub re-attaches + selects
+            // Carry the active subtitle across the switch: an external sub re-attaches + selects
             // after mpv reloads; an embedded pick re-selects by its ordinal among sub tracks.
             val selSub = _subTrackList.value.firstOrNull { it.selected }
             val extSel = selSub?.let { s -> sessionExternalSubs.firstOrNull { it.title == s.label } }
@@ -2354,7 +2353,7 @@ class OwnTVPlayer(
             if (attachedSurface == null) return
             android.util.Log.i(TAG, "HUD engine toggle: mpv → ExoPlayer")
             val pos = if (load.fileLoaded && _position.value > 0) _position.value else load.pendingSeekMs
-            // Carry the active subtitle across the switch (§10): session externals are re-seeded into
+            // Carry the active subtitle across the switch: session externals are re-seeded into
             // ExoPlayer by startExo — an active external is selected there by label, an embedded pick
             // by its ordinal (via load.pendingExoSub).
             val selSub = _subTrackList.value.firstOrNull { it.selected }
@@ -2636,7 +2635,7 @@ class OwnTVPlayer(
                 android.util.Log.i(TAG, "audio-channels=$it")
             }
             // Compatibility for multichannel: some HALs choke on Float / 44.1 kHz 5.1 PCM (mis-sized buffer
-            // → 2× drain, #25). Pin the universally-safe 16-bit/48 kHz output whenever multichannel is
+            // → 2× drain). Pin the universally-safe 16-bit/48 kHz output whenever multichannel is
             // allowed — that is AUTO (the default) as well as Surround, not only "when surround is on". On
             // 44.1 kHz films and music this costs a resample pass; kept on purpose, because AUTO is where
             // a sink that over-claims 5.1 does its damage.
@@ -2693,7 +2692,7 @@ class OwnTVPlayer(
             setOptionString("stream-lavf-o", STREAM_RECONNECT_OPTIONS)
             setOptionString("user-agent", HttpClient.DEFAULT_USER_AGENT)
             setOptionString("sub-scale-with-window", "yes")
-            // Subtitle appearance (#96) — applied at init so the very first subtitle of the session
+            // Subtitle appearance — applied at init so the very first subtitle of the session
             // already looks right. Each option is skipped entirely while it (or the master toggle)
             // is on "Default", leaving mpv's own value in place.
             if (subStyleOn) {
@@ -2708,7 +2707,7 @@ class OwnTVPlayer(
                 if (subStyleOverridesAss()) setOptionString("sub-ass-override", "force")
             }
             setOptionString("audio-delay", audioDelaySec.toString())
-            // N9/N10 on mpv: night mode and volume levelling as FFmpeg filters (AudioDynamics.mpvFilter).
+            // On mpv, night mode and volume levelling as FFmpeg filters (AudioDynamics.mpvFilter).
             setOptionString("af", mpvAudioFilter)
             mpvLanguageList(TrackLanguages.forEngine(prefAudioLang)).takeIf { it.isNotBlank() }?.let { setOptionString("alang", it) }
             if (prefSubLang.isNotBlank()) setOptionString("slang", mpvLanguageList(prefSubLang))
@@ -2783,13 +2782,13 @@ class OwnTVPlayer(
         isArchive: Boolean = false,
         startPaused: Boolean = false,
         userAgent: String? = null,
-        /** Per-channel HTTP headers serialized as `Key: Value` per line (M3U, F16); null for none. */
+        /** Per-channel HTTP headers serialized as `Key: Value` per line (M3U); null for none. */
         httpHeaders: String? = null,
-        /** Widevine/ClearKey licence details (#115); non-null pins the item to ExoPlayer. */
+        /** Widevine/ClearKey licence details; non-null pins the item to ExoPlayer. */
         drmConfig: String? = null,
         /** The container this item declares for itself (v43); null = infer from the URL. */
         manifestType: String? = null,
-        /** P6 — stable engine-pin identity; null keeps the legacy stream-URL key. */
+        /** Stable engine-pin identity; null keeps the legacy stream-URL key. */
         contentKey: String? = null,
         seasonNumber: Int? = null,
         episodeNumber: Int? = null,
@@ -2806,14 +2805,14 @@ class OwnTVPlayer(
         trackKey: String? = null,
     ) {
         this.vodEngineOverride = vodEngineOverride
-        // F12 — the provider belongs to the load. A VOD load with none clears whatever the previous
+        // The provider belongs to the load. A VOD load with none clears whatever the previous
         // item left behind; live keeps the field as-is when none is passed, because LiveViewModel
         // installs the live provider on BOTH engines just before calling this.
         if (reconnectProvider != null || !isLive) reconnectUrlProvider = reconnectProvider
         currentHeaders = StreamHeaders.decode(httpHeaders)
         currentDrm = tv.own.owntv.core.drm.DrmConfig.decode(drmConfig)
         currentManifestType = tv.own.owntv.core.player.ManifestType.decode(manifestType)
-        // The channel's own UA wins over the playlist-wide one (F16): a playlist sets one UA for the
+        // The channel's own UA wins over the playlist-wide one: a playlist sets one UA for the
         // whole provider, an EXTVLCOPT line sets it for the one restream that needs it.
         currentUserAgent = StreamHeaders.userAgentOf(currentHeaders) ?: userAgent?.takeIf { it.isNotBlank() }
         tunedUserAgent = userAgent?.takeIf { it.isNotBlank() }
@@ -2895,7 +2894,7 @@ class OwnTVPlayer(
         currentUserAgent = StreamHeaders.userAgentOf(currentHeaders) ?: queueUserAgent
         tunedUserAgent = queueUserAgent
         tunedHttpHeaders = item.httpHeaders
-        // F12 — a queue item that mints its URL (Stalker episode) reuses that same resolver as its
+        // A queue item that mints its URL (Stalker episode) reuses that same resolver as its
         // reconnect provider, so a retry after the short-lived link expires asks the portal again
         // instead of replaying a dead URL. An item with a stable URL clears the previous item's
         // provider: the lifetime is the load, never the player.
@@ -2970,7 +2969,7 @@ class OwnTVPlayer(
         LiveDiagnosticsLog.event("mpv $why — reopening with tolerant demuxing (discardcorrupt/genpts/ignore_err)")
     }
 
-    /** P6 — move a legacy URL-keyed VOD pin onto the stable content key (no-op without one). */
+    /** Move a legacy URL-keyed VOD pin onto the stable content key (no-op without one). */
     private fun migrateVodPin(url: String, stableKey: String?) {
         if (stableKey == null) return
         scope.launch { vodEngineStore.migrateKey(url, stableKey) }
@@ -3031,7 +3030,7 @@ class OwnTVPlayer(
         _playbackStarted.value = false
         // The track lists are this load's own. Left in place, the remembered language was applied to the
         // previous engine's list — an id that means nothing to the new one — and marked done before
-        // this load had listed a track (M2: a series' language lost on the ExoPlayer → mpv switch).
+        // this load had listed a track (a series' language was lost on the ExoPlayer → mpv switch).
         _audioTrackList.value = emptyList(); _audioCount.value = 0
         _subTrackList.value = emptyList(); _subCount.value = 0
         _audioOnlyMedia.value = false // re-decided per load, once this item's tracks are known
@@ -3065,7 +3064,7 @@ class OwnTVPlayer(
             val wantSoftware = isArchive && !glUnsupported && LiveStreamQuirks.archiveNeedsSoftware(url)
             // A catch-up archive opens on the copy path — hardware decode, frames drawn through GL — instead
             // of the direct surface. On the TCL the direct decoder froze on an archive's first frame in about
-            // one open in four (#229) and took mpv's core lock with it, so nothing could reset or retry; the
+            // one open in four and took mpv's core lock with it, so nothing could reset or retry; the
             // copy path never hands the decoder the surface. Archives are ≤1080p, where the copy is cheap.
             val wantCopy = isArchive && !wantSoftware && !glUnsupported && hwDecoding
             val needReconfig = item.forceSoftwareThisLoad != wantSoftware || item.ccSoftwareOverride ||
@@ -3081,7 +3080,7 @@ class OwnTVPlayer(
                 triedCopyRescue = wantCopy,
             )
             sessionExternalSubs.clear() // genuinely new item → its own external-sub session
-            applySubtitleDelay(0) // timing never carries onto another item/subtitle (§8.4)
+            applySubtitleDelay(0) // timing never carries onto another item/subtitle
             if (needReconfig) mpvAsync { applyRenderConfig() }
         }
         // AFTER the per-load defaults above, never before: this reads the item's own remembered zoom /
@@ -3110,7 +3109,7 @@ class OwnTVPlayer(
         val forceSurfaceReset = forceSurfaceResetNextLoad
         forceSurfaceResetNextLoad = false
         val needsFreshSurface = (lastVideoHeightPx > 1080 || forceSurfaceReset) && surfaceAttached
-        // P6 — read the stable key first, then the legacy URL key that older builds wrote; a legacy
+        // Read the stable key first, then the legacy URL key that older builds wrote; a legacy
         // hit is rewritten under the stable key so it survives the next re-sync/Stalker resolve.
         //
         // Only a pin the USER made with the HUD engine toggle may override the setting. Nothing the
@@ -3126,7 +3125,7 @@ class OwnTVPlayer(
             url in vodPinnedExo -> { migrateVodPin(url, pinKey); true }
             else -> null
         }
-        // #115 — a protected item can only play on ExoPlayer, which has the CDM; mpv has none. That
+        // A protected item can only play on ExoPlayer, which has the CDM; mpv has none. That
         // outranks both the setting and a per-item pin, because the alternative is not a slower route
         // but no route at all.
         val drmProtected = currentDrm != null
@@ -3243,7 +3242,7 @@ class OwnTVPlayer(
                         // The picture opened. Stand down once playback has really moved; until then, catch
                         // the load that froze on its first frame — no sound, the clock stuck at the start
                         // and nothing ever reported. Seen on the TCL with catch-up in about one open in
-                        // four (#229); the retry then plays. Nothing else watches this: every check below
+                        // four; the retry then plays. Nothing else watches this: every check below
                         // and the decode check wait on the same mpv core that has stopped answering.
                         val pos = _position.value
                         if (openedAtPos < 0) openedAtPos = pos
@@ -3319,11 +3318,11 @@ class OwnTVPlayer(
                             }
                             return@launch
                         }
-                        // L6 — the archive ladder's missing rung. The decode-failure branch below already
+                        // The archive ladder's missing rung. The decode-failure branch below already
                         // hands a failing archive to ExoPlayer, but a demuxer that never opens at all only
                         // ever hard-reset mpv, three times, and then showed an error: an archive mpv simply
-                        // cannot open never reached the engine that might have played it. Measured on the
-                        // owner's panel, a healthy archive opens in 1.5–2.1 s, so ten seconds without
+                        // cannot open never reached the engine that might have played it. Measured on a
+                        // real panel, a healthy archive opens in 1.5–2.1 s, so ten seconds without
                         // FILE_LOADED is not slowness, it is a dead end.
                         //
                         // `mpvStuck = true` because that is exactly the situation: the core may be blocked
@@ -3341,14 +3340,14 @@ class OwnTVPlayer(
                     // video-bitrate=null means the demuxer can't parse container headers (moov atom
                     // is at end of file + server doesn't support Range requests). This will never fix
                     // itself by retrying.
-                    // Read off-thread (A-F1): this loop runs on the main scope, and a blocking JNI read
+                    // Read off-thread: this loop runs on the main scope, and a blocking JNI read
                     // per tick is exactly what the threading rule at the top of this file forbids.
                     val bitrateKnown = readProperty("video-bitrate")?.toLongOrNull()?.let { it > 0 } ?: false
                     if (load.fileLoaded && load.currentHeightPx == 0 && !bitrateKnown && elapsed > 6_000 && decoderHadTime) {
                         // "Loaded but no height and no bitrate" is ALSO what a failed video DECODER looks
                         // like (MediaCodec err 0xfffffff4 / 0x80001000). Blaming the file there is wrong —
                         // and it dead-ends, while the same screen shows the codec error contradicting it.
-                        // So classify first: a decoder signature goes down the decode ladder instead. (F08)
+                        // So classify first: a decoder signature goes down the decode ladder instead.
                         val decoderErr = load.lastMpvError ?: diagnostics.recentError()
                         if (looksLikeDecoderFailure(decoderErr) || hardwareCannotDecodeCurrent()) {
                             videoCheckJob?.cancel()
@@ -3369,7 +3368,7 @@ class OwnTVPlayer(
                             videoCheckJob?.cancel()
                             return@launch
                         }
-                        // #229 — a catch-up archive is MPEG-TS, never an MP4 missing its fast-start index:
+                        // A catch-up archive is MPEG-TS, never an MP4 missing its fast-start index:
                         // still no picture after the software rescue means mpv can't decode it, so hand it
                         // to ExoPlayer like the other archive rungs, and say "decode" if that is spent too.
                         if (item.archiveThisItem) {
@@ -3447,7 +3446,7 @@ class OwnTVPlayer(
                         health.reset()
                         continue
                     }
-                    // C-M1 — mpv refilling its cache (paused-for-cache; "Pre-buffer 10 s" needs ≥ 10 s of
+                    // mpv refilling its cache (paused-for-cache; "Pre-buffer 10 s" needs ≥ 10 s of
                     // wall-clock on a real-time feed, as long as this watchdog's limit) holds the position still
                     // while the stream is alive. A growing cache is that proof; a dead socket grows nothing and
                     // still trips. Not progress for the reconnect budget — playback is not holding yet.
@@ -3573,7 +3572,7 @@ class OwnTVPlayer(
                     ?: HttpClient.FALLBACK_USER_AGENT.takeIf { LiveStreamQuirks.blocksDefaultUserAgent(url) }
                     ?: HttpClient.DEFAULT_USER_AGENT,
             )
-            // Per-channel headers (F16). Always written, so a channel that carries none clears whatever
+            // Per-channel headers. Always written, so a channel that carries none clears whatever
             // the previous item set — mpv keeps the property across loads otherwise.
             setPropertyString("http-header-fields", StreamHeaders.toMpvHeaderFields(currentHeaders))
             // reconnect_streamed helps one long-lived raw-TS response, but breaks HLS: EOF is the
@@ -3585,7 +3584,7 @@ class OwnTVPlayer(
             // Global proxy (Approach 1): route mpv's own FFmpeg networking through the configured HTTP
             // proxy, or clear it when disabled. Applied per-load so toggling the setting takes effect on
             // the next stream. The URL may embed proxy credentials — it is NEVER logged here.
-            // Never for the app's own timeshift server on loopback (N4), which no proxy can reach.
+            // Never for the app's own timeshift server on loopback, which no proxy can reach.
             setPropertyString(
                 "http-proxy",
                 if (TimeshiftServer.isLocal(url)) "" else proxyHolder.mpvProxyUrl() ?: "",
@@ -3632,7 +3631,7 @@ class OwnTVPlayer(
         )
 
     /**
-     * Push the custom subtitle look (#96) onto the running mpv instance. Every option resolves to
+     * Push the custom subtitle look onto the running mpv instance. Every option resolves to
      * mpv's own value when it's on "Default" (or the master toggle is off). Must run on the mpv
      * thread (call inside [mpvAsync]).
      *
@@ -3683,9 +3682,9 @@ class OwnTVPlayer(
         }
     }
 
-    // --- Subtitle timing (subtitle plan §8): offset for the ACTIVE subtitle. Positive = shown later. ---
+    // --- Subtitle timing: offset for the ACTIVE subtitle. Positive = shown later. ---
 
-    /** True when timing adjustment applies to the active subtitle on this engine (§8.1): any text sub
+    /** True when timing adjustment applies to the active subtitle on this engine: any text sub
      *  on mpv (`sub-delay`); side-loaded external subs only on ExoPlayer (shifted copy at load). */
     fun subtitleTimingAvailable(): Boolean {
         if (isLiveContent) return false
@@ -3700,7 +3699,7 @@ class OwnTVPlayer(
 
     fun resetSubtitleDelay() = setSubtitleDelay(0, byUser = true)
 
-    /** Apply a remembered offset (from the subtitle layer, §8.4) without re-persisting it. */
+    /** Apply a remembered offset (from the subtitle layer) without re-persisting it. */
     fun applySubtitleDelay(offsetMs: Int) = setSubtitleDelay(offsetMs, byUser = false)
 
     private fun setSubtitleDelay(ms: Int, byUser: Boolean) {
@@ -3721,7 +3720,7 @@ class OwnTVPlayer(
     }
 
     /** Tell the subtitle layer which subtitle is active ("path:&lt;file&gt;" external, "emb:…" embedded,
-     *  null off) so it can apply that subtitle's remembered timing (§8.4). */
+     *  null off) so it can apply that subtitle's remembered timing. */
     private fun notifyActiveSubtitle(track: TrackOption?) {
         val identity = track?.let { t ->
             sessionExternalSubs.firstOrNull { it.title == t.label }?.let { "path:${it.path}" }
@@ -3756,7 +3755,7 @@ class OwnTVPlayer(
         }
     }
 
-    // --- Remembered audio / subtitle language (playback_prefs, v44, owner decision 11) ---
+    // --- Remembered audio / subtitle language (playback_prefs, v44) ---
 
     /** One load's remembered track languages. Each half is applied once, when both the answer from the
      *  database and that kind's track list are in — whichever arrives last does it. */
@@ -3775,7 +3774,7 @@ class OwnTVPlayer(
         trackRecall = recall
         scope.launch {
             val remembered = playbackPrefs.tracksFor(key)
-            // "Original language" (N14): the title's own language from TMDB, standing in for a remembered
+            // "Original language": the title's own language from TMDB, standing in for a remembered
             // one. Bounded, because a first play may ask TMDB; with no answer the stream's main track stays.
             val original = if (remembered?.first == null && prefAudioLang == TrackLanguages.ORIGINAL) {
                 withTimeoutOrNull(ORIGINAL_LANGUAGE_WAIT_MS) { runCatching { originalLanguage.of(key) }.getOrNull() }
@@ -3898,7 +3897,7 @@ class OwnTVPlayer(
      * HUD "Retry" on an error. The HUD offers it for *any* failed playback, so this must not assume
      * live: reloading a movie through the live path restarted it at 00:00 with live demuxer settings
      * and the live watchdogs attached, and — with a stale Stalker [reconnectUrlProvider] left over
-     * from a previous channel — could even mint and play a live URL instead of the movie (F11).
+     * from a previous channel — could even mint and play a live URL instead of the movie.
      */
     fun retry() {
         // After a live give-up [abandonLive] has stopped the stream, so the URL is the one it gave up on —
@@ -3922,7 +3921,7 @@ class OwnTVPlayer(
      * Live restarts at the edge; VOD resumes where it stopped, which is the whole point of retrying
      * a movie 40 minutes in. A catch-up archive stays an archive and restarts from its beginning, as
      * [engineSwitchResumePos] does: reloaded as a plain VOD item it lost its probe, its rescue rungs and
-     * its engine pin, and resumed at an offset the panel cannot serve (#229).
+     * its engine pin, and resumed at an offset the panel cannot serve.
      */
     private fun reload(url: String, isLive: Boolean, resetRetries: Boolean) {
         val archive = !isLive && item.archiveThisItem
@@ -4299,7 +4298,7 @@ class OwnTVPlayer(
         mpvHasSurface = false
     }
 
-    // --- Audio Mode (Audio Mode plan §5) ---
+    // --- Audio Mode ---
     // Drop video output but keep audio playing at position. mpv `vid=no` stops the video decoder live
     // (no reload, audio uninterrupted); ExoPlayer (image-sub handoff path) just releases its surface.
     // Restored by exitAudioOnly() before the video surface remounts on return to fullscreen/mini.
@@ -4336,7 +4335,7 @@ class OwnTVPlayer(
     private val _audioTrackList = MutableStateFlow<List<TrackOption>>(emptyList())
     private val _subTrackList = MutableStateFlow<List<TrackOption>>(emptyList())
 
-    // --- Video quality (N11) ---
+    // --- Video quality ---
     // mpv lists an HLS master's variants as video tracks only when FFmpeg probed their size, so the
     // Quality menu there is best-effort; on ExoPlayer (a handed-over film) it is the track selector's.
     private val _videoQualities = MutableStateFlow<List<Int>>(emptyList())
@@ -4407,7 +4406,7 @@ class OwnTVPlayer(
     }
 
     /** The mpv half of [streamInfo]: ~25 property reads, which is why it runs on [mpvExecutor] and never
-     *  on the caller's thread (A-F2 — the overlay polls this once a second from composition). */
+     *  on the caller's thread (the overlay polls this once a second from composition). */
     private fun mpvStreamInfo(m: MPVLib): List<StreamInfoRow> {
         fun str(p: String) = m.getPropertyString(p)?.takeIf { it.isNotBlank() }
         val out = ArrayList<StreamInfoRow>()
@@ -4631,7 +4630,7 @@ class OwnTVPlayer(
             setPropertyInt("sid", mpvId)
             setPropertyString("sub-visibility", "yes") // ensure subs aren't hidden
         }
-        // CEA-608/708 CC: text only flows from the SOFTWARE decoder's side data (#57), so decode in
+        // CEA-608/708 CC: text only flows from the SOFTWARE decoder's side data, so decode in
         // software while this track is selected — but only where that's viable (≤1080p unless software
         // decoding above 1080p is allowed, GL works).
         val isCc = track?.codec?.lowercase()?.startsWith("eia") == true
@@ -4669,11 +4668,11 @@ class OwnTVPlayer(
 
     /**
      * Attach an external subtitle file (OpenSubtitles download or local pick) and select it
-     * immediately (subtitle plan §6.5). mpv's `sub-add … select` attaches it live with no playback
+     * immediately. mpv's `sub-add … select` attaches it live with no playback
      * interruption. [title] labels it in the track list; [lang] is the ISO code when known.
      *
      * When ExoPlayer owns VOD playback (engine fallback / preferred engine) the sub is side-loaded
-     * natively via a position-preserving re-prepare (§10). During an image-sub handoff, picking an
+     * natively via a position-preserving re-prepare. During an image-sub handoff, picking an
      * external TEXT sub returns playback to mpv and attaches it once mpv reloads.
      */
     /** One external subtitle to (re)attach — see [restoreExternalSubtitles]. */
@@ -4686,12 +4685,12 @@ class OwnTVPlayer(
     )
 
     /** Set by the subtitle layer; fired after a VOD file finishes loading so previously downloaded
-     *  subtitles can be re-listed (subtitle plan §9). Runs on the mpv event thread. */
+     *  subtitles can be re-listed. Runs on the mpv event thread. */
     var onVodFileLoaded: (() -> Unit)? = null
 
     /**
      * Re-attach previously downloaded subtitles WITHOUT changing the current selection (they show in
-     * the Subtitles list; the user re-picks — owner decision). No-op on ExoPlayer/live.
+     * the Subtitles list; the user re-picks). No-op on ExoPlayer/live.
      */
     fun restoreExternalSubtitles(subs: List<ExternalSub>) {
         if (subs.isEmpty()) return
@@ -4727,7 +4726,7 @@ class OwnTVPlayer(
         if (sessionExternalSubs.none { it.path == path }) sessionExternalSubs.add(ExternalSub(path, title, lang, source))
         if (exoActive) {
             if (item.exoVodFallback) {
-                // Exo owns VOD playback (engine fallback / preferred engine): side-load natively (§10).
+                // Exo owns VOD playback (engine fallback / preferred engine): side-load natively.
                 exoEngine?.addExternalSubtitle(path, title, lang, source)
                 onActiveSubtitleChanged?.invoke("path:$path")
             } else {
@@ -4740,7 +4739,7 @@ class OwnTVPlayer(
         }
         if (!initialized) return
         mpvAsync {
-            // Already attached (e.g. re-applied after an engine toggle raced the §9 restore): don't add a
+            // Already attached (e.g. re-applied after an engine toggle raced the replay restore): don't add a
             // duplicate row — just select the existing track.
             _subTrackList.value.firstOrNull { it.label == title }?.let { existing ->
                 setPropertyInt("sid", existing.mpvId)
@@ -4924,7 +4923,7 @@ class OwnTVPlayer(
         }
     }
 
-    /** mpv's own `paused-for-cache` and `demuxer-cache-duration`, for the live stall watchdog (C-M1). The
+    /** mpv's own `paused-for-cache` and `demuxer-cache-duration`, for the live stall watchdog. The
      *  spinner flag is not enough — the app raises it itself while it waits or reconnects. */
     @Volatile private var mpvPausedForCache = false
     @Volatile private var mpvCacheSecs = 0.0
@@ -4985,7 +4984,7 @@ class OwnTVPlayer(
                 }
                 _audioCount.value = _audioTrackList.value.size
                 _subCount.value = _subTrackList.value.size
-                // Re-list previously downloaded subtitles for a VOD item (subtitle plan §9). Fires after
+                // Re-list previously downloaded subtitles for a VOD item. Fires after
                 // the fresh track list is built so restoreExternalSubtitles appends onto it.
                 if (!isLiveContent) onVodFileLoaded?.invoke()
                 // Fast-zap safety net: a trimmed probe can miss the audio PMT on a sparse stream, leaving
@@ -5039,7 +5038,7 @@ class OwnTVPlayer(
                     mpvAsync { setPropertyBoolean("pause", true) }
                     _isPlaying.value = false
                 }
-                // Surround-output failsafe (#25): some sinks claim multichannel PCM support but mis-play it —
+                // Surround-output failsafe: some sinks claim multichannel PCM support but mis-play it —
                 // the audio drains ~2× fast, so mpv's audio-master clock (and the video) runs ~2× and the
                 // sound is silent. mpv sees the output as fine (audio-params == audio-out-params, avsync ≈ 0),
                 // so the only tell is the video running away: estimated-vf-fps ≈ 2× the file's container-fps.
@@ -5109,7 +5108,7 @@ class OwnTVPlayer(
                         }
                     }
                 }
-                // F14: frame rate for a stream that never declares one. Live MPEG-TS usually has no
+                // Frame rate for a stream that never declares one. Live MPEG-TS usually has no
                 // `container-fps`, which is the ONLY thing that feeds [_videoFps] — so on mpv live the
                 // fps stayed null, AutoFrameRateEffect got null, and Auto frame rate silently did
                 // nothing on exactly the content it exists for (25fps broadcast on a 60Hz panel).
@@ -5185,7 +5184,7 @@ class OwnTVPlayer(
                             val pos = if (isLiveContent) 0L else _position.value
                             // If the codec list says no hardware decoder covers this codec at this size,
                             // retrying the direct path is guaranteed to fail again — go straight to the
-                            // rescue ladder and say so, instead of burning retries on a known-no. (F10)
+                            // rescue ladder and say so, instead of burning retries on a known-no.
                             // A catch-up archive skips the retry ladder: the hardware decoder not engaging
                             // on a mid-GOP stream repeats identically on every retry.
                             if (tryArchiveSoftwareRescue("direct decoder never engaged on archive")) return@mpvAsync
@@ -5216,8 +5215,8 @@ class OwnTVPlayer(
                                     if (gen == loadGeneration) loadUrl(currentUrl ?: return@launch, currentMetaSnapshot(), isLiveContent, pos, resetRetries = false)
                                 }
                             } else if (tryDecodeRescue("direct failed after retries")) {
-                                // The shared ladder (F7) picks the rung: the copy rescue between direct and
-                                // software (F09) — still hardware decoding, GL compositing, and with no
+                                // The shared ladder picks the rung: the copy rescue between direct and
+                                // software — still hardware decoding, GL compositing, and with no
                                 // resolution gate the ONLY rescue a 4K file the direct path can't open ever
                                 // gets — then pure software decode for weak decoders that mangle the stream.
                                 // Both are skipped on emulators (translated GL crashes) and software above
@@ -5342,7 +5341,7 @@ class OwnTVPlayer(
                             !((isHardHttpRefusal(load.lastMpvError) || (!isLiveContent && isSessionLimitRefusal(load.lastMpvError))) &&
                                 item.autoRetries >= HARD_REFUSAL_MAX_RETRIES)
                         ) {
-                            // F29 — a one-session panel answering mpv teaches the same panel-wide quirk an
+                            // A one-session panel answering mpv teaches the same panel-wide quirk an
                             // ExoPlayer 458 does, so the NEXT tune knows the two engines must not overlap.
                             if (isLiveContent && httpStatusOf(load.lastMpvError)?.let { LiveStreamQuirks.isSessionLimit(it) } == true) {
                                 currentUrl?.let { LiveStreamQuirks.rememberSessionLimit(it) }
@@ -5401,7 +5400,7 @@ class OwnTVPlayer(
                         ) {
                             // Decoder (not network/container) failure and the direct path is exhausted:
                             // take the copy rung before the ≤1080p software one, so 4K files that only
-                            // fail on the direct surface still get a rescue. (F09)
+                            // fail on the direct surface still get a rescue.
                             tryDecodeRescue("playback didn't start — decoder failure")
                         } else if (
                             ladderRungUseful(LadderRung.DECODE_RESCUE, load.lastMpvError, isLiveContent) &&
@@ -5499,7 +5498,7 @@ class OwnTVPlayer(
                         // support, so reopening at an offset fails outright ("not formatted for streaming")
                         // — the very trap [resumePositionForHandoff] exists for. It goes straight to the
                         // error, which is still better than the silent freeze it used to get.
-                        // N18 — "Reconnect attempts" (default 1, the single reload films always had), earned
+                        // "Reconnect attempts" (default 1, the single reload films always had), earned
                         // back by a minute of playback since the last one — see [FilmNetwork.nextReconnect].
                         val budget = playbackSettings.value?.vodReconnects ?: 1
                         val next = FilmNetwork.nextReconnect(item.midStreamReloads, item.midStreamReloadAtMs, pos, budget)
@@ -5663,13 +5662,13 @@ internal data class ItemState(
     /** A stream the hardware decoder cannot start (weak TV decoders reject some otherwise-fine files) is
      *  retried ONCE in pure software, per item, before the error shows. Never changes the user setting. */
     @field:Volatile var forceSoftwareThisLoad: Boolean = false,
-    /** The RESCUE rung between "direct hardware" and "software 1080p or less" (F09): hwdec=mediacodec-copy
+    /** The RESCUE rung between "direct hardware" and "software 1080p or less": hwdec=mediacodec-copy
      *  + vo=gpu - still hardware decoding, but frames are copied out and composited by GL. The default
-     *  only for a catch-up archive, whose first frame froze the direct path (#229); otherwise it exists
+     *  only for a catch-up archive, whose first frame froze the direct path; otherwise it exists
      *  for the 4K file the direct path cannot open at all. */
     @field:Volatile var forceCopyThisLoad: Boolean = false,
     @field:Volatile var triedCopyRescue: Boolean = false,
     /** CEA-608/708 CC text is decoder side data the hardware decoder never surfaces, so the synthetic CC
-     *  track stays empty under hwdec (#57). While a CC track is selected we decode in software. */
+     *  track stays empty under hwdec. While a CC track is selected we decode in software. */
     @field:Volatile var ccSoftwareOverride: Boolean = false,
 )

@@ -25,7 +25,6 @@
     <string name="profiles_kids_badge">어린이</string>
     <string name="profiles_add">프로필 추가</string>
     <string name="profiles_title">프로필</string>
-    <string name="profiles_add_button">프로필 추가</string>
     <string name="profiles_delete_title">“<xliff:g id="name">%1$s</xliff:g>” 프로필을 삭제할까요?</string>
     <string name="profiles_delete_message">이 프로필과 해당 즐겨찾기 및 시청 기록을 삭제합니다. 소스는 유지됩니다.</string>
     <string name="profiles_kids_tag">어린이</string>
@@ -33,10 +32,7 @@
     <string name="search_title">검색</string>
     <string name="search_continue">이어서 보기</string>
     <string name="search_unwatched">시청하지 않음</string>
-    <string name="search_hint">채널, 영화 및 시리즈 검색…</string>
     <string name="search_recent">최근 검색어</string>
-    <string name="search_recent_empty">최근 검색어가 여기에 표시됩니다.</string>
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> — 검색 결과가 없습니다.</string>
     <string name="search_nothing_in_list"><xliff:g id="list">%1$s</xliff:g>에 아직 아무 항목도 없습니다.</string>
     <string name="search_clear">지우기</string>
     <string name="search_jump_to">바로가기</string>
@@ -153,12 +149,7 @@
     </plurals>
     <string name="home_trending_movie">영화</string>
     <string name="home_trending_series">시리즈</string>
-    <string name="home_trending_section_label">지금 인기 급상승 · 동기화 스냅샷</string>
     <string name="home_trending_provider_match">제공업체 일치 항목</string>
-    <string name="home_trending_language_choice"><xliff:g id="language">%1$s</xliff:g> 언어 선택 항목</string>
-    <string name="home_trending_english_fallback">영어 대체 선택 항목</string>
-    <string name="home_trending_untagged_fallback">언어 태그 없는 대체 선택 항목</string>
-    <string name="home_trending_other_fallback"><xliff:g id="language">%1$s</xliff:g> 대체 선택 항목</string>
     <string name="home_trending_why_label">이 항목이 표시되는 이유</string>
     <string name="home_trending_reason_title">TMDB 순위 #<xliff:g id="rank">%1$d</xliff:g> <xliff:g id="media_type">%2$s</xliff:g> + 제공업체 일치</string>
     <string name="home_trending_reason_preferred">선택한 <xliff:g id="language">%1$s</xliff:g> 제공업체 버전이 다른 언어의 항목보다 우선합니다.</string>
@@ -174,10 +165,7 @@
     <string name="home_trending_more_details">상세 정보 더 보기</string>
     <string name="home_trending_all_versions">모든 버전</string>
     <string name="home_trending_why_menu">이 작품이 여기에 있는 이유</string>
-    <string name="home_trending_previous">이전</string>
     <string name="home_trending_pause">일시중지</string>
-    <string name="home_trending_resume">이어보기</string>
-    <string name="home_trending_next">다음</string>
     <string name="home_trending_unavailable">이 버전은 더 이상 사용할 수 없습니다</string>
     <string name="recording_notification_title">녹화 중</string>
     <string name="recording_failed_no_space">중지됨: 저장 공간이 없습니다</string>
@@ -188,7 +176,6 @@
     <string name="recording_failed_channel_gone">해당 채널이 재생목록에 더 이상 없습니다</string>
     <string name="recording_failed_unknown">녹화되지 않았습니다</string>
     <string name="recording_title">녹화</string>
-    <string name="recording_description">이 기기에 저장된 라이브 TV.</string>
     <string name="recording_empty">아직 녹화된 것이 없습니다. TV 편성표에서 프로그램의 녹화를 누르거나, 채널을 길게 눌러 녹화하거나 시간을 예약하세요.</string>
     <string name="recording_group_now">녹화 중</string>
     <string name="recording_group_scheduled">예약됨</string>
@@ -231,7 +218,6 @@
         <item quantity="other">녹화 <xliff:g id="count">%1$d</xliff:g>개</item>
     </plurals>
     <string name="settings_recording_mobile_data">모바일 데이터로 녹화</string>
-    <string name="settings_recording_mobile_data_description">끄면 Wi-Fi가 아닐 때 시작될 녹화는 기다리지 않고 건너뜁니다. 생방송은 다시 오지 않습니다.</string>
     <string name="settings_record_watching">보고 있는 것 녹화</string>
     <string name="settings_record_watching_description">보고 있는 채널을 저장하는 녹화 버튼을 플레이어에 추가합니다. 채널을 직접 받아오므로 녹화하는 동안 공급자의 연결을 하나 사용하며, 채널을 바꾸거나 플레이어를 나가도 계속 녹화합니다.</string>
     <string name="settings_record_watching_warning_title">연결은 하나뿐</string>

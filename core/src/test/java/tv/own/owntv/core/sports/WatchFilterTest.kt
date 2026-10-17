@@ -11,7 +11,7 @@ class WatchFilterTest {
     private fun opt(name: String, tier: WatchTier, source: Long = 1) =
         WatchOption(ChannelEntity(id = ++id, sourceId = source, name = name, streamUrl = "http://x/$id"), tier)
 
-    // Mockup T3's seven channels for Frankfurt – Köln.
+    // Seven channels for Frankfurt – Köln.
     private val bl1 = opt("DE| SKY SPORT BUNDESLIGA 1 FHD", WatchTier.GUIDE)
     private val uhd = opt("DE| SKY SPORT BUNDESLIGA UHD", WatchTier.GUIDE)
     private val austria = opt("AT| SKY SPORT AUSTRIA 1 HD", WatchTier.GUIDE, source = 2)
@@ -21,7 +21,7 @@ class WatchFilterTest {
     private val unknown = opt("BUNDESLIGA LIVE 720p", WatchTier.LIKELY)
     private val seven = listOf(bl1, uhd, austria, event, uk, arabic, unknown)
 
-    @Test fun `mockup T3 - German and English, any country, HD and better - showing 5 of 7`() {
+    @Test fun `German and English, any country, HD and better - showing 5 of 7`() {
         val list = WatchList.of(
             seven,
             WatchFilter(languages = setOf("DE", "EN"), minQuality = MinQuality.HD),

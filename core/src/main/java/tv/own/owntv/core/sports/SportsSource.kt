@@ -27,11 +27,11 @@ interface SportsSource {
     suspend fun teams(league: League): List<Team>
 }
 
-/** A non-2xx answer. [code] 403 and 429 mean "slow down" (README §7.4). */
+/** A non-2xx answer. [code] 403 and 429 mean "slow down". */
 class SportsHttpException(val code: Int) : IOException("HTTP $code")
 
 /**
- * ESPN's public endpoints, called straight from the device: no key, no Worker in between (README §7.1).
+ * ESPN's public endpoints, called straight from the device: no key, no Worker in between.
  * Rides the app's shared OkHttp client — `newBuilder()` keeps its connection pool, proxy, DNS and
  * gzip — with a 10 s ceiling per call. No retries here; [SportsRefreshPolicy] decides when to try again.
  */

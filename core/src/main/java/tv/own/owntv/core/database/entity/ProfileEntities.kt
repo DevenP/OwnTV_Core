@@ -142,7 +142,7 @@ data class SourceEntity(
     val maxConnectionsProbedAt: Long = 0,
     val createdAt: Long = System.currentTimeMillis(),
     val lastSyncAt: Long? = null,
-    // --- v44: four more per-playlist overrides (owner decision 12). Each `null` = follow the global
+    // --- v44: four more per-playlist overrides. Each `null` = follow the global
     // setting, which is what every existing row reads as after the upgrade.
     /** Catch-up time zone for this provider's archive, as a `SettingsRepository.CatchupTimezone` name. */
     val catchupTimezone: String? = null,
@@ -152,7 +152,7 @@ data class SourceEntity(
     val vodEnginePreference: String? = null,
     /** "Give up after" for a live tune on this playlist, in seconds. */
     val liveTuneTimeoutSecs: Int? = null,
-    /** An HTTP `Referer` this provider's streams require (N16). */
+    /** An HTTP `Referer` this provider's streams require. */
     val httpReferer: String? = null,
     /**
      * The time zone an Xtream panel reports for itself (v49), as a `java.util.TimeZone` ID: its
