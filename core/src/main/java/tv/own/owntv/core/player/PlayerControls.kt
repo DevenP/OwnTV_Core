@@ -80,6 +80,15 @@ enum class PlayerControl(
      */
     PREVIOUS_CHANNEL(ControlCluster.MEDIA, ControlHost.BOTH, R.string.player_previous_channel),
 
+    /**
+     * The other channels showing the match this channel was started from (Sports Hub) — the backup when
+     * the stream stalls. Only for a channel started from a match, with more than one channel.
+     */
+    OTHER_CHANNELS(ControlCluster.MEDIA, ControlHost.BOTH, R.string.sports_other_channels),
+
+    /** That match's page (timeline, stats, table). Same condition as [OTHER_CHANNELS], and ESPN reachable. */
+    MATCH(ControlCluster.MEDIA, ControlHost.BOTH, R.string.sports_filter_match),
+
     // --- The tools cluster: things about how it is being played and shown ---
 
     /** Which engine owns playback. A text pill naming it on the television; H3 matches that. */

@@ -246,6 +246,8 @@ dependencies {
     // android.jar's org.json is a stub and isReturnDefaultValues silences it; backup/restore is
     // all JSON, so the tests need the real implementation. Same reason as :app.
     testImplementation(libs.org.json)
+    // Virtual time for the sports repository's refresh loop (same artifact :player-core tests with).
+    testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.junit)
     // The runner named in `testInstrumentationRunner` above. Not transitive from androidx.test.ext.
     androidTestImplementation(libs.androidx.test.runner)
