@@ -117,6 +117,9 @@ internal class M3uSyncer(
             val buffer = ArrayList<PendingM3uChannel>(chunkSize)
             val movieBuffer = ArrayList<PendingM3uChannel>(chunkSize)
             var order = 0 // playlist position — lets "Playlist order" sorting replay the file's order
+            // For PlaylistNumbering: did any channel carry tvg-chno, and which channels did not.
+            var providerNumbered = false
+            val unnumberedKeys = HashSet<String>()
             var categoryOrder = 0
 
             fun queueCategory(type: MediaType, group: String) {
@@ -210,6 +213,7 @@ internal class M3uSyncer(
                     )
                 }
                 channels.forEach { seenChannelKeys.add(it.remoteId!!) }
+                channels.forEach { if (it.number == null) unnumberedKeys.add(it.remoteId!!) else providerNumbered = true }
                 val legacyKeys = buffer.map { legacyStableKey(legacyChannelKeyCounters, it.entry.name, it.entry.groupTitle) }
                 val start = SystemClock.elapsedRealtime()
                 val stored = rescueTruncatedKeys(channelHashLookup(), channels.map { it.remoteId!! }.zip(legacyKeys))
@@ -468,6 +472,8 @@ internal class M3uSyncer(
                 }
                 channelDao.deleteNullRemoteIds(s.id)
                 support.pruneCategories(s.id, MediaType.LIVE, seenGroupsByType[MediaType.LIVE].orEmpty(), "M3U live", stats)
+                val renumbered = PlaylistNumbering.apply(channelDao, s.id, providerNumbered, unnumberedKeys)
+                Log.d(TAG, "M3U playlist numbering sourceId=${s.id} providerNumbered=$providerNumbered renumbered=$renumbered")
             }
             if (moviesProcessed > 0) {
                 support.pruneRemoteIds("M3U movies", s.id, seenMovieKeys, stats, { movieDao.remoteIdsForSource(it) }) { src, ids ->
