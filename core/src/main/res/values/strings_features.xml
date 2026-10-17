@@ -901,6 +901,6 @@
     <string name="sports_broadcasts_find_first">Use Find channels to list the channels in your guide that show this match.</string>
     <!-- Translators: Broadcasts tab section with nothing in it. -->
     <string name="sports_broadcasts_none">None listed</string>
-    <!-- Translators: Move window in Sports settings: the arrows choose a row, OK picks it up or puts it down, and only Save or Cancel closes the window. -->
+    <!-- Translators: Move window (Sports settings, and moving categories, channels, films, series and favourites on TV): the arrows choose a row, OK picks it up or puts it down, and only Save or Cancel closes the window. -->
     <string name="sports_move_instructions">▲/▼ to choose · OK to pick up or put down · Save when done</string>
 </resources>
