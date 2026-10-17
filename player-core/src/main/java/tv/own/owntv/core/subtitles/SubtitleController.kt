@@ -68,7 +68,7 @@ class SubtitleController(
 
     init {
         // Re-list a title's previously downloaded subtitles whenever its file finishes loading.
-        // They're attached but not selected — the user re-picks (per owner decision).
+        // They're attached but not selected — the user re-picks.
         player.onVodFileLoaded = { restoreForCurrentItem() }
         // When the active subtitle changes, apply ITS remembered offset (never another release's);
         // when the user adjusts timing, persist it under the exact subtitle identity.
@@ -134,7 +134,7 @@ class SubtitleController(
         return accounts.session(pid) != null
     }
 
-    /** In-player sign-in for the R1 "account needed" flow — same path as the Settings screen, so the
+    /** In-player sign-in for the "account needed" flow — same path as the Settings screen, so the
      *  user lands back in the search that started it. Throws for the sign-in-failed dialog. */
     suspend fun signIn(username: String, password: String, staySignedIn: Boolean) {
         val pid = _current.value?.profileId ?: activeProfile()
@@ -376,7 +376,7 @@ class SubtitleController(
         return repository.linkedForContent(pid, episodeKey(show, ep))
     }
 
-    /** Profile-scoped (owner decision): drops the ACTIVE profile's copy; the shared file survives
+    /** Profile-scoped: drops the ACTIVE profile's copy; the shared file survives
      *  while any other profile still references it. */
     suspend fun deleteCached(cacheId: Long) {
         val pid = activeProfile(); if (pid >= 0) repository.deleteCached(pid, cacheId)

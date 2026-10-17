@@ -71,7 +71,7 @@ class SubtitleRepository(
         hearingImpaired: Boolean,
         onQuota: (remaining: Int?, resetTime: String?) -> Unit = { _, _ -> },
     ): ResolvedSubtitle = withContext(Dispatchers.IO) {
-        // R3: reuse an existing download for this exact file — no /download, no quota.
+        // Reuse an existing download for this exact file — no /download, no quota.
         dao.findByOpenSubFileId(fileId)?.let { cached ->
             if (File(cached.cachedPath).exists()) {
                 dao.touchCache(cached.id, System.currentTimeMillis())
@@ -212,7 +212,7 @@ class SubtitleRepository(
         dao.linksForType(profileId, mediaType)
 
     /**
-     * Delete one cached subtitle FOR ONE PROFILE (owner decision: subtitle management is per
+     * Delete one cached subtitle FOR ONE PROFILE (subtitle management is per
      * profile). This profile's links go; the shared file + cache row (and with them any other
      * profile's links/selections) are only removed when no other profile still references it.
      */

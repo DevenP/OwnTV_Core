@@ -3,7 +3,7 @@ package tv.own.owntv.core.live
 import java.text.Normalizer
 
 /**
- * A provider name split the way Stage shows it (G5): "DE| Sky Cinema Premieren ᴴᴰ" becomes the name
+ * A provider name split the way Stage shows it: "DE| Sky Cinema Premieren ᴴᴰ" becomes the name
  * "Sky Cinema Premieren", the tag "HD" and the country "DE". Providers write their quality and
  * source marks as superscript letters; each run of them is one tag. The country prefix is shown
  * once, as the "GROUPS · DE" heading, instead of on every row.

@@ -26,7 +26,7 @@ import tv.own.owntv.core.sports.model.Team
 import java.io.File
 import java.time.LocalDate
 
-/** R1.2: the rebuild-based board — window rules, replace-not-merge, details and tables, storage. */
+/** The rebuild-based board — window rules, replace-not-merge, details and tables, storage. */
 @OptIn(ExperimentalCoroutinesApi::class)
 class SportsRebuildTest {
 

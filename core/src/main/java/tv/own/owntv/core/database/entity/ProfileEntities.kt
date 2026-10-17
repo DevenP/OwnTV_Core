@@ -152,7 +152,7 @@ data class SourceEntity(
     val vodEnginePreference: String? = null,
     /** "Give up after" for a live tune on this playlist, in seconds. */
     val liveTuneTimeoutSecs: Int? = null,
-    /** An HTTP `Referer` this provider's streams require (N16). */
+    /** An HTTP `Referer` this provider's streams require. */
     val httpReferer: String? = null,
     /**
      * The time zone an Xtream panel reports for itself (v49), as a `java.util.TimeZone` ID: its

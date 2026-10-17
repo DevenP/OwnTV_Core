@@ -85,7 +85,7 @@ class OwnTVDatabaseMigrationTest {
             assertIndexExists(sqlite, "index_epg_programmes_natural_key")
             assertTableExists(sqlite, "content_order")
             assertIndexExists(sqlite, "index_content_order_profileId_mediaType_contextKey_itemId")
-            // D1: v8→v9 now truncates the rebuildable programme cache (instant first launch)
+            // v8→v9 truncates the rebuildable programme cache (instant first launch)
             // instead of the old row-wise de-dup; the guide re-downloads on the next EPG sync.
             // epg_channels is untouched.
             assertCount(sqlite, "epg_programmes", 0)
@@ -108,7 +108,7 @@ class OwnTVDatabaseMigrationTest {
             // Structure added along the way.
             assertTableExists(sqlite, "content_order")
             assertIndexExists(sqlite, "index_content_order_profileId_mediaType_contextKey_itemId")
-            // v24: custom category membership (issue #87).
+            // v24: custom category membership.
             assertTableExists(sqlite, "custom_category_members")
             assertIndexExists(sqlite, "index_custom_category_members_profileId_mediaType_contextKey_itemId")
             assertColumnExists(sqlite, "channels", "contentHash")
@@ -259,7 +259,7 @@ class OwnTVDatabaseMigrationTest {
     }
 
     /**
-     * The v23 → v24 hop: custom category membership (issue #87). A user arriving from a v23 dev
+     * The v23 → v24 hop: custom category membership. A user arriving from a v23 dev
      * build (or the next public release built on it) must gain the table with zero data loss —
      * content_order rows made before the upgrade survive, and the new table is empty but fully
      * indexed. `everyExportedSchemaVersionMigratesToCurrent` covers the schema-validity half of
@@ -381,7 +381,7 @@ class OwnTVDatabaseMigrationTest {
     }
 
     /**
-     * D2 — the tests above each pick one interesting starting version, which leaves the hops in
+     * The tests above each pick one interesting starting version, which leaves the hops in
      * between covered only by accident. A user can arrive from *any* shipped version, so every
      * exported schema must migrate all the way to the current one and pass Room's full-schema
      * validation. This is the test that fails when a new migration is added without its predecessor
@@ -417,7 +417,7 @@ class OwnTVDatabaseMigrationTest {
     }
 
     /**
-     * D2 — MIGRATION_4_6 skips version 5 rather than shipping 4→5 and 5→6. That is only safe
+     * MIGRATION_4_6 skips version 5 rather than shipping 4→5 and 5→6. That is only safe
      * because v5 never reached a public build: it existed on dev machines for one change to
      * `favorites` that was reverted before release, so 4.json and 6.json describe the identical
      * schema (same identityHash). If a future change ever makes them differ, this no-op hop would
@@ -435,7 +435,7 @@ class OwnTVDatabaseMigrationTest {
     }
 
     /**
-     * D2 — [OwnTVDatabase.healSchema] is the last line of defence against the interrupted-import
+     * [OwnTVDatabase.healSchema] is the last line of defence against the interrupted-import
      * drift that crash-looped 4.0.x → 4.1.0. The test above proves it rescues one drifted upgrade;
      * this one proves it is complete: strip *every* object it claims to guarantee (all non-unique
      * indexes on the bulk-synced tables and all four external-content FTS tables) from a current
@@ -498,7 +498,7 @@ class OwnTVDatabaseMigrationTest {
     /**
      * v40 → v41: the matcher's normalized names become stored columns, and a time index appears.
      *
-     * The upgrade path that matters is the owner's: a database already full of guide rows, upgraded
+     * The upgrade path that matters is the common one: a database already full of guide rows, upgraded
      * in place. What is proved here is that the columns and indexes arrive, that existing rows are
      * backfilled with the same answer [EpgMatcher.normalizeForEpg] would have given, and — the part a
      * schema check cannot see — that no guide row is lost on the way.
@@ -742,7 +742,7 @@ class OwnTVDatabaseMigrationTest {
     }
 
     /**
-     * v49 (playback audit M6/M7): the panel's time zone on the source and the M3U catch-up correction
+     * v49: the panel's time zone on the source and the M3U catch-up correction
      * on the channel. Existing rows come through whole and read "not known" (null / 0) — exactly what
      * builds the catch-up URLs they built before — until the next sync fills them.
      */

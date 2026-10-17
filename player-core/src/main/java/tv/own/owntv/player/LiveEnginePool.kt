@@ -15,7 +15,7 @@ import kotlinx.coroutines.flow.asStateFlow
  * 1. **Exactly one tile has sound.** Giving a tile the sound mutes whichever tile had it. Four
  *    engines each grabbing audio focus is precisely what must not happen.
  * 2. **The tiles without sound are asked for less video.** The focused tile keeps the full picture;
- *    the rest are capped, which is one of the only two mitigations D5 leaves for a device that runs
+ *    the rest are capped, which is one of the only two mitigations left for a device that runs
  *    out of hardware decoders (the other is the tile saying so — see
  *    [PlaybackFailure.DecoderExhausted]).
  *
@@ -69,7 +69,7 @@ class LiveEnginePool(private val newEngine: () -> LivePreviewEngine) {
     }
 
     /**
-     * The owner's background-audio case: one tile keeps the picture, another gives up its picture and
+     * The background-audio case: one tile keeps the picture, another gives up its picture and
      * plays only sound.
      *
      * A sound-only tile takes the sound, because sound is all it has left. It still costs a provider

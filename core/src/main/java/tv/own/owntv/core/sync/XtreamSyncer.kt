@@ -41,10 +41,10 @@ internal class XtreamSyncer(
                 tv.own.owntv.core.model.HlsSupport.of(details.hlsSupported),
             )
             // The panel states its session limit up front; the app used to learn it only by failing a
-            // tune and reading the 458 back (F30). Stored, so it also survives a restart.
+            // tune and reading the 458 back. Stored, so it also survives a restart.
             support.sourceDao.updateMaxConnections(s.id, details.maxConnections)
             if (details.maxConnections == 1) tv.own.owntv.core.player.LiveSessionLimit.singleSession(s.url)
-            // The zone its timeshift `start` is written in — catch-up's Automatic time zone (M6).
+            // The zone its timeshift `start` is written in — catch-up's Automatic time zone.
             support.sourceDao.updateServerTimeZone(s.id, details.serverTimeZone)
         }
         val semaphore = Semaphore(PHASE_CONCURRENCY)
@@ -56,7 +56,7 @@ internal class XtreamSyncer(
         }
     }
 
-    // C5: the three Xtream phases share one generic scaffolding (syncXtreamPhase) — they differ only
+    // The three Xtream phases share one generic scaffolding (syncXtreamPhase) — they differ only
     // in phase/table names, the entity mapper, and per-entity DAO lambdas (ContentAdapter). Live is
     // NOT wrapped in guardStep (a live failure fails the whole sync, as before); movies/series are.
 
@@ -207,7 +207,7 @@ internal class XtreamSyncer(
     )
 
     /**
-     * One Xtream content phase (C5 — extracted from the three near-identical copies):
+     * One Xtream content phase (extracted from three near-identical copies):
      * category refresh → bulk stream (fresh insert or hash-diffed stable upsert) → per-category
      * fallback when the bulk list errors/truncates → prune (only after a COMPLETE bulk pass).
      */
@@ -323,7 +323,7 @@ internal class XtreamSyncer(
     }
 
     /**
-     * Prune after a per-category fallback (S2). Before this, a fallback run never pruned at all, so
+     * Prune after a per-category fallback. Before this, a fallback run never pruned at all, so
      * titles the provider had removed stayed in the catalog forever on any panel that can't serve the
      * bulk list.
      *
@@ -399,7 +399,7 @@ internal class XtreamSyncer(
         }
 
     /**
-     * Fallback for when a provider truncates the single bulk list (issue #15): re-fetch one category at
+     * Fallback for when a provider truncates the single bulk list: re-fetch one category at
      * a time (`&category_id=X`, tiny payloads) and upsert progressively. The table is NOT cleared first,
      * so any items the partial bulk already inserted (incl. uncategorized ones missing from the category
      * list) survive — the unique `(sourceId, remoteId)` index dedupes the overlap. [total] is shared with

@@ -34,7 +34,7 @@ data class DownloadStorageInfo(
  *
  * This is the queue-control half only: it writes [DownloadDao] rows and hands the actual transfers
  * to [DownloadWorker]/[DownloadEngine], which run in a foreground service and therefore survive the
- * user leaving the app (audit item DL1). [DownloadDao] remains the single source of truth, and
+ * user leaving the app. [DownloadDao] remains the single source of truth, and
  * downloads still run strictly one at a time (each one possibly over several connections).
  */
 class DownloadManager(
@@ -149,7 +149,7 @@ class DownloadManager(
     internal suspend fun pauseForWatching(id: Long) = pauseNow(id, DownloadReason.PAUSED_FOR_WATCHING)
 
     private suspend fun pauseNow(id: Long, reason: DownloadReason?) {
-        // Wait for the writer to actually stop before recording how far it got (DL2) — cancel()
+        // Wait for the writer to actually stop before recording how far it got — cancel()
         // alone returns while the transfer is still appending bytes.
         engine.suspendTransfer(id)
         try {

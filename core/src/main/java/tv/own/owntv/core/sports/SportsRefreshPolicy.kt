@@ -85,7 +85,7 @@ class SportsRefreshPolicy {
     fun pauseAfter(code: Int, now: Long): Long? = if (code == 403 || code == 429) now + PAUSE_MS else null
 
     /**
-     * Whether the board should be rebuilt by itself now (R1.3). [rebuiltAt] and [builtFor] describe the
+     * Whether the board should be rebuilt by itself now. [rebuiltAt] and [builtFor] describe the
      * stored board; [triedAt] is when the last rebuild started, so one that failed (started after the
      * last success) waits [REBUILD_RETRY_MS]. A changed follow list counts in every mode but
      * [AutoRebuild.MANUAL].

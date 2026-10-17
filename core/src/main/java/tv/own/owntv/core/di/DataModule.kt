@@ -57,12 +57,12 @@ val dataModule = module {
             // Global custom DNS: a Dns that reads the live snapshot so the DNS server can be changed
             // at runtime without rebuilding this singleton client. Off = system DNS = exact prior behavior.
             .dns(dnsHolder.dns)
-            // Platform trust plus the Let's Encrypt roots older/current devices lack (#208). Clients
+            // Platform trust plus the Let's Encrypt roots older/current devices lack. Clients
             // derived with newBuilder() (streaming, players) inherit it.
             .sslSocketFactory(trust.sslSocketFactory, trust.trustManager)
             // Force HTTP/1.1. Several IPTV panels / EPG hosts (and their CDNs) have flaky HTTP/2 stacks
             // that send RST_STREAM(PROTOCOL_ERROR) on large/slow responses — e.g. big EPG XML downloads
-            // (#17) — which OkHttp surfaces as "stream was reset: PROTOCOL_ERROR". HTTP/1.1 sidesteps it
+            // which OkHttp surfaces as "stream was reset: PROTOCOL_ERROR". HTTP/1.1 sidesteps it
             // with no real downside for our mostly-single-stream downloads.
             .protocols(listOf(Protocol.HTTP_1_1))
             // Default a player-style UA for any request that didn't set one (e.g. Coil image loads),
@@ -80,9 +80,9 @@ val dataModule = module {
     }
     // The playback engines' client: same proxy/DNS/UA/protocol configuration as the singleton above,
     // but its own connection pool, so a live stop can evict *stream* sockets without dropping keep-alive
-    // for EPG, panel API, metadata and image traffic (F28).
+    // for EPG, panel API, metadata and image traffic.
     single { tv.own.owntv.core.network.StreamingHttpClient(get()) }
-    // N4 — live timeshift buffers download on the streaming client, as the players would.
+    // Live timeshift buffers download on the streaming client, as the players would.
     single {
         tv.own.owntv.core.timeshift.TimeshiftManager(
             androidContext(),
@@ -278,7 +278,7 @@ val dataModule = module {
     // planner, resolver, tvHomeRepository
     single { LauncherIntegrationRepository(get(), get(), get()) }
     // Who currently holds a stream on which playlist. Multiview tiles and recordings spend the same
-    // provider connections, so both count against one register (D11).
+    // provider connections, so both count against one register.
     single { tv.own.owntv.core.live.OpenStreamRegistry() }
     // What the user is actually watching. Separate from the register above on purpose — see the
     // class doc: that one is the connection budget, this one is a playback signal.
@@ -295,7 +295,7 @@ val dataModule = module {
     // Watching vs downloading on a one-stream playlist. createdAtStart: it has to be listening before
     // the first playback opens, and nothing else would ask for it until an app's dialog does.
     single(createdAtStart = true) { tv.own.owntv.core.download.DownloadWatchGuard(get(), get(), get(), get(), get(), get()) }
-    // The recording half of the same idea: several can run at once (D10), so the tracker keeps a
+    // The recording half of the same idea: several can run at once, so the tracker keeps a
     // line per running recording rather than a single active one.
     single { tv.own.owntv.core.recording.RecordingActivityTracker() }
     // recordingDao, okHttpClient, sourceDao, streamUrlResolver, openStreamRegistry, settings,
@@ -310,7 +310,7 @@ val dataModule = module {
     // context, recordingDao, sourceDao, settings, openStreamRegistry, engine, scheduler,
     // channelDao + epgDao (series rules: "every showing of this title on this channel" has to read
     // the guide to find out what the showings are)
-    // `createdAtStart` is the fix for a defect the owner's television found: some manufacturers'
+    // `createdAtStart` is the fix for a defect found on a real television: some manufacturers'
     // auto-start policies never deliver BOOT_COMPLETED to an app the user has not "allowed", so
     // RecordingBootReceiver simply does not run and a recording scheduled across a reboot is never
     // re-armed. Nothing in the app can make an OEM deliver that broadcast — but opening the app is
@@ -325,7 +325,7 @@ val dataModule = module {
             androidContext(), get(), get(), get(), get(), get(), get(), get(), get(),
         )
     }
-    // Programme reminders (Stage G2): context, reminderDao — then reminderDao, scheduler. Eager for the
+    // Programme reminders: context, reminderDao — then reminderDao, scheduler. Eager for the
     // same reason as RecordingManager: every launch re-arms, whether or not BOOT_COMPLETED arrived.
     single { tv.own.owntv.core.reminder.ReminderScheduler(androidContext(), get()) }
     single(createdAtStart = true) { tv.own.owntv.core.reminder.ReminderManager(get(), get()) }

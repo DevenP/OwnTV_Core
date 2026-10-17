@@ -48,7 +48,7 @@ data class WatchFilter(
     }
 }
 
-/** What "Watch live" shows: the [shown] rows, how many [hidden], and the counts beside each choice (T3). */
+/** What "Watch live" shows: the [shown] rows, how many [hidden], and the counts beside each choice. */
 data class WatchList(
     val shown: List<WatchOption>,
     val total: Int,

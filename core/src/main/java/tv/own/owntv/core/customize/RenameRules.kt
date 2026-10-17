@@ -1,7 +1,7 @@
 package tv.own.owntv.core.customize
 
 /**
- * Rule engine for bulk renaming channel/movie/series names (issue #86). Pure functions over
+ * Rule engine for bulk renaming channel/movie/series names. Pure functions over
  * (name, rules, options) — no Android dependencies, fully JVM-testable (see
  * app/src/test/.../RenameRulesTest.kt).
  *

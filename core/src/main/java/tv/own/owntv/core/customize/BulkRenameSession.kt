@@ -24,7 +24,7 @@ data class BulkPreviewRow(
 const val BULK_RENAME_MAX_ROWS = 2000
 
 /**
- * One-shot bulk rename flow (issue #86): choice popup → rule builder / auto cleanup → review → apply.
+ * One-shot bulk rename flow: choice popup → rule builder / auto cleanup → review → apply.
  * The flow state (rules, options, preview) lives here — ViewModel state only, deliberately NOT
  * persisted: every session starts from scratch. Nothing is written until the review's Done, and
  * every accepted row lands in ONE [persist] call.

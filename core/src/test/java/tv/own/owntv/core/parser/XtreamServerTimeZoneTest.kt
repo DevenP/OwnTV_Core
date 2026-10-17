@@ -4,7 +4,7 @@ import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Test
 
-/** M6 — the zone an Xtream panel's timeshift `start` is written in, from its `server_info`. */
+/** The zone an Xtream panel's timeshift `start` is written in, from its `server_info`. */
 class XtreamServerTimeZoneTest {
 
     // 2023-11-14 22:13:20 UTC

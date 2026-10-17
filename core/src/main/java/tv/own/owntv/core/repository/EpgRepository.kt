@@ -56,7 +56,7 @@ class EpgRepository(
     /**
      * Where the download is tee'd *while it runs*. It only becomes [cacheFile] once the parse has
      * completed cleanly, so a guide truncated by a network drop is never left behind under the name
-     * readers trust (E1). The `.tmp` suffix also keeps it out of [storeProgrammesForIdsFromCache]'s
+     * readers trust. The `.tmp` suffix also keeps it out of [storeProgrammesForIdsFromCache]'s
      * `endsWith(".xmltv")` scan while it's being written.
      */
     private fun tempCacheFile(storeId: Long) = java.io.File(context.cacheDir, "epg_$storeId$EPG_CACHE_TEMP_SUFFIX")
@@ -711,7 +711,7 @@ class EpgRepository(
         val from = now - WINDOW_BACK_MS; val to = now + guideAheadMs()
         val pastCutoffFor = pastCutoff(now, from)
         // Only promoted (complete) caches are eligible — an in-flight or abandoned `.xmltv.tmp` is
-        // excluded by name, so a truncated download can't be mistaken for the whole feed (E1).
+        // excluded by name, so a truncated download can't be mistaken for the whole feed.
         val files = context.cacheDir.listFiles()
             ?.filter { isUsableEpgCache(it.name, it.length(), it.lastModified(), now, CACHE_TTL_MS) }
             ?: emptyList<java.io.File>()
@@ -761,7 +761,7 @@ class EpgRepository(
     }
 
     /**
-     * Fill guide gaps left by a catalog sync that finished after the guide sync started (S9).
+     * Fill guide gaps left by a catalog sync that finished after the guide sync started.
      *
      * [refreshUrl] filters the feed down to the channels the user owns, and reads that set **once**,
      * at the start. Sync a playlist and a guide at the same time and every channel the playlist

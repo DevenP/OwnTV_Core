@@ -40,7 +40,7 @@ val databaseModule = module {
                 // now but fails Room's full-schema validation at the NEXT version bump (the
                 // 4.0.x → 4.1.0 crash-loop). Healing here repairs drift long before that migration.
                 //
-                // ST4: gated behind a single sqlite_master count so a healthy open pays one index
+                // Gated behind a single sqlite_master count so a healthy open pays one index
                 // lookup instead of ~30 DDL statements on the thread issuing the first query. The
                 // heal itself stays in onOpen — moving it off would let a query beat it to a missing
                 // index. The OwnTVPerf timeline reports both the cost and whether it healed.

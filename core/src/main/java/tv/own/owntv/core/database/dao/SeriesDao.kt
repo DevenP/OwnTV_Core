@@ -72,7 +72,7 @@ interface SeriesDao {
      * The whole point is what it does *not* touch. Room's `@Update` writes every column and, on
      * this table's insert path, re-derives the provider-catalogue metadata from the title — all for
      * a row that is byte-identical and has merely slid down the list because the provider removed
-     * something above it. Issue #192 measured 1,397 real changes producing 255,775 of those.
+     * something above it. One measured resync had 1,397 real changes producing 255,775 of those.
      */
     @Query("UPDATE series SET sortOrder = :sortOrder WHERE id = :id")
     suspend fun setSortOrder(id: Long, sortOrder: Int)
@@ -357,7 +357,7 @@ interface SeriesDao {
     @Query("DELETE FROM episodes WHERE seriesId = :seriesId")
     suspend fun deleteEpisodes(seriesId: Long)
 
-    // --- Episode refresh (S8) ---
+    // --- Episode refresh ---
     // The refresh path must preserve episode row ids: watch history, resume positions and
     // next-episode autoplay all key on them, so a delete-then-reinsert would silently detach the
     // user's progress on every refresh. Hence read/update/insert/delete-the-gone rather than
@@ -379,7 +379,7 @@ interface SeriesDao {
     /**
      * Invalidates every episode cache belonging to a source, so the next open of any of its shows
      * re-fetches. Called after a successful sync: "just resync" is what a user does when episodes
-     * look stale, and before S8 that did nothing at all for episodes.
+     * look stale, and once that did nothing at all for episodes.
      *
      * The `!= 0` keeps this proportional to the shows actually opened rather than to the catalog:
      * a 46k-series source where the user has opened twelve shows writes twelve rows. It also makes

@@ -64,7 +64,7 @@ class ExternalPlayerLauncher(private val context: Context) {
 
             if (context.packageManager.queryIntentActivities(intent, 0).isEmpty()) continue
             // The intent itself, never Intent.createChooser: only the system's own "Open with" window
-            // offers Just once / Always, so a user can make one player the default (owner, 2026-10-15).
+            // offers Just once / Always, so a user can make one player the default.
             return startActivity(intent)
         }
         toast(localizedContext().getString(tv.own.owntv.core.R.string.player_external_not_found))

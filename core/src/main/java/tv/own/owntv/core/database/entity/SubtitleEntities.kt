@@ -27,7 +27,7 @@ import androidx.room.PrimaryKey
     tableName = "subtitle_cache",
     indices = [
         // NULLs compare distinct in SQLite, so many local rows (null file_id) coexist while every
-        // OpenSubtitles file_id stays unique — that uniqueness is what makes the R3 cache-hit safe.
+        // OpenSubtitles file_id stays unique — that uniqueness is what makes the cache hit safe.
         Index(value = ["openSubFileId"], unique = true),
         Index("lastUsedAt"),
     ],

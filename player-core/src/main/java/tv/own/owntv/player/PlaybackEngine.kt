@@ -98,7 +98,7 @@ interface PlaybackEngine {
     fun audioTracks(): List<TrackOption>
     fun textTracks(): List<TrackOption>
 
-    /** N11 — the picture heights this item offers, highest first; empty when there is nothing to choose
+    /** The picture heights this item offers, highest first; empty when there is nothing to choose
      *  between (the player's Quality button shows only then). */
     val videoQualities: StateFlow<List<Int>> get() = NO_QUALITIES
     /** The Quality-menu pick for this item, or null for Auto (Settings → Maximum video quality). */

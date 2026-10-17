@@ -51,7 +51,7 @@ data class GoalAlerts(
  * build or a hand-edited backup can never be out of range.
  */
 data class SportsConfig(
-    /** A List, not a Set: a Set equals itself in any order, so a reorder alone never reached anyone (owner). */
+    /** A List, not a Set: a Set equals itself in any order, so a reorder alone never reached anyone. */
     val leagues: List<String> = emptyList(),
     /** Sport buttons: true = every catalogue league is fetched, false = only [leagues]. */
     val allSports: Boolean = false,

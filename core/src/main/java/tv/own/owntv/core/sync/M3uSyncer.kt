@@ -53,7 +53,7 @@ internal class M3uSyncer(
     private val bulkInsertHelper: BulkInsertHelper,
     private val support: SyncSupport,
 ) {
-    // Channels and movies use the shared adapters (S1): sortOrder no longer needs folding into the
+    // Channels and movies use the shared adapters: sortOrder no longer needs folding into the
     // M3U hash, because upsertStable now compares the stored sortOrder separately, so a reordered
     // playlist still counts as changed without a bespoke hash here.
     private val channelAdapter get() = support.channelAdapter
@@ -268,7 +268,7 @@ internal class M3uSyncer(
             // playlists are small — hundreds to a few thousand lines — so buffering them is cheap).
             val seriesAccumulator = LinkedHashMap<String, M3uShowAccumulator>()
 
-            // S5 — bound the accumulator. A large series playlist (tens of thousands of episode
+            // Bound the accumulator. A large series playlist (tens of thousands of episode
             // lines) would otherwise hold every episode of every show in memory until end-of-parse.
             // Once this many episode rows are buffered they are written out and the accumulator is
             // cleared. Episodes of one show are contiguous in every real playlist, so a show is
@@ -549,7 +549,7 @@ internal class M3uSyncer(
 
     /**
      * Size of a local playlist, for the progress log — read without opening the stream, so the
-     * descriptor is only ever held around the parse itself (S6). Null when it can't be determined.
+     * descriptor is only ever held around the parse itself. Null when it can't be determined.
      */
     private fun localPlaylistSize(url: String): Long? = when {
         url.startsWith("/") -> File(url).length().takeIf { it > 0 }
@@ -562,7 +562,7 @@ internal class M3uSyncer(
         else -> null
     }
 
-    /** Opens a local playlist for reading. The caller MUST close it — always via `use { }` (S6):
+    /** Opens a local playlist for reading. The caller MUST close it — always via `use { }`:
      *  before, an exception between opening and parsing leaked the fd (and, for `content://`, the
      *  provider's file handle) for the life of the process. */
     private fun openLocalPlaylist(url: String): InputStream = when {
@@ -609,7 +609,7 @@ internal class M3uSyncer(
             return ParsedM3uEpisode(show = name, season = 1, episode = 0, title = null) // episode 0 → sequential
         }
 
-        /** Bound on the in-memory series accumulator (S5) — episode rows buffered before an early
+        /** Bound on the in-memory series accumulator — episode rows buffered before an early
          *  flush. Matched to the bulk-insert chunk so a flush is one normal-sized DB batch. */
         private val SERIES_EPISODE_FLUSH_ROWS = BulkInsertHelper.CHUNK
 

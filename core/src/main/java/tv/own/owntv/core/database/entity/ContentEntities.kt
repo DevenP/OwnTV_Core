@@ -81,13 +81,13 @@ data class ChannelEntity(
      *  Xtream, whose timeshift URL is built from the source credentials instead. */
     val catchupSource: String? = null,
     /** M3U `catchup` type — "default" / "append" / "shift" / "flussonic" / "xc". Decides HOW
-     *  [catchupSource] is used; without it the `append` convention can't be honoured (F17). */
+     *  [catchupSource] is used; without it the `append` convention can't be honoured. */
     val catchupType: String? = null,
     /** Per-channel HTTP request headers as `Key: Value` per line — see
      *  [tv.own.owntv.core.network.StreamHeaders]. Set from the M3U's `#EXTVLCOPT` / `#EXTHTTP` /
-     *  `#KODIPROP` directives or a `url|Key=Value` suffix; null for providers that carry none (F16). */
+     *  `#KODIPROP` directives or a `url|Key=Value` suffix; null for providers that carry none. */
     val httpHeaders: String? = null,
-    /** Widevine/ClearKey licence details — see [tv.own.owntv.core.drm.DrmConfig] (v33, #115). Non-null
+    /** Widevine/ClearKey licence details — see [tv.own.owntv.core.drm.DrmConfig] (v33). Non-null
      *  makes this channel ExoPlayer-only: mpv/FFmpeg can decrypt CENC given a raw key
      *  (`--demuxer-lavf-o=decryption_key=…`) but has no CDM, so it cannot FETCH one from a licence
      *  server — which is the only thing a `license_key` URL offers. The ladder must not offer mpv. */
@@ -247,7 +247,7 @@ data class SeriesEntity(
     /**
      * When this show's episode list was last fetched from the provider (epoch ms; 0 = never).
      * Episodes are loaded lazily on open and used to be cached forever, so a show never gained the
-     * episodes the provider added after the first open (S8). This drives the freshness check in
+     * episodes the provider added after the first open. This drives the freshness check in
      * `SeriesRepository.loadEpisodes`. Deliberately *not* in [computeContentHash] — it is local
      * bookkeeping, not provider content.
      */
@@ -320,7 +320,7 @@ data class EpisodeEntity(
 /**
  * What a resync needs to know about a row it already holds. [sortOrder] is deliberately *outside*
  * `computeContentHash()`: folding it in would change every stored hash at once and turn the next
- * resync of a large catalog into a full rewrite, so the syncer compares it separately (S1).
+ * resync of a large catalog into a full rewrite, so the syncer compares it separately.
  */
 data class ContentHashProjection(
     val remoteId: String,

@@ -78,7 +78,7 @@ class UpsertStableTest {
     @Test
     fun `ten thousand rows shifted by two cost zero content writes`() = runBlocking {
         val rec = Recorder()
-        // The measured shape of issue #192: two channels removed near the top of the list shifted
+        // The measured shape of a real resync: two channels removed near the top of the list shifted
         // every row below them by exactly -2. Content byte-identical throughout.
         val n = 10_000
         val rows = (0 until n).map { Row(remoteId = "r$it", name = "N$it", sortOrder = it) }

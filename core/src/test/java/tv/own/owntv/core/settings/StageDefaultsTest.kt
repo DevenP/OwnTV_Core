@@ -8,7 +8,7 @@ import org.junit.Test
 import tv.own.owntv.core.settings.SettingsRepository.Keys
 import tv.own.owntv.core.theme.GlassConfig
 
-/** The TV app's one-time Stage defaults (owner, 2026-10-02). */
+/** The TV app's one-time Stage defaults. */
 class StageDefaultsTest {
 
     @Test

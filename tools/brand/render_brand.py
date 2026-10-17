@@ -6,7 +6,7 @@ here, then re-render; never edit a generated file by hand.
 
     python tools/brand/render_brand.py extras  --font <Roboto.ttf> --out <repo>/extras
     python tools/brand/render_brand.py android --font <Roboto.ttf> --out core/src/main/res
-    python tools/brand/render_brand.py logos --out <repo>/extras      (README logos, #227 wordmark, no font)
+    python tools/brand/render_brand.py logos --out <repo>/extras      (README logos, wordmark, no font)
 
 Needs Pillow. The wordmark uses the apps' default font (the system sans, Roboto on Android).
 """
@@ -94,7 +94,7 @@ def mark(p, px, variant='launcher', vb=VB_FULL, lip=True, shadow=True):
     c = Canvas(px, vb)
     c.dy = 0.5 if use_lip else 2
     sw = 6 if small else 4
-    # No hinge line and no shade band on any still image (owner, 2026-09-24): they appear only in the
+    # No hinge line and no shade band on any still image: they appear only in the
     # flip animation, where the flap needs them. The two flat halves still read as the split card.
     obj = c.layer()
     if use_lip:
@@ -412,10 +412,10 @@ def extras(root, font_path):
         banner(p, 1920, 384, font_path).convert('RGB').save(os.path.join(d, f'banner_{key}.png'))
 
 
-# ==== Stage: the "Pixel" icon and the #227 wordmark =================================================
+# ==== Stage: the "Pixel" icon and the wordmark ======================================================
 # Pixel is the Stage dot-matrix mark: today's TV-set silhouette as a
 # dot grid in a 100-unit box, the play triangle in the default accent. Its banner and launch-screen name
-# use the #227 wordmark by @m3th0d93 (tools/brand/pixel/wordmark.json), so `stage` needs no font file:
+# use the wordmark (tools/brand/pixel/wordmark.json), so `stage` needs no font file:
 #
 #     python tools/brand/render_brand.py stage --out core/src/main/res
 
@@ -538,7 +538,7 @@ def fill_evenodd(img, polys, colour, tx):
 
 
 def wordmark_227(width_px, tv_colour, own=WORD_OWN):
-    """The #227 wordmark (viewBox 988x182) at width_px, transparent, supersampled."""
+    """The wordmark (viewBox 988x182) at width_px, transparent, supersampled."""
     wm = json.load(open(os.path.join(HERE, 'pixel', 'wordmark.json'), encoding='utf-8'))
     w = width_px * SS
     k = w / 988
@@ -552,7 +552,7 @@ def wordmark_227(width_px, tv_colour, own=WORD_OWN):
 
 
 def lockup_227(p, mark_px, own=WORD_OWN, tv=None, pad=0):
-    """Horizontal lockup with the #227 wordmark: flat mark, gap = mark * .26, the wordmark .6 of the mark high."""
+    """Horizontal lockup with the wordmark: flat mark, gap = mark * .26, the wordmark .6 of the mark high."""
     word = wordmark_227(round(mark_px * .6 * 988 / 182), tv or p['acc'], own)
     gap = round(mark_px * .26)
     w = pad * 2 + mark_px + gap + word.width
@@ -564,7 +564,7 @@ def lockup_227(p, mark_px, own=WORD_OWN, tv=None, pad=0):
 
 
 def logos(root):
-    """The README logos (extras/brand/app-logos) with the #227 wordmark, every colour, dark and light."""
+    """The README logos (extras/brand/app-logos) with the wordmark, every colour, dark and light."""
     d = os.path.join(root, 'brand', 'app-logos')
     os.makedirs(d, exist_ok=True)
     for key, p in PAL.items():
@@ -684,7 +684,7 @@ def vector_splash_pixel():
 
 
 def stage_banner(w=320, h=180):
-    """Mark left, #227 wordmark right, on the icon's dark field, as the other banners are laid out."""
+    """Mark left, wordmark right, on the icon's dark field, as the other banners are laid out."""
     s = h / 180
     img = Image.new('RGBA', (w, h), rgb(PIXEL['bg']))
     x0 = round(26 * s)
@@ -722,7 +722,7 @@ def stage(res):
     write(os.path.join(res, 'drawable', 'owntv_splash_pixel.xml'), vector_splash_pixel())
     write(os.path.join(res, 'drawable', 'owntv_splash_static_pixel.xml'), vector_pixel(108, t0, sc, 108))
     stage_banner().save(os.path.join(res, 'drawable-xhdpi', 'owntv_banner_pixel.png'))
-    # The #227 wordmark as two white vectors on the same 988x182 viewport, "own" and "tv", for the apps to
+    # The wordmark as two white vectors on the same 988x182 viewport, "own" and "tv", for the apps to
     # stack and tint (the lockup's "tv" follows the accent).
     wm = json.load(open(os.path.join(HERE, 'pixel', 'wordmark.json'), encoding='utf-8'))
     for name, parts in (('owntv_wordmark_own', ('o', 'w', 'n')), ('owntv_wordmark_tv', ('tv',))):

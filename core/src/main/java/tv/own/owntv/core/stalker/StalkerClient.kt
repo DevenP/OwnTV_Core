@@ -854,7 +854,7 @@ open class StalkerClient(okHttpClient: OkHttpClient) {
         internal fun seasonNumberOf(id: String, name: String?): Int? {
             // "280:2" — the suffix after ':' is the season on classic portals.
             id.substringAfterLast(':', "").toIntOrNull()?.let { return it }
-            // A "Specials" season is season 0 (#228). Without this it had no number, took its list position,
+            // A "Specials" season is season 0. Without this it had no number, took its list position,
             // and — listed first — merged into Season 1.
             if (name != null && SPECIALS.containsMatchIn(name)) return 0
             // Else a trailing number in the name ("Season 2", "S02").

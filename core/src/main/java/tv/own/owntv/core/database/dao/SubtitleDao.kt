@@ -34,7 +34,7 @@ interface SubtitleDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCache(entry: SubtitleCacheEntity): Long
 
-    /** R3 cache-first lookup: an existing download for this exact OpenSubtitles file → skip /download. */
+    /** Cache-first lookup: an existing download for this exact OpenSubtitles file → skip /download. */
     @Query("SELECT * FROM subtitle_cache WHERE openSubFileId = :fileId LIMIT 1")
     suspend fun findByOpenSubFileId(fileId: Long): SubtitleCacheEntity?
 

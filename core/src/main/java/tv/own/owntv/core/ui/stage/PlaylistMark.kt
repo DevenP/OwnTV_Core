@@ -9,7 +9,7 @@ import java.util.Locale
 data class PlaylistMark(val text: String, val argb: Long) {
     companion object {
         /**
-         * Decision D4: the first four letters of the playlist's name, upper-case, after dropping a
+         * The first four letters of the playlist's name, upper-case, after dropping a
          * leading "IPTV" or "TV" word and every separator — IPTV_GOLD → GOLD, Junior → JUNI, X → X. A
          * prefix only counts as a whole word, so "Tvoli" keeps its T; a name that is nothing but the
          * prefix keeps it.

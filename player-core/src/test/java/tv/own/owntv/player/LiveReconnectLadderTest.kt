@@ -185,7 +185,7 @@ class LiveReconnectLadderTest {
 
     @Test
     fun `busy is not refusal — 458 429 408 keep their retries`() {
-        // F29: "the account's one session is already in use" (the non-standard 458 Xtream panels use),
+        // "The account's one session is already in use" (the non-standard 458 Xtream panels use),
         // a rate limit and a request timeout all mean the stream is fine and we should ask again after
         // a back-off — which is what the ExoPlayer side already does via LiveStreamQuirks.isSessionLimit.
         // Treating them as hard refusals made mpv give up on panels ExoPlayer reconnects to.
@@ -210,7 +210,7 @@ class LiveReconnectLadderTest {
 
     @Test
     fun `a refused file skips the rungs that assume it was delivered`() {
-        // M4: a dead film link walked the tolerant-demux and decoder rungs — ~6 opens before its error.
+        // A dead film link walked the tolerant-demux and decoder rungs — ~6 opens before its error.
         val rungs = OwnTVPlayer.LadderRung.entries
         fun useful(rung: OwnTVPlayer.LadderRung, error: String?) = OwnTVPlayer.ladderRungUseful(rung, error)
         for (code in listOf("401 Unauthorized", "403 Forbidden", "404 Not Found", "410 Gone")) {

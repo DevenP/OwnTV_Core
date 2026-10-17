@@ -110,7 +110,7 @@ internal class StalkerSyncer(
         // Genres/pages this pass could not fetch. A non-zero count means remoteIds is incomplete,
         // so pruning against it would delete the missing genres' channels as "stale".
         val pageFailures = java.util.concurrent.atomic.AtomicInteger(0)
-        // Audit S7 diagnostic: the first few channels this pass builds, so their per-field
+        // Diagnostic: the first few channels this pass builds, so their per-field
         // fingerprints can be compared across two consecutive syncs — see [logFieldFingerprints].
         val fieldDiffSample = ArrayList<ChannelEntity>(FIELD_DIFF_SAMPLE)
         var order = 0
@@ -273,7 +273,7 @@ internal class StalkerSyncer(
     }
 
     /**
-     * Audit S7 diagnostic — which channel field makes Stalker rewrite ~99% of its rows every sync.
+     * Diagnostic — which channel field makes Stalker rewrite ~99% of its rows every sync.
      *
      * Stalker resyncs report `dbUpdated≈1500 dbSkipped=0` with identical counts run after run, i.e.
      * the hash differs for nearly every channel even though the catalog plainly hasn't changed. The
@@ -961,7 +961,7 @@ internal class StalkerSyncer(
         private const val STALKER_CHUNK = 1_500
 
         /**
-         * A page size at or below this is the pathology N1 exists for — the reference portal serves
+         * A page size at or below this is the pathology the lazy setup exists for — the reference portal serves
          * 14 and ignores any `max_page_items` we ask for, so a catalogue costs thousands of requests.
          * A portal that pages sanely (hundreds per page) finishes its walk quickly and is left alone.
          */
@@ -995,7 +995,7 @@ internal class StalkerSyncer(
         internal fun sortKey(sortBase: Int, page: Int, maxPageItems: Int, indexInPage: Int): Int =
             sortBase + (page - 1) * maxPageItems + indexInPage
 
-        /** How many channels the S7 field-diff diagnostic fingerprints per sync (see [logFieldFingerprints]). */
+        /** How many channels the field-diff diagnostic fingerprints per sync (see [logFieldFingerprints]). */
         private const val FIELD_DIFF_SAMPLE = 3
 
         /** Total attempts per page for transient 429/5xx errors (1 original + 2 retries). */

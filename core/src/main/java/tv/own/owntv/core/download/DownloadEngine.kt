@@ -43,7 +43,7 @@ data class DownloadProgress(val id: Long, val title: String, val downloadedBytes
 /**
  * The transfer half of downloads, split out of [DownloadManager] so it can run inside
  * [DownloadWorker] — a foreground service — instead of an app-scoped coroutine that Android kills
- * as soon as the user leaves OwnTV (audit item DL1).
+ * as soon as the user leaves OwnTV.
  *
  * [DownloadDao] stays the single source of truth: the engine holds no queue of its own, it just
  * drains whatever rows are QUEUED/RUNNING, one at a time, until none are left.

@@ -4,7 +4,7 @@ import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Test
 
-/** L9 — a segment address is resolved leniently: a signed token must not drop the segment. */
+/** A segment address is resolved leniently: a signed token must not drop the segment. */
 class SegmentUrlTest {
 
     @Test

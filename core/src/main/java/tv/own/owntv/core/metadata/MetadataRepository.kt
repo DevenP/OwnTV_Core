@@ -259,7 +259,7 @@ class MetadataRepository(
 
     /**
      * TMDB's original language (ISO 639-1) of a film or show, for the "Original language" audio choice
-     * (N14); null when enrichment is off, the title has no match, or TMDB could not be reached.
+     * null when enrichment is off, the title has no match, or TMDB could not be reached.
      *
      * A row cached before v45 has no language yet, so its details are fetched again — once, now that
      * the title is being played, rather than for the whole cache (the Worker's quota is shared).

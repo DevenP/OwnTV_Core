@@ -151,7 +151,7 @@ class SourceRepository(
                 .onFailure { Log.w(TAG, "userData relink failed sourceId=${source.id} ms=${SystemClock.elapsedRealtime() - relinkStartedAt}", it) }
         }
         // Episodes are fetched lazily on show-open, never by the syncer, so a resync would otherwise
-        // leave every already-opened show frozen on the episode list it cached the first time (S8).
+        // leave every already-opened show frozen on the episode list it cached the first time.
         // Zeroing the stamps makes the user's "I'll just resync" actually refresh them, on demand
         // and one show at a time — no episode fetch storm across a 46k-series catalog.
         if (result is SyncResult.Success && effective.series) {

@@ -42,7 +42,7 @@ class CompanionHttpServer(
 ) {
 
     /**
-     * The server's **own** slice of the IO pool (C3). Every accepted socket used to be handled on the
+     * The server's **own** slice of the IO pool. Every accepted socket used to be handled on the
      * shared `Dispatchers.IO`, where each one holds a thread for up to its `soTimeout` (10 s, or 30 s
      * for uploads) — so a connection flood, or just a browser pre-connecting aggressively, could park
      * the whole pool and stall the app's own syncs, downloads and image loading. A limited view caps
@@ -55,11 +55,11 @@ class CompanionHttpServer(
     private val scope = CoroutineScope(SupervisorJob() + ioDispatcher)
     private val running = AtomicBoolean(false)
 
-    /** In-flight connections (C3). Beyond the cap a socket is closed at once rather than queued. */
+    /** In-flight connections. Beyond the cap a socket is closed at once rather than queued. */
     private val inFlight = java.util.concurrent.Semaphore(MAX_IN_FLIGHT)
 
     /**
-     * Consecutive wrong PINs this session (C2). A 6-digit PIN is a million possibilities, which a
+     * Consecutive wrong PINs this session. A 6-digit PIN is a million possibilities, which a
      * script on a LAN exhausts in minutes; the constant-time compare stops timing leakage but says
      * nothing about volume. Reset by any correct PIN.
      */
@@ -171,7 +171,7 @@ class CompanionHttpServer(
                     if (running.get()) Log.w(TAG, "Companion accept failed", e)
                     break
                 }
-                // C3: shed rather than queue. A queued connection still holds a socket and would be
+                // Shed rather than queue. A queued connection still holds a socket and would be
                 // served long after the client gave up; closing it immediately keeps the cap honest.
                 if (!inFlight.tryAcquire()) {
                     Log.w(TAG, "Companion connection refused — $MAX_IN_FLIGHT already in flight")
@@ -387,7 +387,7 @@ class CompanionHttpServer(
     private fun pinOk(candidate: String): Boolean = pin.isNotBlank() && CompanionHttpProtocol.pinEquals(candidate, pin)
 
     /**
-     * PIN check for the direct POST endpoints, with the C2 attempt counting applied. Returns true
+     * PIN check for the direct POST endpoints, with the wrong-PIN counting applied. Returns true
      * when the caller may proceed.
      */
     private suspend fun requirePin(candidate: String): Boolean {
@@ -556,17 +556,17 @@ class CompanionHttpServer(
         internal const val UPLOAD_BODY_LIMIT = CompanionHttpProtocol.UPLOAD_BODY_LIMIT
         internal const val FORM_BODY_LIMIT = CompanionHttpProtocol.FORM_BODY_LIMIT
 
-        /** Consecutive wrong PINs before the link closes itself (C2). */
+        /** Consecutive wrong PINs before the link closes itself. */
         internal const val MAX_PIN_ATTEMPTS = 10
 
-        /** Fixed pause before answering a wrong PIN (C2) — fixed so it carries no timing signal. */
+        /** Fixed pause before answering a wrong PIN — fixed so it carries no timing signal. */
         internal const val FAILED_PIN_DELAY_MS = 500L
 
 
-        /** Threads the companion server may take from the shared IO pool (C3). */
+        /** Threads the companion server may take from the shared IO pool. */
         private const val MAX_PARALLELISM = 6
 
-        /** Connections served at once (C3); further ones are closed immediately rather than queued. */
+        /** Connections served at once; further ones are closed immediately rather than queued. */
         private const val MAX_IN_FLIGHT = 16
 
         /** Pure protocol delegates retained for callers that used the old static API. */

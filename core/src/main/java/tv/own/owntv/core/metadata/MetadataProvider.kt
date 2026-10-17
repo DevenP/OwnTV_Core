@@ -181,7 +181,7 @@ data class MovieDetails(
     val trailerKey: String?,
     /** Best title/logo image path from TMDB images; null when no usable logo exists. */
     val logoPath: String?,
-    /** TMDB `original_language` (ISO 639-1, e.g. "ko"): what "Original language" audio plays (N14). */
+    /** TMDB `original_language` (ISO 639-1, e.g. "ko"): what "Original language" audio plays. */
     val originalLanguage: String? = null,
 )
 

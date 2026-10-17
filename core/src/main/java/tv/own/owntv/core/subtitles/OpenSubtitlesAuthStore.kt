@@ -19,7 +19,7 @@ import javax.crypto.spec.GCMParameterSpec
  * Each profile's blob (username, optional password, token, API host, account metadata) is sealed
  * with an Android Keystore AES-256-GCM key that never leaves secure hardware, and the ciphertext
  * sits in a private SharedPreferences file. The password is present only when the user opted in
- * to "Stay signed in" (R5) — otherwise only the token is stored and expiry means manual sign-in.
+ * to "Stay signed in" — otherwise only the token is stored and expiry means manual sign-in.
  *
  * No insecure fallback: if the Keystore key is missing/reset or a blob fails to
  * decrypt (GCM tag mismatch), the stored session is erased and the profile is simply signed out.

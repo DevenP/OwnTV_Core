@@ -45,7 +45,7 @@ data class ChannelFacets(val name: String, val country: String?, val language: S
     }
 }
 
-/** One channel under "Watch live": the [tier] it earned, and for a guide hit the programme's title (T2). */
+/** One channel under "Watch live": the [tier] it earned, and for a guide hit the programme's title. */
 data class WatchOption(
     val channel: ChannelEntity,
     val tier: WatchTier,

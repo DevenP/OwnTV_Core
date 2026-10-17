@@ -40,7 +40,7 @@ class PlaybackEngines(
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
 
     init {
-        // M9 — from Android 14 the RUNNING_* trim levels are no longer delivered, so the only pressure
+        // From Android 14 the RUNNING_* trim levels are no longer delivered, so the only pressure
         // signal left is asking. Polled only while something plays; older Android keeps the callback.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
             scope.launch {

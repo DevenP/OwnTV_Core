@@ -21,7 +21,7 @@ import org.junit.Test
  */
 class XmltvTimeTest {
 
-    /** The exact pre-E2 implementation from `XmltvParser.parseTime`, kept as the oracle. */
+    /** The exact earlier implementation from `XmltvParser.parseTime`, kept as the oracle. */
     private fun legacyParseTime(raw: String?): Long {
         val t = raw?.trim()?.replace(" ", "") ?: return 0
         if (t.length < 14) return 0

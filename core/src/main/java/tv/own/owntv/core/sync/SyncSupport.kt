@@ -100,7 +100,7 @@ internal class SyncSupport(
     /**
      * Hash-diffed stable upsert: unchanged rows are skipped, changed rows keep their local id.
      *
-     * There are three outcomes, not two (S1). `sortOrder` is deliberately not part of
+     * There are three outcomes, not two. `sortOrder` is deliberately not part of
      * `computeContentHash()` — folding it in would change every stored hash at once, so the first
      * resync after such a change rewrites a 170k-row catalog end to end. Instead the stored
      * `sortOrder` travels alongside the hash and is compared separately: a row whose content is
@@ -226,7 +226,7 @@ internal class SyncSupport(
             stats.processedCounts.merge(CATEGORIES_ADDED_KEY, upsert.newRows.size, Int::plus)
             applyHideNewCategoriesDefault(s.id, type, upsert.newRows)
         }
-        // C5: ids come straight from the upsert (existing rows + returned insert rowids) — the old
+        // Ids come straight from the upsert (existing rows + returned insert rowids) — the old
         // second existingCategoriesByRemoteId round-trip only re-fetched just-upserted rows.
         return CategoryRefresh(idsByRemoteId = upsert.idsByRemoteId, seenRemoteIds = uniqueCategories.mapTo(HashSet()) { it.id }).also {
             Log.d(TAG, "refreshCategories end sourceId=${s.id} type=$type mapped=${it.idsByRemoteId.size} totalMs=${SystemClock.elapsedRealtime() - start}")
@@ -327,7 +327,7 @@ internal class SyncSupport(
     ): R = coroutineScope {
         var chunkIndex = 0
         var skippedDuplicates = 0
-        // Plan A. These are the numbers that diagnosed issue #192 and they are the numbers that
+        // These are the numbers that diagnosed the full-rewrite resync and they are the numbers that
         // prove the fix, so they are reported at info level — the per-chunk line below is debug and
         // release builds strip it.
         var totalInserted = 0
@@ -581,7 +581,7 @@ internal class SyncSupport(
 
 /**
  * Per-entity DAO/mapping lambdas so ONE [SyncSupport.upsertStable]/[SyncSupport.insertFresh]/prune
- * implementation serves channels, movies and series (C5) — any fix to the hash-diff/prune logic now
+ * implementation serves channels, movies and series — any fix to the hash-diff/prune logic now
  * lands once.
  */
 internal class ContentAdapter<T>(
@@ -606,7 +606,7 @@ internal class ContentAdapter<T>(
     val countsByCategory: (suspend (sourceId: Long) -> Map<Long, Int>)? = null,
     /** RemoteIds of one category's existing rows — protects a delta-skipped category from pruning. */
     val remoteIdsForCategory: (suspend (sourceId: Long, categoryId: Long) -> List<String>)? = null,
-    /** RemoteIds across a set of categories — the prune scope after a per-category fallback (S2). */
+    /** RemoteIds across a set of categories — the prune scope after a per-category fallback. */
     val remoteIdsInCategories: (suspend (sourceId: Long, categoryIds: List<Long>) -> List<String>)? = null,
 )
 
@@ -621,7 +621,7 @@ internal data class PositionMove(val id: Long, val sortOrder: Int)
  *
  * `[fromSortOrder, toSortOrder]` are the rows' **stored** positions, and every stored row of the
  * source inside that span moves by [delta]. One statement replaces one write per row: the measured
- * Live phase of issue #192 was 30,689 rows at a uniform delta of -2, i.e. exactly one of these.
+ * Live phase of one resync was 30,689 rows at a uniform delta of -2, i.e. exactly one of these.
  */
 internal data class PositionRange(val fromSortOrder: Int, val toSortOrder: Int, val delta: Int)
 
@@ -632,21 +632,21 @@ internal data class UpsertStats(
     /**
      * Rows repositioned without being rewritten. No longer a subset of [updated] — since positions
      * these go through `moveAll`/`moveRanges` and touch one column, so counting them as updates
-     * would hide the very thing that fixed issue #192.
+     * would hide the very thing that keeps a resync cheap.
      */
     val moved: Int = 0,
     /** How many of [moved] were served by a range statement rather than one write each. */
     val movedByRange: Int = 0,
     /**
      * Moves a range could not collapse, which is exactly the population the
-     * `UPDATE … FROM (VALUES …)` batch exists to serve. Reported so D2 can be measured rather than
+     * `UPDATE … FROM (VALUES …)` batch exists to serve. Reported so it can be measured rather than
      * assumed — a re-sync where this is small does not exercise it at all.
      */
     val movedScattered: Int = 0,
 )
 
 /**
- * Result of an Xtream per-category fallback pass (S2). [succeededCategoryRemoteIds] are the
+ * Result of an Xtream per-category fallback pass. [succeededCategoryRemoteIds] are the
  * categories whose list was fetched *completely* — a truncated, failed, skipped or never-reached
  * category is absent, so its rows are left alone. Top-level (not nested in XtreamSyncer) so
  * [pruneScope] can be unit tested.

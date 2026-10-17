@@ -55,7 +55,7 @@ class SeriesRepository(
      * The cache used to be write-once — `episodeCount > 0` meant "done, never ask again" — and since
      * the syncers deliberately don't fetch episodes either, nothing in the app could ever add an
      * episode to a show the user had already opened. New episodes only appeared if the source was
-     * deleted and re-added (which cascade-drops the rows). That's S8; the cache now expires, and a
+     * deleted and re-added (which cascade-drops the rows). Now the cache expires, and a
      * source sync invalidates it outright.
      */
     suspend fun loadEpisodes(series: SeriesEntity): EpisodeLoad = withContext(Dispatchers.IO) {
@@ -64,7 +64,7 @@ class SeriesRepository(
         val stored = if (hasCache) EpisodeLoad.Ready else EpisodeLoad.Empty
         val source = sourceDao.getById(series.sourceId) ?: return@withContext stored
 
-        // M3U is not affected by S8 and deliberately doesn't take this path: its episodes come from
+        // M3U is not affected and deliberately doesn't take this path: its episodes come from
         // the playlist during the sync itself, and `M3uSyncer.flushSeries` folds the episode list
         // into the show's content hash — so a playlist that gains an episode rewrites that show's
         // hierarchy on the next resync. There is nothing to fetch on demand and no cache to expire.

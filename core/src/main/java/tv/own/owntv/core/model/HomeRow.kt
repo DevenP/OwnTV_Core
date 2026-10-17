@@ -9,7 +9,7 @@ enum class HomeRow {
     TRENDING,
     HERO,
 
-    /** Sports Hub (T7): followed matches, drawn only while one is live or kicks off within the hour. */
+    /** Sports Hub: followed matches, drawn only while one is live or kicks off within the hour. */
     LIVE_SPORTS,
     RECENT_CHANNELS,
     FAVORITE_CHANNELS,

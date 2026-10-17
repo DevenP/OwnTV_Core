@@ -136,7 +136,7 @@
             </intent-filter>
         </receiver>
 
-        <!-- Programme reminders (Stage G2): the same pair as recordings, for the same reasons. -->
+        <!-- Programme reminders: the same pair as recordings, for the same reasons. -->
         <receiver
             android:name="tv.own.owntv.core.reminder.ReminderAlarmReceiver"
             android:exported="false">
