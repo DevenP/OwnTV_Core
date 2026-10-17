@@ -26,10 +26,7 @@ data class DownloadStorageInfo(
     val totalBytes: Long,
     /** The chosen folder is missing (USB removed, permission withdrawn), so the app's own folder is in use. */
     val usingFallback: Boolean = false,
-) {
-    val usedBytes: Long get() = (totalBytes - freeBytes).coerceAtLeast(0L)
-    val usedFraction: Float get() = if (totalBytes > 0) (usedBytes.toFloat() / totalBytes).coerceIn(0f, 1f) else 0f
-}
+)
 
 /**
  * Phase 12 — downloads movies & series episodes for offline playback. Files go under the user-chosen

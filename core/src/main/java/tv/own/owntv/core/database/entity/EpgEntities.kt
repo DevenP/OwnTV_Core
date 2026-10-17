@@ -135,11 +135,6 @@ data class EpgHashProjection(
     val contentHash: Int,
 )
 
-data class EpgProgrammeKey(
-    val epgChannelId: String,
-    val startMs: Long,
-)
-
 // The details are part of the hash, so a feed that starts sending them (or the first sync after v47)
 // rewrites the rows instead of skipping them as unchanged.
 fun EpgProgrammeEntity.computeContentHash(): Int =

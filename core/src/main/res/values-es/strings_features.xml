@@ -25,7 +25,6 @@
     <string name="profiles_kids_badge">INFANTIL</string>
     <string name="profiles_add">Añadir perfil</string>
     <string name="profiles_title">Perfiles</string>
-    <string name="profiles_add_button">Añadir perfil</string>
     <string name="profiles_delete_title">¿Eliminar «<xliff:g id="name">%1$s</xliff:g>»?</string>
     <string name="profiles_delete_message">Elimina este perfil, sus favoritos y su historial. Las fuentes se conservan.</string>
     <string name="profiles_kids_tag">Infantil</string>
@@ -33,10 +32,7 @@
     <string name="search_title">Buscar</string>
     <string name="search_continue">Seguir viendo</string>
     <string name="search_unwatched">Sin ver</string>
-    <string name="search_hint">Buscar canales, películas y series…</string>
     <string name="search_recent">Búsquedas recientes</string>
-    <string name="search_recent_empty">Tus búsquedas recientes aparecerán aquí.</string>
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> — sin resultados.</string>
     <string name="search_nothing_in_list">Todavía no hay nada en <xliff:g id="list">%1$s</xliff:g>.</string>
     <string name="search_clear">Borrar</string>
     <string name="search_jump_to">Ir a</string>
@@ -169,12 +165,7 @@
     </plurals>
     <string name="home_trending_movie">Película</string>
     <string name="home_trending_series">Serie</string>
-    <string name="home_trending_section_label">TENDENCIAS ACTUALES · INSTANTÁNEA DE SINCRONIZACIÓN</string>
     <string name="home_trending_provider_match">Coincidencia del proveedor</string>
-    <string name="home_trending_language_choice">Opción en <xliff:g id="language">%1$s</xliff:g></string>
-    <string name="home_trending_english_fallback">Opción alternativa en inglés</string>
-    <string name="home_trending_untagged_fallback">Opción alternativa sin etiqueta de idioma</string>
-    <string name="home_trending_other_fallback">Opción alternativa en <xliff:g id="language">%1$s</xliff:g></string>
     <string name="home_trending_why_label">POR QUÉ APARECE ESTE ELEMENTO</string>
     <string name="home_trending_reason_title">Puesto n.º <xliff:g id="rank">%1$d</xliff:g> en TMDB <xliff:g id="media_type">%2$s</xliff:g> + coincidencia del proveedor</string>
     <string name="home_trending_reason_preferred">La versión seleccionada del proveedor en <xliff:g id="language">%1$s</xliff:g> tiene prioridad sobre las opciones en otros idiomas.</string>
@@ -192,10 +183,7 @@
     <string name="home_trending_more_details">Más detalles</string>
     <string name="home_trending_all_versions">Todas las versiones</string>
     <string name="home_trending_why_menu">Por qué está aquí este título</string>
-    <string name="home_trending_previous">Anterior</string>
     <string name="home_trending_pause">Pausar</string>
-    <string name="home_trending_resume">Reanudar</string>
-    <string name="home_trending_next">Siguiente</string>
     <string name="home_trending_unavailable">Esta versión ya no está disponible</string>
     <string name="recording_notification_title">Grabando</string>
     <string name="recording_failed_no_space">Detenida: no queda espacio</string>
@@ -206,7 +194,6 @@
     <string name="recording_failed_channel_gone">Ese canal ya no está en tu lista</string>
     <string name="recording_failed_unknown">No se grabó</string>
     <string name="recording_title">Grabaciones</string>
-    <string name="recording_description">Televisión en directo guardada en este dispositivo.</string>
     <string name="recording_empty">Aún no hay grabaciones. Pulsa Grabar en un programa de la guía de TV, o mantén pulsado un canal para grabarlo o programar una hora.</string>
     <string name="recording_group_now">Grabando ahora</string>
     <string name="recording_group_scheduled">Programada</string>
@@ -253,7 +240,6 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> grabaciones</item>
     </plurals>
     <string name="settings_recording_mobile_data">Grabar con datos móviles</string>
-    <string name="settings_recording_mobile_data_description">Desactivado: una grabación que toca fuera del Wi-Fi se omite en vez de esperar; un programa en directo no se repite.</string>
     <string name="settings_record_watching">Grabar lo que estoy viendo</string>
     <string name="settings_record_watching_description">Añade al reproductor un botón de grabación que guarda el canal que estás viendo. Descarga el canal por su cuenta, así que ocupa una de las conexiones de tu proveedor mientras dura, y sigue grabando si cambias de canal o sales del reproductor.</string>
     <string name="settings_record_watching_warning_title">Solo una conexión</string>

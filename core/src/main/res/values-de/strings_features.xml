@@ -25,7 +25,6 @@
     <string name="profiles_kids_badge">KINDER</string>
     <string name="profiles_add">Profil hinzufügen</string>
     <string name="profiles_title">Profile</string>
-    <string name="profiles_add_button">Profil hinzufügen</string>
     <string name="profiles_delete_title">„<xliff:g id="name">%1$s</xliff:g>“ löschen?</string>
     <string name="profiles_delete_message">Entfernt dieses Profil sowie die zugehörigen Favoriten und den Wiedergabeverlauf. Die Quellen bleiben erhalten.</string>
     <string name="profiles_kids_tag">Kinder</string>
@@ -33,10 +32,7 @@
     <string name="search_title">Suche</string>
     <string name="search_continue">Weiterschauen</string>
     <string name="search_unwatched">Ungesehen</string>
-    <string name="search_hint">Sender, Filme und Serien durchsuchen…</string>
     <string name="search_recent">Letzte Suchanfragen</string>
-    <string name="search_recent_empty">Deine letzten Suchanfragen werden hier angezeigt.</string>
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> — keine Ergebnisse.</string>
     <string name="search_nothing_in_list">Noch nichts in <xliff:g id="list">%1$s</xliff:g>.</string>
     <string name="search_clear">Löschen</string>
     <string name="search_jump_to">Direkt zu</string>
@@ -161,12 +157,7 @@
     </plurals>
     <string name="home_trending_movie">Film</string>
     <string name="home_trending_series">Serie</string>
-    <string name="home_trending_section_label">AKTUELL IM TREND · SYNCHRONISIERUNGSSTAND</string>
     <string name="home_trending_provider_match">Anbieterübereinstimmung</string>
-    <string name="home_trending_language_choice"><xliff:g id="language">%1$s</xliff:g>-Sprachauswahl</string>
-    <string name="home_trending_english_fallback">Englisch als Ausweichoption</string>
-    <string name="home_trending_untagged_fallback">Nicht gekennzeichnete Ausweichoption</string>
-    <string name="home_trending_other_fallback"><xliff:g id="language">%1$s</xliff:g> als Ausweichoption</string>
     <string name="home_trending_why_label">WARUM DIESER TITEL ANGEZEIGT WIRD</string>
     <string name="home_trending_reason_title">TMDB-Rang #<xliff:g id="rank">%1$d</xliff:g> <xliff:g id="media_type">%2$s</xliff:g> + Anbieterübereinstimmung</string>
     <string name="home_trending_reason_preferred">Die ausgewählte <xliff:g id="language">%1$s</xliff:g>-Anbieterversion wird Einträgen in einer anderen Sprache vorgezogen.</string>
@@ -183,10 +174,7 @@
     <string name="home_trending_more_details">Weitere Details</string>
     <string name="home_trending_all_versions">Alle Versionen</string>
     <string name="home_trending_why_menu">Warum dieser Titel hier ist</string>
-    <string name="home_trending_previous">Zurück</string>
     <string name="home_trending_pause">Pause</string>
-    <string name="home_trending_resume">Fortsetzen</string>
-    <string name="home_trending_next">Weiter</string>
     <string name="home_trending_unavailable">Diese Version ist nicht mehr verfügbar</string>
     <string name="recording_notification_title">Aufnahme läuft</string>
     <string name="recording_failed_no_space">Gestoppt: kein Speicherplatz mehr</string>
@@ -197,7 +185,6 @@
     <string name="recording_failed_channel_gone">Dieser Sender ist nicht mehr in deiner Playlist</string>
     <string name="recording_failed_unknown">Es wurde nichts aufgenommen</string>
     <string name="recording_title">Aufnahmen</string>
-    <string name="recording_description">Live-TV, das auf diesem Gerät gespeichert ist.</string>
     <string name="recording_empty">Noch nichts aufgenommen. Drücke im TV-Guide bei einer Sendung auf Aufnehmen, oder halte einen Sender gedrückt, um ihn aufzunehmen oder eine Zeit zu planen.</string>
     <string name="recording_group_now">Wird jetzt aufgenommen</string>
     <string name="recording_group_scheduled">Geplant</string>
@@ -242,7 +229,6 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> Aufnahmen</item>
     </plurals>
     <string name="settings_recording_mobile_data">Über mobile Daten aufnehmen</string>
-    <string name="settings_recording_mobile_data_description">Aus: eine Aufnahme, die fällig wird, während du nicht im WLAN bist, wird übersprungen statt zu warten — eine Sendung läuft nicht noch einmal.</string>
     <string name="settings_record_watching">Aufnehmen, was ich gerade sehe</string>
     <string name="settings_record_watching_description">Fügt dem Player eine Aufnahmetaste hinzu, die den laufenden Sender speichert. Sie ruft den Sender selbst ab, belegt währenddessen also eine der Verbindungen Ihres Anbieters, und nimmt weiter auf, wenn Sie umschalten oder den Player verlassen.</string>
     <string name="settings_record_watching_warning_title">Nur eine Verbindung</string>

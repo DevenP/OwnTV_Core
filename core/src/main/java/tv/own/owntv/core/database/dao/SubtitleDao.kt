@@ -59,9 +59,6 @@ interface SubtitleDao {
     @Query("SELECT * FROM subtitle_selection WHERE profileId = :profileId AND contentKey = :contentKey LIMIT 1")
     suspend fun selection(profileId: Long, contentKey: String): SubtitleSelectionEntity?
 
-    @Query("DELETE FROM subtitle_selection WHERE profileId = :profileId AND contentKey = :contentKey")
-    suspend fun clearSelection(profileId: Long, contentKey: String)
-
     // --- timing (per profile + content + exact subtitle, §8.4) ---
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -96,9 +93,6 @@ interface SubtitleDao {
             "WHERE l.profileId = :profileId AND l.mediaType = :mediaType ORDER BY l.contentTitle, c.languageName",
     )
     suspend fun linksForType(profileId: Long, mediaType: String): List<LinkedSubtitle>
-
-    @Query("SELECT COUNT(*) FROM subtitle_link WHERE profileId = :profileId AND contentKey = :contentKey")
-    suspend fun linkCountForContent(profileId: Long, contentKey: String): Int
 
     /** Other profiles still referencing this cached file — deletes are profile-scoped, so the shared
      *  file is only removed once the LAST profile lets go of it. */

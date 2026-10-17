@@ -60,9 +60,6 @@ interface SeriesDao {
     @Query("SELECT * FROM series WHERE sourceId = :sourceId AND remoteId = :remoteId LIMIT 1")
     suspend fun findSeriesByRemote(sourceId: Long, remoteId: String): SeriesEntity?
 
-    @Query("SELECT * FROM series WHERE sourceId = :sourceId AND remoteId IN (:remoteIds)")
-    suspend fun findSeriesByRemoteIds(sourceId: Long, remoteIds: List<String>): List<SeriesEntity>
-
     @Query("SELECT remoteId FROM series WHERE sourceId = :sourceId AND remoteId IS NOT NULL")
     suspend fun remoteIdsForSource(sourceId: Long): List<String>
 
@@ -340,9 +337,6 @@ interface SeriesDao {
 
     @Query("SELECT * FROM episodes WHERE id = :id")
     suspend fun getEpisodeById(id: Long): EpisodeEntity?
-
-    @Query("SELECT * FROM episodes WHERE seasonId = :seasonId ORDER BY episodeNumber ASC")
-    fun episodesBySeason(seasonId: Long): Flow<List<EpisodeEntity>>
 
     @Query("SELECT * FROM episodes WHERE seriesId = :seriesId ORDER BY seasonNumber ASC, episodeNumber ASC")
     fun episodesBySeries(seriesId: Long): Flow<List<EpisodeEntity>>

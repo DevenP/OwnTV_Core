@@ -25,7 +25,6 @@
     <string name="profiles_kids_badge">KINDEREN</string>
     <string name="profiles_add">Profiel toevoegen</string>
     <string name="profiles_title">Profielen</string>
-    <string name="profiles_add_button">Profiel toevoegen</string>
     <string name="profiles_delete_title">Verwijder “<xliff:g id="name">%1$s</xliff:g>”?</string>
     <string name="profiles_delete_message">Verwijdert dit profiel en de bijbehorende favorieten en kijkgeschiedenis. Bronnen blijven behouden.</string>
     <string name="profiles_kids_tag">Kinderen</string>
@@ -33,10 +32,7 @@
     <string name="search_title">Zoeken</string>
     <string name="search_continue">Verder kijken</string>
     <string name="search_unwatched">Onbekeken</string>
-    <string name="search_hint">Zoek naar zenders, films en series…</string>
     <string name="search_recent">Recente zoekopdrachten</string>
-    <string name="search_recent_empty">Je recente zoekopdrachten verschijnen hier.</string>
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> — geen resultaten.</string>
     <string name="search_nothing_in_list">Nog niets in <xliff:g id="list">%1$s</xliff:g>.</string>
     <string name="search_clear">Wissen</string>
     <string name="search_jump_to">Ga naar</string>
@@ -161,12 +157,7 @@
     </plurals>
     <string name="home_trending_movie">Film</string>
     <string name="home_trending_series">Serie</string>
-    <string name="home_trending_section_label">NU POPULAIR · MOMENTOPNAME VAN SYNCHRONISATIE</string>
     <string name="home_trending_provider_match">Overeenkomst met aanbieder</string>
-    <string name="home_trending_language_choice"><xliff:g id="language">%1$s</xliff:g> taalkeuze</string>
-    <string name="home_trending_english_fallback">Engelse terugvaloptie</string>
-    <string name="home_trending_untagged_fallback">Ongelabelde terugvaloptie</string>
-    <string name="home_trending_other_fallback"><xliff:g id="language">%1$s</xliff:g> terugvaloptie</string>
     <string name="home_trending_why_label">WAAROM DIT ITEM WORDT WEERGEGEVEN</string>
     <string name="home_trending_reason_title">TMDB-positie #<xliff:g id="rank">%1$d</xliff:g> <xliff:g id="media_type">%2$s</xliff:g> + overeenkomst met aanbieder</string>
     <string name="home_trending_reason_preferred">De geselecteerde <xliff:g id="language">%1$s</xliff:g> versie van de aanbieder krijgt voorrang op items in een andere taal.</string>
@@ -183,10 +174,7 @@
     <string name="home_trending_more_details">Meer details</string>
     <string name="home_trending_all_versions">Alle versies</string>
     <string name="home_trending_why_menu">Waarom deze titel hier staat</string>
-    <string name="home_trending_previous">Vorige</string>
     <string name="home_trending_pause">Pauzeren</string>
-    <string name="home_trending_resume">Hervatten</string>
-    <string name="home_trending_next">Volgende</string>
     <string name="home_trending_unavailable">Deze versie is niet meer beschikbaar</string>
     <string name="recording_notification_title">Opnemen</string>
     <string name="recording_failed_no_space">Gestopt: geen ruimte meer</string>
@@ -197,7 +185,6 @@
     <string name="recording_failed_channel_gone">Dat kanaal staat niet meer in je afspeellijst</string>
     <string name="recording_failed_unknown">Er is niets opgenomen</string>
     <string name="recording_title">Opnames</string>
-    <string name="recording_description">Live tv die op dit apparaat is opgeslagen.</string>
     <string name="recording_empty">Nog niets opgenomen. Druk op Opnemen bij een programma in de tv-gids, of houd een zender ingedrukt om hem op te nemen of een tijd te plannen.</string>
     <string name="recording_group_now">Wordt nu opgenomen</string>
     <string name="recording_group_scheduled">Gepland</string>
@@ -242,7 +229,6 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> opnamen</item>
     </plurals>
     <string name="settings_recording_mobile_data">Opnemen via mobiele data</string>
-    <string name="settings_recording_mobile_data_description">Uit: een opname die valt terwijl je niet op wifi zit wordt overgeslagen in plaats van te wachten — een live programma komt niet terug.</string>
     <string name="settings_record_watching">Opnemen wat ik kijk</string>
     <string name="settings_record_watching_description">Zet een opnameknop in de speler die het kanaal opneemt dat je kijkt. Hij haalt het kanaal zelf op en gebruikt daarvoor een van de verbindingen van je aanbieder, en blijft opnemen als je van kanaal wisselt of de speler verlaat.</string>
     <string name="settings_record_watching_warning_title">Maar één verbinding</string>

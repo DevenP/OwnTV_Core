@@ -51,8 +51,6 @@
     <string name="profiles_add">Add profile</string>
     <!-- Translators: Screen title for the profile management screen. -->
     <string name="profiles_title">Profiles</string>
-    <!-- Translators: Button on the profile management screen to add a profile. -->
-    <string name="profiles_add_button">Add Profile</string>
     <!-- Translators: Dialog title for profile deletion confirmation. "name" is the profile name. -->
     <string name="profiles_delete_title">Delete \u201c<xliff:g id="name">%1$s</xliff:g>\u201d?</string>
     <!-- Translators: Body text in the profile deletion confirmation dialog. Sources are kept. -->
@@ -69,14 +67,8 @@
     <string name="search_continue">Continue watching</string>
     <!-- Translators: Filter chip in search results for unwatched content. -->
     <string name="search_unwatched">Unwatched</string>
-    <!-- Translators: Search input field hint text. -->
-    <string name="search_hint">Search channels, movies &amp; series\u2026</string>
     <!-- Translators: Section header in search results for recent searches. -->
     <string name="search_recent">Recent searches</string>
-    <!-- Translators: Empty-state message when there are no recent searches. -->
-    <string name="search_recent_empty">Your recent searches will show here.</string>
-    <!-- Translators: Empty-state message when a search returns no results. "query" is the search text. -->
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> \u2014 no results.</string>
     <!-- Translators: Empty-state message when a list category has no items. "list" is the list name. -->
     <string name="search_nothing_in_list">Nothing in <xliff:g id="list">%1$s</xliff:g> yet.</string>
     <!-- Translators: Button to clear the search input. -->
@@ -219,12 +211,7 @@
     </plurals>
     <string name="home_trending_movie">Movie</string>
     <string name="home_trending_series">Series</string>
-    <string name="home_trending_section_label">NOW TRENDING · SYNC SNAPSHOT</string>
     <string name="home_trending_provider_match">Provider match</string>
-    <string name="home_trending_language_choice"><xliff:g id="language">%1$s</xliff:g> language choice</string>
-    <string name="home_trending_english_fallback">EN fallback choice</string>
-    <string name="home_trending_untagged_fallback">Untagged fallback choice</string>
-    <string name="home_trending_other_fallback"><xliff:g id="language">%1$s</xliff:g> fallback choice</string>
     <string name="home_trending_why_label">WHY THIS ITEM APPEARS</string>
     <string name="home_trending_reason_title">TMDB rank #<xliff:g id="rank">%1$d</xliff:g> <xliff:g id="media_type">%2$s</xliff:g> + provider match</string>
     <string name="home_trending_reason_preferred">The selected <xliff:g id="language">%1$s</xliff:g> provider version wins before entries in another language.</string>
@@ -242,10 +229,7 @@
     <string name="home_trending_all_versions">All versions</string>
     <!-- Translators: Menu item on a Home Trending title's long-press menu; opens the sheet explaining why the title is on Home. -->
     <string name="home_trending_why_menu">Why this title is here</string>
-    <string name="home_trending_previous">Previous</string>
     <string name="home_trending_pause">Pause</string>
-    <string name="home_trending_resume">Resume</string>
-    <string name="home_trending_next">Next</string>
     <string name="home_trending_unavailable">This version is no longer available</string>
     <!-- Translators: Home row description in Settings for "Continue Watching Movies". -->
     <string name="home_row_continue_movies_description">Movies with a saved position</string>
@@ -340,8 +324,6 @@
 
     <!-- Translators: Screen title for the Recordings screen, and the name of the list of recorded live TV programmes. -->
     <string name="recording_title">Recordings</string>
-    <!-- Translators: One-line description under the Recordings screen title. -->
-    <string name="recording_description">Live TV saved on this device.</string>
     <!-- Translators: Empty-state message on the Recordings screen, directing the user to the TV guide. -->
     <string name="recording_empty">Nothing recorded yet. Press Record on a programme in the TV guide, or long-press a channel to record it or schedule a time.</string>
     <!-- Translators: Section heading for recordings that are being written right now. -->
@@ -424,8 +406,6 @@
     </plurals>
     <!-- Translators: Settings toggle on a phone: may a recording run when the device is on mobile data rather than Wi-Fi. -->
     <string name="settings_recording_mobile_data">Record on mobile data</string>
-    <!-- Translators: Description under the "record on mobile data" toggle. Explains that, unlike a download, a recording is skipped rather than postponed, because a live broadcast does not come round again. -->
-    <string name="settings_recording_mobile_data_description">Off means a recording that falls due away from Wi-Fi is skipped rather than made to wait — a live programme does not come round again.</string>
     <!-- Translators: Settings toggle. Adds a record button to the video player that records the channel already playing, using the connection already open, instead of opening a second one. -->
     <string name="settings_record_watching">Record what I’m watching</string>
     <!-- Translators: Description under the "record what I am watching" toggle. -->

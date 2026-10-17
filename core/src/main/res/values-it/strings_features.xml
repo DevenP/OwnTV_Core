@@ -25,7 +25,6 @@
     <string name="profiles_kids_badge">BAMBINI</string>
     <string name="profiles_add">Aggiungi profilo</string>
     <string name="profiles_title">Profili</string>
-    <string name="profiles_add_button">Aggiungi profilo</string>
     <string name="profiles_delete_title">Eliminare “<xliff:g id="name">%1$s</xliff:g>”?</string>
     <string name="profiles_delete_message">Rimuove questo profilo, i relativi preferiti e la cronologia. Le fonti vengono mantenute.</string>
     <string name="profiles_kids_tag">Bambini</string>
@@ -33,10 +32,7 @@
     <string name="search_title">Ricerca</string>
     <string name="search_continue">Continua a guardare</string>
     <string name="search_unwatched">Non visti</string>
-    <string name="search_hint">Cerca canali, film e serie…</string>
     <string name="search_recent">Ricerche recenti</string>
-    <string name="search_recent_empty">Le tue ricerche recenti verranno visualizzate qui.</string>
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> — nessun risultato.</string>
     <string name="search_nothing_in_list">Ancora niente in <xliff:g id="list">%1$s</xliff:g>.</string>
     <string name="search_clear">Cancella</string>
     <string name="search_jump_to">Vai a</string>
@@ -169,12 +165,7 @@
     </plurals>
     <string name="home_trending_movie">Film</string>
     <string name="home_trending_series">Serie</string>
-    <string name="home_trending_section_label">DI TENDENZA ORA · ISTANTANEA DELLA SINCRONIZZAZIONE</string>
     <string name="home_trending_provider_match">Corrispondenza del fornitore</string>
-    <string name="home_trending_language_choice">Scelta della lingua <xliff:g id="language">%1$s</xliff:g></string>
-    <string name="home_trending_english_fallback">Scelta alternativa in inglese</string>
-    <string name="home_trending_untagged_fallback">Scelta alternativa senza etichetta</string>
-    <string name="home_trending_other_fallback">Scelta alternativa <xliff:g id="language">%1$s</xliff:g></string>
     <string name="home_trending_why_label">PERCHÉ APPARE QUESTO ELEMENTO</string>
     <string name="home_trending_reason_title">Posizione TMDB n. <xliff:g id="rank">%1$d</xliff:g> <xliff:g id="media_type">%2$s</xliff:g> + corrispondenza del fornitore</string>
     <string name="home_trending_reason_preferred">La versione <xliff:g id="language">%1$s</xliff:g> selezionata del fornitore ha la precedenza sulle voci in un\'altra lingua.</string>
@@ -192,10 +183,7 @@
     <string name="home_trending_more_details">Altri dettagli</string>
     <string name="home_trending_all_versions">Tutte le versioni</string>
     <string name="home_trending_why_menu">Perché questo titolo è qui</string>
-    <string name="home_trending_previous">Precedente</string>
     <string name="home_trending_pause">Pausa</string>
-    <string name="home_trending_resume">Riprendi</string>
-    <string name="home_trending_next">Successivo</string>
     <string name="home_trending_unavailable">Questa versione non è più disponibile</string>
     <string name="recording_notification_title">Registrazione in corso</string>
     <string name="recording_failed_no_space">Interrotta: spazio esaurito</string>
@@ -206,7 +194,6 @@
     <string name="recording_failed_channel_gone">Quel canale non è più nella tua playlist</string>
     <string name="recording_failed_unknown">Non è stato registrato</string>
     <string name="recording_title">Registrazioni</string>
-    <string name="recording_description">La TV in diretta salvata su questo dispositivo.</string>
     <string name="recording_empty">Ancora nessuna registrazione. Premi Registra su un programma nella guida TV, oppure tieni premuto un canale per registrarlo o programmare un orario.</string>
     <string name="recording_group_now">Registrazione in corso</string>
     <string name="recording_group_scheduled">Programmata</string>
@@ -253,7 +240,6 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> registrazioni</item>
     </plurals>
     <string name="settings_recording_mobile_data">Registra con i dati mobili</string>
-    <string name="settings_recording_mobile_data_description">Disattivato: una registrazione prevista fuori dal Wi-Fi viene saltata invece di attendere — un programma in diretta non torna.</string>
     <string name="settings_record_watching">Registra quello che sto guardando</string>
     <string name="settings_record_watching_description">Aggiunge al lettore un pulsante di registrazione che salva il canale che stai guardando. Scarica il canale per conto suo, quindi occupa una delle connessioni del tuo provider mentre è in corso, e continua a registrare se cambi canale o esci dal lettore.</string>
     <string name="settings_record_watching_warning_title">Una sola connessione</string>

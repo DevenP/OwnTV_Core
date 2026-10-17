@@ -93,10 +93,7 @@ enum class PlaylistAutoRefresh(val thresholdMs: Long? = null) {
     HOURS_12(12 * 3600_000L),
 
     /** A whole number of days chosen by the user; the count lives in [PlaylistRefresh.manualDays]. */
-    MANUAL;
-
-    /** Interval (staleness-threshold) mode — checked on cold start AND on resume when threshold is exceeded. */
-    val isInterval: Boolean get() = this != OFF && this != STARTUP
+    MANUAL,
 }
 
 /**
@@ -193,9 +190,7 @@ enum class EpgAutoRefresh(val thresholdMs: Long? = null) {
     HOURS_48(48 * 3600_000L),
 
     /** A whole number of days chosen by the user; the count lives in [EpgRefresh.manualDays]. */
-    MANUAL;
-
-    val isInterval: Boolean get() = this != OFF && this != STARTUP
+    MANUAL,
 }
 
 /**
@@ -357,7 +352,6 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         val ACCENT_CUSTOM = stringPreferencesKey("accent_custom")
         val FOCUS_HIGHLIGHT = stringPreferencesKey("focus_highlight_color")
         val FOCUS_HIGHLIGHT_WIDTH = intPreferencesKey("focus_highlight_width")
-        val AVATAR_ID = intPreferencesKey("avatar_id")
         val ACTIVE_PROFILE = longPreferencesKey("active_profile_id")
         val DEFAULT_SOURCE = longPreferencesKey("default_source_id")
         val DOWNLOAD_ROOT = stringPreferencesKey("download_root")
@@ -1505,16 +1499,6 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         context.dataStore.edit { it[Keys.MINI_PLAYER_STYLE] = style.name }
     }
 
-    /**
-     * Shrink into the little window on Back as well as on Home. Off by default, and deliberately:
-     * Back means "leave this screen" far more often than it means "keep watching", and a user who has
-     * not asked for it must not have to dismiss a window every time they close the player.
-     */
-    val pipOnBack: Flow<Boolean> = prefsFlow { it[Keys.PIP_ON_BACK] ?: false }
-    suspend fun setPipOnBack(enabled: Boolean) {
-        context.dataStore.edit { it[Keys.PIP_ON_BACK] = enabled }
-    }
-
     /** How big the floating window starts. The user pinches it from there. */
     enum class PipSize { SMALL, MEDIUM, LARGE }
 
@@ -1727,12 +1711,6 @@ class SettingsRepository(private val context: Context, private val localeStore: 
     val externalPlayerSeries: Flow<Boolean> = prefsFlow { it[Keys.EXTERNAL_PLAYER_SERIES] ?: it[Keys.EXTERNAL_PLAYER] ?: false }
     val externalPlayerLive: Flow<Boolean> = prefsFlow { it[Keys.EXTERNAL_PLAYER_LIVE] ?: false }
 
-    fun externalPlayer(section: ExternalPlayerSection): Flow<Boolean> = when (section) {
-        ExternalPlayerSection.LIVE_TV -> externalPlayerLive
-        ExternalPlayerSection.MOVIES -> externalPlayerMovies
-        ExternalPlayerSection.SERIES -> externalPlayerSeries
-    }
-
     /** A download is a movie or an episode, so it follows that section's setting. */
     fun externalPlayerFor(mediaType: tv.own.owntv.core.model.MediaType): Flow<Boolean> =
         if (mediaType == tv.own.owntv.core.model.MediaType.SERIES) externalPlayerSeries else externalPlayerMovies
@@ -1746,21 +1724,14 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         context.dataStore.edit { it[key] = enabled }
     }
 
-    /** Surround sound (**off by default — opt-in**). Most users are on TV speakers / 2.0 soundbars, and
-     *  forcing a multichannel-LPCM path exposes flaky vendor audio HALs / lying HDMI-ARC chips that claim
-     *  5.1 then mis-play it (drained 2× → "fast video, no sound", #25). So default stereo for stability;
-     *  users with a real 5.1/7.1 receiver turn this on. On: mpv decodes Dolby/DTS to multichannel LPCM (the
-     *  sink picks the layout), with a runaway-detector that auto-falls-back to stereo on a broken output. mpv
-     *  never bitstreams (its passthrough AudioTrack reports no clock and stutters video to a slideshow);
-     *  ExoPlayer may, under the separate [audioPassthrough] switch.
-     *  Second, subtler failure mode (confirmed in the field): even when multichannel LPCM plays correctly,
-     *  the wider HDMI/ARC buffer adds latency the TV/soundbar doesn't report back, so audio lags video
-     *  (lip-sync drift) on VODs. Stereo's small, well-reported buffer stays locked. Hence: default OFF. */
-    val surroundSound: Flow<Boolean> = prefsFlow { it[Keys.SURROUND_SOUND] ?: false }
-
-
     /**
-     * The three-state replacement for [surroundSound] (Auto / Stereo only / Surround).
+     * The three-state replacement for the old [Keys.SURROUND_SOUND] boolean (Auto / Stereo only / Surround).
+     *
+     * Multichannel output fails in two known ways. Flaky vendor audio HALs and HDMI-ARC chips claim 5.1
+     * then mis-play it (drained 2× → "fast video, no sound", #25). And even when multichannel LPCM plays
+     * correctly, the wider HDMI/ARC buffer adds latency the TV/soundbar doesn't report back, so audio lags
+     * video (lip-sync drift) on VODs. mpv never bitstreams (its passthrough AudioTrack reports no clock and
+     * stutters video to a slideshow); ExoPlayer may, under the separate [audioPassthrough] switch.
      *
      * The old boolean was a poor fit for two reasons. It only ever reached **mpv** — Live TV's default
      * engine is ExoPlayer, where "off" changed nothing at all, so a TV that mis-plays multichannel kept
@@ -3031,13 +3002,6 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         context.dataStore.edit { it[Keys.GLASS_ALPHA] = pct.coerceIn(0, 100) }
     }
 
-    /** Avatar for the current (placeholder) profile until real profiles arrive in the wizard. */
-    val avatarId: Flow<Int> = prefsFlow { it[Keys.AVATAR_ID] ?: 0 }
-
-    suspend fun setAvatarId(id: Int) {
-        context.dataStore.edit { it[Keys.AVATAR_ID] = id }
-    }
-
     /** Active profile id; -1 means first-run / setup not yet completed. */
     val activeProfileId: Flow<Long> = prefsFlow { it[Keys.ACTIVE_PROFILE] ?: -1L }
 
@@ -3059,10 +3023,6 @@ class SettingsRepository(private val context: Context, private val localeStore: 
             username = p[Keys.PROXY_USER] ?: "",
             password = p[Keys.PROXY_PASS] ?: "",
         )
-    }
-
-    suspend fun setProxyEnabled(enabled: Boolean) {
-        context.dataStore.edit { it[Keys.PROXY_ENABLED] = enabled }
     }
 
     /** Persist the proxy form in one write (enabled + host/port/user/pass). Blank user/pass = no auth.

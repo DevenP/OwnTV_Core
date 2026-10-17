@@ -471,7 +471,4 @@ class RecordingManager(
 private const val RULE_HORIZON_MS = 14L * 24 * 60 * 60 * 1000
 
 /** Free/total space on the volume recordings are written to, and the floor they stop at (D8). */
-data class RecordingStorageInfo(val freeBytes: Long, val totalBytes: Long, val reserveBytes: Long) {
-    /** What is actually available to a recording: everything above the reserve. */
-    val writableBytes: Long get() = (freeBytes - reserveBytes).coerceAtLeast(0L)
-}
+data class RecordingStorageInfo(val freeBytes: Long, val totalBytes: Long, val reserveBytes: Long)

@@ -376,16 +376,6 @@ class SubtitleController(
         return repository.linkedForContent(pid, episodeKey(show, ep))
     }
 
-    suspend fun hasDownloadsForMovie(movie: MovieEntity): Boolean {
-        val pid = activeProfile(); if (pid < 0) return false
-        return repository.hasDownloadsForContent(pid, movieKey(movie))
-    }
-
-    suspend fun hasDownloadsForEpisode(show: SeriesEntity, ep: EpisodeEntity): Boolean {
-        val pid = activeProfile(); if (pid < 0) return false
-        return repository.hasDownloadsForContent(pid, episodeKey(show, ep))
-    }
-
     /** Profile-scoped (owner decision): drops the ACTIVE profile's copy; the shared file survives
      *  while any other profile still references it. */
     suspend fun deleteCached(cacheId: Long) {

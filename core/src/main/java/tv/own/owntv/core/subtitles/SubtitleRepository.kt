@@ -170,13 +170,6 @@ class SubtitleRepository(
         )
     }
 
-    /** Remembers an explicit "Off" so resume doesn't re-apply a previous external subtitle (§9). */
-    suspend fun rememberOff(profileId: Long, contentKey: String) {
-        dao.upsertSelection(
-            SubtitleSelectionEntity(profileId, contentKey, cacheId = null, off = true, updatedAt = now()),
-        )
-    }
-
     /**
      * The remembered subtitle for this profile + content, ready to reload on resume (§9), or null
      * when there's no external choice or the cached file is gone (caller falls back to auto-select).
@@ -209,10 +202,6 @@ class SubtitleRepository(
                 else { dao.deleteCache(link.cacheId); null }
             }
         }
-
-    /** Whether this profile has any downloaded subtitle for [contentKey] (gates the long-press action). */
-    suspend fun hasDownloadsForContent(profileId: Long, contentKey: String): Boolean =
-        dao.linkCountForContent(profileId, contentKey) > 0
 
     /** This profile's downloaded subtitles for one item (per-item delete popup). */
     suspend fun linkedForContent(profileId: Long, contentKey: String): List<LinkedSubtitle> =

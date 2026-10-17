@@ -25,7 +25,6 @@
     <string name="profiles_kids_badge">ДЕТСКИЙ</string>
     <string name="profiles_add">Добавить профиль</string>
     <string name="profiles_title">Профили</string>
-    <string name="profiles_add_button">Добавить профиль</string>
     <string name="profiles_delete_title">Удалить «<xliff:g id="name">%1$s</xliff:g>»?</string>
     <string name="profiles_delete_message">Этот профиль, его избранное и история будут удалены. Источники сохранятся.</string>
     <string name="profiles_kids_tag">Детский</string>
@@ -33,10 +32,7 @@
     <string name="search_title">Поиск</string>
     <string name="search_continue">Продолжить просмотр</string>
     <string name="search_unwatched">Не просмотрено</string>
-    <string name="search_hint">Поиск каналов, фильмов и сериалов…</string>
     <string name="search_recent">Недавние поисковые запросы</string>
-    <string name="search_recent_empty">Здесь появятся ваши недавние поисковые запросы.</string>
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> — результатов нет.</string>
     <string name="search_nothing_in_list">В <xliff:g id="list">%1$s</xliff:g> пока ничего нет.</string>
     <string name="search_clear">Очистить</string>
     <string name="search_jump_to">Перейти</string>
@@ -177,12 +173,7 @@
     </plurals>
     <string name="home_trending_movie">Фильм</string>
     <string name="home_trending_series">Сериал</string>
-    <string name="home_trending_section_label">СЕЙЧАС В ТРЕНДЕ · СНИМОК СИНХРОНИЗАЦИИ</string>
     <string name="home_trending_provider_match">Совпадение у провайдера</string>
-    <string name="home_trending_language_choice"><xliff:g id="language">%1$s</xliff:g> — выбранный язык</string>
-    <string name="home_trending_english_fallback">Запасной вариант на английском</string>
-    <string name="home_trending_untagged_fallback">Запасной вариант без языковой метки</string>
-    <string name="home_trending_other_fallback"><xliff:g id="language">%1$s</xliff:g> — запасной вариант</string>
     <string name="home_trending_why_label">ПОЧЕМУ ЭТОТ МАТЕРИАЛ ПОКАЗАН</string>
     <string name="home_trending_reason_title">Позиция в рейтинге TMDB: №<xliff:g id="rank">%1$d</xliff:g> <xliff:g id="media_type">%2$s</xliff:g> + совпадение у провайдера</string>
     <string name="home_trending_reason_preferred">Выбранная версия провайдера на языке <xliff:g id="language">%1$s</xliff:g> имеет приоритет перед версиями на других языках.</string>
@@ -201,10 +192,7 @@
     <string name="home_trending_more_details">Подробнее</string>
     <string name="home_trending_all_versions">Все версии</string>
     <string name="home_trending_why_menu">Почему здесь этот фильм или сериал</string>
-    <string name="home_trending_previous">Предыдущий</string>
     <string name="home_trending_pause">Пауза</string>
-    <string name="home_trending_resume">Продолжить</string>
-    <string name="home_trending_next">Следующий</string>
     <string name="home_trending_unavailable">Эта версия больше недоступна</string>
     <string name="recording_notification_title">Идёт запись</string>
     <string name="recording_failed_no_space">Остановлено: нет свободного места</string>
@@ -215,7 +203,6 @@
     <string name="recording_failed_channel_gone">Этого канала больше нет в вашем плейлисте</string>
     <string name="recording_failed_unknown">Запись не выполнена</string>
     <string name="recording_title">Записи</string>
-    <string name="recording_description">Прямой эфир, сохранённый на этом устройстве.</string>
     <string name="recording_empty">Записей пока нет. Нажмите «Записать» у передачи в телегиде или удерживайте канал, чтобы записать его или запланировать время.</string>
     <string name="recording_group_now">Записывается сейчас</string>
     <string name="recording_group_scheduled">Запланировано</string>
@@ -264,7 +251,6 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> записей</item>
     </plurals>
     <string name="settings_recording_mobile_data">Записывать через мобильный интернет</string>
-    <string name="settings_recording_mobile_data_description">Выключено: запись, выпавшая на время без Wi-Fi, пропускается, а не ждёт — прямой эфир не повторится.</string>
     <string name="settings_record_watching">Записывать то, что смотрю</string>
     <string name="settings_record_watching_description">Добавляет в плеер кнопку записи, которая сохраняет канал, который вы смотрите. Канал загружается отдельно, поэтому во время записи занято одно из подключений провайдера, и запись продолжается после смены канала или выхода из плеера.</string>
     <string name="settings_record_watching_warning_title">Только одно подключение</string>

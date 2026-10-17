@@ -57,9 +57,6 @@ interface MetadataDao {
     @Query("DELETE FROM metadata_cache")
     suspend fun clearCache()
 
-    @Query("DELETE FROM metadata_match")
-    suspend fun clearMatches()
-
     /**
      * Drop only the "searched, found nothing" rows, keeping the expensive title→tmdbId results. Used
      * whenever the conditions that produced a miss may have changed (metadata language switch, a fix to

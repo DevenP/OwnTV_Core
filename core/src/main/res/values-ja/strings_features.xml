@@ -25,7 +25,6 @@
     <string name="profiles_kids_badge">キッズ</string>
     <string name="profiles_add">プロフィールを追加</string>
     <string name="profiles_title">プロフィール</string>
-    <string name="profiles_add_button">プロフィールを追加</string>
     <string name="profiles_delete_title">「<xliff:g id="name">%1$s</xliff:g>」を削除しますか？</string>
     <string name="profiles_delete_message">このプロフィールと、そのお気に入りおよび視聴履歴を削除します。ソースは保持されます。</string>
     <string name="profiles_kids_tag">子ども用</string>
@@ -33,10 +32,7 @@
     <string name="search_title">検索</string>
     <string name="search_continue">視聴を続ける</string>
     <string name="search_unwatched">未視聴</string>
-    <string name="search_hint">チャンネル、映画、シリーズを検索…</string>
     <string name="search_recent">最近の検索</string>
-    <string name="search_recent_empty">最近の検索がここに表示されます。</string>
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> — 検索結果はありません。</string>
     <string name="search_nothing_in_list"><xliff:g id="list">%1$s</xliff:g>にはまだ何もありません。</string>
     <string name="search_clear">クリア</string>
     <string name="search_jump_to">移動先</string>
@@ -153,12 +149,7 @@
     </plurals>
     <string name="home_trending_movie">映画</string>
     <string name="home_trending_series">シリーズ</string>
-    <string name="home_trending_section_label">現在のトレンド · 同期時のスナップショット</string>
     <string name="home_trending_provider_match">プロバイダーとの一致</string>
-    <string name="home_trending_language_choice"><xliff:g id="language">%1$s</xliff:g>言語を選択</string>
-    <string name="home_trending_english_fallback">英語のフォールバックを選択</string>
-    <string name="home_trending_untagged_fallback">言語タグなしのフォールバックを選択</string>
-    <string name="home_trending_other_fallback"><xliff:g id="language">%1$s</xliff:g>フォールバックを選択</string>
     <string name="home_trending_why_label">この作品が表示される理由</string>
     <string name="home_trending_reason_title">TMDBランキング #<xliff:g id="rank">%1$d</xliff:g> <xliff:g id="media_type">%2$s</xliff:g> + プロバイダーとの一致</string>
     <string name="home_trending_reason_preferred">選択した<xliff:g id="language">%1$s</xliff:g>のプロバイダー版が、別の言語の項目より優先されます。</string>
@@ -174,10 +165,7 @@
     <string name="home_trending_more_details">詳細を見る</string>
     <string name="home_trending_all_versions">すべてのバージョン</string>
     <string name="home_trending_why_menu">このタイトルが表示される理由</string>
-    <string name="home_trending_previous">前へ</string>
     <string name="home_trending_pause">一時停止</string>
-    <string name="home_trending_resume">再開</string>
-    <string name="home_trending_next">次へ</string>
     <string name="home_trending_unavailable">このバージョンは利用できなくなりました</string>
     <string name="recording_notification_title">録画中</string>
     <string name="recording_failed_no_space">停止しました: 空き容量がありません</string>
@@ -188,7 +176,6 @@
     <string name="recording_failed_channel_gone">このチャンネルはプレイリストにありません</string>
     <string name="recording_failed_unknown">録画されませんでした</string>
     <string name="recording_title">録画</string>
-    <string name="recording_description">この端末に保存されたライブTV。</string>
     <string name="recording_empty">まだ録画はありません。番組表で番組の録画を押すか、チャンネルを長押しして録画または時刻を予約してください。</string>
     <string name="recording_group_now">録画中</string>
     <string name="recording_group_scheduled">予約済み</string>
@@ -231,7 +218,6 @@
         <item quantity="other">録画 <xliff:g id="count">%1$d</xliff:g> 件</item>
     </plurals>
     <string name="settings_recording_mobile_data">モバイルデータで録画する</string>
-    <string name="settings_recording_mobile_data_description">オフのとき、Wi-Fi 以外で予約時刻を迎えた録画は待たずにスキップされます。生放送はやり直せません。</string>
     <string name="settings_record_watching">見ている番組を録画</string>
     <string name="settings_record_watching_description">視聴中のチャンネルを保存する録画ボタンを、プレーヤーに追加します。チャンネルは自分で取得するため、録画中はプロバイダーの接続を 1 つ使い、チャンネルを変えてもプレーヤーを離れても録画を続けます。</string>
     <string name="settings_record_watching_warning_title">接続は1本だけ</string>

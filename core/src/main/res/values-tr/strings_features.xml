@@ -25,7 +25,6 @@
     <string name="profiles_kids_badge">ÇOCUK</string>
     <string name="profiles_add">Profil ekle</string>
     <string name="profiles_title">Profiller</string>
-    <string name="profiles_add_button">Profil ekle</string>
     <string name="profiles_delete_title">“<xliff:g id="name">%1$s</xliff:g>” silinsin mi?</string>
     <string name="profiles_delete_message">Bu profil ile favorilerini ve geçmişini kaldırır. Kaynaklar korunur.</string>
     <string name="profiles_kids_tag">Çocuk</string>
@@ -33,10 +32,7 @@
     <string name="search_title">Arama</string>
     <string name="search_continue">İzlemeye devam et</string>
     <string name="search_unwatched">İzlenmemiş</string>
-    <string name="search_hint">Kanallarda, filmlerde ve dizilerde ara…</string>
     <string name="search_recent">Son aramalar</string>
-    <string name="search_recent_empty">Son aramalarınız burada gösterilecek.</string>
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> — sonuç bulunamadı.</string>
     <string name="search_nothing_in_list">Henüz <xliff:g id="list">%1$s</xliff:g> listesinde hiçbir şey yok.</string>
     <string name="search_clear">Temizle</string>
     <string name="search_jump_to">Şuraya git</string>
@@ -161,12 +157,7 @@
     </plurals>
     <string name="home_trending_movie">Film</string>
     <string name="home_trending_series">Dizi</string>
-    <string name="home_trending_section_label">ŞU ANDA POPÜLER · EŞİTLEME ANLIK GÖRÜNTÜSÜ</string>
     <string name="home_trending_provider_match">Sağlayıcı eşleşmesi</string>
-    <string name="home_trending_language_choice"><xliff:g id="language">%1$s</xliff:g> dil seçimi</string>
-    <string name="home_trending_english_fallback">EN geri dönüş seçimi</string>
-    <string name="home_trending_untagged_fallback">Etiketsiz geri dönüş seçimi</string>
-    <string name="home_trending_other_fallback"><xliff:g id="language">%1$s</xliff:g> geri dönüş seçimi</string>
     <string name="home_trending_why_label">BU ÖĞE NEDEN GÖSTERİLİYOR</string>
     <string name="home_trending_reason_title">TMDB sıralaması #<xliff:g id="rank">%1$d</xliff:g> <xliff:g id="media_type">%2$s</xliff:g> + sağlayıcı eşleşmesi</string>
     <string name="home_trending_reason_preferred">Seçilen <xliff:g id="language">%1$s</xliff:g> sağlayıcı sürümü, başka bir dildeki girdilerden önce tercih edilir.</string>
@@ -183,10 +174,7 @@
     <string name="home_trending_more_details">Daha Fazla Ayrıntı</string>
     <string name="home_trending_all_versions">Tüm sürümler</string>
     <string name="home_trending_why_menu">Bu başlık neden burada</string>
-    <string name="home_trending_previous">Önceki</string>
     <string name="home_trending_pause">Duraklat</string>
-    <string name="home_trending_resume">Devam Et</string>
-    <string name="home_trending_next">Sonraki</string>
     <string name="home_trending_unavailable">Bu sürüm artık kullanılamıyor</string>
     <string name="recording_notification_title">Kaydediliyor</string>
     <string name="recording_failed_no_space">Durduruldu: yer kalmadı</string>
@@ -197,7 +185,6 @@
     <string name="recording_failed_channel_gone">Bu kanal artık oynatma listenizde yok</string>
     <string name="recording_failed_unknown">Kayıt yapılmadı</string>
     <string name="recording_title">Kayıtlar</string>
-    <string name="recording_description">Bu cihaza kaydedilen canlı TV.</string>
     <string name="recording_empty">Henüz kayıt yok. TV rehberinde bir programda Kaydet’e basın ya da bir kanala uzun basarak onu kaydedin veya bir saat zamanlayın.</string>
     <string name="recording_group_now">Şimdi kaydediliyor</string>
     <string name="recording_group_scheduled">Zamanlanmış</string>
@@ -242,7 +229,6 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> kayıt</item>
     </plurals>
     <string name="settings_recording_mobile_data">Mobil veriyle kaydet</string>
-    <string name="settings_recording_mobile_data_description">Kapalı: Wi-Fi dışında denk gelen bir kayıt beklemek yerine atlanır — canlı bir yayın tekrar etmez.</string>
     <string name="settings_record_watching">İzlediğimi kaydet</string>
     <string name="settings_record_watching_description">Oynatıcıya, izlediğiniz kanalı kaydeden bir kayıt düğmesi ekler. Kanalı kendisi çeker, bu yüzden çalışırken sağlayıcınızın bağlantılarından birini kullanır ve kanalı değiştirseniz veya oynatıcıdan çıksanız da kaydetmeyi sürdürür.</string>
     <string name="settings_record_watching_warning_title">Yalnızca tek bağlantı</string>

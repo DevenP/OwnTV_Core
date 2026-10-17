@@ -312,29 +312,11 @@ open class StalkerClient(okHttpClient: OkHttpClient) {
     }
 
     /**
-     * `?type=itv&action=get_epg_info&period=<days>` → **the whole portal guide**, streamed.
+     * Download the whole portal guide (`?type=itv&action=get_epg_info&period=<days>`) to [dest]
+     * **without parsing a byte of it**, returning the size.
      *
      * This is the call STBEmu and TiviMate make, and the reason their users see a full guide and a
-     * working catch-up list on portals where we showed only now/next. It was avoided here as an OOM
-     * risk, which it is *if the reply is collected into a list* — a week of a thousand channels is
-     * hundreds of thousands of programmes. It is not a risk when the reply is never held: [onEntry]
-     * is called as each programme is read, so the caller can write in batches and nothing bigger than
-     * one programme is alive at a time. Exactly how the Xtream catalog lists are already handled.
-     *
-     * Both payload shapes are accepted, because portals disagree: an object keyed by channel id
-     * (`{"data":{"1234":[…]}}` or `{"1234":[…]}`), or one flat array whose entries carry `ch_id`.
-     * Entries with no readable start/stop or no title are skipped rather than failing the crawl.
-     */
-    open suspend fun streamEpgInfo(
-        apiBase: String, mac: String, token: String, userAgent: String?, periodDays: Int,
-        onEntry: suspend (channelId: String, entry: ShortEpgEntry) -> Unit,
-    ) {
-        val url = "$apiBase?type=itv&action=get_epg_info&period=$periodDays&JsHttpRequest=1-xml"
-        request(url, mac, token, userAgent) { reader -> readEpgInfo(reader, onEntry) }
-    }
-
-    /**
-     * Download the whole portal guide to [dest] **without parsing a byte of it**, returning the size.
+     * working catch-up list on portals that offer only now/next otherwise.
      *
      * Written this way because of what a real portal did. The guide itself is quick — a measured
      * 9 MB in about a second for a 12 000-channel panel — but the first attempt parsed it as it
@@ -355,7 +337,15 @@ open class StalkerClient(okHttpClient: OkHttpClient) {
         return requestToFile(url, mac, token, userAgent, dest)
     }
 
-    /** Parse a guide previously fetched by [downloadEpgInfo]. No network, no time limit. */
+    /**
+     * Parse a guide previously fetched by [downloadEpgInfo]. No network, no time limit. [onEntry] is
+     * called as each programme is read, so the caller writes in batches and nothing bigger than one
+     * programme is held — a week of a thousand channels is hundreds of thousands of programmes.
+     *
+     * Both payload shapes are accepted, because portals disagree: an object keyed by channel id
+     * (`{"data":{"1234":[…]}}` or `{"1234":[…]}`), or one flat array whose entries carry `ch_id`.
+     * Entries with no readable start/stop or no title are skipped rather than failing the crawl.
+     */
     open suspend fun parseEpgInfoFile(file: File, onEntry: suspend (channelId: String, entry: ShortEpgEntry) -> Unit) {
         file.inputStream().buffered().use { input -> parseEnvelope(input) { reader -> readEpgInfo(reader, onEntry) } }
     }

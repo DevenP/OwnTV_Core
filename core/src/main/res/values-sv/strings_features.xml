@@ -25,7 +25,6 @@
     <string name="profiles_kids_badge">BARN</string>
     <string name="profiles_add">Lägg till profil</string>
     <string name="profiles_title">Profiler</string>
-    <string name="profiles_add_button">Lägg till profil</string>
     <string name="profiles_delete_title">Ta bort ”<xliff:g id="name">%1$s</xliff:g>”?</string>
     <string name="profiles_delete_message">Tar bort den här profilen och dess favoriter och historik. Källorna behålls.</string>
     <string name="profiles_kids_tag">Barn</string>
@@ -33,10 +32,7 @@
     <string name="search_title">Sökning</string>
     <string name="search_continue">Fortsätt titta</string>
     <string name="search_unwatched">Inte sett</string>
-    <string name="search_hint">Sök bland kanaler, filmer och serier…</string>
     <string name="search_recent">Senaste sökningar</string>
-    <string name="search_recent_empty">Dina senaste sökningar visas här.</string>
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> — inga resultat.</string>
     <string name="search_nothing_in_list">Inget i <xliff:g id="list">%1$s</xliff:g> än.</string>
     <string name="search_clear">Rensa</string>
     <string name="search_jump_to">Gå till</string>
@@ -161,12 +157,7 @@
     </plurals>
     <string name="home_trending_movie">Film</string>
     <string name="home_trending_series">Serie</string>
-    <string name="home_trending_section_label">TRENDAR JUST NU · ÖGONBLICKSBILD FRÅN SYNKRONISERING</string>
     <string name="home_trending_provider_match">Leverantörsmatchning</string>
-    <string name="home_trending_language_choice"><xliff:g id="language">%1$s</xliff:g> språkval</string>
-    <string name="home_trending_english_fallback">Engelska som reservval</string>
-    <string name="home_trending_untagged_fallback">Otaggat reservval</string>
-    <string name="home_trending_other_fallback"><xliff:g id="language">%1$s</xliff:g> som reservval</string>
     <string name="home_trending_why_label">VARFÖR DET HÄR OBJEKTET VISAS</string>
     <string name="home_trending_reason_title">TMDB-placering nr <xliff:g id="rank">%1$d</xliff:g> <xliff:g id="media_type">%2$s</xliff:g> + leverantörsmatchning</string>
     <string name="home_trending_reason_preferred">Den valda leverantörsversionen på <xliff:g id="language">%1$s</xliff:g> prioriteras framför poster på andra språk.</string>
@@ -183,10 +174,7 @@
     <string name="home_trending_more_details">Mer information</string>
     <string name="home_trending_all_versions">Alla versioner</string>
     <string name="home_trending_why_menu">Varför den här titeln finns här</string>
-    <string name="home_trending_previous">Föregående</string>
     <string name="home_trending_pause">Pausa</string>
-    <string name="home_trending_resume">Fortsätt</string>
-    <string name="home_trending_next">Nästa</string>
     <string name="home_trending_unavailable">Den här versionen är inte längre tillgänglig</string>
     <string name="recording_notification_title">Spelar in</string>
     <string name="recording_failed_no_space">Stoppad: inget utrymme kvar</string>
@@ -197,7 +185,6 @@
     <string name="recording_failed_channel_gone">Kanalen finns inte längre i din spellista</string>
     <string name="recording_failed_unknown">Ingenting spelades in</string>
     <string name="recording_title">Inspelningar</string>
-    <string name="recording_description">Direktsänd tv som sparats på den här enheten.</string>
     <string name="recording_empty">Inget inspelat än. Tryck Spela in på ett program i tv-guiden, eller håll in en kanal för att spela in den eller schemalägga en tid.</string>
     <string name="recording_group_now">Spelar in nu</string>
     <string name="recording_group_scheduled">Schemalagd</string>
@@ -242,7 +229,6 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> inspelningar</item>
     </plurals>
     <string name="settings_recording_mobile_data">Spela in via mobildata</string>
-    <string name="settings_recording_mobile_data_description">Av: en inspelning som infaller utanför wifi hoppas över i stället för att vänta — ett direktsänt program kommer inte igen.</string>
     <string name="settings_record_watching">Spela in det jag tittar på</string>
     <string name="settings_record_watching_description">Lägger en inspelningsknapp i spelaren som sparar kanalen du tittar på. Den hämtar kanalen själv och använder därför en av leverantörens anslutningar under tiden, och fortsätter spela in när du byter kanal eller lämnar spelaren.</string>
     <string name="settings_record_watching_warning_title">Bara en anslutning</string>

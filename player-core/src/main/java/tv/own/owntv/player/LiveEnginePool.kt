@@ -28,10 +28,8 @@ import kotlinx.coroutines.flow.asStateFlow
 class LiveEnginePool(private val newEngine: () -> LivePreviewEngine) {
 
     private val engines = LinkedHashMap<Int, LivePreviewEngine>()
-    private val _audibleTile = MutableStateFlow<Int?>(null)
-
     /** The tile whose sound is playing, or null while every tile is muted. */
-    val audibleTile: StateFlow<Int?> = _audibleTile.asStateFlow()
+    private val _audibleTile = MutableStateFlow<Int?>(null)
 
     /** How many engines exist right now — tiles that have been asked for, filled or not. */
     val size: Int get() = engines.size

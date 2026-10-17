@@ -25,7 +25,6 @@
     <string name="profiles_kids_badge">കുട്ടികൾ</string>
     <string name="profiles_add">പ്രൊഫൈൽ ചേർക്കുക</string>
     <string name="profiles_title">പ്രൊഫൈലുകൾ</string>
-    <string name="profiles_add_button">പ്രൊഫൈൽ ചേർക്കുക</string>
     <string name="profiles_delete_title">“<xliff:g id="name">%1$s</xliff:g>” ഇല്ലാതാക്കണോ?</string>
     <string name="profiles_delete_message">ഈ പ്രൊഫൈലും അതിലെ പ്രിയപ്പെട്ടവയും ചരിത്രവും നീക്കംചെയ്യുന്നു. ഉറവിടങ്ങൾ നിലനിർത്തും.</string>
     <string name="profiles_kids_tag">കുട്ടികൾ</string>
@@ -33,10 +32,7 @@
     <string name="search_title">തിരയൽ</string>
     <string name="search_continue">കാണുന്നത് തുടരുക</string>
     <string name="search_unwatched">കാണാത്തവ</string>
-    <string name="search_hint">ചാനലുകൾ, സിനിമകൾ, സീരീസ് എന്നിവ തിരയുക…</string>
     <string name="search_recent">സമീപകാല തിരയലുകൾ</string>
-    <string name="search_recent_empty">നിങ്ങളുടെ സമീപകാല തിരയലുകൾ ഇവിടെ ദൃശ്യമാകും.</string>
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> — ഫലങ്ങളൊന്നുമില്ല.</string>
     <string name="search_nothing_in_list"><xliff:g id="list">%1$s</xliff:g>-ൽ ഇതുവരെ ഒന്നുമില്ല.</string>
     <string name="search_clear">മായ്ക്കുക</string>
     <string name="search_jump_to">നേരിട്ട് പോകുക</string>
@@ -161,12 +157,7 @@
     </plurals>
     <string name="home_trending_movie">സിനിമ</string>
     <string name="home_trending_series">series</string>
-    <string name="home_trending_section_label">ഇപ്പോൾ ട്രെൻഡാകുന്നവ · SYNC സ്നാപ്പ്ഷോട്ട്</string>
     <string name="home_trending_provider_match">provider പൊരുത്തം</string>
-    <string name="home_trending_language_choice"><xliff:g id="language">%1$s</xliff:g> language തിരഞ്ഞെടുപ്പ്</string>
-    <string name="home_trending_english_fallback">EN പകരം തിരഞ്ഞെടുപ്പ്</string>
-    <string name="home_trending_untagged_fallback">ടാഗില്ലാത്ത പകരം തിരഞ്ഞെടുപ്പ്</string>
-    <string name="home_trending_other_fallback"><xliff:g id="language">%1$s</xliff:g> പകരം തിരഞ്ഞെടുപ്പ്</string>
     <string name="home_trending_why_label">ഈ ഇനം പ്രത്യക്ഷപ്പെടാനുള്ള കാരണം</string>
     <string name="home_trending_reason_title">TMDB സ്ഥാനം #<xliff:g id="rank">%1$d</xliff:g> <xliff:g id="media_type">%2$s</xliff:g> + provider പൊരുത്തം</string>
     <string name="home_trending_reason_preferred">മറ്റൊരു language-ലുള്ള എൻട്രികൾക്കു മുമ്പായി തിരഞ്ഞെടുത്ത <xliff:g id="language">%1$s</xliff:g> provider version പരിഗണിക്കപ്പെടുന്നു.</string>
@@ -183,10 +174,7 @@
     <string name="home_trending_more_details">കൂടുതൽ വിവരങ്ങൾ</string>
     <string name="home_trending_all_versions">എല്ലാ versions-ഉം</string>
     <string name="home_trending_why_menu">ഈ ശീർഷകം ഇവിടെ എന്തുകൊണ്ട്</string>
-    <string name="home_trending_previous">മുമ്പത്തേത്</string>
     <string name="home_trending_pause">താൽക്കാലികമായി നിർത്തുക</string>
-    <string name="home_trending_resume">resume</string>
-    <string name="home_trending_next">അടുത്തത്</string>
     <string name="home_trending_unavailable">ഈ version ഇനി ലഭ്യമല്ല</string>
     <string name="recording_notification_title">റെക്കോർഡ് ചെയ്യുന്നു</string>
     <string name="recording_failed_no_space">നിർത്തി: സ്ഥലം ബാക്കിയില്ല</string>
@@ -197,7 +185,6 @@
     <string name="recording_failed_channel_gone">ആ ചാനൽ ഇനി നിങ്ങളുടെ പ്ലേലിസ്റ്റിൽ ഇല്ല</string>
     <string name="recording_failed_unknown">റെക്കോർഡ് ചെയ്തില്ല</string>
     <string name="recording_title">റെക്കോർഡിംഗുകൾ</string>
-    <string name="recording_description">ഈ ഉപകരണത്തിൽ സൂക്ഷിച്ച തത്സമയ ടിവി.</string>
     <string name="recording_empty">ഇതുവരെ ഒന്നും റെക്കോർഡ് ചെയ്തിട്ടില്ല. ടിവി ഗൈഡിൽ ഒരു പരിപാടിയിൽ റെക്കോർഡ് അമർത്തുക, അല്ലെങ്കിൽ ഒരു ചാനൽ ദീർഘനേരം അമർത്തി അത് റെക്കോർഡ് ചെയ്യുക അല്ലെങ്കിൽ സമയം ഷെഡ്യൂൾ ചെയ്യുക.</string>
     <string name="recording_group_now">ഇപ്പോൾ റെക്കോർഡ് ചെയ്യുന്നു</string>
     <string name="recording_group_scheduled">ഷെഡ്യൂൾ ചെയ്തു</string>
@@ -242,7 +229,6 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> റെക്കോർഡിംഗുകൾ</item>
     </plurals>
     <string name="settings_recording_mobile_data">മൊബൈൽ ഡാറ്റയിൽ റെക്കോർഡ് ചെയ്യുക</string>
-    <string name="settings_recording_mobile_data_description">ഓഫാണെങ്കിൽ, Wi-Fi ഇല്ലാത്ത നേരത്ത് വരുന്ന റെക്കോർഡിംഗ് കാത്തിരിക്കാതെ ഒഴിവാക്കും — തത്സമയ പരിപാടി വീണ്ടും വരില്ല.</string>
     <string name="settings_record_watching">ഞാൻ കാണുന്നത് റെക്കോർഡ് ചെയ്യുക</string>
     <string name="settings_record_watching_description">നിങ്ങള്‍ കാണുന്ന ചാനൽ സൂക്ഷിക്കുന്ന ഒരു റെക്കോർഡ് ബട്ടൺ പ്ലേയറിൽ ചേർക്കുന്നു. ചാനൽ സ്വയം എടുക്കുന്നതിനാൽ, പ്രവർത്തിക്കുമ്പോൾ ദാതാവിന്റെ ഒരു കണക്ഷൻ ഉപയോഗിക്കുന്നു; ചാനൽ മാറ്റിയാലും പ്ലേയർ വിട്ടാലും റെക്കോർഡിങ് തുടരും.</string>
     <string name="settings_record_watching_warning_title">ഒരു കണക്ഷൻ മാത്രം</string>

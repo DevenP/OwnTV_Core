@@ -81,7 +81,6 @@ class CompanionHttpServer(
     @Volatile private var onPayload: (CompanionPayload) -> Unit = {}
     @Volatile private var onBackup: (String) -> Unit = {}
     @Volatile private var onImage: (bytes: ByteArray, extension: String) -> Unit = { _, _ -> }
-    @Volatile private var onTmdbKey: (String) -> Unit = {}
     @Volatile private var onServiceConfig: (CompanionServiceConfig) -> Unit = {}
 
     /** The backup file served at `/backup.json` in [CompanionMode.BACKUP_DOWNLOAD] mode. */
@@ -112,7 +111,6 @@ class CompanionHttpServer(
         onPayload: (CompanionPayload) -> Unit = {},
         onBackup: (String) -> Unit = {},
         onImage: (bytes: ByteArray, extension: String) -> Unit = { _, _ -> },
-        onTmdbKey: (String) -> Unit = {},
         onServiceConfig: (CompanionServiceConfig) -> Unit = {},
         downloadFile: File? = null,
         syncInfo: () -> String = { "{}" },
@@ -129,7 +127,6 @@ class CompanionHttpServer(
         this.onPayload = onPayload
         this.onBackup = onBackup
         this.onImage = onImage
-        this.onTmdbKey = onTmdbKey
         this.onServiceConfig = onServiceConfig
         this.downloadFile = downloadFile
         this.syncInfo = syncInfo
@@ -333,23 +330,6 @@ class CompanionHttpServer(
                 return sendHtml(socket, 200, CompanionHtml.imageSentPage(pageContext, pin))
             }
 
-            // TMDB key handover (TMDB_KEY mode) — PIN required. Body is the bare key as text.
-            if (method == "POST" && path == "/tmdbkey") {
-                val headerPin = headers["x-companion-pin"].orEmpty()
-                if (!requirePin(queryPin.ifBlank { headerPin })) return sendText(socket, 401, localized(R.string.companion_error_unauthorized))
-                val body = CompanionHttpProtocol.readBody(input, headers, CompanionHttpProtocol.maxBodyBytes(path))
-                    ?: return sendText(socket, 413, localized(R.string.companion_error_body_too_large))
-                val key = body.trim()
-                // Shape check only — the app cannot verify a key without spending a request, and the
-                // Metadata screen already has a "Test lookup" button for that. This just stops obvious
-                // junk (an empty box, a pasted URL) from silently replacing a working key.
-                if (!Regex("^[A-Za-z0-9._-]{16,128}$").matches(key)) {
-                    return sendText(socket, 400, localized(R.string.companion_tmdb_invalid))
-                }
-                onTmdbKey(key)
-                return sendHtml(socket, 200, CompanionHtml.tmdbKeySentPage(pageContext, pin))
-            }
-
             if (method == "POST" && path == "/serviceconfig") {
                 val headerPin = headers["x-companion-pin"].orEmpty()
                 if (!requirePin(queryPin.ifBlank { headerPin })) return sendText(socket, 401, localized(R.string.companion_error_unauthorized))
@@ -466,7 +446,6 @@ class CompanionHttpServer(
         CompanionMode.BACKUP_RESTORE -> CompanionHtml.backupUploadPage(context, pin)
         CompanionMode.BACKUP_DOWNLOAD -> CompanionHtml.backupDownloadPage(context, pin)
         CompanionMode.IMAGE_UPLOAD -> CompanionHtml.imageUploadPage(context, pin)
-        CompanionMode.TMDB_KEY -> CompanionHtml.tmdbKeyPage(context, pin)
         CompanionMode.TMDB_CONFIG -> CompanionHtml.serviceConfigPage(context, pin, openSubtitles = false)
         CompanionMode.OPEN_SUBTITLES_CONFIG -> CompanionHtml.serviceConfigPage(context, pin, openSubtitles = true)
         // Local sync has no browser side. Someone who opens the address in a browser and types the

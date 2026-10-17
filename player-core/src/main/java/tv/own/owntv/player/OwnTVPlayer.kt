@@ -746,9 +746,8 @@ class OwnTVPlayer(
     // is no upgrade that fixes this. Accepted: live on mpv keeps mild judder; ExoPlayer is the smooth
     // engine and mpv remains the fallback for streams ExoPlayer can't open.
 
+    /** True while the direct (decoder-to-surface) output is in use — zoom is skipped, the app draws subs. */
     private val _directRender = MutableStateFlow(false)
-    /** True while the direct (decoder-to-surface) output is in use — HUD hides zoom, app draws subs. */
-    val directRender: StateFlow<Boolean> = _directRender.asStateFlow()
 
     /** Hardware decoding effectively in use right now — the global setting, minus a per-item override
      *  forced on after the hardware decoder failed to start a stream. */

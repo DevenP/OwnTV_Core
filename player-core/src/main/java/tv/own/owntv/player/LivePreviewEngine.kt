@@ -174,8 +174,6 @@ class LivePreviewEngine(
 
     private val _state = MutableStateFlow(State.IDLE)
     val state: StateFlow<State> = _state.asStateFlow()
-    private val _videoHeight = MutableStateFlow<Int?>(null)
-    val videoHeight: StateFlow<Int?> = _videoHeight.asStateFlow()
     // PAR-corrected display aspect (w/h) + native pixel (w, h), used by ExoPreviewSurface's zoom/letterbox
     // sizing (see Modifier.videoZoom). Mirrors OwnTVPlayer._videoAspect/_videoSize so live-on-ExoPlayer
     // zooms identically to live-on-mpv / VOD.
@@ -1243,7 +1241,6 @@ class LivePreviewEngine(
 
         override fun onVideoSizeChanged(videoSize: VideoSize) {
             if (videoSize.height > 0) {
-                _videoHeight.value = videoSize.height
                 _videoRes.value = "${videoSize.height}p"
                 if (videoSize.height > 1080) sawUhd = true // mark UHD → full decoder release on leave
             }
@@ -1538,7 +1535,7 @@ class LivePreviewEngine(
         _subtitleOn.value = false; _cues.value = emptyList(); _audioUnsupported.value = false
         _noVideoDetected.value = false
         _audioOnlyMedia.value = false // re-decided from this stream's own track list
-        _videoHeight.value = null; _videoAspect.value = null; _videoSize.value = null; _streamChips.value = emptyList(); _videoFps.value = null
+        _videoAspect.value = null; _videoSize.value = null; _streamChips.value = emptyList(); _videoFps.value = null
         _videoRes.value = null
         _error.value = null
         _errorInfo.value = null
@@ -1851,7 +1848,7 @@ class LivePreviewEngine(
         mainHandler.removeCallbacks(audioOnlyConfirmation)
         tune.hasAudioTrack = false
         tune.hasVideoTrack = true
-        _videoHeight.value = null; _videoAspect.value = null; _videoSize.value = null; _streamChips.value = emptyList(); _videoFps.value = null
+        _videoAspect.value = null; _videoSize.value = null; _streamChips.value = emptyList(); _videoFps.value = null
         _videoRes.value = null // else the next channel's HUD opens showing the previous one's resolution badge
         _state.value = State.IDLE
         // Said here, not left to STATE_IDLE: a player already idle mid-reconnect raises no new state, and

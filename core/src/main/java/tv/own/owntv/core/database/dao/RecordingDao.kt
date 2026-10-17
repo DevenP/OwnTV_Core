@@ -66,13 +66,6 @@ interface RecordingDao {
     suspend fun dueAt(now: Long): List<RecordingEntity>
 
     /**
-     * How many of one playlist's connections recordings are currently holding — the left-hand side
-     * of the D10 budget check.
-     */
-    @Query("SELECT COUNT(*) FROM recordings WHERE sourceId = :sourceId AND status = 'RECORDING'")
-    suspend fun runningCountForSource(sourceId: Long): Int
-
-    /**
      * Anything already claiming this playlist over the same window, for the clash warning shown at
      * scheduling time (D10). Overlap is the usual half-open test: it starts before we end, and ends
      * after we start. [excludeId] keeps a row from clashing with itself when it is being edited.

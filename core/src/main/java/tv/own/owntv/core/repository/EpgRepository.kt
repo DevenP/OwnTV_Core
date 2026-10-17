@@ -100,10 +100,6 @@ class EpgRepository(
         }
     }
 
-    suspend fun countProgrammes(storeId: Long): Int = withContext(Dispatchers.IO) {
-        epgDao.countForSources(listOf(storeId))
-    }
-
     /**
      * The set of normalised EPG ids the user's channels actually reference: every channel's tvg-id plus
      * any persisted smart-match overrides. Public XMLTV feeds carry thousands of channels the user doesn't

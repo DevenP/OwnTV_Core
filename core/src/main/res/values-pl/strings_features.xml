@@ -25,7 +25,6 @@
     <string name="profiles_kids_badge">DZIECI</string>
     <string name="profiles_add">Dodaj profil</string>
     <string name="profiles_title">Zarządzanie profilami</string>
-    <string name="profiles_add_button">Dodaj profil</string>
     <string name="profiles_delete_title">Usunąć „<xliff:g id="name">%1$s</xliff:g>”?</string>
     <string name="profiles_delete_message">Usuwa ten profil oraz jego ulubione i historię. Źródła zostaną zachowane.</string>
     <string name="profiles_kids_tag">Dzieci</string>
@@ -33,10 +32,7 @@
     <string name="search_title">Wyszukiwanie</string>
     <string name="search_continue">Oglądaj dalej</string>
     <string name="search_unwatched">Nieobejrzane</string>
-    <string name="search_hint">Szukaj kanałów, filmów i seriali…</string>
     <string name="search_recent">Ostatnie wyszukiwania</string>
-    <string name="search_recent_empty">Tutaj pojawią się Twoje ostatnie wyszukiwania.</string>
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> — brak wyników.</string>
     <string name="search_nothing_in_list">Na liście <xliff:g id="list">%1$s</xliff:g> jeszcze nic nie ma.</string>
     <string name="search_clear">Wyczyść</string>
     <string name="search_jump_to">Przejdź do</string>
@@ -177,12 +173,7 @@
     </plurals>
     <string name="home_trending_movie">Film</string>
     <string name="home_trending_series">Serial</string>
-    <string name="home_trending_section_label">TERAZ POPULARNE · MIGAWKA SYNCHRONIZACJI</string>
     <string name="home_trending_provider_match">Dopasowanie do dostawcy</string>
-    <string name="home_trending_language_choice">Wybór języka: <xliff:g id="language">%1$s</xliff:g></string>
-    <string name="home_trending_english_fallback">Wybór zastępczy: EN</string>
-    <string name="home_trending_untagged_fallback">Wybór zastępczy bez oznaczenia języka</string>
-    <string name="home_trending_other_fallback">Wybór zastępczy: <xliff:g id="language">%1$s</xliff:g></string>
     <string name="home_trending_why_label">DLACZEGO TA POZYCJA JEST WYŚWIETLANA</string>
     <string name="home_trending_reason_title">Pozycja #<xliff:g id="rank">%1$d</xliff:g> w rankingu TMDB <xliff:g id="media_type">%2$s</xliff:g> + dopasowanie do dostawcy</string>
     <string name="home_trending_reason_preferred">Wybrana wersja dostawcy w języku <xliff:g id="language">%1$s</xliff:g> ma pierwszeństwo przed pozycjami w innym języku.</string>
@@ -201,10 +192,7 @@
     <string name="home_trending_more_details">Więcej szczegółów</string>
     <string name="home_trending_all_versions">Wszystkie wersje</string>
     <string name="home_trending_why_menu">Dlaczego ten tytuł jest tutaj</string>
-    <string name="home_trending_previous">Poprzedni</string>
     <string name="home_trending_pause">Wstrzymaj</string>
-    <string name="home_trending_resume">Wznów</string>
-    <string name="home_trending_next">Następny</string>
     <string name="home_trending_unavailable">Ta wersja nie jest już dostępna</string>
     <string name="recording_notification_title">Nagrywanie</string>
     <string name="recording_failed_no_space">Zatrzymano: brak miejsca</string>
@@ -215,7 +203,6 @@
     <string name="recording_failed_channel_gone">Tego kanału nie ma już na Twojej liście</string>
     <string name="recording_failed_unknown">Nie nagrano</string>
     <string name="recording_title">Nagrania</string>
-    <string name="recording_description">Telewizja na żywo zapisana na tym urządzeniu.</string>
     <string name="recording_empty">Nic jeszcze nie nagrano. Naciśnij Nagraj przy programie w przewodniku TV albo przytrzymaj kanał, aby go nagrać lub zaplanować czas.</string>
     <string name="recording_group_now">Teraz nagrywa</string>
     <string name="recording_group_scheduled">Zaplanowane</string>
@@ -264,7 +251,6 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> nagrań</item>
     </plurals>
     <string name="settings_recording_mobile_data">Nagrywaj przez dane komórkowe</string>
-    <string name="settings_recording_mobile_data_description">Wyłączone: nagranie wypadające poza Wi-Fi zostanie pominięte zamiast czekać — audycja na żywo się nie powtórzy.</string>
     <string name="settings_record_watching">Nagrywaj to, co oglądam</string>
     <string name="settings_record_watching_description">Dodaje do odtwarzacza przycisk nagrywania, który zapisuje oglądany kanał. Pobiera kanał samodzielnie, więc przez ten czas zajmuje jedno z połączeń dostawcy i nagrywa dalej po zmianie kanału lub wyjściu z odtwarzacza.</string>
     <string name="settings_record_watching_warning_title">Tylko jedno połączenie</string>

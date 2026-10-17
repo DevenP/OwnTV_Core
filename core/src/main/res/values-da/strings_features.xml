@@ -25,7 +25,6 @@
     <string name="profiles_kids_badge">BØRN</string>
     <string name="profiles_add">Tilføj profil</string>
     <string name="profiles_title">Profiler</string>
-    <string name="profiles_add_button">Tilføj profil</string>
     <string name="profiles_delete_title">Slet “<xliff:g id="name">%1$s</xliff:g>”?</string>
     <string name="profiles_delete_message">Fjerner denne profil samt dens favoritter og afspilningshistorik. Kilderne bevares.</string>
     <string name="profiles_kids_tag">Børn</string>
@@ -33,10 +32,7 @@
     <string name="search_title">Søgning</string>
     <string name="search_continue">Se videre</string>
     <string name="search_unwatched">Ikke set</string>
-    <string name="search_hint">Søg efter kanaler, film og serier…</string>
     <string name="search_recent">Seneste søgninger</string>
-    <string name="search_recent_empty">Dine seneste søgninger vises her.</string>
-    <string name="search_no_results"><xliff:g id="query">%1$s</xliff:g> — ingen resultater.</string>
     <string name="search_nothing_in_list">Der er ikke noget i <xliff:g id="list">%1$s</xliff:g> endnu.</string>
     <string name="search_clear">Ryd</string>
     <string name="search_jump_to">Gå til</string>
@@ -161,12 +157,7 @@
     </plurals>
     <string name="home_trending_movie">Film</string>
     <string name="home_trending_series">Serie</string>
-    <string name="home_trending_section_label">POPULÆRT LIGE NU · SNAPSHOT FRA SYNKRONISERING</string>
     <string name="home_trending_provider_match">Match hos udbyder</string>
-    <string name="home_trending_language_choice">Valg på <xliff:g id="language">%1$s</xliff:g></string>
-    <string name="home_trending_english_fallback">Engelsk reservevalg</string>
-    <string name="home_trending_untagged_fallback">Reservevalg uden sprogmærkat</string>
-    <string name="home_trending_other_fallback">Reservevalg på <xliff:g id="language">%1$s</xliff:g></string>
     <string name="home_trending_why_label">DERFOR VISES DETTE ELEMENT</string>
     <string name="home_trending_reason_title">TMDB-placering nr. <xliff:g id="rank">%1$d</xliff:g> <xliff:g id="media_type">%2$s</xliff:g> + match hos udbyder</string>
     <string name="home_trending_reason_preferred">Den valgte udbyderversion på <xliff:g id="language">%1$s</xliff:g> foretrækkes frem for versioner på et andet sprog.</string>
@@ -183,10 +174,7 @@
     <string name="home_trending_more_details">Flere oplysninger</string>
     <string name="home_trending_all_versions">Alle versioner</string>
     <string name="home_trending_why_menu">Hvorfor denne titel er her</string>
-    <string name="home_trending_previous">Forrige</string>
     <string name="home_trending_pause">Sæt på pause</string>
-    <string name="home_trending_resume">Fortsæt</string>
-    <string name="home_trending_next">Næste</string>
     <string name="home_trending_unavailable">Denne version er ikke længere tilgængelig</string>
     <string name="recording_notification_title">Optager</string>
     <string name="recording_failed_no_space">Stoppet: ingen plads tilbage</string>
@@ -197,7 +185,6 @@
     <string name="recording_failed_channel_gone">Kanalen findes ikke længere på din playliste</string>
     <string name="recording_failed_unknown">Der blev ikke optaget</string>
     <string name="recording_title">Optagelser</string>
-    <string name="recording_description">Live-tv gemt på denne enhed.</string>
     <string name="recording_empty">Intet optaget endnu. Tryk Optag på et program i tv-guiden, eller hold en kanal nede for at optage den eller planlægge et tidspunkt.</string>
     <string name="recording_group_now">Optager nu</string>
     <string name="recording_group_scheduled">Planlagt</string>
@@ -242,7 +229,6 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> optagelser</item>
     </plurals>
     <string name="settings_recording_mobile_data">Optag på mobildata</string>
-    <string name="settings_recording_mobile_data_description">Fra: en optagelse, der falder uden for Wi-Fi, springes over i stedet for at vente — et direkte program kommer ikke igen.</string>
     <string name="settings_record_watching">Optag det, jeg ser</string>
     <string name="settings_record_watching_description">Sætter en optageknap i afspilleren, som gemmer den kanal, du ser. Den henter kanalen selv, så den bruger en af din udbyders forbindelser imens, og den optager videre, når du skifter kanal eller forlader afspilleren.</string>
     <string name="settings_record_watching_warning_title">Kun én forbindelse</string>

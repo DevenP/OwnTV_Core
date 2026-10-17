@@ -48,10 +48,6 @@ interface EpgDao {
     @Query("DELETE FROM epg_programmes WHERE sourceId = :sourceId AND (stopMs <= :from OR startMs >= :to)")
     suspend fun pruneOutsideWindow(sourceId: Long, from: Long, to: Long)
 
-    /** Drop all programmes for one EPG channel id (used to re-fill it from cache after a smart-match). */
-    @Query("DELETE FROM epg_programmes WHERE epgChannelId = :epgChannelId")
-    suspend fun clearChannel(epgChannelId: String)
-
     /**
      * Drop programmes for one EPG channel id only within the given sources. Used by the cache re-fill so
      * we delete only what we're about to repopulate — a source whose cache isn't fresh keeps its data

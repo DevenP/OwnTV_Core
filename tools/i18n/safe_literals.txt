@@ -423,10 +423,9 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	HTTP/1.1 200 OK
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	Not Found
 2	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	OK
-7	uri	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	POST
+6	uri	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	POST
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	Payload Too Large
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	Unauthorized
-1	regex	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	^[A-Za-z0-9._-]{16,128}$
 1	regex	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	^data:image/([a-zA-Z0-9.+-]+);base64,
 1	uri	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	application/json; charset=utf-8
 2	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	bmp
@@ -442,7 +441,7 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	text/html; charset=utf-8
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	text/plain; charset=utf-8
 2	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	webp
-8	uri	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	x-companion-pin
+7	uri	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	x-companion-pin
 3	uri	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	{}
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionLink.kt	10.
 2	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionLink.kt	127.0.0.1
@@ -1052,7 +1051,6 @@
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/EpgDao.kt	AND title LIKE '%' || :query || '%' ORDER BY startMs ASC LIMIT :limit
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/EpgDao.kt	DELETE FROM epg_channels WHERE sourceId = :sourceId
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/EpgDao.kt	DELETE FROM epg_channels WHERE sourceId = :sourceId AND epgChannelId IN (:epgChannelIds)
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/EpgDao.kt	DELETE FROM epg_programmes WHERE epgChannelId = :epgChannelId
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/EpgDao.kt	DELETE FROM epg_programmes WHERE epgChannelId = :epgChannelId AND sourceId IN (:sourceIds)
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/EpgDao.kt	DELETE FROM epg_programmes WHERE id IN (:ids)
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/EpgDao.kt	DELETE FROM epg_programmes WHERE sourceId = :sourceId
@@ -1158,7 +1156,6 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MetadataDao.kt	DELETE FROM metadata_cache
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MetadataDao.kt	DELETE FROM metadata_cache WHERE key = :key
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MetadataDao.kt	DELETE FROM metadata_cache WHERE updatedAt < :cutoff
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MetadataDao.kt	DELETE FROM metadata_match
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MetadataDao.kt	DELETE FROM metadata_match WHERE localKey = :localKey
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/MetadataDao.kt	DELETE FROM metadata_match WHERE tmdbId IS NULL
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MetadataDao.kt	DELETE FROM metadata_match WHERE updatedAt < :cutoff
@@ -1331,7 +1328,6 @@
 2	sql	core/src/main/java/tv/own/owntv/core/database/dao/RecordingDao.kt	SELECT * FROM recordings WHERE status = 'RECORDING' ORDER BY startMs ASC
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/RecordingDao.kt	SELECT * FROM recordings WHERE status = 'SCHEDULED' ORDER BY startMs ASC
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/RecordingDao.kt	SELECT * FROM recordings WHERE status IN ('SCHEDULED', 'RECORDING')
-1	sql	core/src/main/java/tv/own/owntv/core/database/dao/RecordingDao.kt	SELECT COUNT(*) FROM recordings WHERE sourceId = :sourceId AND status = 'RECORDING'
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/RecordingDao.kt	UPDATE recordings SET status = :status, failure = :failure, bytes = :bytes,
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/RecordingDao.kt	filePath = :filePath, startedAt = :startedAt, endedAt = :endedAt, updatedAt = :timestamp WHERE id = :id
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ReminderDao.kt	DELETE FROM programme_reminders WHERE id = :id
@@ -1361,7 +1357,6 @@
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	ORDER BY sortOrder ASC, name ASC, id ASC
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	ORDER BY sortOrder ASC, name ASC, id ASC LIMIT :limit
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT * FROM episodes WHERE id = :id
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT * FROM episodes WHERE seasonId = :seasonId ORDER BY episodeNumber ASC
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT * FROM episodes WHERE seriesId = :seriesId AND remoteId = :remoteId LIMIT 1
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT * FROM episodes WHERE seriesId = :seriesId AND seasonNumber = :season AND episodeNumber = :episode LIMIT 1
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT * FROM episodes WHERE seriesId = :seriesId ORDER BY seasonNumber ASC, episodeNumber ASC
@@ -1376,7 +1371,6 @@
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT * FROM series WHERE id IN (:ids)
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT * FROM series WHERE sourceId = :sourceId AND name = :name LIMIT 1
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT * FROM series WHERE sourceId = :sourceId AND remoteId = :remoteId LIMIT 1
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT * FROM series WHERE sourceId = :sourceId AND remoteId IN (:remoteIds)
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT * FROM series WHERE sourceId = :sourceId AND titleSignature = '' LIMIT :limit
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT * FROM series WHERE sourceId IN (:sourceIds)
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT * FROM series WHERE sourceId IN (:sourceIds) AND name LIKE '%' || :query || '%' ORDER BY addedAt DESC, sortOrder DESC, id DESC
@@ -1439,8 +1433,6 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesSortOrderDao.kt	s.sourceId AS sourceId, s.remoteId AS remoteId, s.name AS name
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesSortOrderDao.kt	seasonsDescending = :seasonsDescending, episodesDescending = :episodesDescending
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	AND (:hlsSupported = 1 OR hlsSupported != 1)
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	DELETE FROM profile_source WHERE profileId = :profileId AND sourceId = :sourceId
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	DELETE FROM sources
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	INNER JOIN profile_source ps ON ps.sourceId = s.id
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	SELECT * FROM profile_source
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	SELECT * FROM sources ORDER BY createdAt ASC
@@ -1451,7 +1443,6 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	SELECT sourceId FROM profile_source WHERE profileId = :profileId
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	UPDATE sources SET catchupTimezone = :mode, catchupOffsetMin = :offsetMin WHERE id = :id
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	UPDATE sources SET hlsSupported = :hlsSupported WHERE id = :id
-1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	UPDATE sources SET httpReferer = :referer WHERE id = :id
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	UPDATE sources SET lastSyncAt = :timestamp WHERE id = :id
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	UPDATE sources SET livePrerollSecs = :secs WHERE id = :id
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	UPDATE sources SET liveTuneTimeoutSecs = :secs WHERE id = :id
@@ -1463,7 +1454,6 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SubtitleDao.kt	DELETE FROM subtitle_cache WHERE id = :id
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SubtitleDao.kt	DELETE FROM subtitle_link WHERE profileId = :profileId AND cacheId = :cacheId
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SubtitleDao.kt	DELETE FROM subtitle_link WHERE profileId = :profileId AND cacheId = :cacheId AND mediaType = :mediaType
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SubtitleDao.kt	DELETE FROM subtitle_selection WHERE profileId = :profileId AND contentKey = :contentKey
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SubtitleDao.kt	FROM subtitle_link l JOIN subtitle_cache c ON c.id = l.cacheId
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SubtitleDao.kt	SELECT * FROM subtitle_cache
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SubtitleDao.kt	SELECT * FROM subtitle_cache WHERE id = :id LIMIT 1
@@ -1475,7 +1465,6 @@
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SubtitleDao.kt	SELECT * FROM subtitle_timing
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SubtitleDao.kt	SELECT COUNT(*) FROM subtitle_link WHERE cacheId = :cacheId AND profileId != :profileId
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SubtitleDao.kt	SELECT COUNT(*) FROM subtitle_link WHERE cacheId = :cacheId AND profileId = :profileId
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SubtitleDao.kt	SELECT COUNT(*) FROM subtitle_link WHERE profileId = :profileId AND contentKey = :contentKey
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SubtitleDao.kt	SELECT DISTINCT cacheId FROM subtitle_link WHERE profileId = :profileId AND mediaType = :mediaType
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SubtitleDao.kt	SELECT c.id AS cacheId, l.contentKey AS contentKey, l.contentTitle AS contentTitle,
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SubtitleDao.kt	SELECT offsetMs FROM subtitle_timing WHERE profileId = :profileId AND contentKey = :contentKey AND subtitleKey = :subtitleKey LIMIT 1
@@ -1495,10 +1484,9 @@
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/TombstoneDao.kt	SELECT COUNT(*) FROM user_data_tombstones
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/TombstoneDao.kt	SELECT deletedAt FROM user_data_tombstones WHERE profileId = :profileId AND kind = :kind AND identity = :identity
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/TrendingDao.kt	DELETE FROM trending_items WHERE sourceId = :sourceId
-1	sql	core/src/main/java/tv/own/owntv/core/database/dao/TrendingDao.kt	DELETE FROM trending_snapshots WHERE sourceId = :sourceId
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/TrendingDao.kt	SELECT * FROM trending_items ORDER BY sourceId, position
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/TrendingDao.kt	SELECT * FROM trending_items WHERE sourceId = :sourceId ORDER BY position
-2	sql	core/src/main/java/tv/own/owntv/core/database/dao/TrendingDao.kt	SELECT * FROM trending_items WHERE sourceId IN (:sourceIds) ORDER BY sourceId, position
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/TrendingDao.kt	SELECT * FROM trending_items WHERE sourceId IN (:sourceIds) ORDER BY sourceId, position
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/TrendingDao.kt	SELECT * FROM trending_snapshots WHERE sourceId = :sourceId LIMIT 1
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/TrendingDao.kt	SELECT * FROM trending_snapshots WHERE sourceId IN (:sourceIds) ORDER BY sourceId
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/TrendingDao.kt	UPDATE trending_snapshots SET lastAttemptAt = :attemptAt, lastAttemptStatus = 'FAILED',
@@ -2898,7 +2886,6 @@
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	auto_frame_rate_prompted
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	auto_frame_rate_reset_pre12
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	auto_play_next
-1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	avatar_id
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	background_playback
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	bg_accent_light
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	bg_blur
@@ -3934,7 +3921,7 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=${enc(type)}&action=create_link&cmd=${enc(cmd)}$seriesParam&forced_storage=0&disable_ad=0&JsHttpRequest=1-xml
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=account_info&action=get_main_info&JsHttpRequest=1-xml
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=itv&action=get_all_channels&JsHttpRequest=1-xml
-2	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=itv&action=get_epg_info&period=$periodDays&JsHttpRequest=1-xml
+1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=itv&action=get_epg_info&period=$periodDays&JsHttpRequest=1-xml
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=itv&action=get_genres&JsHttpRequest=1-xml
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=itv&action=get_ordered_list&genre=${enc(genreId)}&p=$page&JsHttpRequest=1-xml
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=itv&action=get_short_epg&ch_id=${enc(channelId)}&size=$size&JsHttpRequest=1-xml
