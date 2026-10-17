@@ -3,9 +3,6 @@ package tv.own.owntv.core.sync
 import android.os.SystemClock
 import android.util.Log
 import androidx.annotation.VisibleForTesting
-import androidx.core.net.toUri
-import java.io.File
-import java.io.InputStream
 import java.util.Objects
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.currentCoroutineContext
@@ -42,7 +39,7 @@ import tv.own.owntv.core.parser.M3uParser
  * never wipes previously-imported rows of other types.
  */
 internal class M3uSyncer(
-    private val context: android.content.Context,
+    context: android.content.Context,
     private val sourceDao: SourceDao,
     private val categoryDao: CategoryDao,
     private val channelDao: ChannelDao,
@@ -58,6 +55,7 @@ internal class M3uSyncer(
     // playlist still counts as changed without a bespoke hash here.
     private val channelAdapter get() = support.channelAdapter
     private val movieAdapter get() = support.movieAdapter
+    private val localFile = LocalPlaylistFile(context)
 
     suspend fun sync(s: SourceEntity, progress: SyncCounters, stats: SyncStatsCollector) {
         val channelsStart = System.currentTimeMillis()
@@ -69,7 +67,7 @@ internal class M3uSyncer(
         // A locally-picked playlist file (in-app StorageBrowser gives an absolute path; also tolerate
         // file://content:// URIs) is read straight from the device; a normal URL is downloaded. Same parser.
         val isLocal = s.url.startsWith("/") || s.url.startsWith("file://") || s.url.startsWith("content://")
-        val localBytes = if (isLocal) localPlaylistSize(s.url) else null
+        val localBytes = if (isLocal) localFile.size(s.url) else null
         Log.i(TAG, "M3U phase start sourceId=${s.id} local=$isLocal fresh=$freshSource bytesTotal=${localBytes ?: -1}")
         progress.update(SyncPhase.LIVE, 0)
 
@@ -448,7 +446,7 @@ internal class M3uSyncer(
                 }
             }
             val header = if (isLocal) {
-                openLocalPlaylist(s.url).use { input -> m3u.parse(input, onEntry) }
+                localFile.open(s.url).use { input -> m3u.parse(input, onEntry) }
             } else {
                 http.get(s.url, s.userAgent, reportBytes) { input -> m3u.parse(input, onEntry) }
             }
@@ -546,36 +544,6 @@ internal class M3uSyncer(
     )
 
     internal data class ParsedM3uEpisode(val show: String, val season: Int, val episode: Int, val title: String?)
-
-    /**
-     * Size of a local playlist, for the progress log — read without opening the stream, so the
-     * descriptor is only ever held around the parse itself. Null when it can't be determined.
-     */
-    private fun localPlaylistSize(url: String): Long? = when {
-        url.startsWith("/") -> File(url).length().takeIf { it > 0 }
-        url.startsWith("file://") -> url.toUri().path?.let { File(it).length().takeIf { len -> len > 0 } }
-        url.startsWith("content://") -> runCatching {
-            context.contentResolver.openAssetFileDescriptor(url.toUri(), "r")?.use { afd ->
-                afd.length.takeIf { it >= 0 }
-            }
-        }.getOrNull()
-        else -> null
-    }
-
-    /** Opens a local playlist for reading. The caller MUST close it — always via `use { }`:
-     *  before, an exception between opening and parsing leaked the fd (and, for `content://`, the
-     *  provider's file handle) for the life of the process. */
-    private fun openLocalPlaylist(url: String): InputStream = when {
-        url.startsWith("/") -> File(url).inputStream()
-        url.startsWith("file://") -> {
-            val uri = url.toUri()
-            File(uri.path ?: throw java.io.IOException("playlist_file_unavailable")).inputStream()
-        }
-        url.startsWith("content://") ->
-            context.contentResolver.openInputStream(url.toUri())
-                ?: throw java.io.IOException("playlist_file_unavailable")
-        else -> throw java.io.IOException("playlist_path_unsupported")
-    }
 
     companion object {
         private const val TAG = SyncSupport.TAG
