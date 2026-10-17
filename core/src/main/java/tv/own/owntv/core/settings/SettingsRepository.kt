@@ -340,12 +340,8 @@ class SettingsRepository(private val context: Context, private val localeStore: 
     private fun <T> positionFlow(key: Preferences.Key<T>): Flow<T?> =
         context.positionStore.data.map { it[key] }.distinctUntilChanged()
 
-    // Glass effect defaults: OFF (empty scope) — the glass look is strictly opt-in, the app looks
-    // unchanged until the user enables it in Settings → Glass Effect. Alpha/blur defaults are the
-    // "nice preset" applied once glass is turned on.
+    // Glass is off until it is set (a fresh install's Stage defaults turn it on).
     private val GLASS_SCOPE_DEFAULT_BITS: Int = 0
-    private val GLASS_BLUR_DEFAULT_PCT: Int = 78
-    private val GLASS_HIGHLIGHT_DEFAULT_PCT: Int = 55
     private val NAV_WIDEN_OFF = "OFF"
 
     // Internal (not private) only so SettingsBackupCoverageTest can check every key has a backup decision.
@@ -646,19 +642,11 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         val POSITIONS: List<Preferences.Key<*>> = listOf(LAST_LIVE_CHANNEL, LAST_LIVE_CATEGORY, LAST_MOVIES_CATEGORY, LAST_SERIES_CATEGORY)
         // Background image (Glass effect). bg_image_path holds the absolute path of the image we
         // COPIED into app-private storage (so a USB unplug or source-folder delete never blanks it);
-        // blank = no background (feature off, panels stay solid). glass_scope is the bitmask of which
-        // surfaces go translucent (GlassConfig.fromBitmask); glass_alpha is the fill alpha in 0..100;
-        // glass_blur is the backdrop frost strength in 0..100 (Phase 4 — real backdrop blur; 0 keeps
-        // the older Tier-1 translucency-only look).
+        // blank = no background (feature off, panels stay solid). glass_scope is Glass on (any bit set,
+        // see GlassConfig.ON_BITS) or off (0); glass_alpha is the fill alpha in 0..100.
         val BG_IMAGE_PATH = stringPreferencesKey("bg_image_path")
         val GLASS_SCOPE = intPreferencesKey("glass_scope")
         val GLASS_ALPHA = intPreferencesKey("glass_alpha")
-        val GLASS_BLUR = intPreferencesKey("glass_blur")
-        val GLASS_HIGHLIGHT = intPreferencesKey("glass_highlight")
-        val GLASS_ALLOW_FULL_TRANSPARENCY = booleanPreferencesKey("glass_allow_full_transparency")
-        val GLASS_DEPTH_EFFECTS = booleanPreferencesKey("glass_depth_effects")
-        val GLASS_GLINT = booleanPreferencesKey("glass_glint")
-        val GLASS_PRESET = stringPreferencesKey("glass_preset")
         // Glass & background (2 Oct): what sits behind every screen. Unset = the user's look before
         // this existed (see BackgroundConfig.resolve). Darken / Blur / Accent light are overrides of the
         // picture look's own defaults and are cleared when the look changes.
@@ -2837,11 +2825,11 @@ class SettingsRepository(private val context: Context, private val localeStore: 
      * the layout an update had (SEPARATE, the old default, where none was stored); a fresh install —
      * no active profile yet — gets the CINEMATIC default. TV only: the phone has its own look.
      */
-    suspend fun applyStageDefaults(allSurfacesBits: Int) {
+    suspend fun applyStageDefaults() {
         var oldPicture: String? = null
         context.dataStore.edit { prefs ->
             if (prefs[Keys.STAGE_DEFAULTS_APPLIED] == true) return@edit
-            stageDefaults(prefs, allSurfacesBits)
+            stageDefaults(prefs)
             oldPicture = prefs[Keys.BG_IMAGE_PATH]
             prefs.remove(Keys.BG_IMAGE_PATH)
         }
@@ -2853,8 +2841,8 @@ class SettingsRepository(private val context: Context, private val localeStore: 
      * at [alphaPct]. Written only on a fresh install — no profile yet and neither glass nor background ever set —
      * so an existing install keeps whatever it has. The TV uses [applyStageDefaults].
      */
-    suspend fun applyPhoneStageDefaults(allSurfacesBits: Int, alphaPct: Int) {
-        context.dataStore.edit { phoneStageDefaults(it, allSurfacesBits, alphaPct) }
+    suspend fun applyPhoneStageDefaults(alphaPct: Int) {
+        context.dataStore.edit { phoneStageDefaults(it, alphaPct) }
     }
 
     /** v4.1.6 only: force live latency to Balanced exactly once, including existing custom choices. */
@@ -2950,29 +2938,11 @@ class SettingsRepository(private val context: Context, private val localeStore: 
     /** Absolute path to the user's background image (copied into app-private storage); blank = off. */
     val bgImagePath: Flow<String> = prefsFlow { it[Keys.BG_IMAGE_PATH] ?: "" }
 
-    /** Glass scope as a [GlassConfig] bitfield. Empty scope = feature off. */
+    /** Glass on or off, and its opacity. */
     val glassConfig: Flow<tv.own.owntv.core.theme.GlassConfig> = prefsFlow { p ->
-        val bits = p[Keys.GLASS_SCOPE] ?: GLASS_SCOPE_DEFAULT_BITS
-        val alphaPct = p[Keys.GLASS_ALPHA] ?: GLASS_ALPHA_DEFAULT_PCT
-        val blurPct = p[Keys.GLASS_BLUR] ?: GLASS_BLUR_DEFAULT_PCT
-        val highlightPct = p[Keys.GLASS_HIGHLIGHT] ?: GLASS_HIGHLIGHT_DEFAULT_PCT
-        val allowFullTransparency = p[Keys.GLASS_ALLOW_FULL_TRANSPARENCY] ?: false
-        val depthEffects = p[Keys.GLASS_DEPTH_EFFECTS] ?: true
-        val glint = p[Keys.GLASS_GLINT] ?: true
-        val preset = tv.own.owntv.core.theme.GlassPreset.fromStored(
-            name = p[Keys.GLASS_PRESET],
-            customAlpha = alphaPct / 100f,
-            customBlur = blurPct / 100f,
-        )
-        tv.own.owntv.core.theme.GlassConfig.fromBitmask(
-            bits,
-            alpha = alphaPct / 100f,
-            blurStrength = blurPct / 100f,
-            preset = preset,
-            highlightStrength = highlightPct / 100f,
-            allowFullTransparency = allowFullTransparency,
-            depthEffects = depthEffects,
-            glint = glint,
+        tv.own.owntv.core.theme.GlassConfig(
+            enabled = (p[Keys.GLASS_SCOPE] ?: GLASS_SCOPE_DEFAULT_BITS) != 0,
+            alpha = ((p[Keys.GLASS_ALPHA] ?: GLASS_ALPHA_DEFAULT_PCT) / 100f).coerceIn(0f, 1f),
         )
     }
 
@@ -3037,13 +3007,12 @@ class SettingsRepository(private val context: Context, private val localeStore: 
      * Reset (Glass & background): Stage colours, glass on every surface, opacity 50%. The picture file
      * is kept so Background › Picture can return to it.
      */
-    suspend fun resetGlassAndBackground(allSurfacesBits: Int, alphaPct: Int = GLASS_ALPHA_DEFAULT_PCT) {
+    suspend fun resetGlassAndBackground(alphaPct: Int = GLASS_ALPHA_DEFAULT_PCT) {
         context.dataStore.edit {
             it[Keys.BG_STYLE] = tv.own.owntv.core.theme.BackgroundStyle.STAGE.name
             it.remove(Keys.BG_LOOK); it.remove(Keys.BG_DIM); it.remove(Keys.BG_BLUR); it.remove(Keys.BG_ACCENT_LIGHT)
-            it[Keys.GLASS_SCOPE] = allSurfacesBits
+            it[Keys.GLASS_SCOPE] = tv.own.owntv.core.theme.GlassConfig.ON_BITS
             it[Keys.GLASS_ALPHA] = alphaPct
-            it[Keys.GLASS_PRESET] = tv.own.owntv.core.theme.GlassPreset.CUSTOM.name
         }
     }
 
@@ -3052,50 +3021,14 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         context.dataStore.edit { it[Keys.BG_IMAGE_PATH] = path.trim() }
     }
 
-    /** Persist the glass scope bitfield (see [tv.own.owntv.core.theme.GlassConfig.toBitmask]). */
+    /** Glass on ([tv.own.owntv.core.theme.GlassConfig.ON_BITS]) or off (0). */
     suspend fun setGlassScopeBitmask(bits: Int) {
         context.dataStore.edit { it[Keys.GLASS_SCOPE] = bits }
     }
 
-    /** Select a tuned preset. Custom values remain stored so returning to CUSTOM restores them. */
-    suspend fun setGlassPreset(preset: tv.own.owntv.core.theme.GlassPreset) {
-        context.dataStore.edit { it[Keys.GLASS_PRESET] = preset.name }
-    }
-
     /** Persist glass alpha as an integer 0..100. */
-    suspend fun setGlassAlphaPercent(pct: Int, currentBlurPct: Int) {
-        context.dataStore.edit {
-            it[Keys.GLASS_ALPHA] = pct.coerceIn(0, 100)
-            it[Keys.GLASS_BLUR] = currentBlurPct.coerceIn(0, 100)
-            it[Keys.GLASS_PRESET] = tv.own.owntv.core.theme.GlassPreset.CUSTOM.name
-        }
-    }
-
-    /** Persist the backdrop blur ("frost") strength as an integer 0..100. 0 = Tier-1 translucency only. */
-    suspend fun setGlassBlurPercent(pct: Int, currentAlphaPct: Int) {
-        context.dataStore.edit {
-            it[Keys.GLASS_ALPHA] = currentAlphaPct.coerceIn(0, 100)
-            it[Keys.GLASS_BLUR] = pct.coerceIn(0, 100)
-            it[Keys.GLASS_PRESET] = tv.own.owntv.core.theme.GlassPreset.CUSTOM.name
-        }
-    }
-
-    /** Focused lens/rim light strength. 55% preserves the original tuned appearance exactly. */
-    suspend fun setGlassHighlightPercent(pct: Int) {
-        context.dataStore.edit { it[Keys.GLASS_HIGHLIGHT] = pct.coerceIn(0, 100) }
-    }
-
-    suspend fun setGlassAllowFullTransparency(enabled: Boolean) {
-        context.dataStore.edit { it[Keys.GLASS_ALLOW_FULL_TRANSPARENCY] = enabled }
-    }
-
-    suspend fun setGlassDepthEffects(enabled: Boolean) {
-        context.dataStore.edit { it[Keys.GLASS_DEPTH_EFFECTS] = enabled }
-    }
-
-    /** The sweep of light a glass pane arrives with. */
-    suspend fun setGlassGlint(enabled: Boolean) {
-        context.dataStore.edit { it[Keys.GLASS_GLINT] = enabled }
+    suspend fun setGlassAlphaPercent(pct: Int) {
+        context.dataStore.edit { it[Keys.GLASS_ALPHA] = pct.coerceIn(0, 100) }
     }
 
     /** Avatar for the current (placeholder) profile until real profiles arrive in the wizard. */
@@ -3182,11 +3115,10 @@ class SettingsRepository(private val context: Context, private val localeStore: 
             Keys.MINI_PLAYER_POSITION,
             // Live TV latency preset (custom seconds is an int key, see backupIntKeys).
             Keys.LIVE_LATENCY_MODE,
-            // Glass effect: the background image path + scope/alpha so a reinstall keeps the look.
-            // NOTE: only the path string travels — the image bytes live in app-private storage which is
-            // wiped on uninstall, so on a new device a stale path is ignored gracefully (falls back to none).
+            // Glass & background's picture path (Glass on/off and opacity are int keys). Only the path string
+            // travels — the image bytes live in app-private storage which is wiped on uninstall, so on a new
+            // device a stale path is ignored gracefully (falls back to none).
             Keys.BG_IMAGE_PATH,
-            Keys.GLASS_PRESET,
             // Glass & background: Background and Picture look (Darken / Blur are int keys, Accent light a bool).
             Keys.BG_STYLE, Keys.BG_LOOK,
             // Subtitle appearance: text color and screen position (toggle is a bool key, size a float
@@ -3211,7 +3143,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
             Keys.NAV_MENU_HIDDEN,
             Keys.REMOTE_SHORTCUT_BINDINGS,
         )
-        val ints = listOf(Keys.GUIDE_DAYS_TO_KEEP, Keys.FOCUS_HIGHLIGHT_WIDTH, Keys.DEFAULT_VOLUME, Keys.SEEK_STEP_SEC, Keys.LIVE_REWIND_STEP_SEC, Keys.UI_ZOOM_PCT, Keys.FONT_SIZE_PCT, Keys.AUDIO_DELAY_MS, Keys.CATCHUP_OFFSET_MIN, Keys.EPG_OFFSET_MIN, Keys.PROXY_PORT, Keys.DNS_PORT, Keys.CH_NAV_UP_SKIP, Keys.CH_NAV_DOWN_SKIP, Keys.MINI_PLAYER_SIZE_PCT, Keys.LIVE_LATENCY_CUSTOM_SECS, Keys.LIVE_PREROLL_SECS, Keys.LIVE_TUNE_TIMEOUT_SECS, Keys.GLASS_SCOPE, Keys.GLASS_ALPHA, Keys.GLASS_BLUR, Keys.GLASS_HIGHLIGHT, Keys.BG_DIM, Keys.BG_BLUR, Keys.SUB_BG_OPACITY,
+        val ints = listOf(Keys.GUIDE_DAYS_TO_KEEP, Keys.FOCUS_HIGHLIGHT_WIDTH, Keys.DEFAULT_VOLUME, Keys.SEEK_STEP_SEC, Keys.LIVE_REWIND_STEP_SEC, Keys.UI_ZOOM_PCT, Keys.FONT_SIZE_PCT, Keys.AUDIO_DELAY_MS, Keys.CATCHUP_OFFSET_MIN, Keys.EPG_OFFSET_MIN, Keys.PROXY_PORT, Keys.DNS_PORT, Keys.CH_NAV_UP_SKIP, Keys.CH_NAV_DOWN_SKIP, Keys.MINI_PLAYER_SIZE_PCT, Keys.LIVE_LATENCY_CUSTOM_SECS, Keys.LIVE_PREROLL_SECS, Keys.LIVE_TUNE_TIMEOUT_SECS, Keys.GLASS_SCOPE, Keys.GLASS_ALPHA, Keys.BG_DIM, Keys.BG_BLUR, Keys.SUB_BG_OPACITY,
             Keys.PANEL_W_LIVE_CAT, Keys.PANEL_W_LIVE_LIST, Keys.PANEL_W_LIVE_PREVIEW,
             Keys.LIVE_STAGE_SHEET, Keys.LIVE_STAGE_LIST, Keys.LIVE_STAGE_PREVIEW,
             Keys.PANEL_W_MOVIES_CAT, Keys.PANEL_W_MOVIES_LIST, Keys.PANEL_W_MOVIES_PREVIEW,
@@ -3243,7 +3175,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
             Keys.SUB_STYLE_ENABLED, Keys.SUB_SEARCH_FILTER,
                 Keys.PANEL_W_LIVE_ON, Keys.PANEL_W_MOVIES_ON, Keys.PANEL_W_SERIES_ON, Keys.GUIDE_WIDTH_ON,
             Keys.AMBIENT_GLOW_ENABLED, Keys.AMBIENT_GLOW_PULSE,
-            Keys.GLASS_ALLOW_FULL_TRANSPARENCY, Keys.GLASS_DEPTH_EFFECTS, Keys.GLASS_GLINT, Keys.BG_ACCENT_LIGHT, Keys.BRAND_ACCENT_TRIANGLE,
+            Keys.BG_ACCENT_LIGHT, Keys.BRAND_ACCENT_TRIANGLE,
             // Touch-host settings. They travel even though a television has no row for them: a phone
             // restored from a phone must keep them, and a television simply ignores what it never reads.
             Keys.BACKGROUND_PLAYBACK, Keys.PIP_ENABLED, Keys.DATA_SAVER, Keys.DOWNLOADS_WIFI_ONLY,
@@ -3434,14 +3366,13 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         const val GLASS_ALPHA_DEFAULT_PCT = 50
 
         /** The writes of [applyStageDefaults] (except the picture file), apart so a unit test can check them. */
-        internal fun stageDefaults(prefs: MutablePreferences, allSurfacesBits: Int) {
+        internal fun stageDefaults(prefs: MutablePreferences) {
             val update = prefs[Keys.ACTIVE_PROFILE] != null
             prefs[Keys.NAV_STYLE] = NavStyle.DOCKED.name
             prefs[Keys.NAV_SIZE] = NavSize.COMPACT.name
             prefs[Keys.NAV_LENGTH] = NavLength.FIT.name
-            prefs[Keys.GLASS_SCOPE] = allSurfacesBits
+            prefs[Keys.GLASS_SCOPE] = tv.own.owntv.core.theme.GlassConfig.ON_BITS
             prefs[Keys.GLASS_ALPHA] = GLASS_ALPHA_DEFAULT_PCT
-            prefs[Keys.GLASS_PRESET] = tv.own.owntv.core.theme.GlassPreset.CUSTOM.name
             prefs[Keys.BG_STYLE] = tv.own.owntv.core.theme.BackgroundStyle.STAGE.name
             prefs.remove(Keys.BG_LOOK); prefs.remove(Keys.BG_DIM); prefs.remove(Keys.BG_BLUR); prefs.remove(Keys.BG_ACCENT_LIGHT)
             if (update && prefs[Keys.VOD_LAYOUT] == null) prefs[Keys.VOD_LAYOUT] = VodLayout.SEPARATE.name
@@ -3449,12 +3380,11 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         }
 
         /** The writes of [applyPhoneStageDefaults]; nothing at all unless this is a fresh install. */
-        internal fun phoneStageDefaults(prefs: MutablePreferences, allSurfacesBits: Int, alphaPct: Int) {
+        internal fun phoneStageDefaults(prefs: MutablePreferences, alphaPct: Int) {
             val fresh = prefs[Keys.ACTIVE_PROFILE] == null && prefs[Keys.GLASS_SCOPE] == null && prefs[Keys.BG_STYLE] == null
             if (!fresh) return
-            prefs[Keys.GLASS_SCOPE] = allSurfacesBits
+            prefs[Keys.GLASS_SCOPE] = tv.own.owntv.core.theme.GlassConfig.ON_BITS
             prefs[Keys.GLASS_ALPHA] = alphaPct
-            prefs[Keys.GLASS_PRESET] = tv.own.owntv.core.theme.GlassPreset.CUSTOM.name
             prefs[Keys.BG_STYLE] = tv.own.owntv.core.theme.BackgroundStyle.STAGE.name
         }
 
