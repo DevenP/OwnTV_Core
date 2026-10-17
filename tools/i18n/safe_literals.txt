@@ -488,6 +488,8 @@
 2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationStore.kt	hiddenItems
 2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationStore.kt	itemNames
 1	technical	core/src/main/java/tv/own/owntv/core/customize/CustomizationStore.kt	owntv_customizations
+1	technical	core/src/main/java/tv/own/owntv/core/customize/RenameRules.kt	c$pattern
+1	technical	core/src/main/java/tv/own/owntv/core/customize/RenameRules.kt	i$pattern
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/BulkInsertHelper.kt	\0
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/BulkInsertHelper.kt	$msg — no canonical indexes for ${state.table}, indexes were dropped and NOT restored
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/BulkInsertHelper.kt	+ FTS
