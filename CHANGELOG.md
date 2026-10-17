@@ -29,6 +29,8 @@
 
 ### 🐛 Fixes
 
+- **📺 Xtream series no longer lose every episode over one oddly written field**
+- **💬 A series whose episode list the provider refused says why instead of "No episodes"**
 - **📡 Pause and rewind live TV: a channel comes back by itself after a network outage**
 - **▶️ External player picker offers Always again, so one player can be the default**
 - **📺 Live TV falls back from mpv to ExoPlayer and gives up on time again**
