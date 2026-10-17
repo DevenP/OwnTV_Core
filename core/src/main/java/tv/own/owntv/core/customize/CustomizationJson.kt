@@ -20,6 +20,7 @@ internal object CustomizationJson {
                 epgShifts = o.optJSONObject("epgShift").toStringMap(),
                 customCategories = o.optJSONArray("customCats").toCustomCategories(),
                 movedFromOrigin = o.optJSONObject("movedFrom").toStringMap(),
+                lockedCategories = o.optJSONArray("lockedCats").toStringSet(),
             )
         }.getOrDefault(SectionCustomizations())
     }
@@ -33,6 +34,7 @@ internal object CustomizationJson {
         put("epgMatch", JSONObject(c.epgMatches as Map<*, *>))
         put("epgShift", JSONObject(c.epgShifts as Map<*, *>))
         put("movedFrom", JSONObject(c.movedFromOrigin as Map<*, *>))
+        put("lockedCats", JSONArray(c.lockedCategories.toList()))
         put(
             "customCats",
             JSONArray(c.customCategories.map {
