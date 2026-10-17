@@ -288,14 +288,6 @@
     <string name="sports_scores_espn">Resultat: ESPN</string>
     <string name="sports_my_teams">Mina lag</string>
     <string name="sports_live_now">Live nu</string>
-    <plurals name="sports_on_channels">
-        <item quantity="one">På <xliff:g id="count">%1$d</xliff:g> kanal</item>
-        <item quantity="other">På <xliff:g id="count">%1$d</xliff:g> kanaler</item>
-    </plurals>
-    <plurals name="sports_on_your_channels">
-        <item quantity="one">På <xliff:g id="count">%1$d</xliff:g> av dina kanaler</item>
-        <item quantity="other">På <xliff:g id="count">%1$d</xliff:g> av dina kanaler</item>
-    </plurals>
     <string name="sports_not_on_channels">Inte på dina kanaler</string>
     <string name="sports_on_channels_now">Sport på dina kanaler nu</string>
     <string name="sports_on_channels_now_mobile">Sport på dina kanaler</string>
@@ -306,8 +298,6 @@
     <string name="sports_reminder_set">Påminnelse</string>
     <string name="sports_until">till <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set">Set <xliff:g id="set">%1$d</xliff:g></string>
-    <string name="sports_matchday">Omgång <xliff:g id="round">%1$d</xliff:g></string>
-    <string name="sports_half_time_score">Halvlek <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_overs"><xliff:g id="overs">%1$s</xliff:g> ov</string>
     <string name="sports_empty_nothing">Inga matcher i dag i det du följer</string>
     <string name="sports_empty_unreachable">Resultaten går inte att nå just nu. Dina kanaler fungerar ändå.</string>
@@ -340,7 +330,6 @@
     <string name="sports_tab_stats">Statistik</string>
     <string name="sports_tab_lineups">Laguppställningar</string>
     <string name="sports_tab_table">Tabell</string>
-    <string name="sports_tab_h2h">Inbördes möten</string>
     <string name="sports_following">Följer</string>
     <string name="sports_follow">Följ</string>
     <string name="sports_event_goal">Mål · <xliff:g id="player">%1$s</xliff:g></string>
@@ -354,17 +343,7 @@
     <string name="sports_event_kickoff">Avspark</string>
     <string name="sports_event_half_time">Halvtid</string>
     <string name="sports_event_full_time">Slut</string>
-    <string name="sports_stat_possession">Bollinnehav</string>
-    <string name="sports_stat_shots">Skott</string>
-    <string name="sports_stat_shots_on_target">Skott på mål</string>
-    <string name="sports_stat_corners">Hörnor</string>
-    <string name="sports_stat_fouls">Fouls</string>
-    <string name="sports_stat_yellow_cards">Gula kort</string>
     <string name="sports_stat_red_cards">Röda kort</string>
-    <string name="sports_stat_offsides">Offside</string>
-    <string name="sports_stat_saves">Räddningar</string>
-    <string name="sports_stat_passes">Passningar</string>
-    <string name="sports_stat_accurate_passes">Lyckade passningar</string>
     <string name="sports_watch_live">Titta live</string>
     <plurals name="sports_watch_live_count">
         <item quantity="one">Titta live · <xliff:g id="count">%1$d</xliff:g> kanal</item>
@@ -377,7 +356,6 @@
     <string name="sports_reason_pick">Ditt val för <xliff:g id="competition">%1$s</xliff:g></string>
     <string name="sports_reason_likely">Visar oftast <xliff:g id="competition">%1$s</xliff:g></string>
     <string name="sports_confirmed">Bekräftad av guiden</string>
-    <string name="sports_event_channel">Evenemangskanal</string>
     <plurals name="sports_hidden">
         <item quantity="one">+ <xliff:g id="count">%1$d</xliff:g> dold av filter</item>
         <item quantity="other">+ <xliff:g id="count">%1$d</xliff:g> dolda av filter</item>
@@ -416,7 +394,6 @@
     <string name="sports_switch_channel">Byt kanal</string>
     <string name="sports_tab_fixtures">Spelschema</string>
     <string name="sports_tab_results">Resultat</string>
-    <string name="sports_tab_top_scorers">Skytteliga</string>
     <string name="sports_table_team">Lag</string>
     <string name="sports_table_played">M</string>
     <string name="sports_table_won">V</string>
@@ -426,19 +403,13 @@
     <string name="sports_table_points">P</string>
     <string name="sports_table_form">Form</string>
     <string name="sports_this_matchday">Den här omgången</string>
-    <string name="sports_matchday_of">Omgång <xliff:g id="round">%1$d</xliff:g> av <xliff:g id="rounds">%2$d</xliff:g></string>
     <string name="sports_settings_what">Vad som visas</string>
     <string name="sports_show_in_menu">Visa Sport i menyn</string>
-    <string name="sports_show_in_menu_mobile">Fliken Sport</string>
     <string name="sports_show_in_menu_description">På som standard, med eller utan spellista</string>
     <string name="sports_leagues">Sporter och ligor</string>
     <plurals name="sports_league_count">
         <item quantity="one"><xliff:g id="count">%1$d</xliff:g> liga</item>
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> ligor</item>
-    </plurals>
-    <plurals name="sports_sport_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> sport</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> sporter</item>
     </plurals>
     <string name="sports_spoiler_free">Spoilerfritt</string>
     <string name="sports_spoiler_free_description">Dölj resultat tills du trycker OK på dem</string>
@@ -455,17 +426,12 @@
     <string name="sports_score_info_bar_description">Visas bara när fältet är öppet, så det inte avslöjar ett mål</string>
     <string name="sports_score_info_bar_description_mobile">Bara när fältet är öppet</string>
     <string name="sports_goal_alerts_description">För mina lag, medan jag tittar på annat</string>
-    <string name="sports_goal_alerts_summary_closed"><xliff:g id="who">%1$s</xliff:g> · även när OwnTV är stängd</string>
     <string name="sports_match_reminders_description">Före avspark, med den bästa kanalen</string>
     <string name="sports_remembered_channels">Sparade kanaler</string>
     <string name="sports_remembered_one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g></string>
     <plurals name="sports_remembered_summary">
         <item quantity="one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> till</item>
         <item quantity="other"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> till</item>
-    </plurals>
-    <plurals name="sports_competition_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> turnering</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> turneringar</item>
     </plurals>
     <string name="sports_show_likely">Visa ”troliga” kanaler</string>
     <string name="sports_show_likely_description">Sportkanaler utan bekräftelse i guiden</string>
@@ -487,22 +453,19 @@
     <string name="sports_live_card_description">Uppdateras var 30:e s till slut; du startar det från en match</string>
     <string name="sports_alerts_footnote">När OwnTV är stängd kommer aviseringar oftast inom en minut. Om telefonen har legat stilla med skärmen av länge kan Android hålla tillbaka dem i upp till ungefär 15 minuter. Livekortet med resultat hålls inte tillbaka.</string>
     <string name="sports_search_teams">Sök lag, spelare, ligor</string>
-    <string name="sports_live_now_score">live nu <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_suggested">Förslag utifrån det du tittar på</string>
     <plurals name="sports_watched_matches">
         <item quantity="one">Du har sett <xliff:g id="count">%1$d</xliff:g> av deras matcher</item>
         <item quantity="other">Du har sett <xliff:g id="count">%1$d</xliff:g> av deras matcher</item>
     </plurals>
     <string name="sports_league_label">Liga</string>
-    <string name="sports_next">nästa: <xliff:g id="event">%1$s</xliff:g></string>
-    <string name="sports_mens_and_womens">herrar och damer</string>
     <string name="sports_no_playlist_title">Lägg till en spellista för att titta på matcher</string>
     <string name="sports_no_playlist_body">Resultat, tabeller och aviseringar fungerar utan. Med en spellista hittar OwnTV varje kanal som visar matchen.</string>
     <string name="sports_add_playlist">Lägg till spellista</string>
     <string name="sports_home_row">Livesport</string>
     <string name="sports_home_row_description">Följda matcher, medan någon pågår eller snart börjar</string>
     <string name="sports_empty_nothing_followed">Inga sporter eller ligor valda än</string>
-    <string name="sports_empty_choose_in">Välj dem under Inställningar → Sport → Sporter och ligor.</string>
+    <string name="sports_empty_choose_in">Välj dem under Inställningar → App → Sport → Sporter och ligor.</string>
     <string name="sports_load_time_warning">Ju fler sporter och ligor du väljer, desto längre tar inläsning och uppbyggnad.</string>
     <string name="sports_sport_buttons">Sportknappar</string>
     <string name="sports_sport_buttons_mine">Mina sporter</string>

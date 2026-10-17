@@ -318,18 +318,6 @@
     <string name="sports_scores_espn">Wyniki: ESPN</string>
     <string name="sports_my_teams">Moje drużyny</string>
     <string name="sports_live_now">Teraz na żywo</string>
-    <plurals name="sports_on_channels">
-        <item quantity="one">Na <xliff:g id="count">%1$d</xliff:g> kanale</item>
-        <item quantity="few">Na <xliff:g id="count">%1$d</xliff:g> kanałach</item>
-        <item quantity="many">Na <xliff:g id="count">%1$d</xliff:g> kanałach</item>
-        <item quantity="other">Na <xliff:g id="count">%1$d</xliff:g> kanałach</item>
-    </plurals>
-    <plurals name="sports_on_your_channels">
-        <item quantity="one">Na <xliff:g id="count">%1$d</xliff:g> z Twoich kanałów</item>
-        <item quantity="few">Na <xliff:g id="count">%1$d</xliff:g> z Twoich kanałów</item>
-        <item quantity="many">Na <xliff:g id="count">%1$d</xliff:g> z Twoich kanałów</item>
-        <item quantity="other">Na <xliff:g id="count">%1$d</xliff:g> z Twoich kanałów</item>
-    </plurals>
     <string name="sports_not_on_channels">Nie ma na Twoich kanałach</string>
     <string name="sports_on_channels_now">Sport na Twoich kanałach teraz</string>
     <string name="sports_on_channels_now_mobile">Sport na Twoich kanałach</string>
@@ -340,8 +328,6 @@
     <string name="sports_reminder_set">Przypomnienie</string>
     <string name="sports_until">do <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set">Set <xliff:g id="set">%1$d</xliff:g></string>
-    <string name="sports_matchday">Kolejka <xliff:g id="round">%1$d</xliff:g></string>
-    <string name="sports_half_time_score">Przerwa <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_overs"><xliff:g id="overs">%1$s</xliff:g> ov</string>
     <string name="sports_empty_nothing">Dziś brak meczów w tym, co obserwujesz</string>
     <string name="sports_empty_unreachable">Nie można teraz pobrać wyników. Twoje kanały nadal działają.</string>
@@ -374,7 +360,6 @@
     <string name="sports_tab_stats">Statystyki</string>
     <string name="sports_tab_lineups">Składy</string>
     <string name="sports_tab_table">Tabela</string>
-    <string name="sports_tab_h2h">Bezpośrednie mecze</string>
     <string name="sports_following">Obserwujesz</string>
     <string name="sports_follow">Obserwuj</string>
     <string name="sports_event_goal">Gol · <xliff:g id="player">%1$s</xliff:g></string>
@@ -388,17 +373,7 @@
     <string name="sports_event_kickoff">Pierwszy gwizdek</string>
     <string name="sports_event_half_time">Przerwa</string>
     <string name="sports_event_full_time">Koniec meczu</string>
-    <string name="sports_stat_possession">Posiadanie piłki</string>
-    <string name="sports_stat_shots">Strzały</string>
-    <string name="sports_stat_shots_on_target">Strzały celne</string>
-    <string name="sports_stat_corners">Rzuty rożne</string>
-    <string name="sports_stat_fouls">Faule</string>
-    <string name="sports_stat_yellow_cards">Żółte kartki</string>
     <string name="sports_stat_red_cards">Czerwone kartki</string>
-    <string name="sports_stat_offsides">Spalone</string>
-    <string name="sports_stat_saves">Obrony</string>
-    <string name="sports_stat_passes">Podania</string>
-    <string name="sports_stat_accurate_passes">Celne podania</string>
     <string name="sports_watch_live">Oglądaj na żywo</string>
     <plurals name="sports_watch_live_count">
         <item quantity="one">Oglądaj na żywo · <xliff:g id="count">%1$d</xliff:g> kanał</item>
@@ -413,7 +388,6 @@
     <string name="sports_reason_pick">Twój wybór dla <xliff:g id="competition">%1$s</xliff:g></string>
     <string name="sports_reason_likely">Zwykle pokazuje <xliff:g id="competition">%1$s</xliff:g></string>
     <string name="sports_confirmed">Potwierdzone w programie</string>
-    <string name="sports_event_channel">Kanał wydarzenia</string>
     <plurals name="sports_hidden">
         <item quantity="one">+ <xliff:g id="count">%1$d</xliff:g> ukryty przez filtry</item>
         <item quantity="few">+ <xliff:g id="count">%1$d</xliff:g> ukryte przez filtry</item>
@@ -456,7 +430,6 @@
     <string name="sports_switch_channel">Zmień kanał</string>
     <string name="sports_tab_fixtures">Terminarz</string>
     <string name="sports_tab_results">Wyniki</string>
-    <string name="sports_tab_top_scorers">Strzelcy</string>
     <string name="sports_table_team">Drużyna</string>
     <string name="sports_table_played">M</string>
     <string name="sports_table_won">W</string>
@@ -466,10 +439,8 @@
     <string name="sports_table_points">Pkt</string>
     <string name="sports_table_form">Forma</string>
     <string name="sports_this_matchday">Ta kolejka</string>
-    <string name="sports_matchday_of">Kolejka <xliff:g id="round">%1$d</xliff:g> z <xliff:g id="rounds">%2$d</xliff:g></string>
     <string name="sports_settings_what">Co pokazywać</string>
     <string name="sports_show_in_menu">Pokaż Sport w menu</string>
-    <string name="sports_show_in_menu_mobile">Karta Sport</string>
     <string name="sports_show_in_menu_description">Domyślnie włączone, z playlistą lub bez</string>
     <string name="sports_leagues">Sporty i ligi</string>
     <plurals name="sports_league_count">
@@ -477,12 +448,6 @@
         <item quantity="few"><xliff:g id="count">%1$d</xliff:g> ligi</item>
         <item quantity="many"><xliff:g id="count">%1$d</xliff:g> lig</item>
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> lig</item>
-    </plurals>
-    <plurals name="sports_sport_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> sport</item>
-        <item quantity="few"><xliff:g id="count">%1$d</xliff:g> sporty</item>
-        <item quantity="many"><xliff:g id="count">%1$d</xliff:g> sportów</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> sportów</item>
     </plurals>
     <string name="sports_spoiler_free">Bez spoilerów</string>
     <string name="sports_spoiler_free_description">Ukryj wyniki, dopóki nie naciśniesz na nich OK</string>
@@ -499,7 +464,6 @@
     <string name="sports_score_info_bar_description">Widoczny tylko przy otwartym pasku, by nie zdradzić gola</string>
     <string name="sports_score_info_bar_description_mobile">Tylko przy otwartym pasku</string>
     <string name="sports_goal_alerts_description">Dla moich drużyn, gdy oglądam coś innego</string>
-    <string name="sports_goal_alerts_summary_closed"><xliff:g id="who">%1$s</xliff:g> · także przy zamkniętym OwnTV</string>
     <string name="sports_match_reminders_description">Przed pierwszym gwizdkiem, z najlepszym kanałem</string>
     <string name="sports_remembered_channels">Zapamiętane kanały</string>
     <string name="sports_remembered_one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g></string>
@@ -508,12 +472,6 @@
         <item quantity="few"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> inne</item>
         <item quantity="many"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> innych</item>
         <item quantity="other"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> innych</item>
-    </plurals>
-    <plurals name="sports_competition_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> rozgrywki</item>
-        <item quantity="few"><xliff:g id="count">%1$d</xliff:g> rozgrywki</item>
-        <item quantity="many"><xliff:g id="count">%1$d</xliff:g> rozgrywek</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> rozgrywek</item>
     </plurals>
     <string name="sports_show_likely">Pokaż kanały „prawdopodobne”</string>
     <string name="sports_show_likely_description">Kanały sportowe bez potwierdzenia w programie</string>
@@ -535,7 +493,6 @@
     <string name="sports_live_card_description">Odświeża się co 30 s do końca; uruchamiasz ją z meczu</string>
     <string name="sports_alerts_footnote">Przy zamkniętym OwnTV alerty zwykle przychodzą w ciągu minuty. Jeśli telefon długo leży bez ruchu z wyłączonym ekranem, Android może je wstrzymać nawet na około 15 minut. Karta wyniku na żywo nie jest wstrzymywana.</string>
     <string name="sports_search_teams">Szukaj drużyn, zawodników, lig</string>
-    <string name="sports_live_now_score">teraz na żywo <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_suggested">Propozycje na podstawie tego, co oglądasz</string>
     <plurals name="sports_watched_matches">
         <item quantity="one">Obejrzano <xliff:g id="count">%1$d</xliff:g> ich mecz</item>
@@ -544,15 +501,13 @@
         <item quantity="other">Obejrzano <xliff:g id="count">%1$d</xliff:g> ich meczów</item>
     </plurals>
     <string name="sports_league_label">Liga</string>
-    <string name="sports_next">następny: <xliff:g id="event">%1$s</xliff:g></string>
-    <string name="sports_mens_and_womens">mężczyźni i kobiety</string>
     <string name="sports_no_playlist_title">Dodaj playlistę, aby oglądać mecze</string>
     <string name="sports_no_playlist_body">Wyniki, tabele i alerty działają bez niej. Z playlistą OwnTV znajdzie każdy kanał pokazujący ten mecz.</string>
     <string name="sports_add_playlist">Dodaj playlistę</string>
     <string name="sports_home_row">Sport na żywo</string>
     <string name="sports_home_row_description">Obserwowane mecze, gdy któryś trwa lub zaraz się zacznie</string>
     <string name="sports_empty_nothing_followed">Nie wybrano jeszcze sportów ani lig</string>
-    <string name="sports_empty_choose_in">Wybierz je w: Ustawienia → Sport → Sporty i ligi.</string>
+    <string name="sports_empty_choose_in">Wybierz je w: Ustawienia → Aplikacja → Sport → Sporty i ligi.</string>
     <string name="sports_load_time_warning">Im więcej sportów i lig wybierzesz, tym dłużej trwa wczytywanie i budowanie.</string>
     <string name="sports_sport_buttons">Przyciski sportów</string>
     <string name="sports_sport_buttons_mine">Moje sporty</string>

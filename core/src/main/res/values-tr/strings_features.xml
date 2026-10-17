@@ -288,14 +288,6 @@
     <string name="sports_scores_espn">Skorlar: ESPN</string>
     <string name="sports_my_teams">Takımlarım</string>
     <string name="sports_live_now">Şimdi canlı</string>
-    <plurals name="sports_on_channels">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> kanalda</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> kanalda</item>
-    </plurals>
-    <plurals name="sports_on_your_channels">
-        <item quantity="one">Kanallarından <xliff:g id="count">%1$d</xliff:g> tanesinde</item>
-        <item quantity="other">Kanallarından <xliff:g id="count">%1$d</xliff:g> tanesinde</item>
-    </plurals>
     <string name="sports_not_on_channels">Kanallarında yok</string>
     <string name="sports_on_channels_now">Şimdi kanallarındaki spor</string>
     <string name="sports_on_channels_now_mobile">Kanallarındaki spor</string>
@@ -306,8 +298,6 @@
     <string name="sports_reminder_set">Hatırlatıcı</string>
     <string name="sports_until"><xliff:g id="time">%1$s</xliff:g>’e kadar</string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>. set</string>
-    <string name="sports_matchday"><xliff:g id="round">%1$d</xliff:g>. hafta</string>
-    <string name="sports_half_time_score">İY <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_overs"><xliff:g id="overs">%1$s</xliff:g> over</string>
     <string name="sports_empty_nothing">Bugün takip ettiklerinde maç yok</string>
     <string name="sports_empty_unreachable">Skorlara şu an ulaşılamıyor. Kanalların çalışmaya devam ediyor.</string>
@@ -340,7 +330,6 @@
     <string name="sports_tab_stats">İstatistik</string>
     <string name="sports_tab_lineups">Kadrolar</string>
     <string name="sports_tab_table">Puan durumu</string>
-    <string name="sports_tab_h2h">Aralarındaki maçlar</string>
     <string name="sports_following">Takip ediliyor</string>
     <string name="sports_follow">Takip et</string>
     <string name="sports_event_goal">Gol · <xliff:g id="player">%1$s</xliff:g></string>
@@ -354,17 +343,7 @@
     <string name="sports_event_kickoff">Başlama vuruşu</string>
     <string name="sports_event_half_time">Devre arası</string>
     <string name="sports_event_full_time">Maç sonu</string>
-    <string name="sports_stat_possession">Topa sahip olma</string>
-    <string name="sports_stat_shots">Şut</string>
-    <string name="sports_stat_shots_on_target">İsabetli şut</string>
-    <string name="sports_stat_corners">Korner</string>
-    <string name="sports_stat_fouls">Faul</string>
-    <string name="sports_stat_yellow_cards">Sarı kartlar</string>
     <string name="sports_stat_red_cards">Kırmızı kartlar</string>
-    <string name="sports_stat_offsides">Ofsayt</string>
-    <string name="sports_stat_saves">Kurtarış</string>
-    <string name="sports_stat_passes">Pas</string>
-    <string name="sports_stat_accurate_passes">İsabetli pas</string>
     <string name="sports_watch_live">Canlı izle</string>
     <plurals name="sports_watch_live_count">
         <item quantity="one">Canlı izle · <xliff:g id="count">%1$d</xliff:g> kanal</item>
@@ -377,7 +356,6 @@
     <string name="sports_reason_pick"><xliff:g id="competition">%1$s</xliff:g> için seçimin</string>
     <string name="sports_reason_likely">Genelde <xliff:g id="competition">%1$s</xliff:g> yayınlar</string>
     <string name="sports_confirmed">Rehberle doğrulandı</string>
-    <string name="sports_event_channel">Etkinlik kanalı</string>
     <plurals name="sports_hidden">
         <item quantity="one">+ <xliff:g id="count">%1$d</xliff:g> filtrelerle gizli</item>
         <item quantity="other">+ <xliff:g id="count">%1$d</xliff:g> filtrelerle gizli</item>
@@ -416,7 +394,6 @@
     <string name="sports_switch_channel">Kanalı değiştir</string>
     <string name="sports_tab_fixtures">Fikstür</string>
     <string name="sports_tab_results">Sonuçlar</string>
-    <string name="sports_tab_top_scorers">Gol krallığı</string>
     <string name="sports_table_team">Takım</string>
     <string name="sports_table_played">O</string>
     <string name="sports_table_won">G</string>
@@ -426,19 +403,13 @@
     <string name="sports_table_points">P</string>
     <string name="sports_table_form">Form</string>
     <string name="sports_this_matchday">Bu hafta</string>
-    <string name="sports_matchday_of"><xliff:g id="round">%1$d</xliff:g>. hafta / <xliff:g id="rounds">%2$d</xliff:g></string>
     <string name="sports_settings_what">Ne gösterilsin</string>
     <string name="sports_show_in_menu">Menüde Spor’u göster</string>
-    <string name="sports_show_in_menu_mobile">Spor sekmesi</string>
     <string name="sports_show_in_menu_description">Varsayılan olarak açık, oynatma listesi olsun ya da olmasın</string>
     <string name="sports_leagues">Sporlar ve ligler</string>
     <plurals name="sports_league_count">
         <item quantity="one"><xliff:g id="count">%1$d</xliff:g> lig</item>
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> lig</item>
-    </plurals>
-    <plurals name="sports_sport_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> spor</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> spor</item>
     </plurals>
     <string name="sports_spoiler_free">Spoiler yok</string>
     <string name="sports_spoiler_free_description">OK’a basana kadar skorları gizle</string>
@@ -455,17 +426,12 @@
     <string name="sports_score_info_bar_description">Yalnızca çubuk açıkken görünür, golü önceden göstermez</string>
     <string name="sports_score_info_bar_description_mobile">Yalnızca çubuk açıkken</string>
     <string name="sports_goal_alerts_description">Takımlarım için, başka bir şey izlerken</string>
-    <string name="sports_goal_alerts_summary_closed"><xliff:g id="who">%1$s</xliff:g> · OwnTV kapalıyken de</string>
     <string name="sports_match_reminders_description">Başlama vuruşundan önce, en iyi kanalla</string>
     <string name="sports_remembered_channels">Hatırlanan kanallar</string>
     <string name="sports_remembered_one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g></string>
     <plurals name="sports_remembered_summary">
         <item quantity="one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> daha</item>
         <item quantity="other"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> daha</item>
-    </plurals>
-    <plurals name="sports_competition_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> turnuva</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> turnuva</item>
     </plurals>
     <string name="sports_show_likely">“Olası” kanalları göster</string>
     <string name="sports_show_likely_description">Rehberle doğrulanmamış spor kanalları</string>
@@ -487,22 +453,19 @@
     <string name="sports_live_card_description">Maç sonuna kadar 30 sn’de bir güncellenir; bir maçtan başlatırsın</string>
     <string name="sports_alerts_footnote">OwnTV kapalıyken uyarılar genellikle bir dakika içinde gelir. Telefon uzun süre ekranı kapalı ve hareketsiz kaldıysa Android bunları yaklaşık 15 dakikaya kadar geciktirebilir. Canlı skor kartı geciktirilmez.</string>
     <string name="sports_search_teams">Takım, oyuncu, lig ara</string>
-    <string name="sports_live_now_score">şimdi canlı <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_suggested">İzlediklerine göre öneriler</string>
     <plurals name="sports_watched_matches">
         <item quantity="one">Maçlarından <xliff:g id="count">%1$d</xliff:g> tanesini izledin</item>
         <item quantity="other">Maçlarından <xliff:g id="count">%1$d</xliff:g> tanesini izledin</item>
     </plurals>
     <string name="sports_league_label">Lig</string>
-    <string name="sports_next">sıradaki: <xliff:g id="event">%1$s</xliff:g></string>
-    <string name="sports_mens_and_womens">erkek ve kadın</string>
     <string name="sports_no_playlist_title">Maçları izlemek için oynatma listesi ekle</string>
     <string name="sports_no_playlist_body">Skorlar, puan durumları ve uyarılar onsuz da çalışır. Oynatma listesiyle OwnTV bu maçı gösteren her kanalı bulur.</string>
     <string name="sports_add_playlist">Oynatma listesi ekle</string>
     <string name="sports_home_row">Canlı spor</string>
     <string name="sports_home_row_description">Takip edilen maçlar; biri canlıyken ya da başlamak üzereyken</string>
     <string name="sports_empty_nothing_followed">Henüz spor ya da lig seçmedin</string>
-    <string name="sports_empty_choose_in">Bunları Ayarlar → Spor → Sporlar ve ligler bölümünden seç.</string>
+    <string name="sports_empty_choose_in">Bunları Ayarlar → Uygulama → Spor → Sporlar ve ligler bölümünden seç.</string>
     <string name="sports_load_time_warning">Ne kadar çok spor ve lig seçersen yükleme ve oluşturma o kadar uzun sürer.</string>
     <string name="sports_sport_buttons">Spor düğmeleri</string>
     <string name="sports_sport_buttons_mine">Sporlarım</string>

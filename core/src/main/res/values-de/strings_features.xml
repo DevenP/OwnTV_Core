@@ -288,14 +288,6 @@
     <string name="sports_scores_espn">Ergebnisse: ESPN</string>
     <string name="sports_my_teams">Meine Teams</string>
     <string name="sports_live_now">Jetzt live</string>
-    <plurals name="sports_on_channels">
-        <item quantity="one">Auf <xliff:g id="count">%1$d</xliff:g> Sender</item>
-        <item quantity="other">Auf <xliff:g id="count">%1$d</xliff:g> Sendern</item>
-    </plurals>
-    <plurals name="sports_on_your_channels">
-        <item quantity="one">Auf <xliff:g id="count">%1$d</xliff:g> deiner Sender</item>
-        <item quantity="other">Auf <xliff:g id="count">%1$d</xliff:g> deiner Sender</item>
-    </plurals>
     <string name="sports_not_on_channels">Nicht auf deinen Sendern</string>
     <string name="sports_on_channels_now">Jetzt Sport auf deinen Sendern</string>
     <string name="sports_on_channels_now_mobile">Sport auf deinen Sendern</string>
@@ -306,8 +298,6 @@
     <string name="sports_reminder_set">Erinnerung</string>
     <string name="sports_until">bis <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>. Satz</string>
-    <string name="sports_matchday"><xliff:g id="round">%1$d</xliff:g>. Spieltag</string>
-    <string name="sports_half_time_score">HZ <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_overs"><xliff:g id="overs">%1$s</xliff:g> Ov</string>
     <string name="sports_empty_nothing">Heute keine Spiele in dem, was du verfolgst</string>
     <string name="sports_empty_unreachable">Ergebnisse gerade nicht erreichbar. Deine Sender funktionieren weiter.</string>
@@ -340,7 +330,6 @@
     <string name="sports_tab_stats">Statistik</string>
     <string name="sports_tab_lineups">Aufstellungen</string>
     <string name="sports_tab_table">Tabelle</string>
-    <string name="sports_tab_h2h">Direkter Vergleich</string>
     <string name="sports_following">Gefolgt</string>
     <string name="sports_follow">Folgen</string>
     <string name="sports_event_goal">Tor · <xliff:g id="player">%1$s</xliff:g></string>
@@ -354,17 +343,7 @@
     <string name="sports_event_kickoff">Anpfiff</string>
     <string name="sports_event_half_time">Halbzeit</string>
     <string name="sports_event_full_time">Abpfiff</string>
-    <string name="sports_stat_possession">Ballbesitz</string>
-    <string name="sports_stat_shots">Schüsse</string>
-    <string name="sports_stat_shots_on_target">Schüsse aufs Tor</string>
-    <string name="sports_stat_corners">Ecken</string>
-    <string name="sports_stat_fouls">Fouls</string>
-    <string name="sports_stat_yellow_cards">Gelbe Karten</string>
     <string name="sports_stat_red_cards">Rote Karten</string>
-    <string name="sports_stat_offsides">Abseits</string>
-    <string name="sports_stat_saves">Paraden</string>
-    <string name="sports_stat_passes">Pässe</string>
-    <string name="sports_stat_accurate_passes">Angekommene Pässe</string>
     <string name="sports_watch_live">Live ansehen</string>
     <plurals name="sports_watch_live_count">
         <item quantity="one">Live ansehen · <xliff:g id="count">%1$d</xliff:g> Sender</item>
@@ -377,7 +356,6 @@
     <string name="sports_reason_pick">Deine Wahl für <xliff:g id="competition">%1$s</xliff:g></string>
     <string name="sports_reason_likely">Zeigt meist <xliff:g id="competition">%1$s</xliff:g></string>
     <string name="sports_confirmed">Laut Programm</string>
-    <string name="sports_event_channel">Event-Sender</string>
     <plurals name="sports_hidden">
         <item quantity="one">+ <xliff:g id="count">%1$d</xliff:g> durch Filter ausgeblendet</item>
         <item quantity="other">+ <xliff:g id="count">%1$d</xliff:g> durch Filter ausgeblendet</item>
@@ -416,7 +394,6 @@
     <string name="sports_switch_channel">Sender wechseln</string>
     <string name="sports_tab_fixtures">Spielplan</string>
     <string name="sports_tab_results">Ergebnisse</string>
-    <string name="sports_tab_top_scorers">Torschützen</string>
     <string name="sports_table_team">Team</string>
     <string name="sports_table_played">Sp.</string>
     <string name="sports_table_won">S</string>
@@ -426,19 +403,13 @@
     <string name="sports_table_points">Pkt.</string>
     <string name="sports_table_form">Form</string>
     <string name="sports_this_matchday">Dieser Spieltag</string>
-    <string name="sports_matchday_of"><xliff:g id="round">%1$d</xliff:g>. von <xliff:g id="rounds">%2$d</xliff:g> Spieltagen</string>
     <string name="sports_settings_what">Was angezeigt wird</string>
     <string name="sports_show_in_menu">Sport im Menü zeigen</string>
-    <string name="sports_show_in_menu_mobile">Sport-Tab</string>
     <string name="sports_show_in_menu_description">Standardmäßig an, mit oder ohne Playlist</string>
     <string name="sports_leagues">Sportarten und Ligen</string>
     <plurals name="sports_league_count">
         <item quantity="one"><xliff:g id="count">%1$d</xliff:g> Liga</item>
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> Ligen</item>
-    </plurals>
-    <plurals name="sports_sport_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> Sportart</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> Sportarten</item>
     </plurals>
     <string name="sports_spoiler_free">Spoilerfrei</string>
     <string name="sports_spoiler_free_description">Ergebnisse verbergen, bis du darauf OK drückst</string>
@@ -455,17 +426,12 @@
     <string name="sports_score_info_bar_description">Nur bei offener Leiste sichtbar, damit es kein Tor verrät</string>
     <string name="sports_score_info_bar_description_mobile">Nur bei offener Leiste</string>
     <string name="sports_goal_alerts_description">Für meine Teams, während ich etwas anderes sehe</string>
-    <string name="sports_goal_alerts_summary_closed"><xliff:g id="who">%1$s</xliff:g> · auch wenn OwnTV geschlossen ist</string>
     <string name="sports_match_reminders_description">Vor dem Anpfiff, mit dem besten Sender</string>
     <string name="sports_remembered_channels">Gemerkte Sender</string>
     <string name="sports_remembered_one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g></string>
     <plurals name="sports_remembered_summary">
         <item quantity="one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> weitere</item>
         <item quantity="other"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> weitere</item>
-    </plurals>
-    <plurals name="sports_competition_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> Wettbewerb</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> Wettbewerbe</item>
     </plurals>
     <string name="sports_show_likely">„Wahrscheinliche“ Sender zeigen</string>
     <string name="sports_show_likely_description">Sportsender ohne Bestätigung im Programm</string>
@@ -487,22 +453,19 @@
     <string name="sports_live_card_description">Alle 30 s aktualisiert bis zum Abpfiff; du startest sie in einem Spiel</string>
     <string name="sports_alerts_footnote">Bei geschlossenem OwnTV kommen Benachrichtigungen meist innerhalb einer Minute. Liegt das Handy lange still mit ausgeschaltetem Bildschirm, kann Android sie bis zu etwa 15 Minuten zurückhalten. Die Live-Ergebniskarte wird nicht zurückgehalten.</string>
     <string name="sports_search_teams">Teams, Spieler, Ligen suchen</string>
-    <string name="sports_live_now_score">jetzt live <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_suggested">Vorschläge aus dem, was du schaust</string>
     <plurals name="sports_watched_matches">
         <item quantity="one">Du hast <xliff:g id="count">%1$d</xliff:g> ihrer Spiele gesehen</item>
         <item quantity="other">Du hast <xliff:g id="count">%1$d</xliff:g> ihrer Spiele gesehen</item>
     </plurals>
     <string name="sports_league_label">Liga</string>
-    <string name="sports_next">nächstes: <xliff:g id="event">%1$s</xliff:g></string>
-    <string name="sports_mens_and_womens">Männer und Frauen</string>
     <string name="sports_no_playlist_title">Füge eine Playlist hinzu, um Spiele zu sehen</string>
     <string name="sports_no_playlist_body">Ergebnisse, Tabellen und Benachrichtigungen gehen auch ohne. Mit einer Playlist findet OwnTV jeden Sender, der dieses Spiel zeigt.</string>
     <string name="sports_add_playlist">Playlist hinzufügen</string>
     <string name="sports_home_row">Live-Sport</string>
     <string name="sports_home_row_description">Gefolgte Spiele, solange eines läuft oder gleich beginnt</string>
     <string name="sports_empty_nothing_followed">Noch keine Sportarten oder Ligen ausgewählt</string>
-    <string name="sports_empty_choose_in">Wähle sie unter Einstellungen → Sport → Sportarten und Ligen aus.</string>
+    <string name="sports_empty_choose_in">Wähle sie unter Einstellungen → App → Sport → Sportarten und Ligen aus.</string>
     <string name="sports_load_time_warning">Je mehr Sportarten und Ligen du auswählst, desto länger dauern Laden und Aufbau.</string>
     <string name="sports_sport_buttons">Sport-Schaltflächen</string>
     <string name="sports_sport_buttons_mine">Meine Sportarten</string>

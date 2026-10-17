@@ -29,8 +29,9 @@ class SportsAlertsSetup(
 
     /**
      * "Remind me" on a match. With a channel showing it, this is a programme reminder on the best one
-     * — the guide's own path, which both apps already prompt for. On the phone it is also a notification
-     * at the lead time (mockup P7), which works with the app closed. Returns false when neither applies:
+     * — the guide's own path: the in-app prompt while the app is open, the phone's own notification while
+     * it is not. Only without a channel does the phone post a sports notification at the lead time
+     * (mockup P7), so one reminder never arrives twice (owner, WORK O3). Returns false when neither applies:
      * a TV with no channel for the match yet ("Guide not out yet").
      */
     suspend fun remind(profileId: Long, match: Match, channels: List<WatchOption>, leadMinutes: Int): Boolean {
@@ -46,7 +47,7 @@ class SportsAlertsSetup(
             stopMs = match.startMs + MATCH_LENGTH_MS,
             leadMinutes = leadMinutes,
         )
-        val notification = scheduler.remind(match, leadMinutes, channels.map { it.facets.name }.distinct())
+        val notification = !programme && scheduler.remind(match, leadMinutes, channels.map { it.facets.name }.distinct())
         return programme || notification
     }
 

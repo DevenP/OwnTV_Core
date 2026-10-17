@@ -103,11 +103,22 @@ object WatchMatcher {
         return home.foundIn(tokens) && away.foundIn(tokens)
     }
 
-    /** A channel that usually carries it: its name carries the competition or a broadcaster ESPN names. */
+    /**
+     * A channel that usually carries it: its name carries the competition or a broadcaster ESPN names.
+     * Not a channel named for one fixture ("Next | La Clery vs. Vieux Fort South | Premier League"): it
+     * shows that fixture, and when it were this one [isEventChannel] has already listed it.
+     */
     fun isLikely(keys: Keys, channelName: String): Boolean {
+        if (FIXTURE.containsMatchIn(channelName)) return false
         val tokens = TeamNames.tokens(channelName).toSet()
         return keys.league.foundIn(tokens) || keys.broadcasters.any { it.foundIn(tokens) }
     }
+
+    /** A playlist's divider row ("##### PREMIER LEAGUE #####"): a heading, never a channel to watch. */
+    fun isSeparator(channelName: String): Boolean = SEPARATOR.containsMatchIn(channelName)
+
+    private val FIXTURE = Regex("""\s(vs?\.?|v)\s""", RegexOption.IGNORE_CASE)
+    private val SEPARATOR = Regex("""#{3,}|={4,}|-{4,}|\*{4,}""")
 
     /**
      * One list, one row per channel, best tier first; within a tier the input order (playlist order)
@@ -123,6 +134,7 @@ object WatchMatcher {
     ): List<WatchOption> {
         val out = LinkedHashMap<Long, WatchOption>()
         fun add(option: WatchOption) {
+            if (isSeparator(option.channel.name)) return
             val prior = out[option.channel.id]
             if (prior == null || option.tier < prior.tier) out[option.channel.id] = option
         }

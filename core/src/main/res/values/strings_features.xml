@@ -508,16 +508,6 @@
     <string name="sports_my_teams">My teams</string>
     <!-- Translators: Hub row title: matches being played right now. -->
     <string name="sports_live_now">Live now</string>
-    <!-- Translators: How many of the user's channels show a match, on a card or a fixture line, e.g. "On 9 channels". -->
-    <plurals name="sports_on_channels">
-        <item quantity="one">On <xliff:g id="count">%1$d</xliff:g> channel</item>
-        <item quantity="other">On <xliff:g id="count">%1$d</xliff:g> channels</item>
-    </plurals>
-    <!-- Translators: Under a match: how many of the user's own channels show it, e.g. "On 7 of your channels". -->
-    <plurals name="sports_on_your_channels">
-        <item quantity="one">On <xliff:g id="count">%1$d</xliff:g> of your channels</item>
-        <item quantity="other">On <xliff:g id="count">%1$d</xliff:g> of your channels</item>
-    </plurals>
     <!-- Translators: On a match card when none of the user's channels shows the match. The score is still shown. -->
     <string name="sports_not_on_channels">Not on your channels</string>
     <!-- Translators: Hub row title: sport that is on now on the user's own channels, from the TV guide. -->
@@ -538,10 +528,6 @@
     <string name="sports_until">until <xliff:g id="time">%1$s</xliff:g></string>
     <!-- Translators: Tennis: which set is being played, e.g. "Set 2". -->
     <string name="sports_set">Set <xliff:g id="set">%1$d</xliff:g></string>
-    <!-- Translators: A league round, e.g. "Bundesliga · Matchday 7". %1$d is the round number. -->
-    <string name="sports_matchday">Matchday <xliff:g id="round">%1$d</xliff:g></string>
-    <!-- Translators: Under a live score: the half-time score, e.g. "HT 1–0". Use your language's usual abbreviation for half time. -->
-    <string name="sports_half_time_score">HT <xliff:g id="score">%1$s</xliff:g></string>
     <!-- Translators: Cricket: overs bowled in the innings, e.g. "38.2 ov". Use your language's usual abbreviation for overs. -->
     <string name="sports_overs"><xliff:g id="overs">%1$s</xliff:g> ov</string>
     <!-- Translators: Hub, empty state: nothing the user follows is played today. -->
@@ -606,8 +592,6 @@
     <string name="sports_tab_lineups">Line-ups</string>
     <!-- Translators: Match page and league page tab: the league table (standings). -->
     <string name="sports_tab_table">Table</string>
-    <!-- Translators: Match page tab: past meetings of the two teams. -->
-    <string name="sports_tab_h2h">Head to head</string>
     <!-- Translators: State of the follow button on a match, team or league page: the user follows it. -->
     <string name="sports_following">Following</string>
     <!-- Translators: Button: follow a team, a player or a league. -->
@@ -634,28 +618,8 @@
     <string name="sports_event_half_time">Half time</string>
     <!-- Translators: Timeline line: the match has ended. -->
     <string name="sports_event_full_time">Full time</string>
-    <!-- Translators: Match stat. -->
-    <string name="sports_stat_possession">Possession</string>
-    <!-- Translators: Match stat: all shots. -->
-    <string name="sports_stat_shots">Shots</string>
-    <!-- Translators: Match stat. -->
-    <string name="sports_stat_shots_on_target">Shots on target</string>
-    <!-- Translators: Match stat. -->
-    <string name="sports_stat_corners">Corners</string>
-    <!-- Translators: Match stat. -->
-    <string name="sports_stat_fouls">Fouls</string>
-    <!-- Translators: Match stat, and an alert choice's wording elsewhere. -->
-    <string name="sports_stat_yellow_cards">Yellow cards</string>
     <!-- Translators: Match stat, and the Goal alerts choice for sendings-off. -->
     <string name="sports_stat_red_cards">Red cards</string>
-    <!-- Translators: Match stat. -->
-    <string name="sports_stat_offsides">Offsides</string>
-    <!-- Translators: Match stat: goalkeeper saves. -->
-    <string name="sports_stat_saves">Saves</string>
-    <!-- Translators: Match stat: all passes. -->
-    <string name="sports_stat_passes">Passes</string>
-    <!-- Translators: Match stat. -->
-    <string name="sports_stat_accurate_passes">Accurate passes</string>
     <!-- Translators: Match page panel and phone tab: the ranked list of the user's channels showing this match. -->
     <string name="sports_watch_live">Watch live</string>
     <!-- Translators: Title of that panel with the number of channels, e.g. "Watch live · 7 channels". -->
@@ -677,8 +641,6 @@
     <string name="sports_reason_likely">Usually shows <xliff:g id="competition">%1$s</xliff:g></string>
     <!-- Translators: Short reason on a channel row: the TV guide confirms it shows the match. -->
     <string name="sports_confirmed">Confirmed by guide</string>
-    <!-- Translators: Short reason on a channel row: a provider's event channel for this match. -->
-    <string name="sports_event_channel">Event channel</string>
     <!-- Translators: Under the channel list: how many channels the filters hide, e.g. "+ 2 hidden by filters". -->
     <plurals name="sports_hidden">
         <item quantity="one">+ <xliff:g id="count">%1$d</xliff:g> hidden by filters</item>
@@ -749,8 +711,6 @@
     <string name="sports_tab_fixtures">Fixtures</string>
     <!-- Translators: League page tab: matches already played. -->
     <string name="sports_tab_results">Results</string>
-    <!-- Translators: League page tab: the competition's top goal scorers. -->
-    <string name="sports_tab_top_scorers">Top scorers</string>
     <!-- Translators: League table column heading. -->
     <string name="sports_table_team">Team</string>
     <!-- Translators: League table column heading: matches played. Keep it to one to three letters, as league tables do in your language. -->
@@ -769,14 +729,10 @@
     <string name="sports_table_form">Form</string>
     <!-- Translators: League page heading: the current round's matches. -->
     <string name="sports_this_matchday">This matchday</string>
-    <!-- Translators: League page subtitle: the current round of all, e.g. "Matchday 7 of 34". -->
-    <string name="sports_matchday_of">Matchday <xliff:g id="round">%1$d</xliff:g> of <xliff:g id="rounds">%2$d</xliff:g></string>
     <!-- Translators: Settings → Sports section heading. -->
     <string name="sports_settings_what">What to show</string>
     <!-- Translators: Settings switch: show the Sports section in the TV's menu (the rail). -->
     <string name="sports_show_in_menu">Show Sports in the menu</string>
-    <!-- Translators: Phone version of that switch: show the Sports tab in the tab bar. -->
-    <string name="sports_show_in_menu_mobile">Sports tab</string>
     <!-- Translators: Description under that switch. -->
     <string name="sports_show_in_menu_description">On by default, with or without a playlist</string>
     <!-- Translators: Settings row and picker title: which sports and leagues to follow. -->
@@ -785,11 +741,6 @@
     <plurals name="sports_league_count">
         <item quantity="one"><xliff:g id="count">%1$d</xliff:g> league</item>
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> leagues</item>
-    </plurals>
-    <!-- Translators: How many sports are followed, e.g. "4 sports". -->
-    <plurals name="sports_sport_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> sport</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> sports</item>
     </plurals>
     <!-- Translators: Settings switch: hide every score until the user reveals it. -->
     <string name="sports_spoiler_free">Spoiler-free</string>
@@ -821,8 +772,6 @@
     <string name="sports_score_info_bar_description_mobile">Only while the bar is open</string>
     <!-- Translators: Description under Goal alerts on the TV: the TV shows a toast while the user watches something else. -->
     <string name="sports_goal_alerts_description">For my teams, while watching something else</string>
-    <!-- Translators: Phone Settings summary under Goal alerts, e.g. "My teams · also when OwnTV is closed". %1$s is who the alerts are for. OwnTV is the app's name. -->
-    <string name="sports_goal_alerts_summary_closed"><xliff:g id="who">%1$s</xliff:g> · also when OwnTV is closed</string>
     <!-- Translators: Description under Match reminders. -->
     <string name="sports_match_reminders_description">Before kick-off, with the best channel</string>
     <!-- Translators: Settings row and page: the channel remembered for each competition. -->
@@ -833,11 +782,6 @@
     <plurals name="sports_remembered_summary">
         <item quantity="one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> more</item>
         <item quantity="other"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> more</item>
-    </plurals>
-    <!-- Translators: Phone summary of Remembered channels: how many competitions have one, e.g. "5 competitions". -->
-    <plurals name="sports_competition_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> competition</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> competitions</item>
     </plurals>
     <!-- Translators: Settings switch: list sports channels the guide does not confirm. Use your language's quotation marks. -->
     <string name="sports_show_likely">Show “likely” channels</string>
@@ -879,8 +823,6 @@
     <string name="sports_alerts_footnote">With OwnTV closed, alerts usually arrive within a minute. If the phone has been lying still with the screen off for a long time, Android may hold them back for up to about 15 minutes. The live score card is not held back.</string>
     <!-- Translators: Search field on the My teams page. -->
     <string name="sports_search_teams">Search teams, players, leagues</string>
-    <!-- Translators: On a followed team's row: its match is live, with the score, e.g. "live now 2–1". %1$s is the score. -->
-    <string name="sports_live_now_score">live now <xliff:g id="score">%1$s</xliff:g></string>
     <!-- Translators: My teams section heading: teams the user watched often but does not follow yet. -->
     <string name="sports_suggested">Suggested from what you watch</string>
     <!-- Translators: Under a suggested team: how many of its matches the user played from the hub, e.g. "You watched 4 of their matches". -->
@@ -890,10 +832,6 @@
     </plurals>
     <!-- Translators: On a suggested competition's row in My teams: it is a league, not a team. -->
     <string name="sports_league_label">League</string>
-    <!-- Translators: On a followed team's or league's row: its next match or event, e.g. "next: US GP, Austin". %1$s is the event. -->
-    <string name="sports_next">next: <xliff:g id="event">%1$s</xliff:g></string>
-    <!-- Translators: On a followed national side that plays both men's and women's matches (e.g. India in cricket). -->
-    <string name="sports_mens_and_womens">men’s and women’s</string>
     <!-- Translators: Match page on a profile with no playlist: title of the note in the Watch live panel. -->
     <string name="sports_no_playlist_title">Add a playlist to watch matches</string>
     <!-- Translators: Body of that note: scores work without a playlist; with one, OwnTV finds the channels. OwnTV is the app's name. -->
@@ -909,7 +847,7 @@
     <!-- Translators: Hub empty state on a profile that follows no sport or league yet (new users follow nothing). -->
     <string name="sports_empty_nothing_followed">No sports or leagues chosen yet</string>
     <!-- Translators: Under that title: where to choose them. Use the same names as the menus (the Settings tab, the Sports page, its Sports and leagues row). -->
-    <string name="sports_empty_choose_in">Choose them in Settings → Sports → Sports and leagues.</string>
+    <string name="sports_empty_choose_in">Choose them in Settings → App → Sports → Sports and leagues.</string>
     <!-- Translators: Note in the empty hub and under Sport buttons: choosing more makes fetching ("loading") and building the sports board take longer. -->
     <string name="sports_load_time_warning">The more sports and leagues you choose, the longer loading and building take.</string>
     <!-- Translators: Setting in Settings → Sports: which sports get a chip (button) in the hub, and so which leagues are fetched. -->

@@ -288,14 +288,6 @@
     <string name="sports_scores_espn">Eredmények: ESPN</string>
     <string name="sports_my_teams">Csapataim</string>
     <string name="sports_live_now">Most élőben</string>
-    <plurals name="sports_on_channels">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> csatornán</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> csatornán</item>
-    </plurals>
-    <plurals name="sports_on_your_channels">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> csatornádon</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> csatornádon</item>
-    </plurals>
     <string name="sports_not_on_channels">Nincs a csatornáidon</string>
     <string name="sports_on_channels_now">Sport most a csatornáidon</string>
     <string name="sports_on_channels_now_mobile">Sport a csatornáidon</string>
@@ -306,8 +298,6 @@
     <string name="sports_reminder_set">Emlékeztető</string>
     <string name="sports_until"><xliff:g id="time">%1$s</xliff:g>-ig</string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>. szett</string>
-    <string name="sports_matchday"><xliff:g id="round">%1$d</xliff:g>. forduló</string>
-    <string name="sports_half_time_score">Félidő <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_overs"><xliff:g id="overs">%1$s</xliff:g> over</string>
     <string name="sports_empty_nothing">Ma nincs meccs abban, amit követsz</string>
     <string name="sports_empty_unreachable">Az eredmények most nem érhetők el. A csatornáid továbbra is működnek.</string>
@@ -340,7 +330,6 @@
     <string name="sports_tab_stats">Statisztika</string>
     <string name="sports_tab_lineups">Kezdők</string>
     <string name="sports_tab_table">Tabella</string>
-    <string name="sports_tab_h2h">Egymás elleni</string>
     <string name="sports_following">Követed</string>
     <string name="sports_follow">Követés</string>
     <string name="sports_event_goal">Gól · <xliff:g id="player">%1$s</xliff:g></string>
@@ -354,17 +343,7 @@
     <string name="sports_event_kickoff">Kezdés</string>
     <string name="sports_event_half_time">Félidő</string>
     <string name="sports_event_full_time">Vége</string>
-    <string name="sports_stat_possession">Labdabirtoklás</string>
-    <string name="sports_stat_shots">Lövések</string>
-    <string name="sports_stat_shots_on_target">Kaput eltaláló lövések</string>
-    <string name="sports_stat_corners">Szögletek</string>
-    <string name="sports_stat_fouls">Szabálytalanságok</string>
-    <string name="sports_stat_yellow_cards">Sárga lapok</string>
     <string name="sports_stat_red_cards">Piros lapok</string>
-    <string name="sports_stat_offsides">Lesek</string>
-    <string name="sports_stat_saves">Védések</string>
-    <string name="sports_stat_passes">Passzok</string>
-    <string name="sports_stat_accurate_passes">Pontos passzok</string>
     <string name="sports_watch_live">Élő közvetítés</string>
     <plurals name="sports_watch_live_count">
         <item quantity="one">Élő közvetítés · <xliff:g id="count">%1$d</xliff:g> csatorna</item>
@@ -377,7 +356,6 @@
     <string name="sports_reason_pick">A választásod: <xliff:g id="competition">%1$s</xliff:g></string>
     <string name="sports_reason_likely">Általában <xliff:g id="competition">%1$s</xliff:g></string>
     <string name="sports_confirmed">A műsor szerint</string>
-    <string name="sports_event_channel">Eseménycsatorna</string>
     <plurals name="sports_hidden">
         <item quantity="one">+ <xliff:g id="count">%1$d</xliff:g> elrejtve a szűrők miatt</item>
         <item quantity="other">+ <xliff:g id="count">%1$d</xliff:g> elrejtve a szűrők miatt</item>
@@ -416,7 +394,6 @@
     <string name="sports_switch_channel">Csatornaváltás</string>
     <string name="sports_tab_fixtures">Program</string>
     <string name="sports_tab_results">Eredmények</string>
-    <string name="sports_tab_top_scorers">Góllövőlista</string>
     <string name="sports_table_team">Csapat</string>
     <string name="sports_table_played">M</string>
     <string name="sports_table_won">GY</string>
@@ -426,19 +403,13 @@
     <string name="sports_table_points">P</string>
     <string name="sports_table_form">Forma</string>
     <string name="sports_this_matchday">Ez a forduló</string>
-    <string name="sports_matchday_of"><xliff:g id="round">%1$d</xliff:g>. forduló / <xliff:g id="rounds">%2$d</xliff:g></string>
     <string name="sports_settings_what">Mi látszik</string>
     <string name="sports_show_in_menu">Sport megjelenítése a menüben</string>
-    <string name="sports_show_in_menu_mobile">Sport lap</string>
     <string name="sports_show_in_menu_description">Alapból bekapcsolva, lejátszási listával vagy anélkül</string>
     <string name="sports_leagues">Sportágak és bajnokságok</string>
     <plurals name="sports_league_count">
         <item quantity="one"><xliff:g id="count">%1$d</xliff:g> bajnokság</item>
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> bajnokság</item>
-    </plurals>
-    <plurals name="sports_sport_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> sportág</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> sportág</item>
     </plurals>
     <string name="sports_spoiler_free">Spoilermentes</string>
     <string name="sports_spoiler_free_description">Eredmények elrejtése, amíg rájuk nem nyomsz OK-t</string>
@@ -455,17 +426,12 @@
     <string name="sports_score_info_bar_description">Csak nyitott sávnál látszik, így nem árul el gólt</string>
     <string name="sports_score_info_bar_description_mobile">Csak nyitott sávnál</string>
     <string name="sports_goal_alerts_description">A csapataimnak, ha mást nézek</string>
-    <string name="sports_goal_alerts_summary_closed"><xliff:g id="who">%1$s</xliff:g> · akkor is, ha az OwnTV be van zárva</string>
     <string name="sports_match_reminders_description">Kezdés előtt, a legjobb csatornával</string>
     <string name="sports_remembered_channels">Megjegyzett csatornák</string>
     <string name="sports_remembered_one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g></string>
     <plurals name="sports_remembered_summary">
         <item quantity="one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · még <xliff:g id="count">%3$d</xliff:g></item>
         <item quantity="other"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · még <xliff:g id="count">%3$d</xliff:g></item>
-    </plurals>
-    <plurals name="sports_competition_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> sorozat</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> sorozat</item>
     </plurals>
     <string name="sports_show_likely">„Valószínű” csatornák mutatása</string>
     <string name="sports_show_likely_description">Műsor szerint meg nem erősített sportcsatornák</string>
@@ -487,22 +453,19 @@
     <string name="sports_live_card_description">30 mp-enként frissül a végéig; egy meccsről indítod</string>
     <string name="sports_alerts_footnote">Bezárt OwnTV mellett az értesítések általában egy percen belül megérkeznek. Ha a telefon sokáig mozdulatlanul, kikapcsolt képernyővel fekszik, az Android akár kb. 15 percig is visszatarthatja őket. Az élő eredménykártyát nem tartja vissza.</string>
     <string name="sports_search_teams">Csapatok, játékosok, bajnokságok keresése</string>
-    <string name="sports_live_now_score">most élőben <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_suggested">Javaslatok a nézettek alapján</string>
     <plurals name="sports_watched_matches">
         <item quantity="one"><xliff:g id="count">%1$d</xliff:g> meccsüket nézted</item>
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> meccsüket nézted</item>
     </plurals>
     <string name="sports_league_label">Bajnokság</string>
-    <string name="sports_next">következő: <xliff:g id="event">%1$s</xliff:g></string>
-    <string name="sports_mens_and_womens">férfi és női</string>
     <string name="sports_no_playlist_title">Adj hozzá lejátszási listát a meccsek nézéséhez</string>
     <string name="sports_no_playlist_body">Az eredmények, tabellák és értesítések enélkül is működnek. Lejátszási listával az OwnTV minden csatornát megtalál, amely ezt a meccset adja.</string>
     <string name="sports_add_playlist">Lejátszási lista hozzáadása</string>
     <string name="sports_home_row">Élő sport</string>
     <string name="sports_home_row_description">Követett meccsek, amíg valamelyik élőben megy vagy hamarosan kezdődik</string>
     <string name="sports_empty_nothing_followed">Még nem választottál sportágat vagy bajnokságot</string>
-    <string name="sports_empty_choose_in">Itt választhatod ki őket: Beállítások → Sport → Sportágak és bajnokságok.</string>
+    <string name="sports_empty_choose_in">Itt választhatod ki őket: Beállítások → Alkalmazás → Sport → Sportágak és bajnokságok.</string>
     <string name="sports_load_time_warning">Minél több sportágat és bajnokságot választasz, annál tovább tart a betöltés és az összeállítás.</string>
     <string name="sports_sport_buttons">Sportág-gombok</string>
     <string name="sports_sport_buttons_mine">Saját sportágaim</string>

@@ -288,14 +288,6 @@
     <string name="sports_scores_espn">Resultater: ESPN</string>
     <string name="sports_my_teams">Mine hold</string>
     <string name="sports_live_now">Live nu</string>
-    <plurals name="sports_on_channels">
-        <item quantity="one">På <xliff:g id="count">%1$d</xliff:g> kanal</item>
-        <item quantity="other">På <xliff:g id="count">%1$d</xliff:g> kanaler</item>
-    </plurals>
-    <plurals name="sports_on_your_channels">
-        <item quantity="one">På <xliff:g id="count">%1$d</xliff:g> af dine kanaler</item>
-        <item quantity="other">På <xliff:g id="count">%1$d</xliff:g> af dine kanaler</item>
-    </plurals>
     <string name="sports_not_on_channels">Ikke på dine kanaler</string>
     <string name="sports_on_channels_now">Sport på dine kanaler nu</string>
     <string name="sports_on_channels_now_mobile">Sport på dine kanaler</string>
@@ -306,8 +298,6 @@
     <string name="sports_reminder_set">Påmindelse</string>
     <string name="sports_until">til <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>. sæt</string>
-    <string name="sports_matchday"><xliff:g id="round">%1$d</xliff:g>. spillerunde</string>
-    <string name="sports_half_time_score">Pause <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_overs"><xliff:g id="overs">%1$s</xliff:g> ov</string>
     <string name="sports_empty_nothing">Ingen kampe i dag i det, du følger</string>
     <string name="sports_empty_unreachable">Resultaterne kan ikke hentes lige nu. Dine kanaler virker stadig.</string>
@@ -340,7 +330,6 @@
     <string name="sports_tab_stats">Statistik</string>
     <string name="sports_tab_lineups">Opstillinger</string>
     <string name="sports_tab_table">Stilling</string>
-    <string name="sports_tab_h2h">Indbyrdes</string>
     <string name="sports_following">Følger</string>
     <string name="sports_follow">Følg</string>
     <string name="sports_event_goal">Mål · <xliff:g id="player">%1$s</xliff:g></string>
@@ -354,17 +343,7 @@
     <string name="sports_event_kickoff">Kampstart</string>
     <string name="sports_event_half_time">Pause</string>
     <string name="sports_event_full_time">Slut</string>
-    <string name="sports_stat_possession">Boldbesiddelse</string>
-    <string name="sports_stat_shots">Skud</string>
-    <string name="sports_stat_shots_on_target">Skud på mål</string>
-    <string name="sports_stat_corners">Hjørnespark</string>
-    <string name="sports_stat_fouls">Frispark begået</string>
-    <string name="sports_stat_yellow_cards">Gule kort</string>
     <string name="sports_stat_red_cards">Røde kort</string>
-    <string name="sports_stat_offsides">Offside</string>
-    <string name="sports_stat_saves">Redninger</string>
-    <string name="sports_stat_passes">Afleveringer</string>
-    <string name="sports_stat_accurate_passes">Præcise afleveringer</string>
     <string name="sports_watch_live">Se live</string>
     <plurals name="sports_watch_live_count">
         <item quantity="one">Se live · <xliff:g id="count">%1$d</xliff:g> kanal</item>
@@ -377,7 +356,6 @@
     <string name="sports_reason_pick">Dit valg til <xliff:g id="competition">%1$s</xliff:g></string>
     <string name="sports_reason_likely">Viser normalt <xliff:g id="competition">%1$s</xliff:g></string>
     <string name="sports_confirmed">Bekræftet af guiden</string>
-    <string name="sports_event_channel">Eventkanal</string>
     <plurals name="sports_hidden">
         <item quantity="one">+ <xliff:g id="count">%1$d</xliff:g> skjult af filtre</item>
         <item quantity="other">+ <xliff:g id="count">%1$d</xliff:g> skjult af filtre</item>
@@ -416,7 +394,6 @@
     <string name="sports_switch_channel">Skift kanal</string>
     <string name="sports_tab_fixtures">Program</string>
     <string name="sports_tab_results">Resultater</string>
-    <string name="sports_tab_top_scorers">Topscorere</string>
     <string name="sports_table_team">Hold</string>
     <string name="sports_table_played">K</string>
     <string name="sports_table_won">V</string>
@@ -426,19 +403,13 @@
     <string name="sports_table_points">P</string>
     <string name="sports_table_form">Form</string>
     <string name="sports_this_matchday">Denne spillerunde</string>
-    <string name="sports_matchday_of"><xliff:g id="round">%1$d</xliff:g>. spillerunde af <xliff:g id="rounds">%2$d</xliff:g></string>
     <string name="sports_settings_what">Hvad der vises</string>
     <string name="sports_show_in_menu">Vis Sport i menuen</string>
-    <string name="sports_show_in_menu_mobile">Fanen Sport</string>
     <string name="sports_show_in_menu_description">Slået til som standard, med eller uden playliste</string>
     <string name="sports_leagues">Sportsgrene og ligaer</string>
     <plurals name="sports_league_count">
         <item quantity="one"><xliff:g id="count">%1$d</xliff:g> liga</item>
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> ligaer</item>
-    </plurals>
-    <plurals name="sports_sport_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> sportsgren</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> sportsgrene</item>
     </plurals>
     <string name="sports_spoiler_free">Uden spoilere</string>
     <string name="sports_spoiler_free_description">Skjul resultater, til du trykker OK på dem</string>
@@ -455,17 +426,12 @@
     <string name="sports_score_info_bar_description">Vises kun, mens linjen er åben, så den ikke afslører et mål</string>
     <string name="sports_score_info_bar_description_mobile">Kun når linjen er åben</string>
     <string name="sports_goal_alerts_description">For mine hold, mens jeg ser noget andet</string>
-    <string name="sports_goal_alerts_summary_closed"><xliff:g id="who">%1$s</xliff:g> · også når OwnTV er lukket</string>
     <string name="sports_match_reminders_description">Før kampstart, med den bedste kanal</string>
     <string name="sports_remembered_channels">Huskede kanaler</string>
     <string name="sports_remembered_one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g></string>
     <plurals name="sports_remembered_summary">
         <item quantity="one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> mere</item>
         <item quantity="other"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> mere</item>
-    </plurals>
-    <plurals name="sports_competition_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> turnering</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> turneringer</item>
     </plurals>
     <string name="sports_show_likely">Vis „sandsynlige“ kanaler</string>
     <string name="sports_show_likely_description">Sportskanaler uden bekræftelse i guiden</string>
@@ -487,22 +453,19 @@
     <string name="sports_live_card_description">Opdateres hvert 30. sek. til slut; du starter det fra en kamp</string>
     <string name="sports_alerts_footnote">Når OwnTV er lukket, kommer advarsler normalt inden for et minut. Hvis telefonen har ligget stille med slukket skærm længe, kan Android holde dem tilbage i op til ca. 15 minutter. Live-resultatkortet holdes ikke tilbage.</string>
     <string name="sports_search_teams">Søg efter hold, spillere, ligaer</string>
-    <string name="sports_live_now_score">live nu <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_suggested">Forslag ud fra det, du ser</string>
     <plurals name="sports_watched_matches">
         <item quantity="one">Du har set <xliff:g id="count">%1$d</xliff:g> af deres kampe</item>
         <item quantity="other">Du har set <xliff:g id="count">%1$d</xliff:g> af deres kampe</item>
     </plurals>
     <string name="sports_league_label">Liga</string>
-    <string name="sports_next">næste: <xliff:g id="event">%1$s</xliff:g></string>
-    <string name="sports_mens_and_womens">herrer og damer</string>
     <string name="sports_no_playlist_title">Tilføj en playliste for at se kampe</string>
     <string name="sports_no_playlist_body">Resultater, stillinger og advarsler virker uden. Med en playliste finder OwnTV alle kanaler, der viser kampen.</string>
     <string name="sports_add_playlist">Tilføj playliste</string>
     <string name="sports_home_row">Live-sport</string>
     <string name="sports_home_row_description">Fulgte kampe, mens en er live eller snart starter</string>
     <string name="sports_empty_nothing_followed">Ingen sportsgrene eller ligaer valgt endnu</string>
-    <string name="sports_empty_choose_in">Vælg dem under Indstillinger → Sport → Sportsgrene og ligaer.</string>
+    <string name="sports_empty_choose_in">Vælg dem under Indstillinger → App → Sport → Sportsgrene og ligaer.</string>
     <string name="sports_load_time_warning">Jo flere sportsgrene og ligaer du vælger, jo længere tager indlæsning og opbygning.</string>
     <string name="sports_sport_buttons">Sportsknapper</string>
     <string name="sports_sport_buttons_mine">Mine sportsgrene</string>

@@ -288,14 +288,6 @@
     <string name="sports_scores_espn">স্কোর: ESPN</string>
     <string name="sports_my_teams">আমার দল</string>
     <string name="sports_live_now">এখন লাইভ</string>
-    <plurals name="sports_on_channels">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g>টি চ্যানেলে</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g>টি চ্যানেলে</item>
-    </plurals>
-    <plurals name="sports_on_your_channels">
-        <item quantity="one">আপনার <xliff:g id="count">%1$d</xliff:g>টি চ্যানেলে</item>
-        <item quantity="other">আপনার <xliff:g id="count">%1$d</xliff:g>টি চ্যানেলে</item>
-    </plurals>
     <string name="sports_not_on_channels">আপনার চ্যানেলে নেই</string>
     <string name="sports_on_channels_now">এখন আপনার চ্যানেলে খেলা</string>
     <string name="sports_on_channels_now_mobile">আপনার চ্যানেলে খেলা</string>
@@ -306,8 +298,6 @@
     <string name="sports_reminder_set">রিমাইন্ডার</string>
     <string name="sports_until"><xliff:g id="time">%1$s</xliff:g> পর্যন্ত</string>
     <string name="sports_set">সেট <xliff:g id="set">%1$d</xliff:g></string>
-    <string name="sports_matchday">ম্যাচডে <xliff:g id="round">%1$d</xliff:g></string>
-    <string name="sports_half_time_score">বিরতি <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_overs"><xliff:g id="overs">%1$s</xliff:g> ওভার</string>
     <string name="sports_empty_nothing">আপনি যা ফলো করেন তাতে আজ কোনো ম্যাচ নেই</string>
     <string name="sports_empty_unreachable">এখন স্কোর পাওয়া যাচ্ছে না। আপনার চ্যানেলগুলো ঠিকই চলছে।</string>
@@ -340,7 +330,6 @@
     <string name="sports_tab_stats">পরিসংখ্যান</string>
     <string name="sports_tab_lineups">লাইন-আপ</string>
     <string name="sports_tab_table">পয়েন্ট টেবিল</string>
-    <string name="sports_tab_h2h">মুখোমুখি</string>
     <string name="sports_following">ফলো করছেন</string>
     <string name="sports_follow">ফলো করুন</string>
     <string name="sports_event_goal">গোল · <xliff:g id="player">%1$s</xliff:g></string>
@@ -354,17 +343,7 @@
     <string name="sports_event_kickoff">কিক-অফ</string>
     <string name="sports_event_half_time">বিরতি</string>
     <string name="sports_event_full_time">খেলা শেষ</string>
-    <string name="sports_stat_possession">বল দখল</string>
-    <string name="sports_stat_shots">শট</string>
-    <string name="sports_stat_shots_on_target">লক্ষ্যে শট</string>
-    <string name="sports_stat_corners">কর্নার</string>
-    <string name="sports_stat_fouls">ফাউল</string>
-    <string name="sports_stat_yellow_cards">হলুদ কার্ড</string>
     <string name="sports_stat_red_cards">লাল কার্ড</string>
-    <string name="sports_stat_offsides">অফসাইড</string>
-    <string name="sports_stat_saves">সেভ</string>
-    <string name="sports_stat_passes">পাস</string>
-    <string name="sports_stat_accurate_passes">সঠিক পাস</string>
     <string name="sports_watch_live">লাইভ দেখুন</string>
     <plurals name="sports_watch_live_count">
         <item quantity="one">লাইভ দেখুন · <xliff:g id="count">%1$d</xliff:g>টি চ্যানেল</item>
@@ -377,7 +356,6 @@
     <string name="sports_reason_pick"><xliff:g id="competition">%1$s</xliff:g>-এর জন্য আপনার পছন্দ</string>
     <string name="sports_reason_likely">সাধারণত <xliff:g id="competition">%1$s</xliff:g> দেখায়</string>
     <string name="sports_confirmed">গাইডে নিশ্চিত</string>
-    <string name="sports_event_channel">ইভেন্ট চ্যানেল</string>
     <plurals name="sports_hidden">
         <item quantity="one">+ ফিল্টারে <xliff:g id="count">%1$d</xliff:g>টি লুকানো</item>
         <item quantity="other">+ ফিল্টারে <xliff:g id="count">%1$d</xliff:g>টি লুকানো</item>
@@ -416,7 +394,6 @@
     <string name="sports_switch_channel">চ্যানেল বদলান</string>
     <string name="sports_tab_fixtures">সূচি</string>
     <string name="sports_tab_results">ফলাফল</string>
-    <string name="sports_tab_top_scorers">সর্বোচ্চ গোলদাতা</string>
     <string name="sports_table_team">দল</string>
     <string name="sports_table_played">ম্যা</string>
     <string name="sports_table_won">জ</string>
@@ -426,19 +403,13 @@
     <string name="sports_table_points">পয়েন্ট</string>
     <string name="sports_table_form">ফর্ম</string>
     <string name="sports_this_matchday">এই ম্যাচডে</string>
-    <string name="sports_matchday_of"><xliff:g id="rounds">%2$d</xliff:g>টির মধ্যে ম্যাচডে <xliff:g id="round">%1$d</xliff:g></string>
     <string name="sports_settings_what">কী দেখাবে</string>
     <string name="sports_show_in_menu">মেনুতে খেলা দেখান</string>
-    <string name="sports_show_in_menu_mobile">খেলা ট্যাব</string>
     <string name="sports_show_in_menu_description">ডিফল্টভাবে চালু, প্লেলিস্ট থাকুক বা না থাকুক</string>
     <string name="sports_leagues">খেলা ও লিগ</string>
     <plurals name="sports_league_count">
         <item quantity="one"><xliff:g id="count">%1$d</xliff:g>টি লিগ</item>
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g>টি লিগ</item>
-    </plurals>
-    <plurals name="sports_sport_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g>টি খেলা</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g>টি খেলা</item>
     </plurals>
     <string name="sports_spoiler_free">স্পয়লার-মুক্ত</string>
     <string name="sports_spoiler_free_description">OK চাপা পর্যন্ত স্কোর লুকান</string>
@@ -455,17 +426,12 @@
     <string name="sports_score_info_bar_description">বার খোলা থাকলেই দেখায়, যাতে গোল আগে জানা না যায়</string>
     <string name="sports_score_info_bar_description_mobile">শুধু বার খোলা থাকলে</string>
     <string name="sports_goal_alerts_description">আমার দলের জন্য, অন্য কিছু দেখার সময়</string>
-    <string name="sports_goal_alerts_summary_closed"><xliff:g id="who">%1$s</xliff:g> · OwnTV বন্ধ থাকলেও</string>
     <string name="sports_match_reminders_description">কিক-অফের আগে, সেরা চ্যানেলসহ</string>
     <string name="sports_remembered_channels">মনে রাখা চ্যানেল</string>
     <string name="sports_remembered_one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g></string>
     <plurals name="sports_remembered_summary">
         <item quantity="one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · আরও <xliff:g id="count">%3$d</xliff:g>টি</item>
         <item quantity="other"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · আরও <xliff:g id="count">%3$d</xliff:g>টি</item>
-    </plurals>
-    <plurals name="sports_competition_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g>টি প্রতিযোগিতা</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g>টি প্রতিযোগিতা</item>
     </plurals>
     <string name="sports_show_likely">“সম্ভাব্য” চ্যানেল দেখান</string>
     <string name="sports_show_likely_description">গাইডে নিশ্চিত নয় এমন খেলার চ্যানেল</string>
@@ -487,22 +453,19 @@
     <string name="sports_live_card_description">খেলা শেষ পর্যন্ত প্রতি 30 সে. আপডেট; কোনো ম্যাচ থেকে চালু করুন</string>
     <string name="sports_alerts_footnote">OwnTV বন্ধ থাকলে সতর্কতা সাধারণত এক মিনিটের মধ্যে আসে। ফোন অনেকক্ষণ স্ক্রিন বন্ধ করে স্থির পড়ে থাকলে Android এগুলো প্রায় 15 মিনিট পর্যন্ত আটকে রাখতে পারে। লাইভ স্কোর কার্ড আটকায় না।</string>
     <string name="sports_search_teams">দল, খেলোয়াড়, লিগ খুঁজুন</string>
-    <string name="sports_live_now_score">এখন লাইভ <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_suggested">আপনি যা দেখেন তা থেকে পরামর্শ</string>
     <plurals name="sports_watched_matches">
         <item quantity="one">আপনি তাদের <xliff:g id="count">%1$d</xliff:g>টি ম্যাচ দেখেছেন</item>
         <item quantity="other">আপনি তাদের <xliff:g id="count">%1$d</xliff:g>টি ম্যাচ দেখেছেন</item>
     </plurals>
     <string name="sports_league_label">লিগ</string>
-    <string name="sports_next">পরবর্তী: <xliff:g id="event">%1$s</xliff:g></string>
-    <string name="sports_mens_and_womens">পুরুষ ও মহিলা</string>
     <string name="sports_no_playlist_title">ম্যাচ দেখতে একটি প্লেলিস্ট যোগ করুন</string>
     <string name="sports_no_playlist_body">স্কোর, টেবিল ও সতর্কতা এটি ছাড়াও চলে। প্লেলিস্ট থাকলে OwnTV এই ম্যাচ দেখানো প্রতিটি চ্যানেল খুঁজে দেয়।</string>
     <string name="sports_add_playlist">প্লেলিস্ট যোগ করুন</string>
     <string name="sports_home_row">লাইভ খেলা</string>
     <string name="sports_home_row_description">ফলো করা ম্যাচ, যখন কোনোটি লাইভ বা শুরু হতে চলেছে</string>
     <string name="sports_empty_nothing_followed">এখনও কোনো খেলা বা লিগ বেছে নেওয়া হয়নি</string>
-    <string name="sports_empty_choose_in">সেটিংস → খেলা → খেলা ও লিগ থেকে বেছে নিন।</string>
+    <string name="sports_empty_choose_in">সেটিংস → অ্যাপ → খেলা → খেলা ও লিগ থেকে বেছে নিন।</string>
     <string name="sports_load_time_warning">যত বেশি খেলা ও লিগ বেছে নেবেন, লোড ও তৈরি হতে তত বেশি সময় লাগবে।</string>
     <string name="sports_sport_buttons">খেলার বোতাম</string>
     <string name="sports_sport_buttons_mine">আমার খেলা</string>

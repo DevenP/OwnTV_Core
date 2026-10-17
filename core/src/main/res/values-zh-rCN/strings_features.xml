@@ -273,12 +273,6 @@
     <string name="sports_scores_espn">比分：ESPN</string>
     <string name="sports_my_teams">我的球队</string>
     <string name="sports_live_now">正在直播</string>
-    <plurals name="sports_on_channels">
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> 个频道播出</item>
-    </plurals>
-    <plurals name="sports_on_your_channels">
-        <item quantity="other">你的 <xliff:g id="count">%1$d</xliff:g> 个频道播出</item>
-    </plurals>
     <string name="sports_not_on_channels">你的频道未播出</string>
     <string name="sports_on_channels_now">你的频道正在播的体育</string>
     <string name="sports_on_channels_now_mobile">你的频道上的体育</string>
@@ -289,8 +283,6 @@
     <string name="sports_reminder_set">提醒</string>
     <string name="sports_until">至 <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set">第 <xliff:g id="set">%1$d</xliff:g> 盘</string>
-    <string name="sports_matchday">第 <xliff:g id="round">%1$d</xliff:g> 轮</string>
-    <string name="sports_half_time_score">半场 <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_overs"><xliff:g id="overs">%1$s</xliff:g> 轮</string>
     <string name="sports_empty_nothing">你关注的内容今天没有比赛</string>
     <string name="sports_empty_unreachable">暂时无法获取比分。你的频道仍可使用。</string>
@@ -323,7 +315,6 @@
     <string name="sports_tab_stats">统计</string>
     <string name="sports_tab_lineups">阵容</string>
     <string name="sports_tab_table">积分榜</string>
-    <string name="sports_tab_h2h">交锋记录</string>
     <string name="sports_following">已关注</string>
     <string name="sports_follow">关注</string>
     <string name="sports_event_goal">进球 · <xliff:g id="player">%1$s</xliff:g></string>
@@ -337,17 +328,7 @@
     <string name="sports_event_kickoff">开球</string>
     <string name="sports_event_half_time">半场</string>
     <string name="sports_event_full_time">全场结束</string>
-    <string name="sports_stat_possession">控球率</string>
-    <string name="sports_stat_shots">射门</string>
-    <string name="sports_stat_shots_on_target">射正</string>
-    <string name="sports_stat_corners">角球</string>
-    <string name="sports_stat_fouls">犯规</string>
-    <string name="sports_stat_yellow_cards">黄牌</string>
     <string name="sports_stat_red_cards">红牌</string>
-    <string name="sports_stat_offsides">越位</string>
-    <string name="sports_stat_saves">扑救</string>
-    <string name="sports_stat_passes">传球</string>
-    <string name="sports_stat_accurate_passes">成功传球</string>
     <string name="sports_watch_live">观看直播</string>
     <plurals name="sports_watch_live_count">
         <item quantity="other">观看直播 · <xliff:g id="count">%1$d</xliff:g> 个频道</item>
@@ -359,7 +340,6 @@
     <string name="sports_reason_pick">你为 <xliff:g id="competition">%1$s</xliff:g> 选的频道</string>
     <string name="sports_reason_likely">通常播出 <xliff:g id="competition">%1$s</xliff:g></string>
     <string name="sports_confirmed">节目单已确认</string>
-    <string name="sports_event_channel">赛事频道</string>
     <plurals name="sports_hidden">
         <item quantity="other">+ <xliff:g id="count">%1$d</xliff:g> 个被筛选隐藏</item>
     </plurals>
@@ -396,7 +376,6 @@
     <string name="sports_switch_channel">切换频道</string>
     <string name="sports_tab_fixtures">赛程</string>
     <string name="sports_tab_results">赛果</string>
-    <string name="sports_tab_top_scorers">射手榜</string>
     <string name="sports_table_team">球队</string>
     <string name="sports_table_played">场</string>
     <string name="sports_table_won">胜</string>
@@ -406,17 +385,12 @@
     <string name="sports_table_points">积分</string>
     <string name="sports_table_form">近况</string>
     <string name="sports_this_matchday">本轮</string>
-    <string name="sports_matchday_of">第 <xliff:g id="round">%1$d</xliff:g> / <xliff:g id="rounds">%2$d</xliff:g> 轮</string>
     <string name="sports_settings_what">显示内容</string>
     <string name="sports_show_in_menu">在菜单中显示体育</string>
-    <string name="sports_show_in_menu_mobile">体育标签</string>
     <string name="sports_show_in_menu_description">默认开启，有无播放列表均可</string>
     <string name="sports_leagues">运动与联赛</string>
     <plurals name="sports_league_count">
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> 个联赛</item>
-    </plurals>
-    <plurals name="sports_sport_count">
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> 项运动</item>
     </plurals>
     <string name="sports_spoiler_free">防剧透</string>
     <string name="sports_spoiler_free_description">按 OK 前隐藏比分</string>
@@ -433,15 +407,11 @@
     <string name="sports_score_info_bar_description">仅在信息栏打开时显示，不会剧透进球</string>
     <string name="sports_score_info_bar_description_mobile">仅在信息栏打开时</string>
     <string name="sports_goal_alerts_description">我的球队，在观看其他内容时</string>
-    <string name="sports_goal_alerts_summary_closed"><xliff:g id="who">%1$s</xliff:g> · OwnTV 关闭时也提醒</string>
     <string name="sports_match_reminders_description">开赛前提醒，附最佳频道</string>
     <string name="sports_remembered_channels">已记住的频道</string>
     <string name="sports_remembered_one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g></string>
     <plurals name="sports_remembered_summary">
         <item quantity="other"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · 另 <xliff:g id="count">%3$d</xliff:g> 项</item>
-    </plurals>
-    <plurals name="sports_competition_count">
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> 项赛事</item>
     </plurals>
     <string name="sports_show_likely">显示“可能”的频道</string>
     <string name="sports_show_likely_description">节目单未确认的体育频道</string>
@@ -463,21 +433,18 @@
     <string name="sports_live_card_description">每 30 秒更新至终场；从比赛页开启</string>
     <string name="sports_alerts_footnote">OwnTV 关闭时，提醒通常在一分钟内送达。如果手机长时间静置且屏幕关闭，Android 可能会延迟最多约 15 分钟。实时比分卡片不受影响。</string>
     <string name="sports_search_teams">搜索球队、球员、联赛</string>
-    <string name="sports_live_now_score">正在直播 <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_suggested">根据你的观看推荐</string>
     <plurals name="sports_watched_matches">
         <item quantity="other">你看过他们 <xliff:g id="count">%1$d</xliff:g> 场比赛</item>
     </plurals>
     <string name="sports_league_label">联赛</string>
-    <string name="sports_next">下一场：<xliff:g id="event">%1$s</xliff:g></string>
-    <string name="sports_mens_and_womens">男子和女子</string>
     <string name="sports_no_playlist_title">添加播放列表即可观看比赛</string>
     <string name="sports_no_playlist_body">没有播放列表也能查看比分、积分榜和提醒。添加后，OwnTV 会找出播出这场比赛的所有频道。</string>
     <string name="sports_add_playlist">添加播放列表</string>
     <string name="sports_home_row">体育直播</string>
     <string name="sports_home_row_description">关注的比赛，在有比赛直播或即将开始时显示</string>
     <string name="sports_empty_nothing_followed">尚未选择任何运动或联赛</string>
-    <string name="sports_empty_choose_in">请在 设置 → 体育 → 运动与联赛 中选择。</string>
+    <string name="sports_empty_choose_in">请在 设置 → 应用 → 体育 → 运动与联赛 中选择。</string>
     <string name="sports_load_time_warning">选择的运动和联赛越多，加载和构建所需的时间就越长。</string>
     <string name="sports_sport_buttons">运动按钮</string>
     <string name="sports_sport_buttons_mine">我的运动</string>

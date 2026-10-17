@@ -2020,8 +2020,11 @@
 1	json	core/src/main/java/tv/own/owntv/core/live/ProbeChannelSource.kt	vod
 1	technical	core/src/main/java/tv/own/owntv/core/live/ProviderTags.kt	\0
 1	technical	core/src/main/java/tv/own/owntv/core/live/ProviderTags.kt	${name.country}| ${name.name}
+1	technical	core/src/main/java/tv/own/owntv/core/live/ProviderTags.kt	TV
+1	technical	core/src/main/java/tv/own/owntv/core/live/ProviderTags.kt	UK
 1	regex	core/src/main/java/tv/own/owntv/core/live/ProviderTags.kt	\\s+
 1	regex	core/src/main/java/tv/own/owntv/core/live/ProviderTags.kt	^([A-Z]{2,3})\\s*\\|\\s*
+1	regex	core/src/main/java/tv/own/owntv/core/live/ProviderTags.kt	^([A-Z]{2}):\\s*
 1	log	core/src/main/java/tv/own/owntv/core/live/WatchSession.kt	WatchSession
 1	log	core/src/main/java/tv/own/owntv/core/live/WatchSession.kt	watch close sourceId=$sourceId watching=${_watching.value}
 1	log	core/src/main/java/tv/own/owntv/core/live/WatchSession.kt	watch open sourceId=$sourceId watching=${_watching.value}
@@ -3845,6 +3848,7 @@
 1	technical	core/src/main/java/tv/own/owntv/core/sports/TeamNames.kt	women
 1	technical	core/src/main/java/tv/own/owntv/core/sports/WatchFilter.kt	\0
 1	technical	core/src/main/java/tv/own/owntv/core/sports/WatchMatcher.kt	\0
+1	regex	core/src/main/java/tv/own/owntv/core/sports/WatchMatcher.kt	#{3,}|={4,}|-{4,}|\\*{4,}
 1	technical	core/src/main/java/tv/own/owntv/core/sports/WatchMatcher.kt	AE
 8	technical	core/src/main/java/tv/own/owntv/core/sports/WatchMatcher.kt	AR
 1	technical	core/src/main/java/tv/own/owntv/core/sports/WatchMatcher.kt	ARA
@@ -3892,6 +3896,7 @@
 1	technical	core/src/main/java/tv/own/owntv/core/sports/WatchMatcher.kt	US
 1	technical	core/src/main/java/tv/own/owntv/core/sports/WatchMatcher.kt	USA
 1	technical	core/src/main/java/tv/own/owntv/core/sports/WatchMatcher.kt	[A-Za-z]{4,}
+1	regex	core/src/main/java/tv/own/owntv/core/sports/WatchMatcher.kt	\\s(vs?\\.?|v)\\s
 1	technical	core/src/main/java/tv/own/owntv/core/sports/WatchReader.kt	\0
 2	technical	core/src/main/java/tv/own/owntv/core/sports/WatchReader.kt	$it*
 1	technical	core/src/main/java/tv/own/owntv/core/sports/WatchReader.kt	${it.id}@${it.lastSyncAt}

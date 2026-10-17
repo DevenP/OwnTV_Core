@@ -348,22 +348,6 @@
     <string name="sports_scores_espn">النتائج: ESPN</string>
     <string name="sports_my_teams">فرقي</string>
     <string name="sports_live_now">مباشر الآن</string>
-    <plurals name="sports_on_channels">
-        <item quantity="zero">على <xliff:g id="count">%1$d</xliff:g> قناة</item>
-        <item quantity="one">على <xliff:g id="count">%1$d</xliff:g> قناة</item>
-        <item quantity="two">على <xliff:g id="count">%1$d</xliff:g> قناة</item>
-        <item quantity="few">على <xliff:g id="count">%1$d</xliff:g> قنوات</item>
-        <item quantity="many">على <xliff:g id="count">%1$d</xliff:g> قناة</item>
-        <item quantity="other">على <xliff:g id="count">%1$d</xliff:g> قناة</item>
-    </plurals>
-    <plurals name="sports_on_your_channels">
-        <item quantity="zero">على <xliff:g id="count">%1$d</xliff:g> من قنواتك</item>
-        <item quantity="one">على <xliff:g id="count">%1$d</xliff:g> من قنواتك</item>
-        <item quantity="two">على <xliff:g id="count">%1$d</xliff:g> من قنواتك</item>
-        <item quantity="few">على <xliff:g id="count">%1$d</xliff:g> من قنواتك</item>
-        <item quantity="many">على <xliff:g id="count">%1$d</xliff:g> من قنواتك</item>
-        <item quantity="other">على <xliff:g id="count">%1$d</xliff:g> من قنواتك</item>
-    </plurals>
     <string name="sports_not_on_channels">ليست على قنواتك</string>
     <string name="sports_on_channels_now">رياضة على قنواتك الآن</string>
     <string name="sports_on_channels_now_mobile">رياضة على قنواتك</string>
@@ -374,8 +358,6 @@
     <string name="sports_reminder_set">تذكير</string>
     <string name="sports_until">حتى <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set">المجموعة <xliff:g id="set">%1$d</xliff:g></string>
-    <string name="sports_matchday">الجولة <xliff:g id="round">%1$d</xliff:g></string>
-    <string name="sports_half_time_score">الشوط الأول <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_overs"><xliff:g id="overs">%1$s</xliff:g> أوفر</string>
     <string name="sports_empty_nothing">لا مباريات اليوم فيما تتابعه</string>
     <string name="sports_empty_unreachable">تعذّر الوصول إلى النتائج الآن. قنواتك ما زالت تعمل.</string>
@@ -408,7 +390,6 @@
     <string name="sports_tab_stats">الإحصاءات</string>
     <string name="sports_tab_lineups">التشكيلات</string>
     <string name="sports_tab_table">الترتيب</string>
-    <string name="sports_tab_h2h">المواجهات المباشرة</string>
     <string name="sports_following">تتابعه</string>
     <string name="sports_follow">متابعة</string>
     <string name="sports_event_goal">هدف · <xliff:g id="player">%1$s</xliff:g></string>
@@ -422,17 +403,7 @@
     <string name="sports_event_kickoff">انطلاق المباراة</string>
     <string name="sports_event_half_time">نهاية الشوط الأول</string>
     <string name="sports_event_full_time">نهاية المباراة</string>
-    <string name="sports_stat_possession">الاستحواذ</string>
-    <string name="sports_stat_shots">التسديدات</string>
-    <string name="sports_stat_shots_on_target">تسديدات على المرمى</string>
-    <string name="sports_stat_corners">الركنيات</string>
-    <string name="sports_stat_fouls">الأخطاء</string>
-    <string name="sports_stat_yellow_cards">البطاقات الصفراء</string>
     <string name="sports_stat_red_cards">البطاقات الحمراء</string>
-    <string name="sports_stat_offsides">التسلل</string>
-    <string name="sports_stat_saves">التصديات</string>
-    <string name="sports_stat_passes">التمريرات</string>
-    <string name="sports_stat_accurate_passes">التمريرات الدقيقة</string>
     <string name="sports_watch_live">شاهد مباشرة</string>
     <plurals name="sports_watch_live_count">
         <item quantity="zero">شاهد مباشرة · <xliff:g id="count">%1$d</xliff:g> قناة</item>
@@ -449,7 +420,6 @@
     <string name="sports_reason_pick">اختيارك لـ <xliff:g id="competition">%1$s</xliff:g></string>
     <string name="sports_reason_likely">تعرض عادةً <xliff:g id="competition">%1$s</xliff:g></string>
     <string name="sports_confirmed">مؤكد من الدليل</string>
-    <string name="sports_event_channel">قناة حدث</string>
     <plurals name="sports_hidden">
         <item quantity="zero">+ <xliff:g id="count">%1$d</xliff:g> مخفية بالفلاتر</item>
         <item quantity="one">+ <xliff:g id="count">%1$d</xliff:g> مخفية بالفلاتر</item>
@@ -496,7 +466,6 @@
     <string name="sports_switch_channel">تغيير القناة</string>
     <string name="sports_tab_fixtures">المباريات القادمة</string>
     <string name="sports_tab_results">النتائج</string>
-    <string name="sports_tab_top_scorers">الهدافون</string>
     <string name="sports_table_team">الفريق</string>
     <string name="sports_table_played">لعب</string>
     <string name="sports_table_won">ف</string>
@@ -506,10 +475,8 @@
     <string name="sports_table_points">ن</string>
     <string name="sports_table_form">الأداء</string>
     <string name="sports_this_matchday">هذه الجولة</string>
-    <string name="sports_matchday_of">الجولة <xliff:g id="round">%1$d</xliff:g> من <xliff:g id="rounds">%2$d</xliff:g></string>
     <string name="sports_settings_what">ما يُعرض</string>
     <string name="sports_show_in_menu">إظهار الرياضة في القائمة</string>
-    <string name="sports_show_in_menu_mobile">تبويب الرياضة</string>
     <string name="sports_show_in_menu_description">مفعّل افتراضيًا، مع قائمة تشغيل أو بدونها</string>
     <string name="sports_leagues">الرياضات والدوريات</string>
     <plurals name="sports_league_count">
@@ -519,14 +486,6 @@
         <item quantity="few"><xliff:g id="count">%1$d</xliff:g> دوريات</item>
         <item quantity="many"><xliff:g id="count">%1$d</xliff:g> دوريًا</item>
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> دوري</item>
-    </plurals>
-    <plurals name="sports_sport_count">
-        <item quantity="zero"><xliff:g id="count">%1$d</xliff:g> رياضة</item>
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> رياضة</item>
-        <item quantity="two"><xliff:g id="count">%1$d</xliff:g> رياضة</item>
-        <item quantity="few"><xliff:g id="count">%1$d</xliff:g> رياضات</item>
-        <item quantity="many"><xliff:g id="count">%1$d</xliff:g> رياضة</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> رياضة</item>
     </plurals>
     <string name="sports_spoiler_free">دون حرق النتائج</string>
     <string name="sports_spoiler_free_description">إخفاء النتائج حتى تضغط موافق عليها</string>
@@ -543,7 +502,6 @@
     <string name="sports_score_info_bar_description">تظهر فقط أثناء فتح الشريط، فلا تحرق هدفًا</string>
     <string name="sports_score_info_bar_description_mobile">فقط أثناء فتح الشريط</string>
     <string name="sports_goal_alerts_description">لفرقي، أثناء مشاهدة شيء آخر</string>
-    <string name="sports_goal_alerts_summary_closed"><xliff:g id="who">%1$s</xliff:g> · حتى عند إغلاق OwnTV</string>
     <string name="sports_match_reminders_description">قبل انطلاق المباراة، مع أفضل قناة</string>
     <string name="sports_remembered_channels">القنوات المحفوظة</string>
     <string name="sports_remembered_one"><xliff:g id="competition">%1$s</xliff:g> ← <xliff:g id="channel">%2$s</xliff:g></string>
@@ -554,14 +512,6 @@
         <item quantity="few"><xliff:g id="competition">%1$s</xliff:g> ← <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> أخرى</item>
         <item quantity="many"><xliff:g id="competition">%1$s</xliff:g> ← <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> أخرى</item>
         <item quantity="other"><xliff:g id="competition">%1$s</xliff:g> ← <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> أخرى</item>
-    </plurals>
-    <plurals name="sports_competition_count">
-        <item quantity="zero"><xliff:g id="count">%1$d</xliff:g> مسابقة</item>
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> مسابقة</item>
-        <item quantity="two"><xliff:g id="count">%1$d</xliff:g> مسابقة</item>
-        <item quantity="few"><xliff:g id="count">%1$d</xliff:g> مسابقات</item>
-        <item quantity="many"><xliff:g id="count">%1$d</xliff:g> مسابقة</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> مسابقة</item>
     </plurals>
     <string name="sports_show_likely">إظهار القنوات «المحتملة»</string>
     <string name="sports_show_likely_description">قنوات رياضية بلا تأكيد من الدليل</string>
@@ -583,7 +533,6 @@
     <string name="sports_live_card_description">يتحدّث كل 30 ث حتى نهاية المباراة؛ تبدؤه من صفحة مباراة</string>
     <string name="sports_alerts_footnote">عند إغلاق OwnTV تصل التنبيهات عادةً خلال دقيقة. إذا بقي الهاتف ساكنًا وشاشته مطفأة مدة طويلة، فقد يؤخرها Android حتى نحو 15 دقيقة. بطاقة النتيجة المباشرة لا تتأخر.</string>
     <string name="sports_search_teams">ابحث عن فرق ولاعبين ودوريات</string>
-    <string name="sports_live_now_score">مباشر الآن <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_suggested">مقترحات مما تشاهده</string>
     <plurals name="sports_watched_matches">
         <item quantity="zero">شاهدت <xliff:g id="count">%1$d</xliff:g> من مبارياته</item>
@@ -594,15 +543,13 @@
         <item quantity="other">شاهدت <xliff:g id="count">%1$d</xliff:g> من مبارياته</item>
     </plurals>
     <string name="sports_league_label">دوري</string>
-    <string name="sports_next">التالي: <xliff:g id="event">%1$s</xliff:g></string>
-    <string name="sports_mens_and_womens">رجال وسيدات</string>
     <string name="sports_no_playlist_title">أضف قائمة تشغيل لمشاهدة المباريات</string>
     <string name="sports_no_playlist_body">النتائج والجداول والتنبيهات تعمل دونها. ومع قائمة تشغيل يجد OwnTV كل قناة تعرض هذه المباراة.</string>
     <string name="sports_add_playlist">إضافة قائمة تشغيل</string>
     <string name="sports_home_row">رياضة مباشرة</string>
     <string name="sports_home_row_description">المباريات المتابَعة عندما تكون إحداها مباشرة أو على وشك البدء</string>
     <string name="sports_empty_nothing_followed">لم تختر أي رياضات أو دوريات بعد</string>
-    <string name="sports_empty_choose_in">اخترها من الإعدادات ← الرياضة ← الرياضات والدوريات.</string>
+    <string name="sports_empty_choose_in">اخترها من الإعدادات ← التطبيق ← الرياضة ← الرياضات والدوريات.</string>
     <string name="sports_load_time_warning">كلما اخترت رياضات ودوريات أكثر، طال التحميل والبناء.</string>
     <string name="sports_sport_buttons">أزرار الرياضات</string>
     <string name="sports_sport_buttons_mine">رياضاتي</string>

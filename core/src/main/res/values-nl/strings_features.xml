@@ -288,14 +288,6 @@
     <string name="sports_scores_espn">Uitslagen: ESPN</string>
     <string name="sports_my_teams">Mijn teams</string>
     <string name="sports_live_now">Nu live</string>
-    <plurals name="sports_on_channels">
-        <item quantity="one">Op <xliff:g id="count">%1$d</xliff:g> zender</item>
-        <item quantity="other">Op <xliff:g id="count">%1$d</xliff:g> zenders</item>
-    </plurals>
-    <plurals name="sports_on_your_channels">
-        <item quantity="one">Op <xliff:g id="count">%1$d</xliff:g> van je zenders</item>
-        <item quantity="other">Op <xliff:g id="count">%1$d</xliff:g> van je zenders</item>
-    </plurals>
     <string name="sports_not_on_channels">Niet op je zenders</string>
     <string name="sports_on_channels_now">Nu sport op je zenders</string>
     <string name="sports_on_channels_now_mobile">Sport op je zenders</string>
@@ -306,8 +298,6 @@
     <string name="sports_reminder_set">Herinnering</string>
     <string name="sports_until">tot <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set">Set <xliff:g id="set">%1$d</xliff:g></string>
-    <string name="sports_matchday">Speelronde <xliff:g id="round">%1$d</xliff:g></string>
-    <string name="sports_half_time_score">Rust <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_overs"><xliff:g id="overs">%1$s</xliff:g> ov</string>
     <string name="sports_empty_nothing">Vandaag geen wedstrijden in wat je volgt</string>
     <string name="sports_empty_unreachable">Uitslagen zijn nu niet bereikbaar. Je zenders werken nog.</string>
@@ -340,7 +330,6 @@
     <string name="sports_tab_stats">Statistieken</string>
     <string name="sports_tab_lineups">Opstellingen</string>
     <string name="sports_tab_table">Stand</string>
-    <string name="sports_tab_h2h">Onderling</string>
     <string name="sports_following">Volgend</string>
     <string name="sports_follow">Volgen</string>
     <string name="sports_event_goal">Doelpunt · <xliff:g id="player">%1$s</xliff:g></string>
@@ -354,17 +343,7 @@
     <string name="sports_event_kickoff">Aftrap</string>
     <string name="sports_event_half_time">Rust</string>
     <string name="sports_event_full_time">Einde</string>
-    <string name="sports_stat_possession">Balbezit</string>
-    <string name="sports_stat_shots">Schoten</string>
-    <string name="sports_stat_shots_on_target">Schoten op doel</string>
-    <string name="sports_stat_corners">Hoekschoppen</string>
-    <string name="sports_stat_fouls">Overtredingen</string>
-    <string name="sports_stat_yellow_cards">Gele kaarten</string>
     <string name="sports_stat_red_cards">Rode kaarten</string>
-    <string name="sports_stat_offsides">Buitenspel</string>
-    <string name="sports_stat_saves">Reddingen</string>
-    <string name="sports_stat_passes">Passes</string>
-    <string name="sports_stat_accurate_passes">Geslaagde passes</string>
     <string name="sports_watch_live">Live kijken</string>
     <plurals name="sports_watch_live_count">
         <item quantity="one">Live kijken · <xliff:g id="count">%1$d</xliff:g> zender</item>
@@ -377,7 +356,6 @@
     <string name="sports_reason_pick">Jouw keuze voor <xliff:g id="competition">%1$s</xliff:g></string>
     <string name="sports_reason_likely">Zendt meestal <xliff:g id="competition">%1$s</xliff:g></string>
     <string name="sports_confirmed">Bevestigd door gids</string>
-    <string name="sports_event_channel">Eventzender</string>
     <plurals name="sports_hidden">
         <item quantity="one">+ <xliff:g id="count">%1$d</xliff:g> verborgen door filters</item>
         <item quantity="other">+ <xliff:g id="count">%1$d</xliff:g> verborgen door filters</item>
@@ -416,7 +394,6 @@
     <string name="sports_switch_channel">Zender wisselen</string>
     <string name="sports_tab_fixtures">Programma</string>
     <string name="sports_tab_results">Uitslagen</string>
-    <string name="sports_tab_top_scorers">Topscorers</string>
     <string name="sports_table_team">Team</string>
     <string name="sports_table_played">G</string>
     <string name="sports_table_won">W</string>
@@ -426,19 +403,13 @@
     <string name="sports_table_points">Ptn</string>
     <string name="sports_table_form">Vorm</string>
     <string name="sports_this_matchday">Deze speelronde</string>
-    <string name="sports_matchday_of">Speelronde <xliff:g id="round">%1$d</xliff:g> van <xliff:g id="rounds">%2$d</xliff:g></string>
     <string name="sports_settings_what">Wat tonen</string>
     <string name="sports_show_in_menu">Sport in het menu tonen</string>
-    <string name="sports_show_in_menu_mobile">Tabblad Sport</string>
     <string name="sports_show_in_menu_description">Standaard aan, met of zonder afspeellijst</string>
     <string name="sports_leagues">Sporten en competities</string>
     <plurals name="sports_league_count">
         <item quantity="one"><xliff:g id="count">%1$d</xliff:g> competitie</item>
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> competities</item>
-    </plurals>
-    <plurals name="sports_sport_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> sport</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> sporten</item>
     </plurals>
     <string name="sports_spoiler_free">Zonder spoilers</string>
     <string name="sports_spoiler_free_description">Uitslagen verbergen tot je er op OK drukt</string>
@@ -455,17 +426,12 @@
     <string name="sports_score_info_bar_description">Alleen zichtbaar als de balk open is, zodat hij geen doelpunt verraadt</string>
     <string name="sports_score_info_bar_description_mobile">Alleen als de balk open is</string>
     <string name="sports_goal_alerts_description">Voor mijn teams, terwijl ik iets anders kijk</string>
-    <string name="sports_goal_alerts_summary_closed"><xliff:g id="who">%1$s</xliff:g> · ook als OwnTV gesloten is</string>
     <string name="sports_match_reminders_description">Voor de aftrap, met de beste zender</string>
     <string name="sports_remembered_channels">Onthouden zenders</string>
     <string name="sports_remembered_one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g></string>
     <plurals name="sports_remembered_summary">
         <item quantity="one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · nog <xliff:g id="count">%3$d</xliff:g></item>
         <item quantity="other"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · nog <xliff:g id="count">%3$d</xliff:g></item>
-    </plurals>
-    <plurals name="sports_competition_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> competitie</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> competities</item>
     </plurals>
     <string name="sports_show_likely">‘Waarschijnlijke’ zenders tonen</string>
     <string name="sports_show_likely_description">Sportzenders zonder bevestiging in de gids</string>
@@ -487,22 +453,19 @@
     <string name="sports_live_card_description">Ververst elke 30 s tot het einde; je start het vanuit een wedstrijd</string>
     <string name="sports_alerts_footnote">Als OwnTV gesloten is, komen meldingen meestal binnen een minuut. Ligt de telefoon lang stil met het scherm uit, dan kan Android ze tot ongeveer 15 minuten tegenhouden. De live-scorekaart wordt niet tegengehouden.</string>
     <string name="sports_search_teams">Zoek teams, spelers, competities</string>
-    <string name="sports_live_now_score">nu live <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_suggested">Voorstellen op basis van wat je kijkt</string>
     <plurals name="sports_watched_matches">
         <item quantity="one">Je keek <xliff:g id="count">%1$d</xliff:g> van hun wedstrijden</item>
         <item quantity="other">Je keek <xliff:g id="count">%1$d</xliff:g> van hun wedstrijden</item>
     </plurals>
     <string name="sports_league_label">Competitie</string>
-    <string name="sports_next">volgende: <xliff:g id="event">%1$s</xliff:g></string>
-    <string name="sports_mens_and_womens">mannen en vrouwen</string>
     <string name="sports_no_playlist_title">Voeg een afspeellijst toe om wedstrijden te kijken</string>
     <string name="sports_no_playlist_body">Uitslagen, standen en meldingen werken zonder. Met een afspeellijst vindt OwnTV elke zender die deze wedstrijd uitzendt.</string>
     <string name="sports_add_playlist">Afspeellijst toevoegen</string>
     <string name="sports_home_row">Live sport</string>
     <string name="sports_home_row_description">Gevolgde wedstrijden, als er één live is of bijna begint</string>
     <string name="sports_empty_nothing_followed">Nog geen sporten of competities gekozen</string>
-    <string name="sports_empty_choose_in">Kies ze bij Instellingen → Sport → Sporten en competities.</string>
+    <string name="sports_empty_choose_in">Kies ze bij Instellingen → App → Sport → Sporten en competities.</string>
     <string name="sports_load_time_warning">Hoe meer sporten en competities je kiest, hoe langer laden en opbouwen duren.</string>
     <string name="sports_sport_buttons">Sportknoppen</string>
     <string name="sports_sport_buttons_mine">Mijn sporten</string>

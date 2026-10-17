@@ -288,14 +288,6 @@
     <string name="sports_scores_espn">സ്കോറുകൾ: ESPN</string>
     <string name="sports_my_teams">എന്റെ ടീമുകൾ</string>
     <string name="sports_live_now">ഇപ്പോൾ തത്സമയം</string>
-    <plurals name="sports_on_channels">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> ചാനലിൽ</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> ചാനലുകളിൽ</item>
-    </plurals>
-    <plurals name="sports_on_your_channels">
-        <item quantity="one">നിങ്ങളുടെ <xliff:g id="count">%1$d</xliff:g> ചാനലിൽ</item>
-        <item quantity="other">നിങ്ങളുടെ <xliff:g id="count">%1$d</xliff:g> ചാനലുകളിൽ</item>
-    </plurals>
     <string name="sports_not_on_channels">നിങ്ങളുടെ ചാനലുകളിൽ ഇല്ല</string>
     <string name="sports_on_channels_now">ഇപ്പോൾ നിങ്ങളുടെ ചാനലുകളിലെ സ്പോർട്സ്</string>
     <string name="sports_on_channels_now_mobile">നിങ്ങളുടെ ചാനലുകളിലെ സ്പോർട്സ്</string>
@@ -306,8 +298,6 @@
     <string name="sports_reminder_set">ഓർമ്മപ്പെടുത്തൽ</string>
     <string name="sports_until"><xliff:g id="time">%1$s</xliff:g> വരെ</string>
     <string name="sports_set">സെറ്റ് <xliff:g id="set">%1$d</xliff:g></string>
-    <string name="sports_matchday">റൗണ്ട് <xliff:g id="round">%1$d</xliff:g></string>
-    <string name="sports_half_time_score">ഹാഫ് ടൈം <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_overs"><xliff:g id="overs">%1$s</xliff:g> ഓവർ</string>
     <string name="sports_empty_nothing">നിങ്ങൾ പിന്തുടരുന്നവയിൽ ഇന്ന് മത്സരങ്ങളില്ല</string>
     <string name="sports_empty_unreachable">ഇപ്പോൾ സ്കോറുകൾ ലഭ്യമല്ല. നിങ്ങളുടെ ചാനലുകൾ പ്രവർത്തിക്കുന്നുണ്ട്.</string>
@@ -340,7 +330,6 @@
     <string name="sports_tab_stats">സ്ഥിതിവിവരം</string>
     <string name="sports_tab_lineups">ലൈനപ്പുകൾ</string>
     <string name="sports_tab_table">പട്ടിക</string>
-    <string name="sports_tab_h2h">നേർക്കുനേർ</string>
     <string name="sports_following">പിന്തുടരുന്നു</string>
     <string name="sports_follow">പിന്തുടരുക</string>
     <string name="sports_event_goal">ഗോൾ · <xliff:g id="player">%1$s</xliff:g></string>
@@ -354,17 +343,7 @@
     <string name="sports_event_kickoff">കിക്കോഫ്</string>
     <string name="sports_event_half_time">ഹാഫ് ടൈം</string>
     <string name="sports_event_full_time">ഫുൾ ടൈം</string>
-    <string name="sports_stat_possession">പന്തടക്കം</string>
-    <string name="sports_stat_shots">ഷോട്ടുകൾ</string>
-    <string name="sports_stat_shots_on_target">ലക്ഷ്യത്തിലേക്കുള്ള ഷോട്ടുകൾ</string>
-    <string name="sports_stat_corners">കോർണറുകൾ</string>
-    <string name="sports_stat_fouls">ഫൗളുകൾ</string>
-    <string name="sports_stat_yellow_cards">മഞ്ഞക്കാർഡുകൾ</string>
     <string name="sports_stat_red_cards">ചുവപ്പ് കാർഡുകൾ</string>
-    <string name="sports_stat_offsides">ഓഫ്സൈഡ്</string>
-    <string name="sports_stat_saves">സേവുകൾ</string>
-    <string name="sports_stat_passes">പാസുകൾ</string>
-    <string name="sports_stat_accurate_passes">കൃത്യമായ പാസുകൾ</string>
     <string name="sports_watch_live">തത്സമയം കാണുക</string>
     <plurals name="sports_watch_live_count">
         <item quantity="one">തത്സമയം കാണുക · <xliff:g id="count">%1$d</xliff:g> ചാനൽ</item>
@@ -377,7 +356,6 @@
     <string name="sports_reason_pick"><xliff:g id="competition">%1$s</xliff:g>-നായി നിങ്ങൾ തിരഞ്ഞെടുത്തത്</string>
     <string name="sports_reason_likely">സാധാരണ <xliff:g id="competition">%1$s</xliff:g> കാണിക്കുന്നു</string>
     <string name="sports_confirmed">ഗൈഡ് സ്ഥിരീകരിച്ചു</string>
-    <string name="sports_event_channel">ഇവന്റ് ചാനൽ</string>
     <plurals name="sports_hidden">
         <item quantity="one">+ ഫിൽട്ടറുകൾ മറച്ച <xliff:g id="count">%1$d</xliff:g></item>
         <item quantity="other">+ ഫിൽട്ടറുകൾ മറച്ച <xliff:g id="count">%1$d</xliff:g></item>
@@ -416,7 +394,6 @@
     <string name="sports_switch_channel">ചാനൽ മാറ്റുക</string>
     <string name="sports_tab_fixtures">ഫിക്സ്ചറുകൾ</string>
     <string name="sports_tab_results">ഫലങ്ങൾ</string>
-    <string name="sports_tab_top_scorers">ടോപ് സ്കോറർമാർ</string>
     <string name="sports_table_team">ടീം</string>
     <string name="sports_table_played">ക</string>
     <string name="sports_table_won">ജ</string>
@@ -426,19 +403,13 @@
     <string name="sports_table_points">പോ</string>
     <string name="sports_table_form">ഫോം</string>
     <string name="sports_this_matchday">ഈ റൗണ്ട്</string>
-    <string name="sports_matchday_of"><xliff:g id="rounds">%2$d</xliff:g>-ൽ റൗണ്ട് <xliff:g id="round">%1$d</xliff:g></string>
     <string name="sports_settings_what">എന്ത് കാണിക്കണം</string>
     <string name="sports_show_in_menu">മെനുവിൽ സ്പോർട്സ് കാണിക്കുക</string>
-    <string name="sports_show_in_menu_mobile">സ്പോർട്സ് ടാബ്</string>
     <string name="sports_show_in_menu_description">സ്ഥിരമായി ഓൺ, പ്ലേലിസ്റ്റ് ഉണ്ടെങ്കിലും ഇല്ലെങ്കിലും</string>
     <string name="sports_leagues">കായിക ഇനങ്ങളും ലീഗുകളും</string>
     <plurals name="sports_league_count">
         <item quantity="one"><xliff:g id="count">%1$d</xliff:g> ലീഗ്</item>
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> ലീഗുകൾ</item>
-    </plurals>
-    <plurals name="sports_sport_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> കായിക ഇനം</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> കായിക ഇനങ്ങൾ</item>
     </plurals>
     <string name="sports_spoiler_free">സ്പോയിലർ ഇല്ലാതെ</string>
     <string name="sports_spoiler_free_description">OK അമർത്തുന്നതുവരെ സ്കോറുകൾ മറയ്ക്കുക</string>
@@ -455,17 +426,12 @@
     <string name="sports_score_info_bar_description">ബാർ തുറന്നിരിക്കുമ്പോൾ മാത്രം, ഗോൾ മുൻകൂട്ടി വെളിപ്പെടുത്തില്ല</string>
     <string name="sports_score_info_bar_description_mobile">ബാർ തുറന്നിരിക്കുമ്പോൾ മാത്രം</string>
     <string name="sports_goal_alerts_description">എന്റെ ടീമുകൾക്ക്, മറ്റൊന്ന് കാണുമ്പോൾ</string>
-    <string name="sports_goal_alerts_summary_closed"><xliff:g id="who">%1$s</xliff:g> · OwnTV അടച്ചിരിക്കുമ്പോഴും</string>
     <string name="sports_match_reminders_description">കിക്കോഫിന് മുമ്പ്, മികച്ച ചാനലിനൊപ്പം</string>
     <string name="sports_remembered_channels">ഓർമ്മിച്ച ചാനലുകൾ</string>
     <string name="sports_remembered_one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g></string>
     <plurals name="sports_remembered_summary">
         <item quantity="one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> കൂടി</item>
         <item quantity="other"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> കൂടി</item>
-    </plurals>
-    <plurals name="sports_competition_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> മത്സരം</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> മത്സരങ്ങൾ</item>
     </plurals>
     <string name="sports_show_likely">“സാധ്യതയുള്ള” ചാനലുകൾ കാണിക്കുക</string>
     <string name="sports_show_likely_description">ഗൈഡ് സ്ഥിരീകരണമില്ലാത്ത സ്പോർട്സ് ചാനലുകൾ</string>
@@ -487,22 +453,19 @@
     <string name="sports_live_card_description">ഫുൾ ടൈം വരെ ഓരോ 30 സെ. പുതുക്കും; ഒരു മത്സരത്തിൽ നിന്ന് ആരംഭിക്കാം</string>
     <string name="sports_alerts_footnote">OwnTV അടച്ചിരിക്കുമ്പോൾ അലേർട്ടുകൾ സാധാരണയായി ഒരു മിനിറ്റിനുള്ളിൽ എത്തും. ഫോൺ സ്ക്രീൻ ഓഫാക്കി ദീർഘനേരം അനങ്ങാതെ കിടന്നാൽ, Android അവ ഏകദേശം 15 മിനിറ്റ് വരെ വൈകിപ്പിച്ചേക്കാം. തത്സമയ സ്കോർ കാർഡ് വൈകില്ല.</string>
     <string name="sports_search_teams">ടീമുകൾ, കളിക്കാർ, ലീഗുകൾ തിരയുക</string>
-    <string name="sports_live_now_score">ഇപ്പോൾ തത്സമയം <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_suggested">നിങ്ങൾ കാണുന്നതിൽ നിന്നുള്ള നിർദ്ദേശങ്ങൾ</string>
     <plurals name="sports_watched_matches">
         <item quantity="one">അവരുടെ <xliff:g id="count">%1$d</xliff:g> മത്സരം നിങ്ങൾ കണ്ടു</item>
         <item quantity="other">അവരുടെ <xliff:g id="count">%1$d</xliff:g> മത്സരങ്ങൾ നിങ്ങൾ കണ്ടു</item>
     </plurals>
     <string name="sports_league_label">ലീഗ്</string>
-    <string name="sports_next">അടുത്തത്: <xliff:g id="event">%1$s</xliff:g></string>
-    <string name="sports_mens_and_womens">പുരുഷ, വനിതാ</string>
     <string name="sports_no_playlist_title">മത്സരങ്ങൾ കാണാൻ ഒരു പ്ലേലിസ്റ്റ് ചേർക്കുക</string>
     <string name="sports_no_playlist_body">സ്കോറുകൾ, പട്ടികകൾ, അലേർട്ടുകൾ എന്നിവ ഇതില്ലാതെയും പ്രവർത്തിക്കും. ഒരു പ്ലേലിസ്റ്റ് ഉണ്ടെങ്കിൽ, ഈ മത്സരം കാണിക്കുന്ന എല്ലാ ചാനലുകളും OwnTV കണ്ടെത്തും.</string>
     <string name="sports_add_playlist">പ്ലേലിസ്റ്റ് ചേർക്കുക</string>
     <string name="sports_home_row">തത്സമയ സ്പോർട്സ്</string>
     <string name="sports_home_row_description">പിന്തുടരുന്ന മത്സരങ്ങൾ, ഒന്ന് തത്സമയമോ ആരംഭിക്കാറായോ ആയിരിക്കുമ്പോൾ</string>
     <string name="sports_empty_nothing_followed">ഇതുവരെ കായിക ഇനങ്ങളോ ലീഗുകളോ തിരഞ്ഞെടുത്തിട്ടില്ല</string>
-    <string name="sports_empty_choose_in">ക്രമീകരണങ്ങൾ → സ്പോർട്സ് → കായിക ഇനങ്ങളും ലീഗുകളും എന്നതിൽ അവ തിരഞ്ഞെടുക്കുക.</string>
+    <string name="sports_empty_choose_in">ക്രമീകരണങ്ങൾ → ആപ്പ് → സ്പോർട്സ് → കായിക ഇനങ്ങളും ലീഗുകളും എന്നതിൽ അവ തിരഞ്ഞെടുക്കുക.</string>
     <string name="sports_load_time_warning">കൂടുതൽ കായിക ഇനങ്ങളും ലീഗുകളും തിരഞ്ഞെടുക്കുന്തോറും ലോഡിംഗിനും നിർമ്മാണത്തിനും കൂടുതൽ സമയമെടുക്കും.</string>
     <string name="sports_sport_buttons">കായിക ബട്ടണുകൾ</string>
     <string name="sports_sport_buttons_mine">എന്റെ കായിക ഇനങ്ങൾ</string>

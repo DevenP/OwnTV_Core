@@ -167,4 +167,19 @@ class WatchReaderTest {
         assertEquals("EN", ChannelFacets.of("UK| SKY SPORTS FOOTBALL FHD").language)
         assertEquals(null, ChannelFacets.of("BL 18:30 Frankfurt v Köln").language)
     }
+
+    @Test fun `a fixture channel for another match and a divider row are never likely`() {
+        val keys = WatchMatcher.Keys(match("1", frankfurt, koln))
+        assertTrue(WatchMatcher.isLikely(keys, "DE| SKY SPORT BUNDESLIGA 1"))
+        assertEquals(false, WatchMatcher.isLikely(keys, "Next | Hertha vs. Bochum | German Bundesliga"))
+        assertTrue(WatchMatcher.isSeparator("##### BUNDESLIGA #####"))
+        assertEquals(false, WatchMatcher.isSeparator("DE| SKY SPORT BUNDESLIGA 1"))
+        val ranked = WatchMatcher.rank(emptyList(), emptyList(), listOf(ch("##### BUNDESLIGA #####"), ch("DE| SKY SPORT BUNDESLIGA 1")), emptyList(), null)
+        assertEquals(listOf("DE| SKY SPORT BUNDESLIGA 1"), ranked.map { it.channel.name })
+    }
+
+    @Test fun `a colon country prefix gives country and language`() {
+        val f = ChannelFacets.of("UK: PREMIER LEAGUE+ 1")
+        assertEquals("UK", f.country); assertEquals("EN", f.language)
+    }
 }

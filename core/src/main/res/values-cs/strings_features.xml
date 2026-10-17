@@ -318,18 +318,6 @@
     <string name="sports_scores_espn">Výsledky: ESPN</string>
     <string name="sports_my_teams">Moje týmy</string>
     <string name="sports_live_now">Právě živě</string>
-    <plurals name="sports_on_channels">
-        <item quantity="one">Na <xliff:g id="count">%1$d</xliff:g> kanálu</item>
-        <item quantity="few">Na <xliff:g id="count">%1$d</xliff:g> kanálech</item>
-        <item quantity="many">Na <xliff:g id="count">%1$d</xliff:g> kanálech</item>
-        <item quantity="other">Na <xliff:g id="count">%1$d</xliff:g> kanálech</item>
-    </plurals>
-    <plurals name="sports_on_your_channels">
-        <item quantity="one">Na <xliff:g id="count">%1$d</xliff:g> z vašich kanálů</item>
-        <item quantity="few">Na <xliff:g id="count">%1$d</xliff:g> z vašich kanálů</item>
-        <item quantity="many">Na <xliff:g id="count">%1$d</xliff:g> z vašich kanálů</item>
-        <item quantity="other">Na <xliff:g id="count">%1$d</xliff:g> z vašich kanálů</item>
-    </plurals>
     <string name="sports_not_on_channels">Není na vašich kanálech</string>
     <string name="sports_on_channels_now">Sport na vašich kanálech právě teď</string>
     <string name="sports_on_channels_now_mobile">Sport na vašich kanálech</string>
@@ -340,8 +328,6 @@
     <string name="sports_reminder_set">Připomínka</string>
     <string name="sports_until">do <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>. set</string>
-    <string name="sports_matchday"><xliff:g id="round">%1$d</xliff:g>. kolo</string>
-    <string name="sports_half_time_score">Poločas <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_overs"><xliff:g id="overs">%1$s</xliff:g> ov</string>
     <string name="sports_empty_nothing">Dnes se v ničem, co sledujete, nehraje</string>
     <string name="sports_empty_unreachable">Výsledky teď nejsou dostupné. Vaše kanály fungují dál.</string>
@@ -374,7 +360,6 @@
     <string name="sports_tab_stats">Statistiky</string>
     <string name="sports_tab_lineups">Sestavy</string>
     <string name="sports_tab_table">Tabulka</string>
-    <string name="sports_tab_h2h">Vzájemné zápasy</string>
     <string name="sports_following">Sledujete</string>
     <string name="sports_follow">Sledovat</string>
     <string name="sports_event_goal">Gól · <xliff:g id="player">%1$s</xliff:g></string>
@@ -388,17 +373,7 @@
     <string name="sports_event_kickoff">Výkop</string>
     <string name="sports_event_half_time">Poločas</string>
     <string name="sports_event_full_time">Konec zápasu</string>
-    <string name="sports_stat_possession">Držení míče</string>
-    <string name="sports_stat_shots">Střely</string>
-    <string name="sports_stat_shots_on_target">Střely na branku</string>
-    <string name="sports_stat_corners">Rohy</string>
-    <string name="sports_stat_fouls">Fauly</string>
-    <string name="sports_stat_yellow_cards">Žluté karty</string>
     <string name="sports_stat_red_cards">Červené karty</string>
-    <string name="sports_stat_offsides">Ofsajdy</string>
-    <string name="sports_stat_saves">Zákroky</string>
-    <string name="sports_stat_passes">Přihrávky</string>
-    <string name="sports_stat_accurate_passes">Přesné přihrávky</string>
     <string name="sports_watch_live">Sledovat živě</string>
     <plurals name="sports_watch_live_count">
         <item quantity="one">Sledovat živě · <xliff:g id="count">%1$d</xliff:g> kanál</item>
@@ -413,7 +388,6 @@
     <string name="sports_reason_pick">Vaše volba pro <xliff:g id="competition">%1$s</xliff:g></string>
     <string name="sports_reason_likely">Obvykle vysílá <xliff:g id="competition">%1$s</xliff:g></string>
     <string name="sports_confirmed">Potvrzeno programem</string>
-    <string name="sports_event_channel">Kanál události</string>
     <plurals name="sports_hidden">
         <item quantity="one">+ <xliff:g id="count">%1$d</xliff:g> skrytý filtry</item>
         <item quantity="few">+ <xliff:g id="count">%1$d</xliff:g> skryté filtry</item>
@@ -456,7 +430,6 @@
     <string name="sports_switch_channel">Přepnout kanál</string>
     <string name="sports_tab_fixtures">Program</string>
     <string name="sports_tab_results">Výsledky</string>
-    <string name="sports_tab_top_scorers">Střelci</string>
     <string name="sports_table_team">Tým</string>
     <string name="sports_table_played">Z</string>
     <string name="sports_table_won">V</string>
@@ -466,10 +439,8 @@
     <string name="sports_table_points">B</string>
     <string name="sports_table_form">Forma</string>
     <string name="sports_this_matchday">Toto kolo</string>
-    <string name="sports_matchday_of"><xliff:g id="round">%1$d</xliff:g>. kolo z <xliff:g id="rounds">%2$d</xliff:g></string>
     <string name="sports_settings_what">Co zobrazit</string>
     <string name="sports_show_in_menu">Zobrazit Sport v nabídce</string>
-    <string name="sports_show_in_menu_mobile">Karta Sport</string>
     <string name="sports_show_in_menu_description">Ve výchozím stavu zapnuto, s playlistem i bez</string>
     <string name="sports_leagues">Sporty a soutěže</string>
     <plurals name="sports_league_count">
@@ -477,12 +448,6 @@
         <item quantity="few"><xliff:g id="count">%1$d</xliff:g> soutěže</item>
         <item quantity="many"><xliff:g id="count">%1$d</xliff:g> soutěží</item>
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> soutěží</item>
-    </plurals>
-    <plurals name="sports_sport_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> sport</item>
-        <item quantity="few"><xliff:g id="count">%1$d</xliff:g> sporty</item>
-        <item quantity="many"><xliff:g id="count">%1$d</xliff:g> sportů</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> sportů</item>
     </plurals>
     <string name="sports_spoiler_free">Bez spoilerů</string>
     <string name="sports_spoiler_free_description">Skrýt výsledky, dokud na nich nestisknete OK</string>
@@ -499,7 +464,6 @@
     <string name="sports_score_info_bar_description">Zobrazí se jen s otevřeným pruhem, aby neprozradil gól</string>
     <string name="sports_score_info_bar_description_mobile">Jen s otevřeným pruhem</string>
     <string name="sports_goal_alerts_description">Pro moje týmy, když sleduji něco jiného</string>
-    <string name="sports_goal_alerts_summary_closed"><xliff:g id="who">%1$s</xliff:g> · i když je OwnTV zavřený</string>
     <string name="sports_match_reminders_description">Před výkopem, s nejlepším kanálem</string>
     <string name="sports_remembered_channels">Zapamatované kanály</string>
     <string name="sports_remembered_one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g></string>
@@ -508,12 +472,6 @@
         <item quantity="few"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> další</item>
         <item quantity="many"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> dalších</item>
         <item quantity="other"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> dalších</item>
-    </plurals>
-    <plurals name="sports_competition_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> soutěž</item>
-        <item quantity="few"><xliff:g id="count">%1$d</xliff:g> soutěže</item>
-        <item quantity="many"><xliff:g id="count">%1$d</xliff:g> soutěží</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> soutěží</item>
     </plurals>
     <string name="sports_show_likely">Zobrazit „pravděpodobné“ kanály</string>
     <string name="sports_show_likely_description">Sportovní kanály bez potvrzení programem</string>
@@ -535,7 +493,6 @@
     <string name="sports_live_card_description">Obnovuje se každých 30 s do konce; spustíte ho ze zápasu</string>
     <string name="sports_alerts_footnote">Při zavřeném OwnTV dorazí upozornění obvykle do minuty. Pokud telefon dlouho leží se zhasnutou obrazovkou, Android je může zdržet až asi o 15 minut. Karta s živým výsledkem se nezdržuje.</string>
     <string name="sports_search_teams">Hledat týmy, hráče, soutěže</string>
-    <string name="sports_live_now_score">právě živě <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_suggested">Návrhy podle toho, co sledujete</string>
     <plurals name="sports_watched_matches">
         <item quantity="one">Sledovali jste <xliff:g id="count">%1$d</xliff:g> jejich zápas</item>
@@ -544,15 +501,13 @@
         <item quantity="other">Sledovali jste <xliff:g id="count">%1$d</xliff:g> jejich zápasů</item>
     </plurals>
     <string name="sports_league_label">Soutěž</string>
-    <string name="sports_next">další: <xliff:g id="event">%1$s</xliff:g></string>
-    <string name="sports_mens_and_womens">muži i ženy</string>
     <string name="sports_no_playlist_title">Přidejte playlist a sledujte zápasy</string>
     <string name="sports_no_playlist_body">Výsledky, tabulky a upozornění fungují i bez něj. S playlistem OwnTV najde každý kanál, který zápas vysílá.</string>
     <string name="sports_add_playlist">Přidat playlist</string>
     <string name="sports_home_row">Sport živě</string>
     <string name="sports_home_row_description">Sledované zápasy, když se nějaký hraje nebo brzy začne</string>
     <string name="sports_empty_nothing_followed">Zatím nemáte vybrané žádné sporty ani soutěže</string>
-    <string name="sports_empty_choose_in">Vyberte je v části Nastavení → Sport → Sporty a soutěže.</string>
+    <string name="sports_empty_choose_in">Vyberte je v části Nastavení → Aplikace → Sport → Sporty a soutěže.</string>
     <string name="sports_load_time_warning">Čím víc sportů a soutěží vyberete, tím déle trvá načítání a sestavení.</string>
     <string name="sports_sport_buttons">Tlačítka sportů</string>
     <string name="sports_sport_buttons_mine">Moje sporty</string>

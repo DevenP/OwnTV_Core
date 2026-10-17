@@ -273,12 +273,6 @@
     <string name="sports_scores_espn">점수: ESPN</string>
     <string name="sports_my_teams">내 팀</string>
     <string name="sports_live_now">지금 생중계</string>
-    <plurals name="sports_on_channels">
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g>개 채널에서 방송</item>
-    </plurals>
-    <plurals name="sports_on_your_channels">
-        <item quantity="other">내 채널 <xliff:g id="count">%1$d</xliff:g>개에서 방송</item>
-    </plurals>
     <string name="sports_not_on_channels">내 채널에서 방송 안 함</string>
     <string name="sports_on_channels_now">지금 내 채널의 스포츠</string>
     <string name="sports_on_channels_now_mobile">내 채널의 스포츠</string>
@@ -289,8 +283,6 @@
     <string name="sports_reminder_set">알림</string>
     <string name="sports_until"><xliff:g id="time">%1$s</xliff:g>까지</string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>세트</string>
-    <string name="sports_matchday"><xliff:g id="round">%1$d</xliff:g>라운드</string>
-    <string name="sports_half_time_score">전반 <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_overs"><xliff:g id="overs">%1$s</xliff:g> 오버</string>
     <string name="sports_empty_nothing">오늘 팔로우한 경기가 없습니다</string>
     <string name="sports_empty_unreachable">지금은 점수를 가져올 수 없습니다. 채널은 계속 이용할 수 있습니다.</string>
@@ -323,7 +315,6 @@
     <string name="sports_tab_stats">통계</string>
     <string name="sports_tab_lineups">라인업</string>
     <string name="sports_tab_table">순위</string>
-    <string name="sports_tab_h2h">상대 전적</string>
     <string name="sports_following">팔로잉</string>
     <string name="sports_follow">팔로우</string>
     <string name="sports_event_goal">골 · <xliff:g id="player">%1$s</xliff:g></string>
@@ -337,17 +328,7 @@
     <string name="sports_event_kickoff">킥오프</string>
     <string name="sports_event_half_time">하프타임</string>
     <string name="sports_event_full_time">경기 종료</string>
-    <string name="sports_stat_possession">점유율</string>
-    <string name="sports_stat_shots">슈팅</string>
-    <string name="sports_stat_shots_on_target">유효 슈팅</string>
-    <string name="sports_stat_corners">코너킥</string>
-    <string name="sports_stat_fouls">파울</string>
-    <string name="sports_stat_yellow_cards">옐로카드</string>
     <string name="sports_stat_red_cards">레드카드</string>
-    <string name="sports_stat_offsides">오프사이드</string>
-    <string name="sports_stat_saves">선방</string>
-    <string name="sports_stat_passes">패스</string>
-    <string name="sports_stat_accurate_passes">정확한 패스</string>
     <string name="sports_watch_live">실시간 보기</string>
     <plurals name="sports_watch_live_count">
         <item quantity="other">실시간 보기 · <xliff:g id="count">%1$d</xliff:g>개 채널</item>
@@ -359,7 +340,6 @@
     <string name="sports_reason_pick"><xliff:g id="competition">%1$s</xliff:g>에 선택한 채널</string>
     <string name="sports_reason_likely">주로 <xliff:g id="competition">%1$s</xliff:g> 방송</string>
     <string name="sports_confirmed">편성표로 확인됨</string>
-    <string name="sports_event_channel">이벤트 채널</string>
     <plurals name="sports_hidden">
         <item quantity="other">+ 필터로 <xliff:g id="count">%1$d</xliff:g>개 숨김</item>
     </plurals>
@@ -396,7 +376,6 @@
     <string name="sports_switch_channel">채널 전환</string>
     <string name="sports_tab_fixtures">일정</string>
     <string name="sports_tab_results">결과</string>
-    <string name="sports_tab_top_scorers">득점 순위</string>
     <string name="sports_table_team">팀</string>
     <string name="sports_table_played">경기</string>
     <string name="sports_table_won">승</string>
@@ -406,17 +385,12 @@
     <string name="sports_table_points">승점</string>
     <string name="sports_table_form">최근</string>
     <string name="sports_this_matchday">이번 라운드</string>
-    <string name="sports_matchday_of"><xliff:g id="rounds">%2$d</xliff:g>라운드 중 <xliff:g id="round">%1$d</xliff:g>라운드</string>
     <string name="sports_settings_what">표시 항목</string>
     <string name="sports_show_in_menu">메뉴에 스포츠 표시</string>
-    <string name="sports_show_in_menu_mobile">스포츠 탭</string>
     <string name="sports_show_in_menu_description">기본값 켜짐, 재생목록 유무와 관계없음</string>
     <string name="sports_leagues">종목 및 리그</string>
     <plurals name="sports_league_count">
         <item quantity="other">리그 <xliff:g id="count">%1$d</xliff:g>개</item>
-    </plurals>
-    <plurals name="sports_sport_count">
-        <item quantity="other">종목 <xliff:g id="count">%1$d</xliff:g>개</item>
     </plurals>
     <string name="sports_spoiler_free">스포일러 방지</string>
     <string name="sports_spoiler_free_description">OK를 누를 때까지 점수 숨기기</string>
@@ -433,15 +407,11 @@
     <string name="sports_score_info_bar_description">표시줄이 열려 있을 때만 표시되어 골을 미리 알리지 않음</string>
     <string name="sports_score_info_bar_description_mobile">표시줄이 열려 있을 때만</string>
     <string name="sports_goal_alerts_description">내 팀, 다른 것을 볼 때</string>
-    <string name="sports_goal_alerts_summary_closed"><xliff:g id="who">%1$s</xliff:g> · OwnTV가 닫혀 있어도</string>
     <string name="sports_match_reminders_description">킥오프 전, 최적의 채널과 함께</string>
     <string name="sports_remembered_channels">기억한 채널</string>
     <string name="sports_remembered_one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g></string>
     <plurals name="sports_remembered_summary">
         <item quantity="other"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · 외 <xliff:g id="count">%3$d</xliff:g>개</item>
-    </plurals>
-    <plurals name="sports_competition_count">
-        <item quantity="other">대회 <xliff:g id="count">%1$d</xliff:g>개</item>
     </plurals>
     <string name="sports_show_likely">‘가능성 있음’ 채널 표시</string>
     <string name="sports_show_likely_description">편성표 확인이 없는 스포츠 채널</string>
@@ -463,21 +433,18 @@
     <string name="sports_live_card_description">경기 종료까지 30초마다 갱신, 경기 페이지에서 시작</string>
     <string name="sports_alerts_footnote">OwnTV가 닫혀 있어도 알림은 보통 1분 안에 도착합니다. 휴대전화가 화면이 꺼진 채 오래 움직이지 않으면 Android가 최대 약 15분까지 늦출 수 있습니다. 실시간 점수 카드는 늦어지지 않습니다.</string>
     <string name="sports_search_teams">팀, 선수, 리그 검색</string>
-    <string name="sports_live_now_score">지금 생중계 <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_suggested">시청 기록 기반 추천</string>
     <plurals name="sports_watched_matches">
         <item quantity="other">이 팀의 경기를 <xliff:g id="count">%1$d</xliff:g>번 시청함</item>
     </plurals>
     <string name="sports_league_label">리그</string>
-    <string name="sports_next">다음: <xliff:g id="event">%1$s</xliff:g></string>
-    <string name="sports_mens_and_womens">남자 및 여자</string>
     <string name="sports_no_playlist_title">경기를 보려면 재생목록을 추가하세요</string>
     <string name="sports_no_playlist_body">점수, 순위, 알림은 재생목록 없이도 작동합니다. 재생목록이 있으면 OwnTV가 이 경기를 방송하는 모든 채널을 찾습니다.</string>
     <string name="sports_add_playlist">재생목록 추가</string>
     <string name="sports_home_row">실시간 스포츠</string>
     <string name="sports_home_row_description">팔로우한 경기, 생중계 중이거나 곧 시작할 때</string>
     <string name="sports_empty_nothing_followed">아직 선택한 종목이나 리그가 없습니다</string>
-    <string name="sports_empty_choose_in">설정 → 스포츠 → 종목 및 리그에서 선택하세요.</string>
+    <string name="sports_empty_choose_in">설정 → 앱 → 스포츠 → 종목 및 리그에서 선택하세요.</string>
     <string name="sports_load_time_warning">선택한 종목과 리그가 많을수록 불러오기와 구성에 시간이 더 걸립니다.</string>
     <string name="sports_sport_buttons">종목 버튼</string>
     <string name="sports_sport_buttons_mine">내 종목</string>

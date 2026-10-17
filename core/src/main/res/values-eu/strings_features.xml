@@ -247,14 +247,6 @@
     <string name="sports_scores_espn">Emaitzak: ESPN</string>
     <string name="sports_my_teams">Nire taldeak</string>
     <string name="sports_live_now">Orain zuzenean</string>
-    <plurals name="sports_on_channels">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> katetan</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> katetan</item>
-    </plurals>
-    <plurals name="sports_on_your_channels">
-        <item quantity="one">Zure <xliff:g id="count">%1$d</xliff:g> katetan</item>
-        <item quantity="other">Zure <xliff:g id="count">%1$d</xliff:g> katetan</item>
-    </plurals>
     <string name="sports_not_on_channels">Ez dago zure kateetan</string>
     <string name="sports_on_channels_now">Kirola zure kateetan orain</string>
     <string name="sports_on_channels_now_mobile">Kirola zure kateetan</string>
@@ -265,8 +257,6 @@
     <string name="sports_reminder_set">Oroigarria</string>
     <string name="sports_until"><xliff:g id="time">%1$s</xliff:g> arte</string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>. seta</string>
-    <string name="sports_matchday"><xliff:g id="round">%1$d</xliff:g>. jardunaldia</string>
-    <string name="sports_half_time_score">Atsedena <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_overs"><xliff:g id="overs">%1$s</xliff:g> over</string>
     <string name="sports_empty_nothing">Gaur ez dago partidarik jarraitzen duzunean</string>
     <string name="sports_empty_unreachable">Ezin da emaitzetara iritsi orain. Zure kateek badabiltza oraindik.</string>
@@ -299,7 +289,6 @@
     <string name="sports_tab_stats">Estatistikak</string>
     <string name="sports_tab_lineups">Hamaikakoak</string>
     <string name="sports_tab_table">Sailkapena</string>
-    <string name="sports_tab_h2h">Aurrez aurre</string>
     <string name="sports_following">Jarraitzen</string>
     <string name="sports_follow">Jarraitu</string>
     <string name="sports_event_goal">Gola · <xliff:g id="player">%1$s</xliff:g></string>
@@ -313,17 +302,7 @@
     <string name="sports_event_kickoff">Hasiera</string>
     <string name="sports_event_half_time">Atsedena</string>
     <string name="sports_event_full_time">Amaiera</string>
-    <string name="sports_stat_possession">Baloiaren jabetza</string>
-    <string name="sports_stat_shots">Jaurtiketak</string>
-    <string name="sports_stat_shots_on_target">Atera jaurtiketak</string>
-    <string name="sports_stat_corners">Kornerrak</string>
-    <string name="sports_stat_fouls">Faltak</string>
-    <string name="sports_stat_yellow_cards">Txartel horiak</string>
     <string name="sports_stat_red_cards">Txartel gorriak</string>
-    <string name="sports_stat_offsides">Jokoz kanpoak</string>
-    <string name="sports_stat_saves">Geldiketak</string>
-    <string name="sports_stat_passes">Pasak</string>
-    <string name="sports_stat_accurate_passes">Pase zehatzak</string>
     <string name="sports_watch_live">Ikusi zuzenean</string>
     <plurals name="sports_watch_live_count">
         <item quantity="one">Ikusi zuzenean · <xliff:g id="count">%1$d</xliff:g> kate</item>
@@ -336,7 +315,6 @@
     <string name="sports_reason_pick">Zure aukera <xliff:g id="competition">%1$s</xliff:g>-rako</string>
     <string name="sports_reason_likely">Normalean <xliff:g id="competition">%1$s</xliff:g> ematen du</string>
     <string name="sports_confirmed">Gidak berretsia</string>
-    <string name="sports_event_channel">Gertaera-katea</string>
     <plurals name="sports_hidden">
         <item quantity="one">+ <xliff:g id="count">%1$d</xliff:g> iragazkiek ezkutatua</item>
         <item quantity="other">+ <xliff:g id="count">%1$d</xliff:g> iragazkiek ezkutatuak</item>
@@ -375,7 +353,6 @@
     <string name="sports_switch_channel">Aldatu katea</string>
     <string name="sports_tab_fixtures">Egutegia</string>
     <string name="sports_tab_results">Emaitzak</string>
-    <string name="sports_tab_top_scorers">Golegile nagusiak</string>
     <string name="sports_table_team">Taldea</string>
     <string name="sports_table_played">J</string>
     <string name="sports_table_won">I</string>
@@ -385,19 +362,13 @@
     <string name="sports_table_points">P</string>
     <string name="sports_table_form">Forma</string>
     <string name="sports_this_matchday">Jardunaldi hau</string>
-    <string name="sports_matchday_of"><xliff:g id="rounds">%2$d</xliff:g> jardunalditik <xliff:g id="round">%1$d</xliff:g>.a</string>
     <string name="sports_settings_what">Zer erakutsi</string>
     <string name="sports_show_in_menu">Erakutsi Kirola menuan</string>
-    <string name="sports_show_in_menu_mobile">Kirola fitxa</string>
     <string name="sports_show_in_menu_description">Lehenespenez aktibatuta, zerrendarekin edo gabe</string>
     <string name="sports_leagues">Kirolak eta ligak</string>
     <plurals name="sports_league_count">
         <item quantity="one"><xliff:g id="count">%1$d</xliff:g> liga</item>
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> liga</item>
-    </plurals>
-    <plurals name="sports_sport_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> kirol</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> kirol</item>
     </plurals>
     <string name="sports_spoiler_free">Spoilerrik gabe</string>
     <string name="sports_spoiler_free_description">Ezkutatu emaitzak OK sakatu arte</string>
@@ -414,17 +385,12 @@
     <string name="sports_score_info_bar_description">Barra irekita dagoenean bakarrik ageri da, gola ez aurreratzeko</string>
     <string name="sports_score_info_bar_description_mobile">Barra irekita dagoenean soilik</string>
     <string name="sports_goal_alerts_description">Nire taldeentzat, beste zerbait ikusten ari naizela</string>
-    <string name="sports_goal_alerts_summary_closed"><xliff:g id="who">%1$s</xliff:g> · OwnTV itxita dagoenean ere</string>
     <string name="sports_match_reminders_description">Hasiera baino lehen, kate onenarekin</string>
     <string name="sports_remembered_channels">Gogoratutako kateak</string>
     <string name="sports_remembered_one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g></string>
     <plurals name="sports_remembered_summary">
         <item quantity="one"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> gehiago</item>
         <item quantity="other"><xliff:g id="competition">%1$s</xliff:g> → <xliff:g id="channel">%2$s</xliff:g> · <xliff:g id="count">%3$d</xliff:g> gehiago</item>
-    </plurals>
-    <plurals name="sports_competition_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> lehiaketa</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> lehiaketa</item>
     </plurals>
     <string name="sports_show_likely">Erakutsi «litekeena» diren kateak</string>
     <string name="sports_show_likely_description">Gidak berretsi gabeko kirol-kateak</string>
@@ -446,22 +412,19 @@
     <string name="sports_live_card_description">30 s-ro eguneratzen da amaiera arte; partida batetik abiarazten duzu</string>
     <string name="sports_alerts_footnote">OwnTV itxita dagoenean, alertak minutu batean iristen dira normalean. Telefonoa denbora luzez geldi eta pantaila itzalita egon bada, Androidek 15 minutu inguru atzera ditzake. Zuzeneko emaitza-txartela ez da atzeratzen.</string>
     <string name="sports_search_teams">Bilatu taldeak, jokalariak, ligak</string>
-    <string name="sports_live_now_score">orain zuzenean <xliff:g id="score">%1$s</xliff:g></string>
     <string name="sports_suggested">Ikusten duzunaren araberako iradokizunak</string>
     <plurals name="sports_watched_matches">
         <item quantity="one">Haien <xliff:g id="count">%1$d</xliff:g> partida ikusi duzu</item>
         <item quantity="other">Haien <xliff:g id="count">%1$d</xliff:g> partida ikusi dituzu</item>
     </plurals>
     <string name="sports_league_label">Liga</string>
-    <string name="sports_next">hurrengoa: <xliff:g id="event">%1$s</xliff:g></string>
-    <string name="sports_mens_and_womens">gizonezkoak eta emakumezkoak</string>
     <string name="sports_no_playlist_title">Gehitu zerrenda bat partidak ikusteko</string>
     <string name="sports_no_playlist_body">Emaitzak, sailkapenak eta alertak gabe ere badabiltza. Zerrenda batekin, OwnTVk partida hau ematen duen kate oro aurkitzen du.</string>
     <string name="sports_add_playlist">Gehitu zerrenda</string>
     <string name="sports_home_row">Kirola zuzenean</string>
     <string name="sports_home_row_description">Jarraitutako partidak, bat zuzenean edo hastear dagoen bitartean</string>
     <string name="sports_empty_nothing_followed">Oraindik ez duzu kirolik edo ligarik aukeratu</string>
-    <string name="sports_empty_choose_in">Aukeratu itzazu hemen: Ezarpenak → Kirola → Kirolak eta ligak.</string>
+    <string name="sports_empty_choose_in">Aukeratu itzazu hemen: Ezarpenak → Aplikazioa → Kirola → Kirolak eta ligak.</string>
     <string name="sports_load_time_warning">Zenbat eta kirol eta liga gehiago aukeratu, orduan eta gehiago irauten dute kargatzeak eta eraikitzeak.</string>
     <string name="sports_sport_buttons">Kirol-botoiak</string>
     <string name="sports_sport_buttons_mine">Nire kirolak</string>
