@@ -4,12 +4,17 @@ package tv.own.owntv.core.epg
 internal class EpgSourceMerge(val sources: List<EpgSource>, val nextId: Long, val idMap: Map<Long, Long>)
 
 /**
- * Adds [incoming] to [existing] without touching the device's own entries: an incoming source whose
+ * Adds [incoming] to [existing] without dropping the device's own entries: an incoming source whose
  * URL already exists maps to the existing entry, and the rest are appended in the backup's order with
  * ids counting down from [nextId].
+ *
+ * The list's order is the guide priority, so the feeds the backup and the device share take the
+ * backup's order among themselves, in the places they already hold. A feed only the device has keeps
+ * its place; restoring onto a fresh install simply reproduces the backup's list.
  */
 internal fun mergeEpgSources(existing: List<EpgSource>, incoming: List<EpgSource>, nextId: Long): EpgSourceMerge {
     val merged = existing.toMutableList()
+    val existingIds = existing.mapTo(HashSet()) { it.id }
     var next = nextId
     val idMap = HashMap<Long, Long>()
     incoming.forEach { src ->
@@ -29,5 +34,14 @@ internal fun mergeEpgSources(existing: List<EpgSource>, incoming: List<EpgSource
             idMap[src.id] = added.id
         }
     }
-    return EpgSourceMerge(merged, next, idMap)
+    val shared = incoming.mapNotNull { idMap[it.id] }.filter { it in existingIds }.distinct()
+    return EpgSourceMerge(inOrder(merged, shared), next, idMap)
+}
+
+/** [list] with the entries named by [ids] rearranged into that order, within the slots they occupy. */
+private fun inOrder(list: List<EpgSource>, ids: List<Long>): List<EpgSource> {
+    val wanted = ids.toHashSet()
+    val byId = list.associateBy { it.id }
+    val reordered = ids.iterator()
+    return list.map { if (it.id in wanted) byId.getValue(reordered.next()) else it }
 }

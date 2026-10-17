@@ -29,6 +29,10 @@ private val Context.epgStore: DataStore<Preferences> by preferencesDataStore(nam
  * parsed guide still lands in the existing epg_channels / epg_programmes tables, keyed by each EPG
  * source's negative [EpgSource.id]; the guide query simply includes those ids alongside the playlist
  * ids, so channels match guide entries from any feed by their EPG id.
+ *
+ * The list's order is the guide priority: where two feeds carry the same channel, the one nearer the
+ * top wins ([GuidePriority]). It is one list for the whole app, like the feeds themselves, and a
+ * backup carries it as written.
  */
 class EpgSourceStore(private val context: Context) {
 
@@ -69,6 +73,27 @@ class EpgSourceStore(private val context: Context) {
         context.epgStore.edit { prefs ->
             prefs[Keys.LIST] = EpgSourceJson.write(EpgSourceJson.parse(prefs[Keys.LIST]).map { if (it.id == source.id) source else it })
         }
+    }
+
+    /** Move the source one place up or down the list, which is its guide priority. No-op at either end. */
+    suspend fun move(id: Long, up: Boolean) {
+        context.epgStore.edit { prefs ->
+            movedEpgSource(EpgSourceJson.parse(prefs[Keys.LIST]), id, up)
+                ?.let { prefs[Keys.LIST] = EpgSourceJson.write(it) }
+        }
+    }
+
+    /** The list text [priority] was last built from, and what it built. */
+    @Volatile private var priorityCache: Pair<String?, GuidePriority>? = null
+
+    /**
+     * The current guide priority. Every guide read asks for it, so it is rebuilt only when the stored
+     * list text changes; otherwise this is one in-memory DataStore read and a string compare.
+     */
+    suspend fun priority(): GuidePriority {
+        val raw = context.epgStore.data.first()[Keys.LIST]
+        priorityCache?.takeIf { it.first == raw }?.let { return it.second }
+        return GuidePriority.of(EpgSourceJson.parse(raw).map { it.id }).also { priorityCache = raw to it }
     }
 
     suspend fun remove(id: Long) {
@@ -114,8 +139,9 @@ class EpgSourceStore(private val context: Context) {
     }
 
     /**
-     * Merge-restore (backup): adds the backup's EPG sources WITHOUT touching existing ones — an
-     * incoming source whose URL already exists maps to the existing entry. Returns the id mapping
+     * Merge-restore (backup): adds the backup's EPG sources WITHOUT dropping existing ones — an
+     * incoming source whose URL already exists maps to the existing entry, and shared feeds take the
+     * backup's guide priority ([mergeEpgSources]). Returns the id mapping
      * (backup id → device id) so the caller can remap the per-source auto-refresh selections.
      */
     suspend fun mergeJson(raw: String?): Map<Long, Long> {
