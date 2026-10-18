@@ -8,7 +8,7 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 import tv.own.owntv.core.sports.model.Sport
 
-/** Settings → Sports: defaults, first-run choices and the import rules (step 1.7). */
+/** Settings → Sports: defaults, first-run choices and the import rules. */
 class SportsConfigTest {
 
     private val full = SportsConfig(
