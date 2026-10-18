@@ -23,6 +23,7 @@
 ### 🐛 Fixes
 
 - **Cups no longer fetch a table they never have**
+- **A saved channel plays again after the TV wakes from standby**
 - **Settings hints point to the right menu, in every language**
 
 ## core-1.0.68 — 2026-10-17
