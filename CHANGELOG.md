@@ -9,7 +9,7 @@
 > in one bolded line of its own (e.g. **Database v46 · Backup v24 · Breaking**). The detail — what,
 > why, files and verification — belongs in the commit message, never here.
 
-## Unreleased
+## core-1.0.68 — 2026-10-17
 
 **Database v49 · Backup v25 · Breaking (glass settings)**
 
