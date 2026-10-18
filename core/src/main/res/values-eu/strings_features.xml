@@ -339,6 +339,45 @@
     <string name="sports_switch_channel">Aldatu katea</string>
     <string name="sports_tab_fixtures">Egutegia</string>
     <string name="sports_tab_results">Emaitzak</string>
+    <string name="sports_tab_scores">Zuzenean</string>
+    <string name="sports_tab_calendar">Agenda</string>
+    <string name="sports_tab_leagues">Ligak</string>
+    <string name="sports_previous_month">Aurreko hilabetea</string>
+    <string name="sports_next_month">Hurrengo hilabetea</string>
+    <string name="sports_next">Hurrengoa: <xliff:g id="match">%1$s</xliff:g></string>
+    <string name="sports_next_badge">Hurrengoa</string>
+    <string name="sports_new_badge">Berria</string>
+    <string name="sports_no_table_series">Sailkapenik ez — serieak astero aldatzen dira</string>
+    <string name="sports_follow_league">Jarraitu ligari</string>
+    <string name="sports_unfollow_league">Utzi ligari jarraitzeari</string>
+    <string name="sports_no_matches_on"><xliff:g id="day">%1$s</xliff:g>: ez dago partidarik zure kiroletan</string>
+    <string name="sports_nothing_on_day">Ezer ez egun honetan</string>
+    <string name="sports_nothing_in_sport"><xliff:g id="sport">%1$s</xliff:g>: ezer ez egun honetan</string>
+    <string name="sports_change_leagues_hint">Gehitu edo kendu ligak Ezarpenak → Kirola atalean</string>
+    <string name="sports_loading_month"><xliff:g id="month">%1$s</xliff:g> kargatzen…</string>
+    <string name="sports_offline_saved">Gordetakoa erakusten (<xliff:g id="time">%1$s</xliff:g>) — ezin izan da ESPNra iritsi</string>
+    <string name="sports_team_page">Taldearen orria</string>
+    <string name="sports_next_match">Hurrengo partida</string>
+    <string name="sports_last_five">Azken bostak</string>
+    <string name="sports_league_position">Postua ligan</string>
+    <string name="sports_in_my_teams">Nire taldeak atalean</string>
+    <string name="sports_open_match_page">Ireki partidaren orria</string>
+    <string name="sports_open_team_page">Ireki taldearen orria</string>
+    <string name="sports_my_teams_leagues">Zure taldeek jokatzen duten ligak</string>
+    <string name="sports_tab_drivers">Gidariak</string>
+    <string name="sports_tab_constructors">Eraikitzaileak</string>
+    <string name="sports_tab_races">Lasterketak</string>
+    <string name="sports_tab_rankings">Rankinga</string>
+    <string name="sports_tab_matches">Partidak</string>
+    <string name="sports_next_race_weekend">Hurrengo lasterketa-asteburua</string>
+    <string name="sports_last_weekend">Azken asteburua</string>
+    <string name="sports_session_practice_1">Entrenamendu librea 1</string>
+    <string name="sports_session_practice_2">Entrenamendu librea 2</string>
+    <string name="sports_session_practice_3">Entrenamendu librea 3</string>
+    <string name="sports_session_sprint_qualifying">Sprint sailkapena</string>
+    <string name="sports_session_qualifying">Sailkapena</string>
+    <string name="sports_session_sprint">Sprinta</string>
+    <string name="sports_session_race">Lasterketa</string>
     <string name="sports_table_team">Taldea</string>
     <string name="sports_table_played">J</string>
     <string name="sports_table_won">I</string>
@@ -423,6 +462,12 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> orduro</item>
     </plurals>
     <string name="sports_auto_rebuild_app_start">Aplikazioa abiarazten den bakoitzean</string>
+    <string name="sports_calendar_refresh">Agendaren freskatzea</string>
+    <string name="sports_calendar_refresh_description">Gordetako hilabeteak zenbatean behin berriro eskuratzen diren</string>
+    <plurals name="sports_calendar_refresh_days">
+        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> egunean behin</item>
+        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> egunean behin</item>
+    </plurals>
     <string name="sports_find_channels">Bilatu kateak</string>
     <string name="sports_find_channels_description">Partida hau zure gidan eta kateen izenetan bilatzen du. Erreprodukzio-zerrenda handi batean denbora pixka bat behar izan dezake.</string>
     <string name="sports_finding_channels">Zure kateak bilatzen…</string>

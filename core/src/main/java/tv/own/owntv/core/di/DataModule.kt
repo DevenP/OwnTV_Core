@@ -147,11 +147,13 @@ val dataModule = module {
     // everything here — none of it exists, let alone fetches, until a sports screen asks (startup zero-work).
     single<tv.own.owntv.core.sports.SportsSource> { tv.own.owntv.core.sports.EspnSportsSource(get()) }
     single { tv.own.owntv.core.sports.SportsRefreshPolicy() }
+    single { tv.own.owntv.core.sports.SportsGate(get()) }
     single {
         val settings = get<tv.own.owntv.core.settings.SettingsRepository>()
         tv.own.owntv.core.sports.SportsRepository(
             source = get(),
             policy = get(),
+            gate = get(),
             // The active profile's follow list (every catalogue league with "All sports").
             followed = settings.activeSportsConfig.map { it.followedLeagues() },
             liveRefreshSeconds = settings.activeSportsConfig.map { it.liveRefreshSeconds },
@@ -165,6 +167,19 @@ val dataModule = module {
                 .follow(repository.board, settings.activeSportsConfig)
         }
     }
+    single {
+        val settings = get<tv.own.owntv.core.settings.SettingsRepository>()
+        tv.own.owntv.core.sports.SportsCalendar(
+            source = get(),
+            gate = get(),
+            board = get<tv.own.owntv.core.sports.SportsRepository>().board,
+            followed = settings.activeSportsConfig.map { it.followedLeagues() },
+            refreshDays = settings.activeSportsConfig.map { it.calendarRefreshDays },
+            dataDir = androidContext().filesDir,
+            scope = kotlinx.coroutines.CoroutineScope(kotlinx.coroutines.SupervisorJob() + kotlinx.coroutines.Dispatchers.Default),
+        )
+    }
+    single { tv.own.owntv.core.sports.SportsTeams(get(), get(), get()) }
     // "Where is it live": the database reads (Search's own channel ↔ guide mapping) and the cached ranking.
     single<tv.own.owntv.core.sports.WatchData> {
         tv.own.owntv.core.sports.RoomWatchData(get(), get(), get(), get(), get(), get(), get())

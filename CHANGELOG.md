@@ -9,6 +9,21 @@
 > in one bolded line of its own (e.g. **Database v46 · Backup v24 · Breaking**). The detail — what,
 > why, files and verification — belongs in the commit message, never here.
 
+## core-1.0.69 — 2026-10-18
+
+### ✨ New features
+
+- **🏆 Sports: 54 more leagues, with Volleyball and Lacrosse**
+- **📅 Sports calendar: every followed league's month, saved on the device**
+- **🏁 Driver, constructor and tennis rankings**
+- **👕 Team pages: fixtures and results, cups included**
+- **🗂️ League cards: leader and next match**
+- **🔄 Calendar refresh setting**
+
+### 🐛 Fixes
+
+- **Cups no longer fetch a table they never have**
+
 ## core-1.0.68 — 2026-10-17
 
 **Database v49 · Backup v25 · Breaking (glass settings)**

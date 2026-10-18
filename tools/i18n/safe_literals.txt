@@ -3127,10 +3127,10 @@
 1	url	core/src/main/java/tv/own/owntv/core/setup/SourceImporter.kt	file://
 1	technical	core/src/main/java/tv/own/owntv/core/setup/SourceImporter.kt	fresh_add
 1	technical	core/src/main/java/tv/own/owntv/core/setup/SourceImporter.kt	restore
-5	empty	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	\0
+6	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	\0
 1	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	$id-$i
 1	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	(
-1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	,
+1	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	,
 1	url	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	/i/
 1	url	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	://a.espncdn.com
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	:00Z
@@ -3146,27 +3146,30 @@
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	address
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	alt
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	atVs
-3	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	athlete
+6	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	athlete
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	athletesInvolved
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	boxscore
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	broadcasts
-1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	children
+1	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	championshipPts
+2	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	children
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	circuit
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	city
 2	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	clock
-5	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	competitions
-6	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	competitors
+6	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	competitions
+7	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	competitors
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	country
+1	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	current
 7	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	date
 2	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	description
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	details
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	displayClock
-11	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	displayName
-6	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	displayValue
+12	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	displayName
+7	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	displayValue
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	end-regular-time
-1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	entries
-3	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	events
+2	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	entries
+4	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	events
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	flag
+1	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	flagAltText
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	formation
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	fullName
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	fullStatus
@@ -3183,14 +3186,15 @@
 3	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	homeAway
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	href
 1	url	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	https://a.espncdn.com/combiner/i?img=$path&w=$LOGO_PX&h=$LOGO_PX
-15	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	id
+16	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	id
 2	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	in
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	jersey
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	keyEvents
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	kickoff
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	label
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	lastFiveGames
-3	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	leagues
+1	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	league
+4	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	leagues
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	linescores
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	location
 2	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	logo
@@ -3198,7 +3202,7 @@
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	losses
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	market
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	media
-18	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	name
+20	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	name
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	names
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	note
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	opponent
@@ -3210,43 +3214,48 @@
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	penaltyKick
 3	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	period
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	pointDifferential
-1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	points
+3	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	points
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	pointsAgainst
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	pointsFor
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	position
 2	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	post
-1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	rank
+2	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	rank
+1	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	rankings
+1	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	ranks
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	red-card
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	redCard
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	region
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	roster
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	rosters
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	round
-4	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	score
+6	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	score
 4	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	scoringPlay
+1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	season
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	shortDetail
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	shortDisplayName
 3	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	shortName
-1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	slug
+1	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	shortname
+2	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	slug
 2	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	sports
-2	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	standings
+3	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	standings
+1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	startDate
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	starter
 3	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	state
 2	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	statistics
-1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	stats
+2	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	stats
 8	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	status
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	subbedIn
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	subbedOut
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	substitution
 4	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	summary
-7	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	team
+8	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	team
 2	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	teams
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	text
 2	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	tiebreak
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	ties
 8	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	type
 1	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	v
-2	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	value
+4	technical	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	value
 2	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	venue
 4	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	winner
 1	json	core/src/main/java/tv/own/owntv/core/sports/EspnParser.kt	wins
@@ -3436,7 +3445,7 @@
 6	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	f
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	fo
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	for
-2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	g
+4	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	g
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	gd
 6	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	h
 2	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	ht
@@ -3444,22 +3453,22 @@
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	img
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	in
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	j
-4	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	k
+6	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	k
 4	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	l
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	ln
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	lo
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	ls
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	lu
 6	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	m
-11	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	n
+13	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	n
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	no
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	o
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	out
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	ov
 10	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	p
-2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	pt
-4	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	r
-2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	rk
+4	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	pt
+6	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	r
+6	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	rk
 6	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	s
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	sn
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	sp
@@ -3472,154 +3481,332 @@
 3	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	tb
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	ti
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	tl
-8	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	tm
+10	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	tm
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	today
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	tomorrow
 4	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	tx
 7	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	v
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	ve
 5	json	core/src/main/java/tv/own/owntv/core/sports/SportsCacheJson.kt	w
+1	file-path	core/src/main/java/tv/own/owntv/core/sports/SportsCalendar.kt	${file.name}.tmp
+1	file-path	core/src/main/java/tv/own/owntv/core/sports/SportsCalendar.kt	${slot.leagueKey.replace('/', '_')}_${slot.month}.json
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCalendar.kt	${sport.path}/
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCalendar.kt	.json
+1	log	core/src/main/java/tv/own/owntv/core/sports/SportsCalendar.kt	OwnTV-Sports
+3	json	core/src/main/java/tv/own/owntv/core/sports/SportsCalendar.kt	at
+1	file-path	core/src/main/java/tv/own/owntv/core/sports/SportsCalendar.kt	calendar
+1	log	core/src/main/java/tv/own/owntv/core/sports/SportsCalendar.kt	calendar fetch failed code=${(e as? SportsHttpException)?.code ?: -1} error=${e.javaClass.simpleName}
+1	log	core/src/main/java/tv/own/owntv/core/sports/SportsCalendar.kt	calendar write failed: ${it.javaClass.simpleName}
+2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCalendar.kt	d
+2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCalendar.kt	m
+1	file-path	core/src/main/java/tv/own/owntv/core/sports/SportsCalendar.kt	sports
+3	json	core/src/main/java/tv/own/owntv/core/sports/SportsCalendar.kt	ss
+2	json	core/src/main/java/tv/own/owntv/core/sports/SportsCalendar.kt	v
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	1. Lig
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	164205
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	17567
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	180659
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	2. Bundesliga
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	242041
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	244293
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	267979
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	268565
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	270557
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	270559
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	271937
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	272073
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	289234
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	289237
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	3
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	AFC Asian Cup
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	AFC Champions League Elite
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	AFC Champions League Two
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	AFL
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	AR
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	AT
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ATP
 2	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	AU
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Africa Cup of Nations
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Allsvenskan
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Austrian Bundesliga
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	BE
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	BR
+2	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	BR
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Brasileirão
-1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Bundesliga
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	British & Irish Lions Tour
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Bundesliga
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	CAF Champions League
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	CH
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Carabao Cup
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Champions Cup
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Champions League
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Championship
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	College Football
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Community Shield
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Concacaf Champions Cup
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Concacaf Gold Cup
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Conference League
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Copa América
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Copa Libertadores
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Copa Sudamericana
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Copa del Rey
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Copa do Brasil
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Coppa Italia
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Coupe de France
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Cricket
 3	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	DE
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	DFB-Pokal
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	DK
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	DP World Tour
-2	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ES
+4	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ES
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	EURO
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Eliteserien
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Eredivisie
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Europa League
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	European Challenge Cup
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	F1
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	FA Cup
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	FIBA World Cup
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	FIFA Club World Cup
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	FIFA Women's World Cup
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	FIFA World Cup
-3	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	FR
+4	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	FR
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Formula 1
-7	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	GB
+11	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	GB
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	GR
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Greek Super League
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	IN
-2	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	IT
+4	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	IT
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Indian Super League
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	IndyCar
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	International Friendlies
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	International Test Matches
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	KNVB Beker
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	King's Cup
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	LIV Golf
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	LPGA Tour
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	LaLiga
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	LaLiga 2
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	League One
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Leagues Cup
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Liga MX
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Liga Portugal
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Liga Profesional
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Ligue 1
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Ligue 2
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	MLB
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	MLS
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	MX
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	NASCAR
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	NASCAR Cup Series
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	NASCAR O'Reilly
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	NASCAR O'Reilly Auto Parts Series
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	NASCAR Truck
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	NASCAR Truck Series
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	NBA
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	NCAA Basketball
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	NCAA Women's Basketball
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	NCAA Women's Volleyball
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	NCAAF
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	NCAAM
+2	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	NCAAW
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	NFL
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	NHL
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	NL
+2	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	NL
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	NLL
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	NO
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	NRL
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	NWSL
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	National Lacrosse League
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Nations Championship
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Nations League
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ONE
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ONE Championship
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Olympic Men's Ice Hockey
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Olympic Women's Ice Hockey
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	PFL
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	PGA Tour
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	PT
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	PLL
+2	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	PT
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Premier Lacrosse League
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Premier League
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Premiership Rugby
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Pro League
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Rugby World Cup
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	SA
+2	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	SA
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	SE
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Saudi Pro League
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Scottish Cup
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Scottish League Cup
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Scottish Premiership
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Serie A
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Serie B
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Six Nations
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Super Rugby Pacific
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Supercopa de España
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Supercoppa Italiana
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Superliga
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Swiss Super League
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Süper Lig
 2	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	TR
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Taça de Portugal
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	The Rugby Championship
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Top 14
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	UEFA Super Cup
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	UFC
-10	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	US
+16	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	US
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	United Rugby Championship
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	WNBA
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	WTA
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Women's Champions League
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Women's EURO
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Women's Rugby World Cup
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	Women's Super League
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	World Baseball Classic
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	World Cup Qualifying – AFC
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	World Cup Qualifying – CAF
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	World Cup Qualifying – CONMEBOL
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	World Cup Qualifying – Concacaf
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	World Cup Qualifying – UEFA
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	afc.asian.cup
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	afc.champions
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	afc.cup
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	afl
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	all
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	arg.1
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	atp
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	aut.1
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	baseball/world-baseball-classic
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	basketball/fiba
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	basketball/womens-college-basketball
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	bel.1
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	bra.1
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	bra.copa_do_brazil
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	caf.champions
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	caf.nations
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	college-football
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	concacaf.champions
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	concacaf.gold
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	concacaf.leagues.cup
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	conmebol.america
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	conmebol.libertadores
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	conmebol.sudamericana
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	den.1
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	eng.1
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	eng.2
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	eng.3
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	eng.charity
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	eng.fa
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	eng.league_cup
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	eng.w.1
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	esp.1
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	esp.2
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	esp.copa_del_rey
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	esp.super_cup
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	eur
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	f1
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	fiba
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	fifa.cwc
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	fifa.friendly
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	fifa.world
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	fifa.worldq.afc
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	fifa.worldq.caf
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	fifa.worldq.concacaf
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	fifa.worldq.conmebol
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	fifa.worldq.uefa
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	fifa.wwc
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	fra.1
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	fra.2
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	fra.coupe_de_france
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ger.1
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ger.2
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ger.dfb_pokal
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	gre.1
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	hockey/olympics-mens-ice-hockey
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	hockey/olympics-womens-ice-hockey
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ind.1
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	irl
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ita.1
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ita.2
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ita.coppa_italia
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ita.super_cup
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ksa.1
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ksa.kings.cup
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	lacrosse/nll
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	lacrosse/pll
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	liv
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	lpga
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	mens-college-basketball
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	mex.1
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	mlb
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	mma/ofc
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	mma/pfl
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	nascar-premier
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	nascar-secondary
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	nascar-truck
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	nba
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ned.1
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ned.cup
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	nfl
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	nhl
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	nll
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	nor.1
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ofc
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	olympics-mens-ice-hockey
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	olympics-womens-ice-hockey
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	pfl
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	pga
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	pll
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	por.1
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	por.taca.portugal
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	racing/nascar-secondary
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	racing/nascar-truck
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	rugby/17567
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	rugby/268565
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	rugby/272073
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	rugby/289234
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	rugby/289237
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	sco.1
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	sco.cis
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	sco.tennents
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/afc.asian.cup
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/afc.cup
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/bra.copa_do_brazil
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/caf.champions
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/caf.nations
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/concacaf.champions
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/concacaf.gold
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/concacaf.leagues.cup
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/conmebol.america
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/conmebol.sudamericana
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/den.1
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/eng.3
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/eng.charity
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/esp.2
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/esp.super_cup
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/fifa.cwc
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/fifa.friendly
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/fifa.worldq.afc
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/fifa.worldq.caf
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/fifa.worldq.concacaf
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/fifa.worldq.conmebol
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/fifa.wwc
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/fra.2
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/gre.1
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/ita.2
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/ita.super_cup
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/ksa.kings.cup
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/ned.cup
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/nor.1
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/por.taca.portugal
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/sco.cis
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/sco.tennents
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/swe.1
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/uefa.super_cup
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/uefa.wchampions
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/uefa.weuro
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/usa.nwsl
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	sui.1
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	swe.1
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	tur.1
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	tur.2
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	uefa.champions
@@ -3627,17 +3814,26 @@
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	uefa.europa
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	uefa.europa.conf
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	uefa.nations
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	uefa.super_cup
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	uefa.wchampions
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	uefa.weuro
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ufc
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	usa.1
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	usa.nwsl
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	volleyball/womens-college-volleyball
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	wnba
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	womens-college-basketball
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	womens-college-volleyball
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	world-baseball-classic
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	wta
-2	json	core/src/main/java/tv/own/owntv/core/sports/SportsConfig.kt	\0
+2	empty	core/src/main/java/tv/own/owntv/core/sports/SportsConfig.kt	\0
 1	protocol	core/src/main/java/tv/own/owntv/core/sports/SportsConfig.kt	${sport.path}/$id
 4	json	core/src/main/java/tv/own/owntv/core/sports/SportsConfig.kt	ab
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsConfig.kt	alerts
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsConfig.kt	allSports
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsConfig.kt	autoRebuild
 4	json	core/src/main/java/tv/own/owntv/core/sports/SportsConfig.kt	c
+2	technical	core/src/main/java/tv/own/owntv/core/sports/SportsConfig.kt	calendarRefreshDays
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsConfig.kt	card
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsConfig.kt	channels
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsConfig.kt	closed
@@ -3665,7 +3861,11 @@
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsConfig.kt	strict
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsConfig.kt	t
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsConfig.kt	teams
+1	log	core/src/main/java/tv/own/owntv/core/sports/SportsGate.kt	paused
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsHomeRow.kt	\0
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsLeagues.kt	${league.key}#$teamId
+1	log	core/src/main/java/tv/own/owntv/core/sports/SportsLeagues.kt	OwnTV-Sports
+1	log	core/src/main/java/tv/own/owntv/core/sports/SportsLeagues.kt	team schedule failed code=${(e as? SportsHttpException)?.code ?: -1} error=${e.javaClass.simpleName}
 2	json	core/src/main/java/tv/own/owntv/core/sports/SportsMemory.kt	\0
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsMemory.kt	cricket/
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsMemory.kt	cricket/all
@@ -3675,20 +3875,32 @@
 1	file-path	core/src/main/java/tv/own/owntv/core/sports/SportsRepository.kt	board.json
 1	log	core/src/main/java/tv/own/owntv/core/sports/SportsRepository.kt	cache write failed: ${it.javaClass.simpleName}
 1	log	core/src/main/java/tv/own/owntv/core/sports/SportsRepository.kt	fetch failed feed=$feed code=${code ?: -1} error=${e.javaClass.simpleName}
-2	technical	core/src/main/java/tv/own/owntv/core/sports/SportsRepository.kt	not in the catalogue
+3	technical	core/src/main/java/tv/own/owntv/core/sports/SportsRepository.kt	not in the catalogue
 1	log	core/src/main/java/tv/own/owntv/core/sports/SportsRepository.kt	rebuild fetch failed code=${code ?: -1} error=${e.javaClass.simpleName}
 1	log	core/src/main/java/tv/own/owntv/core/sports/SportsRepository.kt	refetch failed error=${e.javaClass.simpleName}
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsRepository.kt	sports
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsRepository.kt	tennis/atp
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsRepository.kt	tennis/wta
+1	empty	core/src/main/java/tv/own/owntv/core/sports/SportsSource.kt	\0
+1	url	core/src/main/java/tv/own/owntv/core/sports/SportsSource.kt	$SITE/apis/site/v2/sports/${league.sport.path}/$slug/teams/$teamId/schedule
 1	url	core/src/main/java/tv/own/owntv/core/sports/SportsSource.kt	$SITE/apis/site/v2/sports/${league.sport.path}/${league.slug}/scoreboard
+1	url	core/src/main/java/tv/own/owntv/core/sports/SportsSource.kt	$SITE/apis/site/v2/sports/${league.sport.path}/${league.slug}/scoreboard?dates=${month.format(MONTH)}&limit=$MONTH_LIMIT
 1	url	core/src/main/java/tv/own/owntv/core/sports/SportsSource.kt	$SITE/apis/site/v2/sports/${league.sport.path}/${league.slug}/teams
 1	url	core/src/main/java/tv/own/owntv/core/sports/SportsSource.kt	$SITE/apis/site/v2/sports/${match.sport.path}/${match.leagueSlug}/summary?event=${match.id}
+1	url	core/src/main/java/tv/own/owntv/core/sports/SportsSource.kt	$SITE/apis/site/v2/sports/tennis/${league.slug}/rankings
 1	url	core/src/main/java/tv/own/owntv/core/sports/SportsSource.kt	$SITE/apis/v2/sports/${league.sport.path}/${league.slug}/standings
+1	url	core/src/main/java/tv/own/owntv/core/sports/SportsSource.kt	$SITE/apis/v2/sports/racing/${league.slug}/standings
 1	url	core/src/main/java/tv/own/owntv/core/sports/SportsSource.kt	$WEB/apis/v2/scoreboard/header?sport=cricket
 1	url	core/src/main/java/tv/own/owntv/core/sports/SportsSource.kt	&dates=$it
 1	url	core/src/main/java/tv/own/owntv/core/sports/SportsSource.kt	?dates=$it
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsSource.kt	?fixture=true
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsSource.kt	HTTP $code
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsSource.kt	all
+1	assertion	core/src/main/java/tv/own/owntv/core/sports/SportsSource.kt	cricket has no month feed
 1	url	core/src/main/java/tv/own/owntv/core/sports/SportsSource.kt	https://site.api.espn.com
 1	url	core/src/main/java/tv/own/owntv/core/sports/SportsSource.kt	https://site.web.api.espn.com
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsSource.kt	no ranking
+1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsSource.kt	yyyyMM
 1	technical	core/src/main/java/tv/own/owntv/core/sports/TeamNames.kt	\0
 2	technical	core/src/main/java/tv/own/owntv/core/sports/TeamNames.kt	$1
 1	regex	core/src/main/java/tv/own/owntv/core/sports/TeamNames.kt	(\\p{L})\\1+
@@ -3891,6 +4103,13 @@
 1	technical	core/src/main/java/tv/own/owntv/core/sports/WatchReader.kt	|
 1	empty	core/src/main/java/tv/own/owntv/core/sports/model/Match.kt	\0
 1	protocol	core/src/main/java/tv/own/owntv/core/sports/model/Match.kt	${League.keyOf(sport, leagueSlug)}#$id
+1	technical	core/src/main/java/tv/own/owntv/core/sports/model/MatchSummary.kt	FP1
+1	technical	core/src/main/java/tv/own/owntv/core/sports/model/MatchSummary.kt	FP2
+1	technical	core/src/main/java/tv/own/owntv/core/sports/model/MatchSummary.kt	FP3
+1	technical	core/src/main/java/tv/own/owntv/core/sports/model/MatchSummary.kt	Qual
+1	technical	core/src/main/java/tv/own/owntv/core/sports/model/MatchSummary.kt	Race
+1	technical	core/src/main/java/tv/own/owntv/core/sports/model/MatchSummary.kt	SR
+1	technical	core/src/main/java/tv/own/owntv/core/sports/model/MatchSummary.kt	SS
 1	protocol	core/src/main/java/tv/own/owntv/core/sports/model/Sport.kt	${sport.path}/$slug
 1	protocol	core/src/main/java/tv/own/owntv/core/sports/model/Sport.kt	australian-football
 1	protocol	core/src/main/java/tv/own/owntv/core/sports/model/Sport.kt	baseball
