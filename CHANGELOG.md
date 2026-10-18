@@ -9,7 +9,7 @@
 > in one bolded line of its own (e.g. **Database v46 · Backup v24 · Breaking**). The detail — what,
 > why, files and verification — belongs in the commit message, never here.
 
-## core-1.0.69 — 2026-10-18
+## core-1.0.69 — Unreleased
 
 ### ✨ New features
 
@@ -24,6 +24,7 @@
 
 - **Cups no longer fetch a table they never have**
 - **A saved channel plays again after the TV wakes from standby**
+- **A live channel ExoPlayer can only show as a slideshow moves to mpv by itself**
 - **Settings hints point to the right menu, in every language**
 
 ## core-1.0.68 — 2026-10-17
