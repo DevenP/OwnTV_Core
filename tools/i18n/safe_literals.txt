@@ -2847,6 +2847,7 @@
 1	technical	core/src/main/java/tv/own/owntv/core/settings/CustomizePinSettings.kt	customize_pin_
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/CustomizePinSettings.kt	customize_pin_$pid
 2	preference-key	core/src/main/java/tv/own/owntv/core/settings/CustomizePinSettings.kt	customize_pin_$profileId
+1	preference-key	core/src/main/java/tv/own/owntv/core/settings/CustomizePinSettings.kt	settings_pin_$profileId
 1	protocol	core/src/main/java/tv/own/owntv/core/settings/RemoteShortcuts.kt	$keyCode:${press.name}
 1	protocol	core/src/main/java/tv/own/owntv/core/settings/RemoteShortcuts.kt	${it.keyCode}$SEPARATOR${it.press.name}$SEPARATOR${it.action.name}
 1	technical	core/src/main/java/tv/own/owntv/core/settings/SettingsImportRules.kt	audio_delay_ms

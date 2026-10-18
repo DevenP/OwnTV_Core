@@ -2,6 +2,7 @@ package tv.own.owntv.core.settings
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import kotlinx.coroutines.flow.Flow
@@ -16,13 +17,21 @@ import tv.own.owntv.core.util.Pin
  * [exportCustomizePins] / [importCustomizePins] → BackupManager `customizePins`), so the PIN value
  * itself never travels in a readable form.
  *
+ * The same PIN can also guard Settings ([settingsPinEnabled]); that switch means nothing without a
+ * PIN, so clearing the PIN turns it off too.
+ *
  * [SettingsRepository] implements this by delegation, so callers keep using `settings.customizePin(…)`.
  */
 interface CustomizePinSettings {
     fun customizePin(profileId: Long): Flow<String?>
 
-    /** null/blank clears the lock. */
+    /** null/blank clears the lock (and the Settings lock that depends on it). */
     suspend fun setCustomizePin(profileId: Long, pin: String?)
+
+    /** Whether opening Settings asks for this profile's Customize PIN. Off by default. */
+    fun settingsPinEnabled(profileId: Long): Flow<Boolean>
+
+    suspend fun setSettingsPinEnabled(profileId: Long, enabled: Boolean)
 
     /** Exports all per-profile Customize PINs as { "<profileId>": "<pin>" }. */
     suspend fun exportCustomizePins(): org.json.JSONObject
@@ -31,7 +40,10 @@ interface CustomizePinSettings {
     suspend fun importCustomizePins(o: org.json.JSONObject, existingProfileIds: Set<Long>)
 }
 
-/** [CustomizePinSettings] over the settings file, under dynamic "customize_pin_<id>" keys. */
+/**
+ * [CustomizePinSettings] over the settings file, under dynamic "customize_pin_<id>" and
+ * "settings_pin_<id>" keys.
+ */
 internal class CustomizePinStore(private val dataStore: DataStore<Preferences>) : CustomizePinSettings {
 
     override fun customizePin(profileId: Long): Flow<String?> = dataStore.data.map { prefs ->
@@ -41,9 +53,26 @@ internal class CustomizePinStore(private val dataStore: DataStore<Preferences>) 
     override suspend fun setCustomizePin(profileId: Long, pin: String?) {
         dataStore.edit { prefs ->
             val k = stringPreferencesKey("customize_pin_$profileId")
-            if (pin.isNullOrBlank()) prefs.remove(k) else prefs[k] = Pin.hash(pin.trim())
+            if (pin.isNullOrBlank()) {
+                prefs.remove(k)
+                prefs.remove(settingsPinKey(profileId))
+            } else {
+                prefs[k] = Pin.hash(pin.trim())
+            }
         }
     }
+
+    override fun settingsPinEnabled(profileId: Long): Flow<Boolean> = dataStore.data.map { prefs ->
+        prefs[settingsPinKey(profileId)] == true
+    }.distinctUntilChanged()
+
+    override suspend fun setSettingsPinEnabled(profileId: Long, enabled: Boolean) {
+        dataStore.edit { prefs ->
+            if (enabled) prefs[settingsPinKey(profileId)] = true else prefs.remove(settingsPinKey(profileId))
+        }
+    }
+
+    private fun settingsPinKey(profileId: Long) = booleanPreferencesKey("settings_pin_$profileId")
 
     override suspend fun exportCustomizePins(): org.json.JSONObject {
         val prefix = "customize_pin_"
