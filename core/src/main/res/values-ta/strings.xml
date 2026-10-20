@@ -1,3 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="common_cancel">ரத்து செய்</string>
+    <string name="common_save">சேமி</string>
+    <string name="common_edit">திருத்து</string>
+    <string name="common_delete">நீக்கு</string>
+    <string name="common_clear">அழி</string>
+    <string name="common_retry">மீண்டும் முயல்</string>
+    <string name="common_create">உருவாக்கு</string>
+    <string name="common_reset">மீட்டமை</string>
+    <string name="common_done">முடிந்தது</string>
+    <string name="common_ok">சரி</string>
+    <string name="common_on">இயக்கு</string>
+    <string name="common_off">நிறுத்து</string>
+    <string name="common_share">பகிர்</string>
+    <string name="common_never">எப்பொழுதும் இல்லை</string>
+    <string name="common_exit">வெளியேறு</string>
+    <string name="common_resume">தொடர்</string>
+    <string name="common_start_over">முதலிருந்து தொடங்கு</string>
+    <string name="common_name">பெயர்</string>
+    <string name="common_back">பின்செல்க</string>
+    <string name="common_own_tv_user">OwnTV பயனர்</string>
+    <string name="common_title">தலைப்பு</string>
+    <string name="common_search_hint">தேடு…</string>
+    <string name="common_search">தேடு</string>
+    <string name="common_nav_home">முகப்பு</string>
 </resources>
