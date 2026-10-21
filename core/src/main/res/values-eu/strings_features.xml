@@ -440,4 +440,45 @@
     <string name="sports_broadcasts_find_first">Erabili Bilatu kateak partida hau ematen duten gidako kateak ikusteko.</string>
     <string name="sports_broadcasts_none">Bat ere ez</string>
     <string name="sports_move_instructions">▲/▼ aukeratzeko · OK hartzeko edo uzteko · Amaitzean Gorde</string>
+    <string name="search_on_tv">Telebista-programak</string>
+    <string name="search_go_to_channel">Joan kanalera</string>
+    <string name="search_go_to_movie">Joan filmera</string>
+    <string name="search_clear_recent">Garbitu azken bilaketak</string>
+    <string name="search_field_hint">Kanalak, filmak eta telesailak</string>
+    <string name="search_card_title">Aurkitu edozer zure erreprodukzio-zerrendetan</string>
+    <string name="search_card_body">Erakusten dituzun erreprodukzio-zerrenda guztietako kanalak, filmak eta telesailak. Aukeratu emaitza bat zuzenean joateko, eta bertan erreproduzitu, deskargatu edo ireki bere aukerak. Orain edo gaur beranduago emititzen diren telebista-programak ere izenburuaren arabera aurkitzen dira.</string>
+    <string name="search_nothing_found">Ez da ezer aurkitu “<xliff:g id="query">%1$s</xliff:g>” bilaketarako</string>
+    <string name="search_nothing_found_body">Bilaketak erakusten dituzun erreprodukzio-zerrendetako kanal-, film- eta telesail-izenetan begiratzen du. Ezkutuko kategoriak ez dira bilatzen. Telebista-programak deskargatutako gidan izenburuaren arabera aurkitzen dira.</string>
+    <string name="search_query_quoted">“<xliff:g id="query">%1$s</xliff:g>”</string>
+    <plurals name="search_result_count">
+        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> emaitza</item>
+        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> emaitza</item>
+    </plurals>
+    <plurals name="search_all_channels">
+        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> kanal</item>
+        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> kanal guztiak</item>
+    </plurals>
+    <string name="home_row_favorite_movies">Gogoko filmak</string>
+    <string name="home_row_favorite_series">Gogoko telesailak</string>
+    <string name="home_trending_rank"><xliff:g id="rank">%1$d</xliff:g>. postua Joeretan · <xliff:g id="section">%2$s</xliff:g></string>
+    <string name="home_trending_in_playlist">ZURE ERREPRODUKZIO-ZERRENDAN</string>
+    <string name="home_trending_style_full_bleed">Pantaila osoa</string>
+    <string name="home_duration_hours_minutes"><xliff:g id="hours">%1$d</xliff:g> h <xliff:g id="minutes">%2$02d</xliff:g> min</string>
+    <string name="home_time_left"><xliff:g id="duration">%1$s</xliff:g> falta dira</string>
+    <string name="home_trending_why_menu">Zergatik dagoen izenburu hau hemen</string>
+    <string name="home_row_favorite_movies_description">Zure gogoko filmak</string>
+    <string name="home_row_favorite_series_description">Zure gogoko telesailak</string>
+    <string name="recording_schedule">Programatu grabazioa…</string>
+    <string name="recording_schedule_hint">Aukeratu eguna, hasiera eta amaiera. Grabatu egiten da kanal honek telebista-gidarik ez badu ere.</string>
+    <string name="recording_schedule_start">Hasiera</string>
+    <string name="recording_schedule_end">Amaiera</string>
+    <string name="recording_schedule_next_day">hurrengo eguna</string>
+    <string name="recording_schedule_past">Ordu hori igaro da dagoeneko</string>
+    <string name="recording_card_empty_title">Oraindik ez da ezer grabatu</string>
+    <string name="recording_card_body">Aukeratu programa bat Telebista-gidan eta sakatu Grabatu, edo luze sakatu kanal bat eta programatu ordu bat. Hemen agertzen da, beste zerbait ikusten ari zaren bitartean ere.</string>
+    <string name="recording_open_guide">Ireki Telebista-gida</string>
+    <plurals name="recording_card_count">
+        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> grabazio</item>
+        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> grabazio</item>
+    </plurals>
 </resources>

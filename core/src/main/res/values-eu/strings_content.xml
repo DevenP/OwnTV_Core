@@ -288,7 +288,7 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> kanal parekatu dira</item>
     </plurals>
     <plurals name="content_epg_review_count">
-        <item quantity="one">Berrikusi <xliff:g id="count">%1$d</xliff:g> parekatze</item>
+        <item quantity="one">Berrikusi parekatze <xliff:g id="count">%1$d</xliff:g></item>
         <item quantity="other">Berrikusi <xliff:g id="count">%1$d</xliff:g> parekatze</item>
     </plurals>
     <string name="content_key_browse">Arakatu</string>
@@ -313,11 +313,11 @@
     <string name="content_movie_details">Filmaren xehetasunak</string>
     <string name="content_series_details">Telesailaren xehetasunak</string>
     <plurals name="content_vod_title_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> izenburu</item>
+        <item quantity="one">Izenburu <xliff:g id="count">%1$d</xliff:g></item>
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> izenburu</item>
     </plurals>
     <plurals name="content_vod_series_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> telesail</item>
+        <item quantity="one">Telesail <xliff:g id="count">%1$d</xliff:g></item>
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> telesail</item>
     </plurals>
     <string name="content_resume_episode">Jarraitu: <xliff:g id="episode">%1$s</xliff:g></string>
