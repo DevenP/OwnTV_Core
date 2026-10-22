@@ -31,6 +31,7 @@
     <string name="common_nav_series">Telesailak</string>
     <string name="common_nav_downloads">Deskargak</string>
     <string name="common_nav_guide">Gida</string>
+    <string name="common_nav_guide_short">Telebista-gida</string>
     <string name="common_nav_library">Liburutegia</string>
     <string name="common_nav_more">Gehiago</string>
     <string name="common_cast">Aktoreak</string>
@@ -156,13 +157,12 @@
     <string name="sync_error_guide_empty">Gida hau hutsik dago oraintxe. Baliteke hornitzaileak oraindik argitaratu ez izana — saiatu berriro geroago, mesedez.</string>
     <string name="common_minutes">Minutuak</string>
     <string name="common_size_mb"><xliff:g id="size">%1$s</xliff:g> MB</string>
+    <string name="common_size_gb"><xliff:g id="size">%1$s</xliff:g> GB</string>
     <string name="common_plus">+</string>
     <string name="common_minus">–</string>
     <string name="common_hide">Ezkutatu</string>
     <string name="common_show">Erakutsi</string>
     <string name="common_qr_code_companion_url">Laguntzaile-aplikazioaren URLaren QR kodea</string>
-    <string name="common_nav_guide_short">Telebista-gida</string>
-    <string name="common_size_gb"><xliff:g id="size">%1$s</xliff:g> GB</string>
     <string name="shell_rail_profile_line"><xliff:g id="playlist">%1$s</xliff:g> · aldatu</string>
     <string name="shell_rail_detail_last">Azkena: <xliff:g id="title">%1$s</xliff:g></string>
     <string name="shell_rail_detail_resume">Jarraitu: <xliff:g id="title">%1$s</xliff:g></string>

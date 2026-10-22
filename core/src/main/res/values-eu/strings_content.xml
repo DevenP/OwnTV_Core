@@ -244,9 +244,32 @@
     <string name="content_downloads_ready_short">Prest</string>
     <string name="content_downloads_ready">Ikusteko prest</string>
     <string name="content_downloads_paused">Pausatuta</string>
+    <string name="content_downloads_file_missing">Fitxategia falta da: ez dago jada unitatean</string>
+    <string name="content_downloads_reason_account_busy">Kontua lanpetuta: beste jario batek konexioa erabiltzen du</string>
+    <string name="content_downloads_reason_refused">Zerbitzariak esteka baztertu du</string>
+    <string name="content_downloads_reason_not_found">Zerbitzariak ez du fitxategi hau jada</string>
+    <string name="content_downloads_reason_server_error">Zerbitzariaren errorea</string>
+    <string name="content_downloads_reason_http">Zerbitzariak ez du fitxategia bidali</string>
+    <string name="content_downloads_reason_connection_lost">Konexioa galdu da</string>
+    <string name="content_downloads_reason_folder">Deskarga-karpeta ez dago erabilgarri</string>
+    <string name="content_downloads_reason_no_space">Ez dago leku nahikorik</string>
+    <string name="content_downloads_reason_too_large">Handiegia unitate honetarako: ezin ditu 4 GB baino handiagoko fitxategiak gorde. Aukeratu beste deskarga-karpeta bat, edo formateatu unitatea exFAT gisa</string>
+    <string name="content_downloads_reason_waiting_watching">Zain: ikusteari uzten diozunean hasten da</string>
+    <string name="content_downloads_reason_paused_watching">Pausatuta ikusten ari zaren bitartean</string>
+    <string name="content_downloads_reason_with_code"><xliff:g id="reason">%1$s</xliff:g> (HTTP <xliff:g id="code">%2$d</xliff:g>)</string>
+    <string name="content_download_watch_title">Erreprodukzio-zerrenda honek jario bakarra onartzen du</string>
+    <string name="content_download_watch_body"><xliff:g id="playlist">%1$s</xliff:g> zerrendako deskarga bat erabiltzen ari zen, beraz oraingoz pausatuta dago. Ikusi, edo itxi erreproduzigailua eta jarraitu deskargatzen?</string>
+    <string name="content_download_watch_watch">Pausatu deskarga eta ikusi</string>
+    <string name="content_download_watch_keep">Jarraitu deskargatzen</string>
+    <string name="content_download_watch_remember">Ez galdetu berriro</string>
+    <string name="content_download_watch_setting">Ikusi deskargatzen den bitartean</string>
+    <string name="content_download_watch_setting_description">Jario bakarra onartzen duten erreprodukzio-zerrendetarako: zer gertatzen den deskarga batekin erreproduzitzen hasten zarenean.</string>
+    <string name="content_download_watch_ask">Galdetu aldi bakoitzean</string>
+    <string name="content_download_watch_pause">Pausatu deskarga</string>
     <string name="content_downloads_starts_after">Ilaran · <xliff:g id="title">%1$s</xliff:g> amaitu ondoren hasiko da</string>
     <string name="content_downloads_speed"><xliff:g id="size">%1$s</xliff:g> MB/s</string>
     <string name="content_playlist_picker_subtitle">Leku guztietan aplikatzen da eta gogoratu egiten da</string>
+    <string name="content_playlist_marks_note">Erreprodukzio-zerrenda guztiak aktibatuta daudenean, errenkada bakoitzak jatorri duen erreprodukzio-zerrendaren marka erakusten du.</string>
     <string name="content_action_next_episode">Hurrengo atala</string>
     <string name="content_search_in">Bilatu: <xliff:g id="name">%1$s</xliff:g></string>
     <string name="content_live_guide_view">Gida-ikuspegia</string>
@@ -297,9 +320,15 @@
     <string name="content_key_menu">Menua</string>
     <string name="content_key_enter">Sartu</string>
     <string name="content_key_select">Hautatu</string>
+    <string name="content_key_unselect">Desautatu</string>
+    <string name="content_key_page">Orria</string>
+    <string name="content_history_overlay_hint">Azkenekoz ikusi dituzun kanalak, berrienak lehenik</string>
     <string name="content_watched_duration"><xliff:g id="value">%1$s</xliff:g> ikusita</string>
     <string name="content_menu_group_show">Erakutsi</string>
     <string name="content_epg_show_empty">Gidarik gabeko kanalak</string>
+    <string name="content_epg_show_preview">Bideo-aurrebista</string>
+    <string name="content_epg_view_timeline">Kronologia</string>
+    <string name="content_menu_group_view">Ikuspegia</string>
     <string name="content_vod_providers">Hornitzaileak</string>
     <string name="content_sort_movies_title">Ordenatu filmak</string>
     <string name="content_sort_series_title">Ordenatu telesailak</string>
@@ -332,33 +361,4 @@
     <string name="content_season_specials">Bereziak</string>
     <string name="content_poster_size">Posterren tamaina</string>
     <string name="content_vod_more_in">Gehiago hemen: <xliff:g id="category">%1$s</xliff:g></string>
-    <string name="content_downloads_file_missing">Fitxategia falta da: ez dago jada unitatean</string>
-    <string name="content_downloads_reason_account_busy">Kontua lanpetuta: beste jario batek konexioa erabiltzen du</string>
-    <string name="content_downloads_reason_refused">Zerbitzariak esteka baztertu du</string>
-    <string name="content_downloads_reason_not_found">Zerbitzariak ez du fitxategi hau jada</string>
-    <string name="content_downloads_reason_server_error">Zerbitzariaren errorea</string>
-    <string name="content_downloads_reason_http">Zerbitzariak ez du fitxategia bidali</string>
-    <string name="content_downloads_reason_connection_lost">Konexioa galdu da</string>
-    <string name="content_downloads_reason_folder">Deskarga-karpeta ez dago erabilgarri</string>
-    <string name="content_downloads_reason_no_space">Ez dago leku nahikorik</string>
-    <string name="content_downloads_reason_too_large">Handiegia unitate honetarako: ezin ditu 4 GB baino handiagoko fitxategiak gorde. Aukeratu beste deskarga-karpeta bat, edo formateatu unitatea exFAT gisa</string>
-    <string name="content_downloads_reason_waiting_watching">Zain: ikusteari uzten diozunean hasten da</string>
-    <string name="content_downloads_reason_paused_watching">Pausatuta ikusten ari zaren bitartean</string>
-    <string name="content_downloads_reason_with_code"><xliff:g id="reason">%1$s</xliff:g> (HTTP <xliff:g id="code">%2$d</xliff:g>)</string>
-    <string name="content_download_watch_title">Erreprodukzio-zerrenda honek jario bakarra onartzen du</string>
-    <string name="content_download_watch_body"><xliff:g id="playlist">%1$s</xliff:g> zerrendako deskarga bat erabiltzen ari zen, beraz oraingoz pausatuta dago. Ikusi, edo itxi erreproduzigailua eta jarraitu deskargatzen?</string>
-    <string name="content_download_watch_watch">Pausatu deskarga eta ikusi</string>
-    <string name="content_download_watch_keep">Jarraitu deskargatzen</string>
-    <string name="content_download_watch_remember">Ez galdetu berriro</string>
-    <string name="content_download_watch_setting">Ikusi deskargatzen den bitartean</string>
-    <string name="content_download_watch_setting_description">Jario bakarra onartzen duten erreprodukzio-zerrendetarako: zer gertatzen den deskarga batekin erreproduzitzen hasten zarenean.</string>
-    <string name="content_download_watch_ask">Galdetu aldi bakoitzean</string>
-    <string name="content_download_watch_pause">Pausatu deskarga</string>
-    <string name="content_playlist_marks_note">Erreprodukzio-zerrenda guztiak aktibatuta daudenean, errenkada bakoitzak jatorri duen erreprodukzio-zerrendaren marka erakusten du.</string>
-    <string name="content_key_unselect">Desautatu</string>
-    <string name="content_key_page">Orria</string>
-    <string name="content_history_overlay_hint">Azkenekoz ikusi dituzun kanalak, berrienak lehenik</string>
-    <string name="content_epg_show_preview">Bideo-aurrebista</string>
-    <string name="content_epg_view_timeline">Kronologia</string>
-    <string name="content_menu_group_view">Ikuspegia</string>
 </resources>
