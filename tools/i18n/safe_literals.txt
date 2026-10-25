@@ -2777,6 +2777,7 @@
 1	log	core/src/main/java/tv/own/owntv/core/repository/EpgRepository.kt	EPG prune sourceId=$storeId ms=${SystemClock.elapsedRealtime() - pruneStartedAt}
 1	log	core/src/main/java/tv/own/owntv/core/repository/EpgRepository.kt	EPG sync incomplete — keeping partial (written=$writtenCount accepted=$processedCount inserted=$inserted updated=$updated skipped=$skipped)
 28	log	core/src/main/java/tv/own/owntv/core/repository/EpgRepository.kt	EpgRepository
+1	protocol	core/src/main/java/tv/own/owntv/core/repository/EpgRepository.kt	Guide channels match no playlist channel
 1	protocol	core/src/main/java/tv/own/owntv/core/repository/EpgRepository.kt	Guide has no programmes in the guide window
 1	room-schema	core/src/main/java/tv/own/owntv/core/repository/EpgRepository.kt	INSERT OR IGNORE INTO `epg_keep_history` VALUES (?)
 1	protocol	core/src/main/java/tv/own/owntv/core/repository/EpgRepository.kt	Portal guide source $portalSourceId no longer exists
@@ -5151,6 +5152,7 @@
 2	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	ECONNREFUSED
 1	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	END_TAG
 2	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	Failed to connect
+1	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	Guide channels match no playlist channel
 1	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	HTTP 401
 1	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	HTTP 403
 1	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	HTTP 404
