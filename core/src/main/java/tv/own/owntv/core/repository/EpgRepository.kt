@@ -478,6 +478,9 @@ class EpgRepository(
                 parseCompleted = true
             }
             if (parseCompleted && channels.isNotEmpty() && processedCount == 0) {
+                // Filtered to the playlists' channels and none of the feed's is one of them: the guide
+                // has programmes, just for channels no playlist links to yet.
+                if (needed != null && channels.keys.none { it in needed }) throw GuideMatchesNoChannelException()
                 throw NoProgrammesInWindowException()
             }
         } catch (c: CancellationException) {
@@ -657,7 +660,18 @@ class EpgRepository(
      * have none at all, which left the EPG screen with nothing to show and the row reading "Not
      * synced yet" as though the sync had never run.
      */
-    class NoProgrammesInWindowException : java.io.IOException("Guide has no programmes in the guide window")
+    open class NoProgrammesInWindowException(
+        message: String = "Guide has no programmes in the guide window",
+    ) : java.io.IOException(message)
+
+    /**
+     * The feed carried channels, but not one of them is a channel the playlists use (by tvg-id or a
+     * saved match), so the sync kept none of its programmes. Not an empty guide: Auto-match pairs the
+     * channels by name, and the next sync keeps theirs. Still definitive, like its parent — syncing
+     * again unchanged gives the same answer. The message is a stable comparison key, as above.
+     */
+    class GuideMatchesNoChannelException :
+        NoProgrammesInWindowException("Guide channels match no playlist channel")
 
     /**
      * A portal guide whose playlist has since been deleted. Definitive for the same reason — the
