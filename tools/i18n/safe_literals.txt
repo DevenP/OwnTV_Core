@@ -4516,7 +4516,7 @@
 1	technical	core/src/main/java/tv/own/owntv/core/sync/M3uSyncer.kt	r
 1	technical	core/src/main/java/tv/own/owntv/core/sync/M3uSyncer.kt	series
 1	log	core/src/main/java/tv/own/owntv/core/sync/M3uSyncer.kt	totalShows=$seriesProcessed ms=${SystemClock.elapsedRealtime() - start}
-1	log	core/src/main/java/tv/own/owntv/core/sync/M3uVodResort.kt	OwnTVHome
+1	log	core/src/main/java/tv/own/owntv/core/sync/M3uVodResort.kt	M3uVodResort
 1	log	core/src/main/java/tv/own/owntv/core/sync/M3uVodResort.kt	m3uVodResort check failed
 1	log	core/src/main/java/tv/own/owntv/core/sync/M3uVodResort.kt	m3uVodResort sourceId=${source.id} — video files in Live TV, re-syncing
 2	empty	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	\0
