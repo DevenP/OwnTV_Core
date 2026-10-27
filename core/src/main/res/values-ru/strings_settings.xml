@@ -692,6 +692,13 @@
     <string name="settings_sources_test_trial">Пробная учётная запись</string>
     <string name="settings_sources_test_expiry_none">Дата окончания не указана</string>
     <string name="settings_sources_info">Сведения</string>
+    <string name="settings_sources_clean_names">Названия</string>
+    <string name="settings_sources_clean_names_title">Названия каналов в «<xliff:g id="name">%1$s</xliff:g>»</string>
+    <string name="settings_sources_clean_names_description">Более короткие названия каналов на всех экранах. Телегид по-прежнему сопоставляет названия, которые присылает провайдер, а каналы, переименованные в «Настройке», сохраняют ваше название. Сохранение обновляет плейлист.</string>
+    <string name="settings_sources_clean_names_toggle">Очищать названия каналов</string>
+    <string name="settings_sources_clean_names_example">Убирает префикс страны и отметку качества в конце: «UK| News One HD» показывается как «News One»</string>
+    <string name="settings_sources_clean_names_custom">Также удалять</string>
+    <string name="settings_sources_clean_names_custom_hint">Слова через ; например VIP; Backup</string>
     <string name="settings_sources_retest">Проверить снова</string>
     <string name="settings_sources_probe_title">Проверить этот плейлист?</string>
     <string name="settings_sources_probe_warning">Многие провайдеры не сообщают, сколько каналов можно смотреть одновременно, поэтому OwnTV выясняет это, открывая несколько каналов и наблюдая, какие из них продолжают работать. Всё, что сейчас воспроизводится, остановится, и это может занять до двух минут.</string>

@@ -682,6 +682,13 @@
     <string name="settings_sources_test_trial">ট্রায়াল অ্যাকাউন্ট</string>
     <string name="settings_sources_test_expiry_none">কোনো মেয়াদ শেষের তারিখ জানানো হয়নি</string>
     <string name="settings_sources_info">তথ্য</string>
+    <string name="settings_sources_clean_names">নাম</string>
+    <string name="settings_sources_clean_names_title">“<xliff:g id="name">%1$s</xliff:g>”-এ চ্যানেলের নাম</string>
+    <string name="settings_sources_clean_names_description">সব স্ক্রিনে ছোট চ্যানেলের নাম। গাইড এখনও আপনার প্রদানকারীর পাঠানো নামের সাথেই মেলায়, আর কাস্টমাইজে আপনি যে চ্যানেলের নাম বদলেছেন সেগুলো আপনার নামই রাখে। সংরক্ষণ করলে প্লেলিস্ট রিফ্রেশ হয়।</string>
+    <string name="settings_sources_clean_names_toggle">চ্যানেলের নাম পরিষ্কার করুন</string>
+    <string name="settings_sources_clean_names_example">দেশের উপসর্গ আর শেষের মানের ট্যাগ সরায়: “UK| News One HD” দেখাবে “News One”</string>
+    <string name="settings_sources_clean_names_custom">এগুলোও সরান</string>
+    <string name="settings_sources_clean_names_custom_hint">; দিয়ে আলাদা শব্দ, যেমন VIP; Backup</string>
     <string name="settings_sources_retest">আবার পরীক্ষা করুন</string>
     <string name="settings_sources_probe_title">এই প্লেলিস্ট পরীক্ষা করবেন?</string>
     <string name="settings_sources_probe_warning">অনেক সরবরাহকারী কখনোই জানায় না আপনি একসঙ্গে কতগুলি চ্যানেল দেখতে পারবেন, তাই OwnTV কয়েকটি চ্যানেল খুলে কোনগুলি টিকে থাকে তা দেখে এটি নির্ণয় করে। এখন যা চলছে সব বন্ধ হয়ে যাবে, এবং এতে দুই মিনিট পর্যন্ত লাগতে পারে।</string>

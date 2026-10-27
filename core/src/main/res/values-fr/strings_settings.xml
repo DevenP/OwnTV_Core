@@ -687,6 +687,13 @@
     <string name="settings_sources_test_trial">Compte d’essai</string>
     <string name="settings_sources_test_expiry_none">Aucune date d’expiration communiquée</string>
     <string name="settings_sources_info">Infos</string>
+    <string name="settings_sources_clean_names">Noms</string>
+    <string name="settings_sources_clean_names_title">Noms des chaînes dans « <xliff:g id="name">%1$s</xliff:g> »</string>
+    <string name="settings_sources_clean_names_description">Des noms de chaînes plus courts sur tous les écrans. Le guide continue d’utiliser les noms envoyés par votre fournisseur, et les chaînes renommées dans Personnaliser gardent votre nom. Enregistrer actualise la playlist.</string>
+    <string name="settings_sources_clean_names_toggle">Nettoyer les noms des chaînes</string>
+    <string name="settings_sources_clean_names_example">Retire un préfixe de pays et une mention de qualité à la fin : « UK| News One HD » devient « News One »</string>
+    <string name="settings_sources_clean_names_custom">Retirer aussi</string>
+    <string name="settings_sources_clean_names_custom_hint">Mots séparés par ; ex. VIP; Backup</string>
     <string name="settings_sources_retest">Retester</string>
     <string name="settings_sources_probe_title">Tester cette liste ?</string>
     <string name="settings_sources_probe_warning">Beaucoup de fournisseurs n’indiquent jamais combien de chaînes vous pouvez regarder en même temps ; OwnTV le découvre donc en en ouvrant quelques-unes et en observant lesquelles tiennent. Tout ce qui est en cours de lecture s’arrêtera, et cela peut prendre jusqu’à deux minutes.</string>

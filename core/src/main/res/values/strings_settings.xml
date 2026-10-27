@@ -1411,7 +1411,7 @@
     <!-- Translators: Label of a text field in the channel-name dialog: extra words to remove from the start or end of every channel name. -->
     <string name="settings_sources_clean_names_custom">Also remove</string>
     <!-- Translators: Placeholder of the "Also remove" field. Keep the semicolon: it separates the words. -->
-    <string name="settings_sources_clean_names_custom_hint">Words separated by ;  e.g. VIP; Backup</string>
+    <string name="settings_sources_clean_names_custom_hint">Words separated by ; e.g. VIP; Backup</string>
     <!-- Translators: Button inside the Info popup: measure the playlist again. -->
     <string name="settings_sources_retest">Re-test</string>
     <!-- Translators: Title of the confirmation shown before the connection measurement runs. -->

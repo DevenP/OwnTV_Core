@@ -721,6 +721,13 @@
     <string name="settings_sources_test_trial">Próbafiók</string>
     <string name="settings_sources_test_expiry_none">Nincs megadva lejárati dátum</string>
     <string name="settings_sources_info">Információ</string>
+    <string name="settings_sources_clean_names">Nevek</string>
+    <string name="settings_sources_clean_names_title">Csatornanevek itt: „<xliff:g id="name">%1$s</xliff:g>”</string>
+    <string name="settings_sources_clean_names_description">Rövidebb csatornanevek minden képernyőn. A műsorújság továbbra is a szolgáltató által küldött nevekkel párosít, a Testreszabásban átnevezett csatornák pedig megtartják az általad adott nevet. A mentés frissíti a lejátszási listát.</string>
+    <string name="settings_sources_clean_names_toggle">Csatornanevek tisztítása</string>
+    <string name="settings_sources_clean_names_example">Eltávolítja az országelőtagot és a végén lévő minőségjelölést: „UK| News One HD” így jelenik meg: „News One”</string>
+    <string name="settings_sources_clean_names_custom">Ezeket is törölje</string>
+    <string name="settings_sources_clean_names_custom_hint">Pontosvesszővel (;) elválasztott szavak, pl. VIP; Backup</string>
     <string name="settings_sources_retest">Újratesztelés</string>
     <string name="settings_sources_probe_title">Teszteli ezt a lejátszási listát?</string>
     <string name="settings_sources_probe_warning">Sok szolgáltató soha nem árulja el, hány csatornát nézhet egyszerre, ezért az OwnTV úgy deríti ki, hogy megnyit néhányat, és megnézi, melyik marad életben. Minden, ami most szól, le fog állni, és ez akár két percig is eltarthat.</string>

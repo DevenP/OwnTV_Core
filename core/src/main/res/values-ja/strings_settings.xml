@@ -677,6 +677,13 @@
     <string name="settings_sources_test_trial">体験アカウント</string>
     <string name="settings_sources_test_expiry_none">有効期限の報告はありません</string>
     <string name="settings_sources_info">情報</string>
+    <string name="settings_sources_clean_names">名前</string>
+    <string name="settings_sources_clean_names_title">「<xliff:g id="name">%1$s</xliff:g>」のチャンネル名</string>
+    <string name="settings_sources_clean_names_description">すべての画面でチャンネル名を短く表示します。番組表は引き続きプロバイダーが送る名前で照合し、カスタマイズで名前を変えたチャンネルはその名前のままです。保存するとプレイリストを更新します。</string>
+    <string name="settings_sources_clean_names_toggle">チャンネル名を整理</string>
+    <string name="settings_sources_clean_names_example">先頭の国コードと末尾の画質表記を取り除きます:「UK| News One HD」は「News One」と表示</string>
+    <string name="settings_sources_clean_names_custom">ほかに削除する語</string>
+    <string name="settings_sources_clean_names_custom_hint">; で区切った語(例: VIP; Backup)</string>
     <string name="settings_sources_retest">再テスト</string>
     <string name="settings_sources_probe_title">このプレイリストをテストしますか？</string>
     <string name="settings_sources_probe_warning">同時に視聴できるチャンネル数を知らせないプロバイダーは少なくありません。そこで OwnTV はいくつか実際に開き、どれが続くかを見て判断します。再生中のものはすべて停止し、最大で 2 分ほどかかります。</string>

@@ -780,6 +780,13 @@
     <string name="settings_sources_test_trial">Proba-kontua</string>
     <string name="settings_sources_test_expiry_none">Ez da iraungitze-datarik jakinarazi</string>
     <string name="settings_sources_info">Informazioa</string>
+    <string name="settings_sources_clean_names">Izenak</string>
+    <string name="settings_sources_clean_names_title">Kanal-izenak “<xliff:g id="name">%1$s</xliff:g>” zerrendan</string>
+    <string name="settings_sources_clean_names_description">Kanal-izen laburragoak pantaila guztietan. Gidak hornitzaileak bidaltzen dituen izenekin lotzen jarraitzen du, eta Pertsonalizatu atalean izena aldatu diezun kanalek zure izena gordetzen dute. Gordetzeak zerrenda freskatzen du.</string>
+    <string name="settings_sources_clean_names_toggle">Garbitu kanal-izenak</string>
+    <string name="settings_sources_clean_names_example">Herrialde-aurrizkia eta amaierako kalitate-etiketa kentzen ditu: “UK| News One HD” “News One” gisa ageri da</string>
+    <string name="settings_sources_clean_names_custom">Kendu hauek ere</string>
+    <string name="settings_sources_clean_names_custom_hint">; bidez bereizitako hitzak, adib. VIP; Backup</string>
     <string name="settings_sources_retest">Probatu berriro</string>
     <string name="settings_sources_probe_title">Erreprodukzio-zerrenda hau probatu?</string>
     <string name="settings_sources_probe_warning">Hornitzaile askok ez dute inoiz esaten zenbat kanal ikus ditzakezun aldi berean, beraz OwnTVk hainbat ireki eta zeintzuk irauten duten ikusiz jakiten du. Orain erreproduzitzen ari den guztia gelditu egingo da, eta honek bi minutu arte iraun dezake.</string>

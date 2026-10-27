@@ -702,6 +702,13 @@
     <string name="settings_sources_test_trial">حساب تجريبي</string>
     <string name="settings_sources_test_expiry_none">لم يُبلَّغ عن تاريخ انتهاء</string>
     <string name="settings_sources_info">معلومات</string>
+    <string name="settings_sources_clean_names">الأسماء</string>
+    <string name="settings_sources_clean_names_title">أسماء القنوات في «<xliff:g id="name">%1$s</xliff:g>»</string>
+    <string name="settings_sources_clean_names_description">أسماء قنوات أقصر في كل الشاشات. يظل الدليل يطابق الأسماء التي يرسلها مزودك، وتحتفظ القنوات التي أعدت تسميتها في «تخصيص» بأسمائك. الحفظ يحدّث قائمة التشغيل.</string>
+    <string name="settings_sources_clean_names_toggle">تنظيف أسماء القنوات</string>
+    <string name="settings_sources_clean_names_example">يزيل بادئة الدولة ووسم الجودة في النهاية: «UK| News One HD» تظهر كـ«News One»</string>
+    <string name="settings_sources_clean_names_custom">إزالة أيضًا</string>
+    <string name="settings_sources_clean_names_custom_hint">كلمات مفصولة بـ ; مثل VIP; Backup</string>
     <string name="settings_sources_retest">إعادة الاختبار</string>
     <string name="settings_sources_probe_title">اختبار هذه القائمة؟</string>
     <string name="settings_sources_probe_warning">لا يذكر كثير من المزوّدين عدد القنوات التي يمكنك مشاهدتها في وقت واحد، لذا يكتشف OwnTV ذلك بفتح بضع قنوات ومعرفة أيها يستمر. سيتوقف كل ما يعمل الآن، وقد يستغرق هذا حتى دقيقتين.</string>

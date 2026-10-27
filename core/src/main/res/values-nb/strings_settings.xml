@@ -682,6 +682,13 @@
     <string name="settings_sources_test_trial">Prøvekonto</string>
     <string name="settings_sources_test_expiry_none">Ingen utløpsdato oppgitt</string>
     <string name="settings_sources_info">Info</string>
+    <string name="settings_sources_clean_names">Navn</string>
+    <string name="settings_sources_clean_names_title">Kanalnavn i «<xliff:g id="name">%1$s</xliff:g>»</string>
+    <string name="settings_sources_clean_names_description">Kortere kanalnavn på alle skjermer. Guiden matcher fortsatt navnene leverandøren sender, og kanaler du har gitt nytt navn i Tilpass, beholder navnet ditt. Lagring oppdaterer spillelisten.</string>
+    <string name="settings_sources_clean_names_toggle">Rydd i kanalnavn</string>
+    <string name="settings_sources_clean_names_example">Fjerner et landsprefiks og en kvalitetsmerking til slutt: «UK| News One HD» vises som «News One»</string>
+    <string name="settings_sources_clean_names_custom">Fjern også</string>
+    <string name="settings_sources_clean_names_custom_hint">Ord atskilt med ; f.eks. VIP; Backup</string>
     <string name="settings_sources_retest">Test på nytt</string>
     <string name="settings_sources_probe_title">Vil du teste denne spillelisten?</string>
     <string name="settings_sources_probe_warning">Mange leverandører sier aldri hvor mange kanaler du kan se samtidig, så OwnTV finner det ut ved å åpne noen og se hvilke som holder. Alt som spilles av nå, stopper, og dette kan ta opptil to minutter.</string>

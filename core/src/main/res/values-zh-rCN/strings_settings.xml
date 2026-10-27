@@ -677,6 +677,13 @@
     <string name="settings_sources_test_trial">试用账号</string>
     <string name="settings_sources_test_expiry_none">未提供到期日期</string>
     <string name="settings_sources_info">信息</string>
+    <string name="settings_sources_clean_names">名称</string>
+    <string name="settings_sources_clean_names_title">“<xliff:g id="name">%1$s</xliff:g>”中的频道名称</string>
+    <string name="settings_sources_clean_names_description">所有界面显示更短的频道名称。节目指南仍按提供商发送的名称匹配,在“自定义”中改过名的频道保留你的名称。保存会刷新播放列表。</string>
+    <string name="settings_sources_clean_names_toggle">清理频道名称</string>
+    <string name="settings_sources_clean_names_example">去掉开头的国家前缀和末尾的画质标记:“UK| News One HD”显示为“News One”</string>
+    <string name="settings_sources_clean_names_custom">另外删除</string>
+    <string name="settings_sources_clean_names_custom_hint">用 ; 分隔的词,例如 VIP; Backup</string>
     <string name="settings_sources_retest">重新测试</string>
     <string name="settings_sources_probe_title">测试此播放列表？</string>
     <string name="settings_sources_probe_warning">许多运营商从不说明你可以同时观看多少个频道，因此 OwnTV 会打开几个频道，看哪些能够持续播放，以此来确定。当前正在播放的内容会停止，此过程最多需要两分钟。</string>
