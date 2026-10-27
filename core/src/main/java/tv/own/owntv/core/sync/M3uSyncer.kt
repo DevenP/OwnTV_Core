@@ -434,7 +434,7 @@ internal class M3uSyncer(
                         pendingEpisodeRows++
                         if (pendingEpisodeRows >= SERIES_EPISODE_FLUSH_ROWS) flushSeries(final = false)
                     }
-                    // Other VOD tags (type="vod"/"movie", tvg-type="vod"/"movie") → the movie grid.
+                    // Other VOD tags (type/tvg-type "vod"/"movie"), or an untagged film URL → the movie grid.
                     e.isVod -> {
                         e.groupTitle?.let { queueCategory(MediaType.MOVIE, it) }
                         movieBuffer.add(PendingM3uChannel(order = order++, entry = e))
