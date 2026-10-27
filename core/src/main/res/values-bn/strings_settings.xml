@@ -755,6 +755,7 @@
     <string name="settings_epg_sources_auto_refresh_title">স্বয়ংক্রিয় রিফ্রেশ</string>
     <string name="settings_epg_sources_auto_refresh_description">বন্ধ, অ্যাপ চালুর সময় অথবা ডেটা পুরোনো হলে</string>
     <string name="settings_epg_sources_not_synced">এখনো সিঙ্ক করা হয়নি</string>
+    <string name="settings_epg_sources_priority">গাইডের অগ্রাধিকার: <xliff:g id="total">%2$d</xliff:g>টির মধ্যে <xliff:g id="position">%1$d</xliff:g>। দুটি উৎসে একই চ্যানেল থাকলে এই তালিকায় যেটি উপরে আছে সেটি ব্যবহার করা হয়।</string>
     <string name="settings_epg_refresh_1h">১ ঘণ্টা</string>
     <string name="settings_epg_refresh_3h">৩ ঘণ্টা</string>
     <string name="settings_epg_refresh_6h">৬ ঘণ্টা</string>

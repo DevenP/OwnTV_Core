@@ -771,6 +771,7 @@
     <string name="settings_epg_sources_auto_refresh_title">Automatyczne odświeżanie</string>
     <string name="settings_epg_sources_auto_refresh_description">Wyłączone, przy uruchomieniu lub gdy dane są nieaktualne</string>
     <string name="settings_epg_sources_not_synced">Jeszcze nie zsynchronizowano</string>
+    <string name="settings_epg_sources_priority">Priorytet przewodnika: <xliff:g id="position">%1$d</xliff:g> z <xliff:g id="total">%2$d</xliff:g>. Gdy dwa źródła zawierają ten sam kanał, używane jest to, które jest wyżej na tej liście.</string>
     <string name="settings_epg_refresh_1h">1 godzina</string>
     <string name="settings_epg_refresh_3h">3 godziny</string>
     <string name="settings_epg_refresh_6h">6 godzin</string>

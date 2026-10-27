@@ -755,6 +755,7 @@
     <string name="settings_epg_sources_auto_refresh_title">Automatisk uppdatering</string>
     <string name="settings_epg_sources_auto_refresh_description">Av, vid start eller när data är inaktuella</string>
     <string name="settings_epg_sources_not_synced">Inte synkroniserad ännu</string>
+    <string name="settings_epg_sources_priority">Guideprioritet <xliff:g id="position">%1$d</xliff:g> av <xliff:g id="total">%2$d</xliff:g>. När två källor har samma kanal används den som står högst i listan.</string>
     <string name="settings_epg_refresh_1h">1 timme</string>
     <string name="settings_epg_refresh_3h">3 timmar</string>
     <string name="settings_epg_refresh_6h">6 timmar</string>

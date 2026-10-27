@@ -755,6 +755,7 @@
     <string name="settings_epg_sources_auto_refresh_title">സ്വയമേവ പുതുക്കൽ</string>
     <string name="settings_epg_sources_auto_refresh_description">ഓഫ്, ആരംഭിക്കുമ്പോൾ, അല്ലെങ്കിൽ ഡാറ്റ പഴകുമ്പോൾ</string>
     <string name="settings_epg_sources_not_synced">ഇതുവരെ സമന്വയിപ്പിച്ചിട്ടില്ല</string>
+    <string name="settings_epg_sources_priority">ഗൈഡ് മുൻഗണന: <xliff:g id="position">%1$d</xliff:g>/<xliff:g id="total">%2$d</xliff:g>. രണ്ട് ഉറവിടങ്ങളിൽ ഒരേ ചാനൽ ഉണ്ടെങ്കിൽ, ഈ ലിസ്റ്റിൽ മുകളിലുള്ളത് ഉപയോഗിക്കും.</string>
     <string name="settings_epg_refresh_1h">1 മണിക്കൂർ</string>
     <string name="settings_epg_refresh_3h">3 മണിക്കൂർ</string>
     <string name="settings_epg_refresh_6h">6 മണിക്കൂർ</string>

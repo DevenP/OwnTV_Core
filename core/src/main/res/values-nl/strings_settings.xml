@@ -755,6 +755,7 @@
     <string name="settings_epg_sources_auto_refresh_title">Automatisch vernieuwen</string>
     <string name="settings_epg_sources_auto_refresh_description">Uit, bij opstarten of wanneer gegevens verouderd zijn</string>
     <string name="settings_epg_sources_not_synced">Nog niet gesynchroniseerd</string>
+    <string name="settings_epg_sources_priority">Gidsprioriteit <xliff:g id="position">%1$d</xliff:g> van <xliff:g id="total">%2$d</xliff:g>. Als twee bronnen dezelfde zender bevatten, wordt de bron die hoger in deze lijst staat gebruikt.</string>
     <string name="settings_epg_refresh_1h">1 uur</string>
     <string name="settings_epg_refresh_3h">3 uur</string>
     <string name="settings_epg_refresh_6h">6 uur</string>

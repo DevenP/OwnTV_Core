@@ -747,6 +747,7 @@
     <string name="settings_epg_sources_auto_refresh_title">自動更新</string>
     <string name="settings_epg_sources_auto_refresh_description">オフ、起動時、またはデータが古い場合</string>
     <string name="settings_epg_sources_not_synced">まだ同期されていません</string>
+    <string name="settings_epg_sources_priority">番組表の優先度 <xliff:g id="position">%1$d</xliff:g>/<xliff:g id="total">%2$d</xliff:g>。複数のソースに同じチャンネルがある場合は、このリストで上にあるソースが使われます。</string>
     <string name="settings_epg_refresh_1h">1時間ごと</string>
     <string name="settings_epg_refresh_3h">3時間ごと</string>
     <string name="settings_epg_refresh_6h">6時間ごと</string>

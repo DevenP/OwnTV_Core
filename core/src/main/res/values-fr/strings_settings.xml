@@ -763,6 +763,7 @@
     <string name="settings_epg_sources_auto_refresh_title">Actualisation automatique</string>
     <string name="settings_epg_sources_auto_refresh_description">Désactivée, au démarrage ou lorsque les données sont obsolètes</string>
     <string name="settings_epg_sources_not_synced">Pas encore synchronisée</string>
+    <string name="settings_epg_sources_priority">Priorité du guide : <xliff:g id="position">%1$d</xliff:g> sur <xliff:g id="total">%2$d</xliff:g>. Quand deux sources proposent la même chaîne, celle placée le plus haut dans cette liste est utilisée.</string>
     <string name="settings_epg_refresh_1h">1 heure</string>
     <string name="settings_epg_refresh_3h">3 heures</string>
     <string name="settings_epg_refresh_6h">6 heures</string>

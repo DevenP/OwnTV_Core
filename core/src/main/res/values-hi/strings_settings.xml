@@ -755,6 +755,7 @@
     <string name="settings_epg_sources_auto_refresh_title">अपने-आप रीफ़्रेश</string>
     <string name="settings_epg_sources_auto_refresh_description">बंद, स्टार्टअप पर या डेटा पुराना होने पर</string>
     <string name="settings_epg_sources_not_synced">अभी तक सिंक नहीं हुआ</string>
+    <string name="settings_epg_sources_priority">गाइड प्राथमिकता: <xliff:g id="total">%2$d</xliff:g> में से <xliff:g id="position">%1$d</xliff:g>। जब दो स्रोतों में एक ही चैनल हो, तो इस सूची में ऊपर वाला स्रोत उपयोग होता है।</string>
     <string name="settings_epg_refresh_1h">1 घंटा</string>
     <string name="settings_epg_refresh_3h">3 घंटे</string>
     <string name="settings_epg_refresh_6h">6 घंटे</string>

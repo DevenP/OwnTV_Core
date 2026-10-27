@@ -755,6 +755,7 @@
     <string name="settings_epg_sources_auto_refresh_title">Otomatik yenileme</string>
     <string name="settings_epg_sources_auto_refresh_description">Kapalı, başlangıçta veya veriler eskidiğinde</string>
     <string name="settings_epg_sources_not_synced">Henüz eşitlenmedi</string>
+    <string name="settings_epg_sources_priority">Rehber önceliği: <xliff:g id="position">%1$d</xliff:g>/<xliff:g id="total">%2$d</xliff:g>. İki kaynak aynı kanalı içerdiğinde bu listede daha yukarıda olan kullanılır.</string>
     <string name="settings_epg_refresh_1h">1 saat</string>
     <string name="settings_epg_refresh_3h">3 saat</string>
     <string name="settings_epg_refresh_6h">6 saat</string>

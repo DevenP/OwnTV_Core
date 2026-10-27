@@ -787,6 +787,7 @@
     <string name="settings_epg_sources_auto_refresh_title">التحديث التلقائي</string>
     <string name="settings_epg_sources_auto_refresh_description">متوقف، أو عند بدء التشغيل، أو عندما تصبح البيانات قديمة</string>
     <string name="settings_epg_sources_not_synced">لم تتم المزامنة بعد</string>
+    <string name="settings_epg_sources_priority">أولوية الدليل <xliff:g id="position">%1$d</xliff:g> من <xliff:g id="total">%2$d</xliff:g>. عندما يذكر مصدران القناة نفسها، يُستخدم المصدر الأعلى في هذه القائمة.</string>
     <string name="settings_epg_refresh_1h">ساعة واحدة</string>
     <string name="settings_epg_refresh_3h">3 ساعات</string>
     <string name="settings_epg_refresh_6h">6 ساعات</string>
