@@ -36,7 +36,7 @@ class M3uVodResort(
             val modes = settings.playlistAutoRefresh.first()
             sourceDao.observeAll().first().forEach { source ->
                 val mode = (modes[source.id] ?: PlaylistRefresh.OFF).mode
-                if (!needsResort(source.type, mode) { channelDao.videoFileUrlCandidates(source.id, CANDIDATES) }) return@forEach
+                if (!needsResort(source.type, mode) { candidateUrls(source.id) }) return@forEach
                 val counts = importFinalizer.contentCounts(source.id)
                 Log.i(TAG, "m3uVodResort sourceId=${source.id} — video files in Live TV, re-syncing")
                 catalogSyncScheduler.enqueueSync(
@@ -52,11 +52,15 @@ class M3uVodResort(
         settings.markM3uVodResortChecked()
     }
 
+    /** A few live URLs per video extension; one small indexed scan each, run once per install. */
+    private suspend fun candidateUrls(sourceId: Long): List<String> =
+        ProgressiveVideoUrl.EXTENSIONS.flatMap { channelDao.streamUrlsLike(sourceId, "%.$it%", CANDIDATES) }
+
     companion object {
         private const val TAG = "M3uVodResort"
 
         /** Enough candidates that an odd URL like `/movies.mp4/live/1.ts` cannot hide a real film. */
-        private const val CANDIDATES = 50
+        private const val CANDIDATES = 20
 
         /** Whether a saved source needs the re-sort. [liveUrls] is read only for an M3U source that auto-refreshes. */
         internal suspend fun needsResort(

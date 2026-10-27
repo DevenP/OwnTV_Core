@@ -158,24 +158,12 @@ interface ChannelDao {
     suspend fun remoteIdsForSource(sourceId: Long): List<String>
 
     /**
-     * A few of the source's live URLs that may name a video file — the extension at the end, or
-     * before a query or fragment. A coarse filter so the startup check never loads the whole
-     * catalogue; the caller confirms each with `ProgressiveVideoUrl`.
+     * A few of the source's live URLs containing [pattern] (a `LIKE` pattern such as `%.mp4%`). A
+     * coarse filter so the startup check never loads the whole catalogue; the caller confirms each
+     * with `ProgressiveVideoUrl`.
      */
-    @Query(
-        """SELECT streamUrl FROM channels WHERE sourceId = :sourceId AND (
-            streamUrl LIKE '%.mp4' OR streamUrl LIKE '%.mp4?%' OR streamUrl LIKE '%.mp4#%' OR
-            streamUrl LIKE '%.m4v' OR streamUrl LIKE '%.m4v?%' OR streamUrl LIKE '%.m4v#%' OR
-            streamUrl LIKE '%.mkv' OR streamUrl LIKE '%.mkv?%' OR streamUrl LIKE '%.mkv#%' OR
-            streamUrl LIKE '%.avi' OR streamUrl LIKE '%.avi?%' OR streamUrl LIKE '%.avi#%' OR
-            streamUrl LIKE '%.mov' OR streamUrl LIKE '%.mov?%' OR streamUrl LIKE '%.mov#%' OR
-            streamUrl LIKE '%.wmv' OR streamUrl LIKE '%.wmv?%' OR streamUrl LIKE '%.wmv#%' OR
-            streamUrl LIKE '%.webm' OR streamUrl LIKE '%.webm?%' OR streamUrl LIKE '%.webm#%' OR
-            streamUrl LIKE '%.mpg' OR streamUrl LIKE '%.mpg?%' OR streamUrl LIKE '%.mpg#%' OR
-            streamUrl LIKE '%.mpeg' OR streamUrl LIKE '%.mpeg?%' OR streamUrl LIKE '%.mpeg#%'
-        ) LIMIT :limit"""
-    )
-    suspend fun videoFileUrlCandidates(sourceId: Long, limit: Int): List<String>
+    @Query("SELECT streamUrl FROM channels WHERE sourceId = :sourceId AND streamUrl LIKE :pattern LIMIT :limit")
+    suspend fun streamUrlsLike(sourceId: Long, pattern: String, limit: Int): List<String>
 
     /**
      * Each channel's provider id alongside the guide key it is actually stored under — what a Stalker

@@ -522,14 +522,14 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/BulkInsertHelper.kt	movies_fts
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/BulkInsertHelper.kt	room_fts_content_sync_${it}_AFTER_INSERT
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/BulkInsertHelper.kt	series_fts
-1	sql	core/src/main/java/tv/own/owntv/core/database/Migration49To50.kt	ALTER TABLE `channels` ADD COLUMN `providerName` TEXT
-1	sql	core/src/main/java/tv/own/owntv/core/database/Migration49To50.kt	ALTER TABLE `sources` ADD COLUMN `channelNameStrip` TEXT
-1	sql	core/src/main/java/tv/own/owntv/core/database/Migration49To50.kt	ALTER TABLE `sources` ADD COLUMN `cleanChannelNames` INTEGER NOT NULL DEFAULT 0
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/Migration49To50.kt	channelNameStrip
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/Migration49To50.kt	channels
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/Migration49To50.kt	cleanChannelNames
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/Migration49To50.kt	providerName
-2	room-schema	core/src/main/java/tv/own/owntv/core/database/Migration49To50.kt	sources
+1	sql	core/src/main/java/tv/own/owntv/core/database/Migration50To51.kt	ALTER TABLE `channels` ADD COLUMN `providerName` TEXT
+1	sql	core/src/main/java/tv/own/owntv/core/database/Migration50To51.kt	ALTER TABLE `sources` ADD COLUMN `channelNameStrip` TEXT
+1	sql	core/src/main/java/tv/own/owntv/core/database/Migration50To51.kt	ALTER TABLE `sources` ADD COLUMN `cleanChannelNames` INTEGER NOT NULL DEFAULT 0
+1	room-schema	core/src/main/java/tv/own/owntv/core/database/Migration50To51.kt	channelNameStrip
+1	room-schema	core/src/main/java/tv/own/owntv/core/database/Migration50To51.kt	channels
+1	room-schema	core/src/main/java/tv/own/owntv/core/database/Migration50To51.kt	cleanChannelNames
+1	room-schema	core/src/main/java/tv/own/owntv/core/database/Migration50To51.kt	providerName
+2	room-schema	core/src/main/java/tv/own/owntv/core/database/Migration50To51.kt	sources
 18	sql	core/src/main/java/tv/own/owntv/core/database/OwnTVDatabase.kt	)
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/OwnTVDatabase.kt	,
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/OwnTVDatabase.kt	?
@@ -1000,7 +1000,7 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	SELECT remoteId FROM channels WHERE sourceId = :sourceId AND remoteId IS NOT NULL LIMIT 1
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	SELECT remoteId, epgChannelId FROM channels WHERE sourceId = :sourceId AND remoteId IS NOT NULL AND epgChannelId IS NOT NULL
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	SELECT remoteId, id, contentHash, sortOrder FROM channels WHERE sourceId = :sourceId AND remoteId IS NOT NULL
-1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	SELECT streamUrl FROM channels WHERE sourceId = :sourceId
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	SELECT streamUrl FROM channels WHERE sourceId = :sourceId AND streamUrl LIKE :pattern LIMIT :limit
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	UPDATE channels SET number = :number WHERE id = :id
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	UPDATE channels SET sortOrder = :sortOrder WHERE id = :id
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	UPDATE channels SET sortOrder = sortOrder + :delta WHERE sourceId = :sourceId AND sortOrder BETWEEN :fromSortOrder AND :toSortOrder
@@ -4543,6 +4543,7 @@
 2	log	core/src/main/java/tv/own/owntv/core/sync/M3uSyncer.kt	ms=${SystemClock.elapsedRealtime() - start}
 1	technical	core/src/main/java/tv/own/owntv/core/sync/M3uSyncer.kt	series
 1	log	core/src/main/java/tv/own/owntv/core/sync/M3uSyncer.kt	totalShows=$seriesProcessed ms=${SystemClock.elapsedRealtime() - start}
+1	sql	core/src/main/java/tv/own/owntv/core/sync/M3uVodResort.kt	%.$it%
 1	log	core/src/main/java/tv/own/owntv/core/sync/M3uVodResort.kt	M3uVodResort
 1	log	core/src/main/java/tv/own/owntv/core/sync/M3uVodResort.kt	m3uVodResort check failed
 1	log	core/src/main/java/tv/own/owntv/core/sync/M3uVodResort.kt	m3uVodResort sourceId=${source.id} — video files in Live TV, re-syncing

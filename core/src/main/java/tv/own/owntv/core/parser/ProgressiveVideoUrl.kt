@@ -16,7 +16,7 @@ package tv.own.owntv.core.parser
  */
 internal object ProgressiveVideoUrl {
 
-    private val EXTENSIONS = setOf("mp4", "m4v", "mkv", "avi", "mov", "wmv", "webm", "mpg", "mpeg")
+    val EXTENSIONS = setOf("mp4", "m4v", "mkv", "avi", "mov", "wmv", "webm", "mpg", "mpeg")
 
     private val FILE_SCHEMES = setOf("http", "https", "file")
 
