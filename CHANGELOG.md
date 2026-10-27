@@ -11,11 +11,22 @@
 
 ## core-1.0.70 — unreleased
 
-**Database v50**
+**Database v52 · Backup: two new playlist fields**
+
+### ✨ New features
+
+- **✨ Clean channel names, per playlist** (community PR #46 by @Kevsosmooth)
+- **🔢 M3U playlists without channel numbers are numbered in playlist order** (community PR #43 by @Kevsosmooth)
+- **🎬 M3U entries that point at a video file go to Movies** (community PR #45 by @Kevsosmooth)
 
 ### 🐛 Fixes
 
 - **TV guide sync up to 14× faster: adding a guide takes minutes, not a quarter of an hour**
+- **M3U entries the playlist now tags as films or series leave Live TV** (community PR #36 by @Kevsosmooth)
+- **M3U download retried once after a dropped connection** (community PR #44 by @Kevsosmooth)
+- **Playlist re-sync keeps titles in the provider's order; an unchanged re-sync is about 4× faster**
+- **Smaller database: seven redundant catalogue indexes dropped**
+- **Faster playlist import: title tags read only when present**
 - **Guide re-sync looks up what it already has in one read**
 
 ## core-1.0.69 — 2026-10-21
