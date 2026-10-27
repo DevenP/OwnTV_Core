@@ -195,7 +195,7 @@ internal class M3uSyncer(
                 val channels = buffer.map { item ->
                     val entry = item.entry
                     val group = entry.groupTitle
-                    ChannelEntity(
+                    tv.own.owntv.core.customize.ChannelNameCleanup.apply(s, ChannelEntity(
                         sourceId = s.id,
                         categoryId = group?.let { groupToCategoryId[MediaType.LIVE to it] },
                         name = entry.name,
@@ -213,7 +213,7 @@ internal class M3uSyncer(
                         httpHeaders = StreamHeaders.encode(entry.headers),
                         drmConfig = DrmConfig.encode(entry.drm),
                         manifestType = ManifestType.encode(entry.manifestType),
-                    )
+                    ))
                 }
                 channels.forEach { seenChannelKeys.add(it.remoteId!!) }
                 channels.forEach { if (it.number == null) unnumberedKeys.add(it.remoteId!!) else providerNumbered = true }
