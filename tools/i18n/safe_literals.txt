@@ -1004,6 +1004,7 @@
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	UPDATE channels SET number = :number WHERE id = :id
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	UPDATE channels SET sortOrder = :sortOrder WHERE id = :id
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	UPDATE channels SET sortOrder = sortOrder + :delta WHERE sourceId = :sourceId AND sortOrder BETWEEN :fromSortOrder AND :toSortOrder
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	UPDATE channels SET sortOrder = sortOrder - :parked WHERE sourceId = :sourceId AND sortOrder >= :parked / 2
 3	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	WHERE c.categoryId = :categoryId
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	WHERE c.sourceId IN (:sourceIds)
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	WHERE c.sourceId IN (:sourceIds) AND c.name LIKE '%' || :query || '%'
@@ -1245,6 +1246,7 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	SELECT remoteId, id, contentHash, sortOrder FROM movies WHERE sourceId = :sourceId AND remoteId IS NOT NULL
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	UPDATE movies SET sortOrder = :sortOrder WHERE id = :id
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	UPDATE movies SET sortOrder = sortOrder + :delta WHERE sourceId = :sourceId AND sortOrder BETWEEN :fromSortOrder AND :toSortOrder
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	UPDATE movies SET sortOrder = sortOrder - :parked WHERE sourceId = :sourceId AND sortOrder >= :parked / 2
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	WHERE f.profileId = :profileId AND f.mediaType = 'MOVIE' AND m.sourceId IN (:sourceIds)
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	WHERE f.profileId = :profileId AND m.sourceId IN (:sourceIds)
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	WHERE f.profileId = :profileId AND m.sourceId IN (:sourceIds) AND m.name LIKE '%' || :query || '%' ORDER BY f.addedAt DESC
@@ -1428,6 +1430,7 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	UPDATE series SET episodesSyncedAt = :at WHERE id = :seriesId
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	UPDATE series SET sortOrder = :sortOrder WHERE id = :id
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	UPDATE series SET sortOrder = sortOrder + :delta WHERE sourceId = :sourceId AND sortOrder BETWEEN :fromSortOrder AND :toSortOrder
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	UPDATE series SET sortOrder = sortOrder - :parked WHERE sourceId = :sourceId AND sortOrder >= :parked / 2
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	WHERE f.profileId = :profileId AND f.mediaType = 'SERIES' AND s.sourceId IN (:sourceIds)
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	WHERE f.profileId = :profileId AND s.sourceId IN (:sourceIds)
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	WHERE f.profileId = :profileId AND s.sourceId IN (:sourceIds) AND s.name LIKE '%' || :query || '%' ORDER BY f.addedAt DESC
@@ -4512,7 +4515,7 @@
 1	log	core/src/main/java/tv/own/owntv/core/sync/M3uReclassifiedLive.kt	M3uReclassified
 1	preference-key	core/src/main/java/tv/own/owntv/core/sync/M3uSyncer.kt	
 1	technical	core/src/main/java/tv/own/owntv/core/sync/M3uSyncer.kt	$base$KEY_SEPARATOR#$n
-1	log	core/src/main/java/tv/own/owntv/core/sync/M3uSyncer.kt	$label hash map loaded sourceId=$sourceId size=${it.size} ms=${SystemClock.elapsedRealtime() - start}
+1	log	core/src/main/java/tv/own/owntv/core/sync/M3uSyncer.kt	$label hash map loaded sourceId=$sourceId size=${it.byRemoteId.size} ms=${SystemClock.elapsedRealtime() - start}
 1	technical	core/src/main/java/tv/own/owntv/core/sync/M3uSyncer.kt	$name$KEY_SEPARATOR${group.orEmpty()}
 1	technical	core/src/main/java/tv/own/owntv/core/sync/M3uSyncer.kt	${show.name.substringAfterLast(',').trim()}$KEY_SEPARATOR$group
 1	technical	core/src/main/java/tv/own/owntv/core/sync/M3uSyncer.kt	${show.name}$KEY_SEPARATOR$group
@@ -4648,7 +4651,7 @@
 1	technical	core/src/main/java/tv/own/owntv/core/sync/SyncSupport.kt	$label chunk applied phase=${phase.name} chunk=$chunkIndex raw=$rawCount accepted=${rows.size}
 1	technical	core/src/main/java/tv/own/owntv/core/sync/SyncSupport.kt	$label chunk skipped phase=${phase.name} chunk=$chunkIndex raw=$rawCount skipped=$skipped
 1	log	core/src/main/java/tv/own/owntv/core/sync/SyncSupport.kt	$label content prune sourceId=$sourceId stale=${stale.size} ms=${SystemClock.elapsedRealtime() - start}
-1	log	core/src/main/java/tv/own/owntv/core/sync/SyncSupport.kt	$label hash map loaded sourceId=$sourceId size=${it.size} ms=${SystemClock.elapsedRealtime() - start}
+1	log	core/src/main/java/tv/own/owntv/core/sync/SyncSupport.kt	$label hash map loaded sourceId=$sourceId size=${it.byRemoteId.size} ms=${SystemClock.elapsedRealtime() - start}
 1	log	core/src/main/java/tv/own/owntv/core/sync/SyncSupport.kt	$label prune skipped sourceId=$sourceId reason=catalog_shrink stored=$stored stale=$stale
 1	technical	core/src/main/java/tv/own/owntv/core/sync/SyncSupport.kt	$label stream done phase=${phase.name} chunks=$chunkIndex totalUnique=${total[0]}
 1	log	core/src/main/java/tv/own/owntv/core/sync/SyncSupport.kt	SyncManager

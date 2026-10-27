@@ -84,9 +84,9 @@ internal class M3uSyncer(
             // live-only playlist never pays for movie/series queries. Loaded even on a fresh source:
             // a retried first sync may have leftover rows from the failed attempt, and diffing
             // against them (instead of blind-inserting) keeps the path single and idempotent.
-            var channelHashes: Map<String, StoredRow>? = null
-            var movieHashes: Map<String, StoredRow>? = null
-            var seriesHashes: Map<String, StoredRow>? = null
+            var channelHashes: StoredRows? = null
+            var movieHashes: StoredRows? = null
+            var seriesHashes: StoredRows? = null
             suspend fun channelHashLookup() = channelHashes ?: loadHashLookup("M3U live", s.id) {
                 channelDao.contentHashesForSource(it)
             }.also { channelHashes = it }
@@ -219,7 +219,8 @@ internal class M3uSyncer(
                 channels.forEach { if (it.number == null) unnumberedKeys.add(it.remoteId!!) else providerNumbered = true }
                 val legacyKeys = buffer.map { legacyStableKey(legacyChannelKeyCounters, it.entry.name, it.entry.groupTitle) }
                 val start = SystemClock.elapsedRealtime()
-                val stored = rescueTruncatedKeys(channelHashLookup(), channels.map { it.remoteId!! }.zip(legacyKeys))
+                val lookup = channelHashLookup()
+                val stored = StoredRows(rescueTruncatedKeys(lookup.byRemoteId, channels.map { it.remoteId!! }.zip(legacyKeys)), lookup.occupied)
                 val upsert = support.upsertStable(channels, CompletableDeferred(stored), channelAdapter)
                 processed += channels.size
                 Log.d(
@@ -255,7 +256,8 @@ internal class M3uSyncer(
                 movies.forEach { seenMovieKeys.add(it.remoteId!!) }
                 val legacyKeys = movieBuffer.map { legacyStableKey(legacyMovieKeyCounters, it.entry.name, it.entry.groupTitle) }
                 val start = SystemClock.elapsedRealtime()
-                val stored = rescueTruncatedKeys(movieHashLookup(), movies.map { it.remoteId!! }.zip(legacyKeys))
+                val lookup = movieHashLookup()
+                val stored = StoredRows(rescueTruncatedKeys(lookup.byRemoteId, movies.map { it.remoteId!! }.zip(legacyKeys)), lookup.occupied)
                 val upsert = support.upsertStable(movies, CompletableDeferred(stored), movieAdapter)
                 moviesProcessed += movies.size
                 Log.d(
@@ -319,7 +321,7 @@ internal class M3uSyncer(
                 val start = SystemClock.elapsedRealtime()
                 val shows = seriesAccumulator.values.toList()
                 val existing = rescueTruncatedKeys(
-                    seriesHashLookup(),
+                    seriesHashLookup().byRemoteId,
                     shows.map { show ->
                         val group = show.group.orEmpty()
                         "${show.name}$KEY_SEPARATOR$group" to "${show.name.substringAfterLast(',').trim()}$KEY_SEPARATOR$group"
@@ -523,10 +525,10 @@ internal class M3uSyncer(
         label: String,
         sourceId: Long,
         load: suspend (Long) -> List<tv.own.owntv.core.database.entity.ContentHashProjection>,
-    ): Map<String, StoredRow> {
+    ): StoredRows {
         val start = SystemClock.elapsedRealtime()
-        return load(sourceId).associateBy({ it.remoteId }, { StoredRow(it.id, it.contentHash, it.sortOrder) }).also {
-            Log.d(TAG, "$label hash map loaded sourceId=$sourceId size=${it.size} ms=${SystemClock.elapsedRealtime() - start}")
+        return StoredRows(load(sourceId).associateBy({ it.remoteId }, { StoredRow(it.id, it.contentHash, it.sortOrder) })).also {
+            Log.d(TAG, "$label hash map loaded sourceId=$sourceId size=${it.byRemoteId.size} ms=${SystemClock.elapsedRealtime() - start}")
         }
     }
 
