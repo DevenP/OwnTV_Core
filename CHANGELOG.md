@@ -9,6 +9,15 @@
 > in one bolded line of its own (e.g. **Database v46 · Backup v24 · Breaking**). The detail — what,
 > why, files and verification — belongs in the commit message, never here.
 
+## core-1.0.70 — unreleased
+
+**Database v50**
+
+### 🐛 Fixes
+
+- **TV guide sync up to 14× faster: adding a guide takes minutes, not a quarter of an hour**
+- **Guide re-sync looks up what it already has in one read**
+
 ## core-1.0.69 — 2026-10-21
 
 ### ✨ New features
