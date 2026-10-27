@@ -677,6 +677,13 @@
     <string name="settings_sources_test_trial">試用帳號</string>
     <string name="settings_sources_test_expiry_none">未提供到期日</string>
     <string name="settings_sources_info">資訊</string>
+    <string name="settings_sources_clean_names">名稱</string>
+    <string name="settings_sources_clean_names_title">「<xliff:g id="name">%1$s</xliff:g>」中的頻道名稱</string>
+    <string name="settings_sources_clean_names_description">所有畫面顯示更短的頻道名稱。節目表仍依供應商傳送的名稱比對,在「自訂」中改過名稱的頻道會保留你的名稱。儲存後會重新整理播放清單。</string>
+    <string name="settings_sources_clean_names_toggle">清理頻道名稱</string>
+    <string name="settings_sources_clean_names_example">移除開頭的國家前綴與結尾的畫質標記:「UK| News One HD」會顯示為「News One」</string>
+    <string name="settings_sources_clean_names_custom">另外移除</string>
+    <string name="settings_sources_clean_names_custom_hint">以 ; 分隔的字詞,例如 VIP; Backup</string>
     <string name="settings_sources_retest">重新測試</string>
     <string name="settings_sources_probe_title">測試此播放清單？</string>
     <string name="settings_sources_probe_warning">許多供應商從不說明你可以同時觀看多少個頻道，因此 OwnTV 會開啟幾個頻道，看看哪些能持續播放來判斷。目前正在播放的內容會停止，此過程最多需要兩分鐘。</string>

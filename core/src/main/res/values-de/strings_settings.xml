@@ -682,6 +682,13 @@
     <string name="settings_sources_test_trial">Testkonto</string>
     <string name="settings_sources_test_expiry_none">Kein Ablaufdatum gemeldet</string>
     <string name="settings_sources_info">Info</string>
+    <string name="settings_sources_clean_names">Namen</string>
+    <string name="settings_sources_clean_names_title">Sendernamen in „<xliff:g id="name">%1$s</xliff:g>“</string>
+    <string name="settings_sources_clean_names_description">Kürzere Sendernamen auf allen Bildschirmen. Der Guide ordnet weiter nach den Namen deines Anbieters zu, und in Anpassen umbenannte Sender behalten deinen Namen. Speichern aktualisiert die Playlist.</string>
+    <string name="settings_sources_clean_names_toggle">Sendernamen bereinigen</string>
+    <string name="settings_sources_clean_names_example">Entfernt ein Länderkürzel vorne und eine Qualitätsangabe am Ende: „UK| News One HD“ wird zu „News One“</string>
+    <string name="settings_sources_clean_names_custom">Außerdem entfernen</string>
+    <string name="settings_sources_clean_names_custom_hint">Wörter durch ; getrennt, z. B. VIP; Backup</string>
     <string name="settings_sources_retest">Erneut testen</string>
     <string name="settings_sources_probe_title">Diese Playlist testen?</string>
     <string name="settings_sources_probe_warning">Viele Anbieter verraten nie, wie viele Kanäle Sie gleichzeitig sehen dürfen. OwnTV findet es deshalb heraus, indem es einige öffnet und beobachtet, welche bestehen bleiben. Alles, was gerade läuft, wird beendet, und das kann bis zu zwei Minuten dauern.</string>

@@ -682,6 +682,13 @@
     <string name="settings_sources_test_trial">Deneme hesabı</string>
     <string name="settings_sources_test_expiry_none">Bitiş tarihi bildirilmedi</string>
     <string name="settings_sources_info">Bilgi</string>
+    <string name="settings_sources_clean_names">Adlar</string>
+    <string name="settings_sources_clean_names_title">“<xliff:g id="name">%1$s</xliff:g>” içindeki kanal adları</string>
+    <string name="settings_sources_clean_names_description">Her ekranda daha kısa kanal adları. Rehber yine sağlayıcınızın gönderdiği adlarla eşleşir ve Özelleştir’de yeniden adlandırdığınız kanallar sizin adınızı korur. Kaydetmek oynatma listesini yeniler.</string>
+    <string name="settings_sources_clean_names_toggle">Kanal adlarını temizle</string>
+    <string name="settings_sources_clean_names_example">Baştaki ülke ön ekini ve sondaki kalite etiketini kaldırır: “UK| News One HD” “News One” olarak görünür</string>
+    <string name="settings_sources_clean_names_custom">Bunları da kaldır</string>
+    <string name="settings_sources_clean_names_custom_hint">; ile ayrılmış sözcükler, örn. VIP; Backup</string>
     <string name="settings_sources_retest">Yeniden test et</string>
     <string name="settings_sources_probe_title">Bu oynatma listesi test edilsin mi?</string>
     <string name="settings_sources_probe_warning">Birçok sağlayıcı aynı anda kaç kanal izleyebileceğinizi hiç belirtmez; bu yüzden OwnTV birkaç kanal açıp hangilerinin devam ettiğine bakarak bunu kendisi bulur. Şu anda oynatılan her şey duracak ve bu işlem iki dakikaya kadar sürebilir.</string>

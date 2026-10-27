@@ -682,6 +682,13 @@
     <string name="settings_sources_test_trial">Proefaccount</string>
     <string name="settings_sources_test_expiry_none">Geen vervaldatum opgegeven</string>
     <string name="settings_sources_info">Info</string>
+    <string name="settings_sources_clean_names">Namen</string>
+    <string name="settings_sources_clean_names_title">Zendernamen in “<xliff:g id="name">%1$s</xliff:g>”</string>
+    <string name="settings_sources_clean_names_description">Kortere zendernamen op elk scherm. De gids koppelt nog steeds op de namen die je provider stuurt, en zenders die je in Aanpassen hebt hernoemd houden jouw naam. Opslaan vernieuwt de playlist.</string>
+    <string name="settings_sources_clean_names_toggle">Zendernamen opschonen</string>
+    <string name="settings_sources_clean_names_example">Verwijdert een landvoorvoegsel en een kwaliteitslabel aan het eind: “UK| News One HD” wordt “News One”</string>
+    <string name="settings_sources_clean_names_custom">Ook verwijderen</string>
+    <string name="settings_sources_clean_names_custom_hint">Woorden gescheiden door ; bijv. VIP; Backup</string>
     <string name="settings_sources_retest">Opnieuw testen</string>
     <string name="settings_sources_probe_title">Deze afspeellijst testen?</string>
     <string name="settings_sources_probe_warning">Veel providers zeggen nooit hoeveel kanalen je tegelijk mag kijken, dus OwnTV zoekt het uit door er een paar te openen en te kijken welke blijven werken. Alles wat nu speelt, stopt en dit kan tot twee minuten duren.</string>

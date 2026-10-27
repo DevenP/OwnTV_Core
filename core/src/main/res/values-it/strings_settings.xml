@@ -687,6 +687,13 @@
     <string name="settings_sources_test_trial">Account di prova</string>
     <string name="settings_sources_test_expiry_none">Nessuna data di scadenza indicata</string>
     <string name="settings_sources_info">Informazioni</string>
+    <string name="settings_sources_clean_names">Nomi</string>
+    <string name="settings_sources_clean_names_title">Nomi dei canali in «<xliff:g id="name">%1$s</xliff:g>»</string>
+    <string name="settings_sources_clean_names_description">Nomi dei canali più brevi in tutte le schermate. La guida continua ad abbinare i nomi inviati dal tuo provider e i canali rinominati in Personalizza mantengono il tuo nome. Il salvataggio aggiorna la playlist.</string>
+    <string name="settings_sources_clean_names_toggle">Pulisci i nomi dei canali</string>
+    <string name="settings_sources_clean_names_example">Rimuove un prefisso di paese e un’indicazione di qualità alla fine: «UK| News One HD» diventa «News One»</string>
+    <string name="settings_sources_clean_names_custom">Rimuovi anche</string>
+    <string name="settings_sources_clean_names_custom_hint">Parole separate da ; es. VIP; Backup</string>
     <string name="settings_sources_retest">Riprova test</string>
     <string name="settings_sources_probe_title">Testare questa playlist?</string>
     <string name="settings_sources_probe_warning">Molti provider non dicono mai quanti canali puoi guardare contemporaneamente, così OwnTV lo scopre aprendone alcuni e vedendo quali resistono. Tutto ciò che è in riproduzione si fermerà e l’operazione può richiedere fino a due minuti.</string>

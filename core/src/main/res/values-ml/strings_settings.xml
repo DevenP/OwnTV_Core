@@ -682,6 +682,13 @@
     <string name="settings_sources_test_trial">ട്രയൽ അക്കൗണ്ട്</string>
     <string name="settings_sources_test_expiry_none">കാലാവധി തീയതി നൽകിയിട്ടില്ല</string>
     <string name="settings_sources_info">വിവരം</string>
+    <string name="settings_sources_clean_names">പേരുകൾ</string>
+    <string name="settings_sources_clean_names_title">“<xliff:g id="name">%1$s</xliff:g>”-ലെ ചാനൽ പേരുകൾ</string>
+    <string name="settings_sources_clean_names_description">എല്ലാ സ്ക്രീനിലും ചെറിയ ചാനൽ പേരുകൾ. ഗൈഡ് ഇപ്പോഴും നിങ്ങളുടെ ദാതാവ് അയയ്ക്കുന്ന പേരുകളുമായാണ് ചേർക്കുന്നത്, കസ്റ്റമൈസിൽ നിങ്ങൾ പേരുമാറ്റിയ ചാനലുകൾ നിങ്ങളുടെ പേര് നിലനിർത്തും. സേവ് ചെയ്യുമ്പോൾ പ്ലേലിസ്റ്റ് പുതുക്കും.</string>
+    <string name="settings_sources_clean_names_toggle">ചാനൽ പേരുകൾ വൃത്തിയാക്കുക</string>
+    <string name="settings_sources_clean_names_example">രാജ്യ മുൻപ്രത്യയവും അവസാനത്തെ ക്വാളിറ്റി ടാഗും നീക്കുന്നു: “UK| News One HD” “News One” ആയി കാണിക്കും</string>
+    <string name="settings_sources_clean_names_custom">ഇവയും നീക്കുക</string>
+    <string name="settings_sources_clean_names_custom_hint">; കൊണ്ട് വേർതിരിച്ച വാക്കുകൾ, ഉദാ. VIP; Backup</string>
     <string name="settings_sources_retest">വീണ്ടും പരിശോധിക്കുക</string>
     <string name="settings_sources_probe_title">ഈ പ്ലേലിസ്റ്റ് പരിശോധിക്കണോ?</string>
     <string name="settings_sources_probe_warning">ഒരേസമയം എത്ര ചാനലുകൾ കാണാമെന്ന് പല ദാതാക്കളും ഒരിക്കലും പറയാറില്ല. അതിനാൽ കുറച്ച് ചാനലുകൾ തുറന്ന് ഏതൊക്കെ തുടരുന്നു എന്ന് നോക്കിയാണ് OwnTV ഇത് കണ്ടെത്തുന്നത്. ഇപ്പോൾ പ്ലേ ചെയ്യുന്നതെല്ലാം നിലയ്ക്കും, ഇതിന് രണ്ട് മിനിറ്റ് വരെ എടുത്തേക്കാം.</string>

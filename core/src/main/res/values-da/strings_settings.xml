@@ -682,6 +682,13 @@
     <string name="settings_sources_test_trial">Prøvekonto</string>
     <string name="settings_sources_test_expiry_none">Ingen udløbsdato oplyst</string>
     <string name="settings_sources_info">Info</string>
+    <string name="settings_sources_clean_names">Navne</string>
+    <string name="settings_sources_clean_names_title">Kanalnavne i “<xliff:g id="name">%1$s</xliff:g>”</string>
+    <string name="settings_sources_clean_names_description">Kortere kanalnavne på alle skærme. Guiden matcher stadig de navne, din udbyder sender, og kanaler, du har omdøbt i Tilpas, beholder dit navn. Gem opdaterer playlisten.</string>
+    <string name="settings_sources_clean_names_toggle">Ryd op i kanalnavne</string>
+    <string name="settings_sources_clean_names_example">Fjerner et landepræfiks og et kvalitetsmærke til sidst: “UK| News One HD” vises som “News One”</string>
+    <string name="settings_sources_clean_names_custom">Fjern også</string>
+    <string name="settings_sources_clean_names_custom_hint">Ord adskilt af ; f.eks. VIP; Backup</string>
     <string name="settings_sources_retest">Test igen</string>
     <string name="settings_sources_probe_title">Vil du teste denne playliste?</string>
     <string name="settings_sources_probe_warning">Mange udbydere oplyser aldrig, hvor mange kanaler du må se samtidig, så OwnTV finder ud af det ved at åbne nogle stykker og se, hvilke der overlever. Alt, der afspilles nu, stopper, og det kan tage op til to minutter.</string>
