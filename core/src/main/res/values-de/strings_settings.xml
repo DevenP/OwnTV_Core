@@ -755,6 +755,7 @@
     <string name="settings_epg_sources_auto_refresh_title">Automatische Aktualisierung</string>
     <string name="settings_epg_sources_auto_refresh_description">Aus, beim App-Start oder wenn die Daten veraltet sind</string>
     <string name="settings_epg_sources_not_synced">Noch nicht synchronisiert</string>
+    <string name="settings_epg_sources_priority">Programmpriorität <xliff:g id="position">%1$d</xliff:g> von <xliff:g id="total">%2$d</xliff:g>. Führen zwei Quellen denselben Sender, wird die weiter oben in dieser Liste verwendet.</string>
     <string name="settings_epg_refresh_1h">1 Stunde</string>
     <string name="settings_epg_refresh_3h">3 Stunden</string>
     <string name="settings_epg_refresh_6h">6 Stunden</string>

@@ -747,6 +747,7 @@
     <string name="settings_epg_sources_auto_refresh_title">자동 새로 고침</string>
     <string name="settings_epg_sources_auto_refresh_description">꺼짐, 앱 시작 시 또는 데이터가 오래되었을 때</string>
     <string name="settings_epg_sources_not_synced">아직 동기화되지 않음</string>
+    <string name="settings_epg_sources_priority">편성표 우선순위 <xliff:g id="position">%1$d</xliff:g>/<xliff:g id="total">%2$d</xliff:g>. 두 소스에 같은 채널이 있으면 이 목록에서 더 위에 있는 소스가 사용됩니다.</string>
     <string name="settings_epg_refresh_1h">1시간</string>
     <string name="settings_epg_refresh_3h">3시간</string>
     <string name="settings_epg_refresh_6h">6시간</string>

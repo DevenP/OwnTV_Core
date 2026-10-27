@@ -771,6 +771,7 @@
     <string name="settings_epg_sources_auto_refresh_title">Automatická aktualizace</string>
     <string name="settings_epg_sources_auto_refresh_description">Vypnuto, při spuštění nebo při zastaralých datech</string>
     <string name="settings_epg_sources_not_synced">Zatím nesynchronizováno</string>
+    <string name="settings_epg_sources_priority">Priorita průvodce <xliff:g id="position">%1$d</xliff:g> z <xliff:g id="total">%2$d</xliff:g>. Když dva zdroje obsahují stejný kanál, použije se ten, který je v tomto seznamu výš.</string>
     <string name="settings_epg_refresh_1h">1 hodina</string>
     <string name="settings_epg_refresh_3h">3 hodiny</string>
     <string name="settings_epg_refresh_6h">6 hodin</string>

@@ -853,6 +853,7 @@
     <string name="settings_epg_sources_auto_refresh_title">Freskatze automatikoa</string>
     <string name="settings_epg_sources_auto_refresh_description">Desaktibatuta, abiatzean, edo datuak zaharkituta daudenean</string>
     <string name="settings_epg_sources_not_synced">Oraindik ez da sinkronizatu</string>
+    <string name="settings_epg_sources_priority">Gidaren lehentasuna: <xliff:g id="position">%1$d</xliff:g>/<xliff:g id="total">%2$d</xliff:g>. Bi iturrik kanal bera badute, zerrenda honetan gorago dagoena erabiltzen da.</string>
     <string name="settings_epg_refresh_1h">ordu 1</string>
     <string name="settings_epg_refresh_3h">3 ordu</string>
     <string name="settings_epg_refresh_6h">6 ordu</string>

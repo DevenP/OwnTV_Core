@@ -18,6 +18,8 @@
 - **✨ Clean channel names, per playlist** (community PR #46 by @Kevsosmooth)
 - **🔢 M3U playlists without channel numbers are numbered in playlist order** (community PR #43 by @Kevsosmooth)
 - **🎬 M3U entries that point at a video file go to Movies** (community PR #45 by @Kevsosmooth)
+- **📋 Guide priority follows the EPG Sources order** (community PR #38 by @Kevsosmooth)
+- **🔎 A guide whose channels match none of the playlist's says so** (community PR #58 by @arch-fan)
 
 ### 🐛 Fixes
 
@@ -28,6 +30,9 @@
 - **Smaller database: seven redundant catalogue indexes dropped**
 - **Faster playlist import: title tags read only when present**
 - **Guide re-sync looks up what it already has in one read**
+- **Catch-up works with `${(b)…}` / `${(e)…}` templates** (community PR #53 by @sarmadsoomro)
+- **Xtream passwords with special characters play; short Xtream links and Stalker MACs masked in logs** (community PR #54 by @sarmadsoomro)
+- **Stalker re-sync no longer rewrites every live channel**
 
 ## core-1.0.69 — 2026-10-21
 

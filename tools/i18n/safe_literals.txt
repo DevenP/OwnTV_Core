@@ -543,6 +543,7 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/BulkInsertHelper.kt	SELECT name, sql FROM sqlite_master WHERE type='index' AND tbl_name='$table' AND sql IS NOT NULL
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/BulkInsertHelper.kt	SELECT sql FROM sqlite_master WHERE type='trigger' AND name='$triggerName'
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/BulkInsertHelper.kt	UNIQUE
+1	sql	core/src/main/java/tv/own/owntv/core/database/BulkInsertHelper.kt	UPDATE `channels` SET `streamUrl` = ? WHERE `sourceId` = ? AND `remoteId` = ? AND `streamUrl` != ?
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/BulkInsertHelper.kt	Unknown FTS table: $ftsTable
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/BulkInsertHelper.kt	Unknown table: $table
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/BulkInsertHelper.kt	categories
@@ -1115,7 +1116,6 @@
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/EpgDao.kt	FROM epg_programmes WHERE startMs > :from - 86400000 AND startMs < :to AND stopMs > :from
 3	sql	core/src/main/java/tv/own/owntv/core/database/dao/EpgDao.kt	NULL AS categories, NULL AS year, NULL AS rating, NULL AS lengthMin, NULL AS episode
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/EpgDao.kt	SELECT (MAX(stopMs) - MIN(startMs)) / 86400000 FROM epg_programmes WHERE epgChannelId = :epgChannelId
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/EpgDao.kt	SELECT * FROM epg_programmes WHERE epgChannelId = :epgChannelId AND startMs <= :now AND stopMs > :now ORDER BY startMs DESC LIMIT 1
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/EpgDao.kt	SELECT * FROM epg_programmes WHERE epgChannelId = :epgChannelId AND stopMs <= :now ORDER BY stopMs DESC LIMIT 1
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/EpgDao.kt	SELECT * FROM epg_programmes WHERE epgChannelId = :epgChannelId AND stopMs > :now ORDER BY startMs ASC LIMIT :limit
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/EpgDao.kt	SELECT * FROM epg_programmes WHERE epgChannelId = :epgKey
@@ -1745,22 +1745,28 @@
 1	uri	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	$base&$body
 1	uri	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	$base?$body
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	${g[1]}/streaming/timeshift.php?username=${g[2]}&password=${g[3]}&stream=${g[4]}
-1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	${g[1]}/streaming/timeshift.php?username=${g[2]}&password=${g[3]}&stream=${g[6]}&start=${g[5]}&duration=${g[4]}
+1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	${g[1]}/streaming/timeshift.php?username=${queryValue(g[2])}&password=${queryValue(g[3])}&stream=${g[6]}&start=${g[5]}&duration=${g[4]}
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	${prefix}archive-$startS-$durationS.ts$query
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	${prefix}timeshift_abs-$startS.m3u8$query
+1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	%2B
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	&
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	&start=$start&duration=$durationMin
+1	regex	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	([yMLwdDFuHkKhmsS])\\1+
+1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	+
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	.m3u8
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	.ts
 1	uri	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	?
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	?$it
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	?utc={utc}&lutc={lutc}
-2	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	UTC
+4	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	UTC
+2	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	UTF-8
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	YmdHMS
 1	regex	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	\\$?\\{([A-Za-z_][A-Za-z0-9_-]*)(?::([^}]*))?\\}
+1	regex	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	\\$\\{\\((b|e)\\)([^}]+?)(?::(utc))?\\}
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	^(.+?)/timeshift/([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/.]+)\\.(?:ts|m3u8)$
 1	regex	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	^(https?://[^/]+)/(?:live/)?([^/]+)/([^/]+)/(\\d+)(?:\\.[A-Za-z0-9]+)?$
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	append
+1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	b
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	currenttime
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	default
 2	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	duration
@@ -1777,7 +1783,7 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	stop
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	timenow
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	timeshift
-1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	timestamp
+2	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	timestamp
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	ts
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	utc
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/CatchupUrl.kt	utcend
@@ -1950,18 +1956,18 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/EpgMatcher.kt	vip
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/EpgMatcher.kt	wales
 1	protocol	core/src/main/java/tv/own/owntv/core/epg/EpgMatcher.kt	za
+3	json	core/src/main/java/tv/own/owntv/core/epg/EpgSourceJson.kt	at
+2	json	core/src/main/java/tv/own/owntv/core/epg/EpgSourceJson.kt	err
+2	json	core/src/main/java/tv/own/owntv/core/epg/EpgSourceJson.kt	id
+2	json	core/src/main/java/tv/own/owntv/core/epg/EpgSourceJson.kt	name
+2	json	core/src/main/java/tv/own/owntv/core/epg/EpgSourceJson.kt	ua
+2	json	core/src/main/java/tv/own/owntv/core/epg/EpgSourceJson.kt	url
 1	technical	core/src/main/java/tv/own/owntv/core/epg/EpgSourceStore.kt	EPG
 1	technical	core/src/main/java/tv/own/owntv/core/epg/EpgSourceStore.kt	[]
-3	json	core/src/main/java/tv/own/owntv/core/epg/EpgSourceStore.kt	at
-2	json	core/src/main/java/tv/own/owntv/core/epg/EpgSourceStore.kt	err
-2	json	core/src/main/java/tv/own/owntv/core/epg/EpgSourceStore.kt	id
 1	preference-key	core/src/main/java/tv/own/owntv/core/epg/EpgSourceStore.kt	migrated_v1
-2	json	core/src/main/java/tv/own/owntv/core/epg/EpgSourceStore.kt	name
 1	preference-key	core/src/main/java/tv/own/owntv/core/epg/EpgSourceStore.kt	next_id
 1	technical	core/src/main/java/tv/own/owntv/core/epg/EpgSourceStore.kt	owntv_epg_sources
 1	preference-key	core/src/main/java/tv/own/owntv/core/epg/EpgSourceStore.kt	sources
-2	json	core/src/main/java/tv/own/owntv/core/epg/EpgSourceStore.kt	ua
-2	json	core/src/main/java/tv/own/owntv/core/epg/EpgSourceStore.kt	url
 2	empty	core/src/main/java/tv/own/owntv/core/epg/GuideCandidates.kt	\0
 1	log	core/src/main/java/tv/own/owntv/core/epg/GuideCandidates.kt	Guide candidate limit $limit reached (named=${named.size} withProgrammes=${withProgrammes.size}) — list truncated
 1	log	core/src/main/java/tv/own/owntv/core/epg/GuideCandidates.kt	GuideCandidates
@@ -2039,16 +2045,16 @@
 1	log	core/src/main/java/tv/own/owntv/core/live/GuideReader.kt	rows=${stored.size} collapsed=${collapsed.size}
 1	log	core/src/main/java/tv/own/owntv/core/live/GuideReader.kt	shiftGroups=${keyed.groupBy { it.third }.size} chunks=$chunks rows=$rowsRead
 2	log	core/src/main/java/tv/own/owntv/core/live/GuideReader.kt	totalMs=${SystemClock.elapsedRealtime() - startedAt}
-1	log	core/src/main/java/tv/own/owntv/core/live/LiveEpgReader.kt	OwnTVHome
-1	log	core/src/main/java/tv/own/owntv/core/live/LiveEpgReader.kt	Stalker catch-up resolve failed channelId=${ch.id}
-1	log	core/src/main/java/tv/own/owntv/core/live/LiveEpgReader.kt	Stalker rewind resolve failed channelId=${ch.id}
+1	log	core/src/main/java/tv/own/owntv/core/live/LiveArchiveUrls.kt	OwnTVHome
+1	log	core/src/main/java/tv/own/owntv/core/live/LiveArchiveUrls.kt	Stalker catch-up resolve failed channelId=${ch.id}
+1	log	core/src/main/java/tv/own/owntv/core/live/LiveArchiveUrls.kt	Stalker rewind resolve failed channelId=${ch.id}
+1	uri	core/src/main/java/tv/own/owntv/core/live/LiveArchiveUrls.kt	ts
+1	protocol	core/src/main/java/tv/own/owntv/core/live/LiveArchiveUrls.kt	xc
+1	protocol	core/src/main/java/tv/own/owntv/core/live/LiveArchiveUrls.kt	xtream
 1	log	core/src/main/java/tv/own/owntv/core/live/LiveEpgReader.kt	fromStored=$fromStored fromCache=${result.size - fromStored}
 1	log	core/src/main/java/tv/own/owntv/core/live/LiveEpgReader.kt	keys=${channelKeys.map { it.second }.distinct().size} chunks=$chunks
 1	log	core/src/main/java/tv/own/owntv/core/live/LiveEpgReader.kt	live_nowplaying channels=${channels.size} keyed=${channelKeys.size}
 1	log	core/src/main/java/tv/own/owntv/core/live/LiveEpgReader.kt	totalMs=${android.os.SystemClock.elapsedRealtime() - startedAt}
-1	uri	core/src/main/java/tv/own/owntv/core/live/LiveEpgReader.kt	ts
-1	protocol	core/src/main/java/tv/own/owntv/core/live/LiveEpgReader.kt	xc
-1	protocol	core/src/main/java/tv/own/owntv/core/live/LiveEpgReader.kt	xtream
 2	preference-key	core/src/main/java/tv/own/owntv/core/live/LiveKey.kt	ALL
 2	preference-key	core/src/main/java/tv/own/owntv/core/live/LiveKey.kt	CATCHUP
 2	preference-key	core/src/main/java/tv/own/owntv/core/live/LiveKey.kt	CUSTOM:
@@ -2276,12 +2282,13 @@
 1	log	core/src/main/java/tv/own/owntv/core/network/FirstRead.kt	OwnTV-Network
 1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	\0
 1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	$1***@
-2	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	$1=***
+1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	$1=***
 1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	$1•••/•••/
+1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	$1•••/•••/$2
+1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	(://[^/\\s]+/)[^/\\s?#]+/[^/\\s?#]+/(\\d+(?:\\.[A-Za-z0-9]+)?)(?=$|[?#:\\s"'),;\\]>])
 1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	(?i)(://)([^/@:]+)(:[^/@]*)?@
 1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	(?i)(://[^/]+/(?:live|movie|series|vod|timeshift)/)([^/]+)/([^/]+)/
-1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	(?i)(username|password|user|pass|token)=[^&]*
-1	technical	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	(?i)(username|password|user|pass|token|data|auth|signature|sig|key)=[^&]*
+1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	(?i)(username|password|user|pass|token|data|auth|signature|sig|key|mac)=[^&]*
 2	protocol	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	Content-Encoding
 1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	GET body done url=$safeUrl totalMs=${SystemClock.elapsedRealtime() - startedAt}
 1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	GET body progress url=$label bytes=$bytesRead total=${totalBytes ?: -1}
@@ -2289,7 +2296,7 @@
 1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	GET failed url=$safeUrl attempt=$attempt/$attempts totalMs=${SystemClock.elapsedRealtime() - startedAt}
 1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	GET headers url=$safeUrl code=${response.code} contentLength=${totalBytes ?: -1}
 1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	GET start url=$safeUrl ua=${ua.take(48)} attempt=$attempt/$attempts
-1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	HTTP ${response.code} for ${redact(url)}
+1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	HTTP ${response.code} for ${redactUrl(url)}
 2	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	HttpClient
 1	protocol	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	Transfer-Encoding
 1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	User-Agent
@@ -2440,17 +2447,21 @@
 2	protocol	core/src/main/java/tv/own/owntv/core/parser/XmltvTime.kt	\0
 7	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	\0
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	#EXTM3U
-1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	${base(s)}/live/${s.username}/${s.password}/$streamId.m3u8
-1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	${base(s)}/live/${s.username}/${s.password}/$streamId.ts
-1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	${base(s)}/movie/${s.username}/${s.password}/$streamId.${ext ?: "mp4"}
+1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	${base(s)}/live/${credentials(s)}/$streamId.m3u8
+1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	${base(s)}/live/${credentials(s)}/$streamId.ts
+1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	${base(s)}/movie/${credentials(s)}/$streamId.${ext ?: "mp4"}
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	${base(s)}/player_api.php?username=$u&password=$p
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	${base(s)}/player_api.php?username=$u&password=$p&action=$action$extra
-1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	${base(s)}/series/${s.username}/${s.password}/$episodeId.${ext ?: "mp4"}
+1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	${base(s)}/series/${credentials(s)}/$episodeId.${ext ?: "mp4"}
+1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	${base(s)}/timeshift/${credentials(s)}/$durationMinutes/${fmt.format(java.util.Date(startMs))}/$streamId.$ext
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	${base(s)}/xmltv.php?username=$u&password=$p
+1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	${xtreamPathSegment(s.username)}/${xtreamPathSegment(s.password)}
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	&category_id=$it
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	&series_id=$seriesId
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	&stream_id=$streamId&limit=$limit
+1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	-._~!$&'()*+,;=:@
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	0
+1	technical	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	0123456789ABCDEF
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	1
 1	technical	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	GMT$sign${(minutes / 60).toString().padStart(2, '0')}:${(minutes % 60).toString().padStart(2, '0')}
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	Stream truncated after $count items label=$label — partial list kept
@@ -2848,6 +2859,7 @@
 1	log	core/src/main/java/tv/own/owntv/core/repository/EpgRepository.kt	EPG prune sourceId=$storeId ms=${SystemClock.elapsedRealtime() - pruneStartedAt}
 1	log	core/src/main/java/tv/own/owntv/core/repository/EpgRepository.kt	EPG sync incomplete — keeping partial (written=$writtenCount accepted=$processedCount inserted=$inserted updated=$updated skipped=$skipped)
 29	log	core/src/main/java/tv/own/owntv/core/repository/EpgRepository.kt	EpgRepository
+1	protocol	core/src/main/java/tv/own/owntv/core/repository/EpgRepository.kt	Guide channels match no playlist channel
 1	protocol	core/src/main/java/tv/own/owntv/core/repository/EpgRepository.kt	Guide has no programmes in the guide window
 1	room-schema	core/src/main/java/tv/own/owntv/core/repository/EpgRepository.kt	INSERT OR IGNORE INTO `epg_keep_history` VALUES (?)
 1	sql	core/src/main/java/tv/own/owntv/core/repository/EpgRepository.kt	INSERT OR REPLACE INTO `epg_programmes` (`id`,`sourceId`,`epgChannelId`,`startMs`,`stopMs`,`title`,`description`,
@@ -4215,7 +4227,7 @@
 1	technical	core/src/main/java/tv/own/owntv/core/stalker/StalkerAuthManager.kt	status
 1	log	core/src/main/java/tv/own/owntv/core/stalker/StalkerAuthManager.kt	watchdog=${profile["watchdog_timeout"] ?: "?"} ms=${SystemClock.elapsedRealtime() - startedAt}
 2	technical	core/src/main/java/tv/own/owntv/core/stalker/StalkerAuthManager.kt	watchdog_timeout
-5	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	\0
+6	empty	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	\0
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$1=***
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=${enc(type)}&action=create_link&cmd=${enc(cmd)}$seriesParam&forced_storage=0&disable_ad=0&JsHttpRequest=1-xml
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=account_info&action=get_main_info&JsHttpRequest=1-xml
@@ -4243,6 +4255,7 @@
 1	url	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	&sn=${URLEncoder.encode(it, "UTF-8")}
 1	url	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	&stb_type=${URLEncoder.encode(it, "UTF-8")}
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	(?i)(token|password|pass)=[^&]*
+1	regex	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	(?i)[?&]play_token=[^&\\s]*(?=&|\\s|$)
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	(\\d+)\\s*$
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	(\\d{4})-(\\d{2})-(\\d{2})(?:[ T](\\d{2}):(\\d{2})(?::(\\d{2}))?)?
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	*
@@ -4599,7 +4612,7 @@
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label categories sourceId=${s.id} count=${cats.size}
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label delta-skip sourceId=${s.id} unchangedCategories=${skippedCatDbIds.size}
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label fetch done sourceId=${s.id} pages=${pagesFetched.get()} failures=${pageFailures.get()} emitted=$emitted fetchMs=${SystemClock.elapsedRealtime() - fetchStart}
-1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label fieldDiff sourceId=$sourceId remoteId=${c.remoteId} hash=${c.computeContentHash()}
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label fieldDiff sourceId=$sourceId remoteId=${c.remoteId} hash=${stalkerChannelHash(c)}
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label genre ${gi + 1}/${list.size} id=${genre.id} '${genre.title}' total=${first.totalItems} maxPer=$maxPer pages=$pages
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label genre=${genre.id} page1 failed (${e.message})
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label genre=${genre.id} page=$p failed (${e.message})
@@ -4641,7 +4654,7 @@
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	portal XMLTV probe failed sourceId=${s.id}: ${it.message}
 4	room-schema	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	series
 2	room-schema	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	series_fts
-1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	streamUrl=${c.streamUrl.hashCode()} epgChannelId=${c.epgChannelId.hashCode()}
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	streamUrl=${StalkerClient.withoutPlayToken(c.streamUrl).hashCode()} epgChannelId=${c.epgChannelId.hashCode()}
 1	technical	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	tv_guide_url
 1	technical	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	unknown
 1	technical	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	xmltv_url
@@ -5236,6 +5249,7 @@
 2	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	ECONNREFUSED
 1	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	END_TAG
 2	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	Failed to connect
+1	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	Guide channels match no playlist channel
 1	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	HTTP 401
 1	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	HTTP 403
 1	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	HTTP 404

@@ -794,6 +794,7 @@
     <string name="settings_epg_sources_auto_refresh_title">Automatikus frissítés</string>
     <string name="settings_epg_sources_auto_refresh_description">Ki, induláskor, vagy ha az adatok elavultak</string>
     <string name="settings_epg_sources_not_synced">Még nincs szinkronizálva</string>
+    <string name="settings_epg_sources_priority">Műsorújság-prioritás: <xliff:g id="position">%1$d</xliff:g>/<xliff:g id="total">%2$d</xliff:g>. Ha két forrás ugyanazt a csatornát tartalmazza, a listában feljebb lévő lesz használva.</string>
     <string name="settings_epg_refresh_1h">1 óra</string>
     <string name="settings_epg_refresh_3h">3 óra</string>
     <string name="settings_epg_refresh_6h">6 óra</string>

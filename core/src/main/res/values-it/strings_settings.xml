@@ -763,6 +763,7 @@
     <string name="settings_epg_sources_auto_refresh_title">Aggiornamento automatico</string>
     <string name="settings_epg_sources_auto_refresh_description">Disattivato, all\'avvio o quando i dati non sono aggiornati</string>
     <string name="settings_epg_sources_not_synced">Non ancora sincronizzata</string>
+    <string name="settings_epg_sources_priority">Priorità guida <xliff:g id="position">%1$d</xliff:g> di <xliff:g id="total">%2$d</xliff:g>. Quando due fonti elencano lo stesso canale, viene usata quella più in alto in questo elenco.</string>
     <string name="settings_epg_refresh_1h">1 ora</string>
     <string name="settings_epg_refresh_3h">3 ore</string>
     <string name="settings_epg_refresh_6h">6 ore</string>

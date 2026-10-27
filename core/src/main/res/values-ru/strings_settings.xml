@@ -771,6 +771,7 @@
     <string name="settings_epg_sources_auto_refresh_title">Автоматическое обновление</string>
     <string name="settings_epg_sources_auto_refresh_description">Отключено, при запуске или при устаревании данных</string>
     <string name="settings_epg_sources_not_synced">Ещё не синхронизировано</string>
+    <string name="settings_epg_sources_priority">Приоритет телепрограммы: <xliff:g id="position">%1$d</xliff:g> из <xliff:g id="total">%2$d</xliff:g>. Если два источника содержат один и тот же канал, используется тот, что выше в этом списке.</string>
     <string name="settings_epg_refresh_1h">1 час</string>
     <string name="settings_epg_refresh_3h">3 часа</string>
     <string name="settings_epg_refresh_6h">6 часов</string>

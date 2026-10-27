@@ -747,6 +747,7 @@
     <string name="settings_epg_sources_auto_refresh_title">自動更新</string>
     <string name="settings_epg_sources_auto_refresh_description">關閉、啟動時更新，或資料過期時更新</string>
     <string name="settings_epg_sources_not_synced">尚未同步</string>
+    <string name="settings_epg_sources_priority">節目表優先順序：第 <xliff:g id="position">%1$d</xliff:g> 位，共 <xliff:g id="total">%2$d</xliff:g> 個。兩個來源包含同一頻道時，會使用此清單中較上方的來源。</string>
     <string name="settings_epg_refresh_1h">1 小時</string>
     <string name="settings_epg_refresh_3h">3 小時</string>
     <string name="settings_epg_refresh_6h">6 小時</string>
