@@ -53,8 +53,15 @@ class CategoryRelock(
      */
     fun leftApp() = relockFor(relockProfile.current, skipWithoutLocks = true)
 
-    /** The active profile is now [profileId]. What the PIN opened belongs to the profile that entered it. */
-    fun profileChanged(profileId: Long) = relockFor(relockProfile.changeTo(profileId))
+    /**
+     * The active profile is now [profileId]. What the PIN opened belongs to the profile that entered it.
+     * The same profile again is no change: an app that reports it each time its screen is rebuilt (a
+     * phone turned on its side) must not close what the PIN opened.
+     */
+    fun profileChanged(profileId: Long) {
+        if (profileId == relockProfile.current) return
+        relockFor(relockProfile.changeTo(profileId))
+    }
 
     /** Back in front: [resume] what was freed only once the relock check has stopped what it sealed. */
     fun afterSealCheck(resume: () -> Unit) {
