@@ -70,6 +70,23 @@
     <string name="settings_remote_shortcuts_long_press">Langer Tastendruck</string>
     <string name="settings_remote_shortcuts_unknown_button">Fernbedienungstaste %1$d</string>
     <string name="settings_remote_shortcuts_help">• Standardmäßig blättern CH+/CH− und Zurück/Vor durch Listen; Halten springt zum ersten oder letzten Eintrag.\n• Kurzer und langer Tastendruck können getrennt belegt werden.\n• „Zum letzten Eintrag“ bleibt in sehr großen „Alle“-Listen deaktiviert.\n• Langes Drücken von Zurück fokussiert immer „Aktuelle Wiedergabe“ und ist nicht änderbar.\n• Häufig belegbare Tasten sind Rot/Grün/Gelb/Blau, Zahlen, CH+/CH− und Zurück-/Vorspulen.\n• Zurück, Steuerkreuz, OK, Lautstärke, Home und Ein/Aus bleiben geschützt.\n• Zahlenkürzel funktionieren beim Browsen; im Vollbild hat die Kanalnummerneingabe Vorrang.</string>
+    <string name="settings_player_buttons">Player-Tasten</string>
+    <string name="settings_player_hold_ok">OK im Player halten</string>
+    <string name="settings_player_hold_ok_description">Was langes Drücken von OK öffnet, während die Steuerung ausgeblendet ist</string>
+    <string name="settings_help_player_hold_ok">Halten Sie OK im Live-Player im Vollbild bei ausgeblendeter Steuerung gedrückt, um die Senderliste, die Programmübersicht oder die Sendungsinfo zu öffnen. Aus lässt OK wie bisher. Solange dies aktiv ist, wirkt ein kurzes OK beim Loslassen. Filme und Episoden behalten das gewohnte OK.</string>
+    <string name="settings_player_short_ok">OK bei ausgeblendeter Steuerung</string>
+    <string name="settings_player_short_ok_description">Was ein kurzes Drücken von OK im Vollbild-Player bewirkt</string>
+    <string name="settings_help_player_short_ok">Ein kurzes OK im Vollbild-Player blendet die Steuerung ein. Wählen Sie Senderliste oder Programmübersicht, um bei Live-Sendern stattdessen diese zu öffnen; jede andere Taste, die der Player nicht nutzt, blendet weiterhin die Steuerung ein. Filme und Episoden zeigen immer die Steuerung.</string>
+    <string name="settings_player_swap_channel_keys">Sender hoch/runter tauschen</string>
+    <string name="settings_player_swap_channel_keys_description">CH+ und Hoch wechseln zum vorherigen Sender</string>
+    <string name="settings_help_player_swap_channel_keys">Normalerweise wechseln CH+ und Steuerkreuz-Hoch zum nächsten Sender, CH− und Runter zum vorherigen. Schalten Sie dies ein, um beides beim Fernsehen zu tauschen, im Vollbild und im Mini-Player. Listen beim Stöbern sind nicht betroffen.</string>
+    <string name="settings_player_number_keys_tune">Zifferntasten wählen Sender</string>
+    <string name="settings_player_number_keys_tune_description">Eine Sendernummer im Live-Player eingeben</string>
+    <string name="settings_help_player_number_keys_tune">Geben Sie im Live-Player im Vollbild eine Sendernummer auf der Fernbedienung ein, um zu diesem Sender zu springen. Schalten Sie dies aus, um die Zifferntasten für Ihre Fernbedienungs-Kurzbefehle freizuhalten. Für die Eingabe muss außerdem Sendernummern in den Live-TV-Einstellungen eingeschaltet sein.</string>
+    <string name="settings_player_ok_channel_list">Senderliste</string>
+    <string name="settings_player_ok_guide">Programmübersicht</string>
+    <string name="settings_player_ok_programme_info">Sendungsinfo</string>
+    <string name="settings_player_ok_show_controls">Steuerung einblenden</string>
     <string name="settings_remote_button_channel_up">Kanal +</string>
     <string name="settings_remote_button_channel_down">Kanal −</string>
     <string name="settings_remote_button_rewind">Zurückspulen</string>
@@ -264,6 +281,8 @@
     <string name="settings_breadcrumb"><xliff:g id="group">%1$s</xliff:g> › <xliff:g id="title">%2$s</xliff:g></string>
     <string name="settings_startup_home">Startseite</string>
     <string name="settings_startup_last_channel">Letzter Sender</string>
+    <string name="settings_startup_last_channel_guide">Letzter Sender · Programmübersicht</string>
+    <string name="settings_startup_last_channel_live">Letzter Sender · Live-TV</string>
     <string name="settings_startup_favorites">Live · Favoriten</string>
     <string name="settings_startup_specific_channel">Bestimmter Sender</string>
     <string name="settings_startup_channel_unavailable">Der Startsender ist nicht verfügbar. Die Startseite wurde geöffnet.</string>
@@ -1291,6 +1310,12 @@
     <string name="settings_nav_hide_after_desc">Nur schwebend: wie lange die Leiste wartet, nachdem der Fokus sie verlassen hat</string>
     <string name="settings_nav_widen">Bei Fokus verbreitern</string>
     <string name="settings_nav_widen_desc">Angedockt und Kompakt: zeigt die Namen über dem Inhalt, solange die Leiste den Fokus hat</string>
+    <string name="settings_nav_menu_labels">Menübeschriftungen</string>
+    <string name="settings_nav_menu_labels_desc">Die Bereichsnamen neben den Symbolen: aus, solange die Leiste den Fokus hat, oder immer</string>
+    <string name="settings_nav_menu_labels_focused">Bei Fokus</string>
+    <string name="settings_nav_menu_labels_always">Immer</string>
+    <string name="settings_nav_menu_labels_summary">Beschriftungen: <xliff:g id="choice">%1$s</xliff:g></string>
+    <string name="settings_search_keywords_menu_labels">Beschriftungen, Namen, Text, nur Symbole, Leiste, Seitenleiste, Menü, verbreitern, breit</string>
     <string name="settings_nav_menu_items">Menüeinträge</string>
     <string name="settings_nav_menu_items_desc">Dynamisch: folgt dem Inhalt der Playlist · Statisch: selbst auswählen</string>
     <string name="settings_nav_bar">Leiste</string>

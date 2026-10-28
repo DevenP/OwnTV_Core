@@ -20,6 +20,10 @@
 - **🎬 M3U entries that point at a video file go to Movies** (community PR #45 by @Kevsosmooth)
 - **📋 Guide priority follows the EPG Sources order** (community PR #38 by @Kevsosmooth)
 - **🔎 A guide whose channels match none of the playlist's says so** (community PR #58 by @arch-fan)
+- **🎛️ Player buttons: hold OK, short OK, swap channel up/down, number keys** (community PR #48 by @Kevsosmooth)
+- **🚀 Start on the last channel in the TV Guide or Live TV** (community PR #49 by @Kevsosmooth)
+- **🏷️ Menu labels: off, when focused or always** (community PR #41 by @Kevsosmooth)
+- **🎤 Voice search** (community PR #42 by @Kevsosmooth)
 
 ### 🐛 Fixes
 
