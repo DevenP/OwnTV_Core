@@ -532,12 +532,12 @@
 2	technical	core/src/main/java/tv/own/owntv/core/customize/CustomizationStore.kt	cust_
 1	preference-key	core/src/main/java/tv/own/owntv/core/customize/CustomizationStore.kt	cust_${profileId}_${type.name}
 1	technical	core/src/main/java/tv/own/owntv/core/customize/CustomizationStore.kt	owntv_customizations
-1	technical	core/src/main/java/tv/own/owntv/core/customize/RenameRules.kt	c$pattern
-1	technical	core/src/main/java/tv/own/owntv/core/customize/RenameRules.kt	i$pattern
 1	log	core/src/main/java/tv/own/owntv/core/customize/LockedNotificationTitles.kt	$what: unable to check its category lock, so its title stays hidden
 1	log	core/src/main/java/tv/own/owntv/core/customize/LockedNotificationTitles.kt	LockedNotificationTitles
 1	log	core/src/main/java/tv/own/owntv/core/customize/LockedNotificationTitles.kt	download $id
 1	log	core/src/main/java/tv/own/owntv/core/customize/LockedNotificationTitles.kt	recording $id
+1	technical	core/src/main/java/tv/own/owntv/core/customize/RenameRules.kt	c$pattern
+1	technical	core/src/main/java/tv/own/owntv/core/customize/RenameRules.kt	i$pattern
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/BulkInsertHelper.kt	\0
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/BulkInsertHelper.kt	$msg — no canonical indexes for ${state.table}, indexes were dropped and NOT restored
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/BulkInsertHelper.kt	+ FTS
@@ -1087,7 +1087,6 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ContentOrderDao.kt	SELECT o.profileId AS profileId, o.mediaType AS mediaType, o.itemId AS itemId,
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ContentOrderDao.kt	WHERE c.sourceId = :sourceId OR m.sourceId = :sourceId OR s.sourceId = :sourceId
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ContentOrderDao.kt	o.contextKey AS contextKey, o.position AS position,
-1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	DELETE FROM custom_category_members WHERE profileId = :profileId AND mediaType = :type AND itemId IN (:itemIds) AND (
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	(:type = 'LIVE' AND itemId IN (SELECT id FROM channels WHERE sourceId IN (:sourceIds)
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	(:type = 'MOVIE' AND itemId IN (SELECT id FROM movies WHERE sourceId IN (:sourceIds)
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	(:type = 'SERIES' AND itemId IN (SELECT id FROM series WHERE sourceId IN (:sourceIds)
@@ -1096,6 +1095,7 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	AND (categoryId IS NULL OR categoryId NOT IN (:excluded))))
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	AND (categoryId IS NULL OR categoryId NOT IN (:excluded)))) OR
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	AND COALESCE(c.sourceId, mv.sourceId, s.sourceId) IN (:sourceIds)
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	DELETE FROM custom_category_members WHERE profileId = :profileId AND mediaType = :type AND itemId IN (:itemIds) AND (
 4	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	INNER JOIN custom_category_members m ON m.itemId = c.id AND m.profileId = :profileId AND m.mediaType = 'LIVE' AND m.contextKey = :contextKey
 4	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	INNER JOIN custom_category_members m ON m.itemId = mv.id AND m.profileId = :profileId AND m.mediaType = 'MOVIE' AND m.contextKey = :contextKey
 4	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	INNER JOIN custom_category_members m ON m.itemId = s.id AND m.profileId = :profileId AND m.mediaType = 'SERIES' AND m.contextKey = :contextKey
@@ -2973,6 +2973,10 @@
 1	log	core/src/main/java/tv/own/owntv/core/repository/SourceTester.kt	test sourceId=${source.id} type=${source.type} -> ${result::class.simpleName}
 3	empty	core/src/main/java/tv/own/owntv/core/settings/ClockColors.kt	\0
 1	technical	core/src/main/java/tv/own/owntv/core/settings/ClockColors.kt	accent
+1	technical	core/src/main/java/tv/own/owntv/core/settings/CustomizePinSettings.kt	customize_pin_
+1	preference-key	core/src/main/java/tv/own/owntv/core/settings/CustomizePinSettings.kt	customize_pin_$pid
+2	preference-key	core/src/main/java/tv/own/owntv/core/settings/CustomizePinSettings.kt	customize_pin_$profileId
+1	preference-key	core/src/main/java/tv/own/owntv/core/settings/CustomizePinSettings.kt	settings_pin_$profileId
 1	protocol	core/src/main/java/tv/own/owntv/core/settings/RemoteShortcuts.kt	$keyCode:${press.name}
 1	protocol	core/src/main/java/tv/own/owntv/core/settings/RemoteShortcuts.kt	${it.keyCode}$SEPARATOR${it.press.name}$SEPARATOR${it.action.name}
 1	technical	core/src/main/java/tv/own/owntv/core/settings/SettingsImportRules.kt	audio_delay_ms
@@ -3040,9 +3044,6 @@
 1	technical	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	clock_date_color
 1	technical	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	clock_time_color
 1	technical	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	clock_weather_color
-1	technical	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	customize_pin_
-1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	customize_pin_$pid
-2	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	customize_pin_$profileId
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	data_saver
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	default_source_id
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	default_volume

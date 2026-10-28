@@ -33,7 +33,6 @@ import tv.own.owntv.core.live.MIN_MULTIVIEW_TILES
 import tv.own.owntv.core.recording.RecordingSchedule
 import tv.own.owntv.core.model.HomeConfig
 import tv.own.owntv.core.player.SurroundMode
-import tv.own.owntv.core.util.Pin
 import tv.own.owntv.core.model.ContentMenu
 import tv.own.owntv.core.theme.AccentColor
 import tv.own.owntv.core.theme.AppFontFamily
@@ -284,7 +283,8 @@ object SeekSteps {
  * Persists app-level preferences: global ones in the settings file, per-profile ones under keys that
  * carry the profile id.
  */
-class SettingsRepository(private val context: Context, private val localeStore: LocaleStore) {
+class SettingsRepository(private val context: Context, private val localeStore: LocaleStore) :
+    CustomizePinSettings by CustomizePinStore(context.dataStore) {
 
     /**
      * Scope for the warm settings snapshots below. Lives as long as this singleton — deliberately never
@@ -722,22 +722,6 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         context.dataStore.edit { prefs ->
             prefs[stringPreferencesKey("startup_channel_$profileId")] = channel.toJson().toString()
             prefs[stringPreferencesKey("startup_mode_$profileId")] = StartupMode.SPECIFIC_CHANNEL.name
-        }
-    }
-
-    // --- Customize Categories & Items: optional per-profile PIN lock on the screen (so hidden items can't
-    //     be unhidden by someone else). Exported/imported in backups as a salted SHA-256 hash (see
-    //     exportCustomizePins / importCustomizePins → BackupManager `customizePins`), so the PIN value
-    //     itself never travels in a readable form. ---
-    fun customizePin(profileId: Long): Flow<String?> = prefsFlow { prefs ->
-        prefs[stringPreferencesKey("customize_pin_$profileId")]?.takeIf { it.isNotBlank() }
-    }
-
-    /** null/blank clears the lock. */
-    suspend fun setCustomizePin(profileId: Long, pin: String?) {
-        context.dataStore.edit { prefs ->
-            val k = stringPreferencesKey("customize_pin_$profileId")
-            if (pin.isNullOrBlank()) prefs.remove(k) else prefs[k] = Pin.hash(pin.trim())
         }
     }
 
@@ -3311,37 +3295,6 @@ class SettingsRepository(private val context: Context, private val localeStore: 
     /** Applies a locale deferred until a complete backup restore has cleared its marker. */
     suspend fun applyImportedLocale(tag: String) {
         localeStore.set(tag)
-    }
-
-    // --- Backup: per-profile Customize PIN lock (dynamic "customize_pin_<id>" keys) ---
-
-    /** Exports all per-profile Customize PINs as { "<profileId>": "<pin>" }. */
-    suspend fun exportCustomizePins(): org.json.JSONObject {
-        val prefix = "customize_pin_"
-        val out = org.json.JSONObject()
-        context.dataStore.data.first().asMap().forEach { (k, v) ->
-            if (k.name.startsWith(prefix) && v is String && v.isNotBlank()) {
-                out.put(k.name.removePrefix(prefix), v)
-            }
-        }
-        return out
-    }
-
-    /** Restores Customize PINs only for profile ids in [existingProfileIds] (others are dropped safely). */
-    suspend fun importCustomizePins(o: org.json.JSONObject, existingProfileIds: Set<Long>) {
-        context.dataStore.edit { prefs ->
-            o.keys().forEach { key ->
-                val pid = key.toLongOrNull() ?: return@forEach
-                if (pid !in existingProfileIds) return@forEach
-                val pin = o.optString(key).takeIf { it.isNotEmpty() } ?: return@forEach
-                prefs[stringPreferencesKey("customize_pin_$pid")] = normalizeCustomizePin(pin)
-            }
-        }
-    }
-
-    private fun normalizeCustomizePin(value: String): String {
-        val trimmed = value.trim()
-        return if (Pin.isHashed(trimmed)) trimmed else Pin.hash(trimmed)
     }
 
     companion object {
