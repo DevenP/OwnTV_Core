@@ -614,6 +614,8 @@
     <string name="settings_customize_set_pin">🔒 Angi PIN</string>
     <string name="settings_customize_change_pin">🔒 Endre PIN</string>
     <string name="settings_customize_remove_lock">Fjern låsen</string>
+    <string name="settings_customize_settings_pin">Be om PIN for å åpne Innstillinger</string>
+    <string name="settings_customize_settings_pin_button">Be om PIN for å åpne Innstillinger: <xliff:g id="state">%1$s</xliff:g></string>
     <string name="settings_customize_description">Skjul og vis kanaler, filmer og serier, og gi nytt navn til eller endre rekkefølgen på kategorier for denne profilen. Beholdes ved nye synkroniseringer.</string>
     <string name="settings_customize_new_category_behavior">Virkemåte for nye kategorier</string>
     <string name="settings_customize_hide">Skjul</string>
@@ -659,6 +661,7 @@
     <string name="settings_customize_rename_hint">Bare for denne profilen. La feltet stå tomt for å gjenopprette «<xliff:g id="name">%1$s</xliff:g>».</string>
     <string name="settings_customize_remove_pin_title">Fjerne PIN-låsen?</string>
     <string name="settings_customize_remove_pin_message">Tilpasningsskjermen åpnes uten å be om PIN igjen.</string>
+    <string name="settings_customize_remove_pin_locks">Alle kategorier som er låst med denne PIN-koden, låses også opp.</string>
     <string name="settings_customize_remove">Fjern</string>
     <string name="settings_customize_confirm_pin">Bekreft ny PIN</string>
     <string name="settings_customize_pin_mismatch">PIN-kodene samsvarer ikke – skriv inn på nytt</string>

@@ -617,6 +617,8 @@
     <string name="settings_customize_set_pin">🔒 Définir un PIN</string>
     <string name="settings_customize_change_pin">🔒 Modifier le PIN</string>
     <string name="settings_customize_remove_lock">Supprimer le verrouillage</string>
+    <string name="settings_customize_settings_pin">Demander le PIN pour ouvrir les Paramètres</string>
+    <string name="settings_customize_settings_pin_button">Demander le PIN pour ouvrir les Paramètres : <xliff:g id="state">%1$s</xliff:g></string>
     <string name="settings_customize_description">Masquez et réaffichez des chaînes, des films et des séries, et renommez ou réorganisez les catégories de ce profil. Ces réglages sont conservés après les resynchronisations.</string>
     <string name="settings_customize_new_category_behavior">Comportement des nouvelles catégories</string>
     <string name="settings_customize_hide">Masquer</string>
@@ -663,6 +665,7 @@
     <string name="settings_customize_rename_hint">Uniquement pour ce profil. Laissez ce champ vide pour restaurer « <xliff:g id="name">%1$s</xliff:g> ».</string>
     <string name="settings_customize_remove_pin_title">Supprimer le verrouillage par PIN ?</string>
     <string name="settings_customize_remove_pin_message">L’écran de personnalisation s’ouvrira désormais sans demander de PIN.</string>
+    <string name="settings_customize_remove_pin_locks">Toutes les catégories verrouillées avec ce PIN sont aussi déverrouillées.</string>
     <string name="settings_customize_remove">Supprimer</string>
     <string name="settings_customize_confirm_pin">Confirmer le nouveau PIN</string>
     <string name="settings_customize_pin_mismatch">Les PIN ne correspondent pas — saisissez-les à nouveau</string>

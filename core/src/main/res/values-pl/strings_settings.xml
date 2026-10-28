@@ -620,6 +620,8 @@
     <string name="settings_customize_set_pin">🔒 Ustaw PIN</string>
     <string name="settings_customize_change_pin">🔒 Zmień PIN</string>
     <string name="settings_customize_remove_lock">Usuń blokadę</string>
+    <string name="settings_customize_settings_pin">Pytaj o PIN przy otwieraniu Ustawień</string>
+    <string name="settings_customize_settings_pin_button">Pytaj o PIN przy otwieraniu Ustawień: <xliff:g id="state">%1$s</xliff:g></string>
     <string name="settings_customize_description">Ukrywaj i pokazuj kanały, filmy oraz seriale, a także zmieniaj nazwy i kolejność kategorii w tym profilu. Ustawienia pozostają zachowane po ponownej synchronizacji.</string>
     <string name="settings_customize_new_category_behavior">Sposób obsługi nowych kategorii</string>
     <string name="settings_customize_hide">Ukryj</string>
@@ -667,6 +669,7 @@
     <string name="settings_customize_rename_hint">Tylko w tym profilu. Pozostaw puste, aby przywrócić „<xliff:g id="name">%1$s</xliff:g>”.</string>
     <string name="settings_customize_remove_pin_title">Usunąć blokadę PIN?</string>
     <string name="settings_customize_remove_pin_message">Ekran personalizacji będzie odtąd otwierany bez pytania o PIN.</string>
+    <string name="settings_customize_remove_pin_locks">Wszystkie kategorie zablokowane tym PIN-em również zostaną odblokowane.</string>
     <string name="settings_customize_remove">Usuń</string>
     <string name="settings_customize_confirm_pin">Potwierdź nowy PIN</string>
     <string name="settings_customize_pin_mismatch">Kody PIN nie są zgodne — wprowadź je ponownie</string>

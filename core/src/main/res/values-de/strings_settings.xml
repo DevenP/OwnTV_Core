@@ -614,6 +614,8 @@
     <string name="settings_customize_set_pin">🔒 PIN festlegen</string>
     <string name="settings_customize_change_pin">🔒 PIN ändern</string>
     <string name="settings_customize_remove_lock">Sperre entfernen</string>
+    <string name="settings_customize_settings_pin">PIN zum Öffnen der Einstellungen verlangen</string>
+    <string name="settings_customize_settings_pin_button">PIN zum Öffnen der Einstellungen verlangen: <xliff:g id="state">%1$s</xliff:g></string>
     <string name="settings_customize_description">Sender, Filme und Serien für dieses Profil ein- oder ausblenden sowie Kategorien umbenennen oder neu anordnen. Bleibt auch nach erneuten Synchronisierungen erhalten.</string>
     <string name="settings_customize_new_category_behavior">Verhalten bei neuen Kategorien</string>
     <string name="settings_customize_hide">Ausblenden</string>
@@ -659,6 +661,7 @@
     <string name="settings_customize_rename_hint">Gilt nur für dieses Profil. Leer lassen, um „<xliff:g id="name">%1$s</xliff:g>“ wiederherzustellen.</string>
     <string name="settings_customize_remove_pin_title">PIN-Sperre entfernen?</string>
     <string name="settings_customize_remove_pin_message">Der Anpassungsbildschirm wird künftig geöffnet, ohne erneut nach einer PIN zu fragen.</string>
+    <string name="settings_customize_remove_pin_locks">Alle mit dieser PIN gesperrten Kategorien werden ebenfalls entsperrt.</string>
     <string name="settings_customize_remove">Entfernen</string>
     <string name="settings_customize_confirm_pin">Neue PIN bestätigen</string>
     <string name="settings_customize_pin_mismatch">PINs stimmen nicht überein – erneut eingeben</string>

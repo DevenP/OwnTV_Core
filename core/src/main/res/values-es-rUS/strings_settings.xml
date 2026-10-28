@@ -617,6 +617,8 @@
     <string name="settings_customize_set_pin">🔒 Establecer PIN</string>
     <string name="settings_customize_change_pin">🔒 Cambiar PIN</string>
     <string name="settings_customize_remove_lock">Quitar bloqueo</string>
+    <string name="settings_customize_settings_pin">Pedir PIN para abrir la Configuración</string>
+    <string name="settings_customize_settings_pin_button">Pedir PIN para abrir la Configuración: <xliff:g id="state">%1$s</xliff:g></string>
     <string name="settings_customize_description">Oculta y vuelve a mostrar canales, películas y series, y cambia el nombre o el orden de las categorías de este perfil. Los cambios se conservan después de volver a sincronizar.</string>
     <string name="settings_customize_new_category_behavior">Comportamiento de categorías nuevas</string>
     <string name="settings_customize_hide">Ocultar</string>
@@ -663,6 +665,7 @@
     <string name="settings_customize_rename_hint">Solo para este perfil. Déjalo en blanco para restaurar “<xliff:g id="name">%1$s</xliff:g>”.</string>
     <string name="settings_customize_remove_pin_title">¿Quitar el bloqueo con PIN?</string>
     <string name="settings_customize_remove_pin_message">La pantalla Personalizar volverá a abrirse sin solicitar un PIN.</string>
+    <string name="settings_customize_remove_pin_locks">Todas las categorías bloqueadas con este PIN también se desbloquean.</string>
     <string name="settings_customize_remove">Quitar</string>
     <string name="settings_customize_confirm_pin">Confirmar PIN nuevo</string>
     <string name="settings_customize_pin_mismatch">Los PIN no coinciden — vuelve a ingresarlos</string>

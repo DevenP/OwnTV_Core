@@ -626,6 +626,8 @@
     <string name="settings_customize_set_pin">🔒 تعيين PIN</string>
     <string name="settings_customize_change_pin">🔒 تغيير PIN</string>
     <string name="settings_customize_remove_lock">إزالة القفل</string>
+    <string name="settings_customize_settings_pin">طلب رمز PIN لفتح الإعدادات</string>
+    <string name="settings_customize_settings_pin_button">طلب رمز PIN لفتح الإعدادات: <xliff:g id="state">%1$s</xliff:g></string>
     <string name="settings_customize_description">أخفِ القنوات والأفلام والمسلسلات أو أظهرها، وأعد تسمية الفئات أو ترتيبها لهذا الملف الشخصي. تبقى هذه التخصيصات بعد عمليات إعادة المزامنة.</string>
     <string name="settings_customize_new_category_behavior">سلوك الفئات الجديدة</string>
     <string name="settings_customize_hide">إخفاء</string>
@@ -675,6 +677,7 @@
     <string name="settings_customize_rename_hint">لهذا الملف الشخصي فقط. اتركه فارغًا لاستعادة «<xliff:g id="name">%1$s</xliff:g>».</string>
     <string name="settings_customize_remove_pin_title">هل تريد إزالة قفل PIN؟</string>
     <string name="settings_customize_remove_pin_message">ستُفتح شاشة التخصيص دون طلب رمز PIN مرة أخرى.</string>
+    <string name="settings_customize_remove_pin_locks">سيُلغى أيضًا قفل كل فئة مقفلة بهذا الرمز.</string>
     <string name="settings_customize_remove">إزالة</string>
     <string name="settings_customize_confirm_pin">تأكيد PIN الجديد</string>
     <string name="settings_customize_pin_mismatch">رمزا PIN غير متطابقين — أعد الإدخال</string>

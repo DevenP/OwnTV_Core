@@ -60,6 +60,11 @@
     </plurals>
     <string name="content_category_restore_order">清除自定义排序</string>
     <string name="content_category_restore_nothing">此分类已是播放列表默认设置</string>
+    <string name="content_category_lock">用 PIN 锁定</string>
+    <string name="content_category_locked_placeholder">此分类已锁定</string>
+    <plurals name="content_category_pin_wait">
+        <item quantity="other">PIN 错误次数过多。请在 <xliff:g id="count">%1$d</xliff:g> 秒后重试</item>
+    </plurals>
     <string name="content_move_to_category">移动到分类…</string>
     <string name="content_remove_from_category">从此分类中移除</string>
     <string name="content_download">下载</string>

@@ -611,6 +611,8 @@
     <string name="settings_customize_set_pin">🔒 PINを設定</string>
     <string name="settings_customize_change_pin">🔒 PINを変更</string>
     <string name="settings_customize_remove_lock">ロックを解除</string>
+    <string name="settings_customize_settings_pin">設定を開くときにPINを要求</string>
+    <string name="settings_customize_settings_pin_button">設定を開くときにPINを要求: <xliff:g id="state">%1$s</xliff:g></string>
     <string name="settings_customize_description">このプロフィールのチャンネル、映画、シリーズの表示／非表示を切り替え、カテゴリの名前や順序を変更します。再同期後も設定は維持されます。</string>
     <string name="settings_customize_new_category_behavior">新しいカテゴリの動作</string>
     <string name="settings_customize_hide">非表示にする</string>
@@ -655,6 +657,7 @@
     <string name="settings_customize_rename_hint">このプロフィールにのみ適用されます。空欄にすると「<xliff:g id="name">%1$s</xliff:g>」に戻ります。</string>
     <string name="settings_customize_remove_pin_title">PINロックを解除しますか？</string>
     <string name="settings_customize_remove_pin_message">今後、カスタマイズ画面を開くときにPINの入力を求められなくなります。</string>
+    <string name="settings_customize_remove_pin_locks">このPINでロックしたカテゴリもすべてロックが解除されます。</string>
     <string name="settings_customize_remove">解除</string>
     <string name="settings_customize_confirm_pin">新しいPINを確認</string>
     <string name="settings_customize_pin_mismatch">PINが一致しません — 入力し直してください</string>

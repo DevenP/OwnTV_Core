@@ -620,6 +620,8 @@
     <string name="settings_customize_set_pin">🔒 Nastavit PIN</string>
     <string name="settings_customize_change_pin">🔒 Změnit PIN</string>
     <string name="settings_customize_remove_lock">Odstranit zámek</string>
+    <string name="settings_customize_settings_pin">Vyžadovat PIN pro otevření Nastavení</string>
+    <string name="settings_customize_settings_pin_button">Vyžadovat PIN pro otevření Nastavení: <xliff:g id="state">%1$s</xliff:g></string>
     <string name="settings_customize_description">Skrývejte a znovu zobrazujte kanály, filmy a seriály a přejmenovávejte nebo měňte pořadí kategorií pro tento profil. Změny se zachovají i po opětovné synchronizaci.</string>
     <string name="settings_customize_new_category_behavior">Chování nových kategorií</string>
     <string name="settings_customize_hide">Skrýt</string>
@@ -667,6 +669,7 @@
     <string name="settings_customize_rename_hint">Platí pouze pro tento profil. Ponecháním prázdného pole obnovíte název „<xliff:g id="name">%1$s</xliff:g>“.</string>
     <string name="settings_customize_remove_pin_title">Odstranit zámek PIN?</string>
     <string name="settings_customize_remove_pin_message">Obrazovka přizpůsobení se příště otevře bez požadavku na PIN.</string>
+    <string name="settings_customize_remove_pin_locks">Odemknou se také všechny kategorie uzamčené tímto PINem.</string>
     <string name="settings_customize_remove">Odstranit</string>
     <string name="settings_customize_confirm_pin">Potvrďte nový PIN</string>
     <string name="settings_customize_pin_mismatch">PIN se neshoduje — zadejte jej znovu</string>

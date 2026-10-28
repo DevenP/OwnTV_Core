@@ -611,6 +611,8 @@
     <string name="settings_customize_set_pin">🔒 設定 PIN</string>
     <string name="settings_customize_change_pin">🔒 變更 PIN</string>
     <string name="settings_customize_remove_lock">移除鎖定</string>
+    <string name="settings_customize_settings_pin">開啟設定時要求輸入 PIN</string>
+    <string name="settings_customize_settings_pin_button">開啟設定時要求輸入 PIN：<xliff:g id="state">%1$s</xliff:g></string>
     <string name="settings_customize_description">為此使用者檔案隱藏或取消隱藏頻道、電影及影集，並重新命名或排列分類。重新同步後仍會保留。</string>
     <string name="settings_customize_new_category_behavior">新分類的顯示方式</string>
     <string name="settings_customize_hide">隱藏</string>
@@ -655,6 +657,7 @@
     <string name="settings_customize_rename_hint">僅適用於此使用者檔案。留白即可還原為「<xliff:g id="name">%1$s</xliff:g>」。</string>
     <string name="settings_customize_remove_pin_title">要移除 PIN 鎖定嗎？</string>
     <string name="settings_customize_remove_pin_message">之後開啟「自訂」畫面時，將不會再要求輸入 PIN。</string>
+    <string name="settings_customize_remove_pin_locks">以此 PIN 鎖定的所有分類也會一併解除鎖定。</string>
     <string name="settings_customize_remove">移除</string>
     <string name="settings_customize_confirm_pin">確認新的 PIN</string>
     <string name="settings_customize_pin_mismatch">PIN 不相符，請重新輸入</string>

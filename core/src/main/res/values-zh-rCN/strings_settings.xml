@@ -611,6 +611,8 @@
     <string name="settings_customize_set_pin">🔒 设置 PIN</string>
     <string name="settings_customize_change_pin">🔒 更改 PIN</string>
     <string name="settings_customize_remove_lock">移除锁定</string>
+    <string name="settings_customize_settings_pin">打开设置时要求输入 PIN</string>
+    <string name="settings_customize_settings_pin_button">打开设置时要求输入 PIN：<xliff:g id="state">%1$s</xliff:g></string>
     <string name="settings_customize_description">为此用户档案隐藏或取消隐藏频道、电影和剧集，以及重命名或重新排序分类。重新同步后仍会保留。</string>
     <string name="settings_customize_new_category_behavior">新分类处理方式</string>
     <string name="settings_customize_hide">隐藏</string>
@@ -655,6 +657,7 @@
     <string name="settings_customize_rename_hint">仅对此用户档案生效。留空可恢复为“<xliff:g id="name">%1$s</xliff:g>”。</string>
     <string name="settings_customize_remove_pin_title">移除 PIN 锁？</string>
     <string name="settings_customize_remove_pin_message">以后打开“自定义”界面时将不再要求输入 PIN。</string>
+    <string name="settings_customize_remove_pin_locks">用此 PIN 锁定的所有分类也将一并解锁。</string>
     <string name="settings_customize_remove">移除</string>
     <string name="settings_customize_confirm_pin">确认新 PIN</string>
     <string name="settings_customize_pin_mismatch">两次输入的 PIN 不一致 — 请重新输入</string>

@@ -65,6 +65,12 @@
     </plurals>
     <string name="content_category_restore_order">ഇഷ്ടാനുസൃത ക്രമം നീക്കം ചെയ്യും</string>
     <string name="content_category_restore_nothing">വിഭാഗം ഇതിനകം പ്ലേലിസ്റ്റ് ഡിഫോൾട്ടിലാണ്</string>
+    <string name="content_category_lock">PIN ഉപയോഗിച്ച് ലോക്ക് ചെയ്യുക</string>
+    <string name="content_category_locked_placeholder">ഈ വിഭാഗം ലോക്ക് ചെയ്തിരിക്കുന്നു</string>
+    <plurals name="content_category_pin_wait">
+        <item quantity="one">തെറ്റായ PIN വളരെയധികം തവണ നൽകി. <xliff:g id="count">%1$d</xliff:g> സെക്കൻഡിന് ശേഷം വീണ്ടും ശ്രമിക്കുക</item>
+        <item quantity="other">തെറ്റായ PIN വളരെയധികം തവണ നൽകി. <xliff:g id="count">%1$d</xliff:g> സെക്കൻഡിന് ശേഷം വീണ്ടും ശ്രമിക്കുക</item>
+    </plurals>
     <string name="content_move_to_category">വിഭാഗത്തിലേക്ക് നീക്കുക…</string>
     <string name="content_remove_from_category">ഈ വിഭാഗത്തിൽ നിന്ന് നീക്കുക</string>
     <string name="content_download">ഡൗൺലോഡ് ചെയ്യുക</string>
