@@ -95,6 +95,11 @@ val dataModule = module {
     // session, categoryDao).
     single { tv.own.owntv.core.customize.CategoryUnlockSession() }
     single { tv.own.owntv.core.customize.CategoryLockView(get(), get(), get()) }
+    // One count of wrong Customize PINs for the whole app, so moving to another category, section or
+    // PIN door does not start a fresh run of guesses. Monotonic clock: changing the time cannot end a wait.
+    single { tv.own.owntv.core.categorylock.PinAttemptLimiter(android.os.SystemClock::elapsedRealtime) }
+    // Which locked category a downloaded or recorded file the player is on belongs to, for the relock.
+    single { tv.own.owntv.core.categorylock.PlayingFileCategory() }
     single { CustomizationStore(androidContext(), get()) }
     single { tv.own.owntv.core.customize.LockedNotificationTitles(get(), get(), get(), get(), get(), get()) }
     single { tv.own.owntv.core.epg.EpgSourceStore(androidContext()) }
