@@ -185,6 +185,9 @@ class CustomizationStore(private val context: Context, private val locks: Catego
     fun observeVisible(profileId: Long, type: MediaType): Flow<SectionCustomizations> =
         locks.visible(profileId, type, observe(profileId, type))
 
+    /** Whether [profileId] has a category lock that can seal anything: a locked category and the PIN. */
+    fun observeHasLocks(profileId: Long): Flow<Boolean> = locks.hasLocks(profileId) { observe(profileId, it) }
+
     /** True when [categoryId]'s category is locked and, unless [anySession], not opened this session. */
     suspend fun sealsCategory(profileId: Long, categoryId: Long?, anySession: Boolean = false): Boolean =
         sealsItem(profileId, ItemCategory.Found(categoryId), anySession)

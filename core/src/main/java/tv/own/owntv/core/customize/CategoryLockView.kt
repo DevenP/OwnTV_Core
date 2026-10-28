@@ -67,6 +67,12 @@ class CategoryLockView(
         return sealed && hasPin(profileId).first()
     }
 
+    /** Whether a lock can seal anything on [profileId]: it has the PIN and a locked category in some section. */
+    fun hasLocks(profileId: Long, raw: (MediaType) -> Flow<SectionCustomizations>): Flow<Boolean> =
+        combine(LOCKABLE_SECTIONS.map { type -> raw(type).map { it.lockedCategories.isNotEmpty() } }) { it.any { locked -> locked } }
+            .combine(hasPin(profileId)) { locked, pin -> locked && pin }
+            .distinctUntilChanged()
+
     private fun hasPin(profileId: Long): Flow<Boolean> = settings.customizePin(profileId).map { it != null }
 
     /** Resolves the sealed provider folders to DB ids; custom ids have no row and stay key-only. */
