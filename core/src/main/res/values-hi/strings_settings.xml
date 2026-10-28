@@ -614,6 +614,8 @@
     <string name="settings_customize_set_pin">🔒 PIN सेट करें</string>
     <string name="settings_customize_change_pin">🔒 PIN बदलें</string>
     <string name="settings_customize_remove_lock">लॉक हटाएँ</string>
+    <string name="settings_customize_settings_pin">सेटिंग खोलने के लिए PIN माँगें</string>
+    <string name="settings_customize_settings_pin_button">सेटिंग खोलने के लिए PIN माँगें: <xliff:g id="state">%1$s</xliff:g></string>
     <string name="settings_customize_description">इस प्रोफ़ाइल के लिए चैनल, फ़िल्में और सीरीज़ छिपाएँ या फिर दिखाएँ तथा श्रेणियों का नाम या क्रम बदलें। यह रीसिंक के बाद भी बना रहता है।</string>
     <string name="settings_customize_new_category_behavior">नई श्रेणी का व्यवहार</string>
     <string name="settings_customize_hide">छिपाएँ</string>
@@ -659,6 +661,7 @@
     <string name="settings_customize_rename_hint">केवल इस प्रोफ़ाइल के लिए। “<xliff:g id="name">%1$s</xliff:g>” वापस लाने के लिए खाली छोड़ें।</string>
     <string name="settings_customize_remove_pin_title">PIN लॉक हटाएँ?</string>
     <string name="settings_customize_remove_pin_message">कस्टमाइज़ेशन स्क्रीन अब PIN पूछे बिना खुलेगी।</string>
+    <string name="settings_customize_remove_pin_locks">इस PIN से लॉक की गई सभी श्रेणियाँ भी अनलॉक हो जाएँगी।</string>
     <string name="settings_customize_remove">हटाएँ</string>
     <string name="settings_customize_confirm_pin">नए PIN की पुष्टि करें</string>
     <string name="settings_customize_pin_mismatch">PIN मेल नहीं खाते—दोबारा दर्ज करें</string>

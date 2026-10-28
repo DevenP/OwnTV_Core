@@ -65,6 +65,12 @@
     </plurals>
     <string name="content_category_restore_order">कस्टम क्रम हट जाएगा</string>
     <string name="content_category_restore_nothing">श्रेणी पहले से playlist के डिफ़ॉल्ट पर है</string>
+    <string name="content_category_lock">PIN से लॉक करें</string>
+    <string name="content_category_locked_placeholder">यह श्रेणी लॉक है</string>
+    <plurals name="content_category_pin_wait">
+        <item quantity="one">बहुत बार गलत PIN डाला गया। <xliff:g id="count">%1$d</xliff:g> सेकंड बाद फिर कोशिश करें</item>
+        <item quantity="other">बहुत बार गलत PIN डाला गया। <xliff:g id="count">%1$d</xliff:g> सेकंड बाद फिर कोशिश करें</item>
+    </plurals>
     <string name="content_move_to_category">श्रेणी में ले जाएँ…</string>
     <string name="content_remove_from_category">इस श्रेणी से हटाएँ</string>
     <string name="content_download">डाउनलोड करें</string>

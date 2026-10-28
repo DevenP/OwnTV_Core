@@ -614,6 +614,8 @@
     <string name="settings_customize_set_pin">🔒 PIN ayarla</string>
     <string name="settings_customize_change_pin">🔒 PIN\'i değiştir</string>
     <string name="settings_customize_remove_lock">Kilidi kaldır</string>
+    <string name="settings_customize_settings_pin">Ayarları açmak için PIN iste</string>
+    <string name="settings_customize_settings_pin_button">Ayarları açmak için PIN iste: <xliff:g id="state">%1$s</xliff:g></string>
     <string name="settings_customize_description">Bu profil için kanalları, filmleri ve dizileri gizleyin veya yeniden gösterin; kategorileri yeniden adlandırın ya da sıralayın. Yeniden eşitlemelerden etkilenmez.</string>
     <string name="settings_customize_new_category_behavior">Yeni kategori davranışı</string>
     <string name="settings_customize_hide">Gizle</string>
@@ -659,6 +661,7 @@
     <string name="settings_customize_rename_hint">Yalnızca bu profil için geçerlidir. “<xliff:g id="name">%1$s</xliff:g>” adını geri yüklemek için boş bırakın.</string>
     <string name="settings_customize_remove_pin_title">PIN kilidi kaldırılsın mı?</string>
     <string name="settings_customize_remove_pin_message">Özelleştirme ekranı artık PIN sormadan açılacak.</string>
+    <string name="settings_customize_remove_pin_locks">Bu PIN ile kilitlenen tüm kategorilerin kilidi de açılır.</string>
     <string name="settings_customize_remove">Kaldır</string>
     <string name="settings_customize_confirm_pin">Yeni PIN\'i doğrulayın</string>
     <string name="settings_customize_pin_mismatch">PIN\'ler eşleşmiyor — yeniden girin</string>

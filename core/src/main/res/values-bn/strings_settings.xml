@@ -614,6 +614,8 @@
     <string name="settings_customize_set_pin">🔒 PIN সেট করুন</string>
     <string name="settings_customize_change_pin">🔒 PIN পরিবর্তন করুন</string>
     <string name="settings_customize_remove_lock">লক সরান</string>
+    <string name="settings_customize_settings_pin">সেটিংস খুলতে PIN চাওয়া হবে</string>
+    <string name="settings_customize_settings_pin_button">সেটিংস খুলতে PIN চাওয়া হবে: <xliff:g id="state">%1$s</xliff:g></string>
     <string name="settings_customize_description">এই প্রোফাইলের জন্য চ্যানেল, সিনেমা ও সিরিজ লুকান বা আবার দেখান এবং বিভাগগুলোর নাম পরিবর্তন বা ক্রম বদলান। পুনরায় সিঙ্ক করলেও এগুলো বজায় থাকবে।</string>
     <string name="settings_customize_new_category_behavior">নতুন বিভাগের আচরণ</string>
     <string name="settings_customize_hide">লুকান</string>
@@ -659,6 +661,7 @@
     <string name="settings_customize_rename_hint">শুধু এই প্রোফাইলের জন্য। “<xliff:g id="name">%1$s</xliff:g>” ফিরিয়ে আনতে ফাঁকা রাখুন।</string>
     <string name="settings_customize_remove_pin_title">PIN লক সরাবেন?</string>
     <string name="settings_customize_remove_pin_message">নিজের মতো সাজানোর স্ক্রিনটি আবার PIN না চেয়েই খুলবে।</string>
+    <string name="settings_customize_remove_pin_locks">এই PIN দিয়ে লক করা সব বিভাগও আনলক হয়ে যাবে।</string>
     <string name="settings_customize_remove">সরান</string>
     <string name="settings_customize_confirm_pin">নতুন PIN নিশ্চিত করুন</string>
     <string name="settings_customize_pin_mismatch">PIN দুটি মিলছে না—আবার লিখুন</string>

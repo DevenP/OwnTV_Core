@@ -60,6 +60,11 @@
     </plurals>
     <string name="content_category_restore_order">カスタム順序を解除します</string>
     <string name="content_category_restore_nothing">このカテゴリはすでにプレイリストの初期状態です</string>
+    <string name="content_category_lock">PINでロック</string>
+    <string name="content_category_locked_placeholder">このカテゴリはロックされています</string>
+    <plurals name="content_category_pin_wait">
+        <item quantity="other">PINの入力ミスが多すぎます。<xliff:g id="count">%1$d</xliff:g> 秒後にもう一度お試しください</item>
+    </plurals>
     <string name="content_move_to_category">カテゴリに移動…</string>
     <string name="content_remove_from_category">このカテゴリから削除</string>
     <string name="content_download">ダウンロード</string>

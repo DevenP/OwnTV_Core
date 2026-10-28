@@ -60,6 +60,11 @@
     </plurals>
     <string name="content_category_restore_order">清除自訂排序</string>
     <string name="content_category_restore_nothing">此分類已是播放清單預設值</string>
+    <string name="content_category_lock">以 PIN 鎖定</string>
+    <string name="content_category_locked_placeholder">此分類已鎖定</string>
+    <plurals name="content_category_pin_wait">
+        <item quantity="other">PIN 錯誤次數過多。請在 <xliff:g id="count">%1$d</xliff:g> 秒後再試一次</item>
+    </plurals>
     <string name="content_move_to_category">移至分類…</string>
     <string name="content_remove_from_category">從此分類中移除</string>
     <string name="content_download">下載</string>

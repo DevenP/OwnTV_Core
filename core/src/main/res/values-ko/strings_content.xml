@@ -60,6 +60,11 @@
     </plurals>
     <string name="content_category_restore_order">사용자 지정 순서가 해제됩니다</string>
     <string name="content_category_restore_nothing">이 카테고리는 이미 플레이리스트 기본값입니다</string>
+    <string name="content_category_lock">PIN으로 잠금</string>
+    <string name="content_category_locked_placeholder">이 카테고리는 잠겨 있습니다</string>
+    <plurals name="content_category_pin_wait">
+        <item quantity="other">잘못된 PIN 입력이 너무 많습니다. <xliff:g id="count">%1$d</xliff:g>초 후에 다시 시도하세요</item>
+    </plurals>
     <string name="content_move_to_category">카테고리로 이동…</string>
     <string name="content_remove_from_category">이 카테고리에서 삭제</string>
     <string name="content_download">다운로드</string>

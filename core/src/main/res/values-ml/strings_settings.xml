@@ -614,6 +614,8 @@
     <string name="settings_customize_set_pin">🔒 PIN സജ്ജമാക്കുക</string>
     <string name="settings_customize_change_pin">🔒 PIN മാറ്റുക</string>
     <string name="settings_customize_remove_lock">ലോക്ക് നീക്കംചെയ്യുക</string>
+    <string name="settings_customize_settings_pin">ക്രമീകരണങ്ങൾ തുറക്കാൻ PIN ചോദിക്കുക</string>
+    <string name="settings_customize_settings_pin_button">ക്രമീകരണങ്ങൾ തുറക്കാൻ PIN ചോദിക്കുക: <xliff:g id="state">%1$s</xliff:g></string>
     <string name="settings_customize_description">ഈ പ്രൊഫൈലിനായി ചാനലുകൾ, സിനിമകൾ, സീരീസ് എന്നിവ മറയ്ക്കുകയോ വീണ്ടും കാണിക്കുകയോ ചെയ്യുക; വിഭാഗങ്ങളുടെ പേര് മാറ്റുകയോ ക്രമം മാറ്റുകയോ ചെയ്യുക. വീണ്ടും സമന്വയിപ്പിച്ചാലും മാറ്റങ്ങൾ നിലനിൽക്കും.</string>
     <string name="settings_customize_new_category_behavior">പുതിയ വിഭാഗങ്ങളുടെ പ്രവർത്തനം</string>
     <string name="settings_customize_hide">മറയ്ക്കുക</string>
@@ -659,6 +661,7 @@
     <string name="settings_customize_rename_hint">ഈ പ്രൊഫൈലിന് മാത്രം. “<xliff:g id="name">%1$s</xliff:g>” പുനഃസ്ഥാപിക്കാൻ ശൂന്യമായി വിടുക.</string>
     <string name="settings_customize_remove_pin_title">PIN ലോക്ക് നീക്കംചെയ്യണോ?</string>
     <string name="settings_customize_remove_pin_message">ഇനി PIN ചോദിക്കാതെ ഇഷ്ടാനുസൃതമാക്കൽ സ്ക്രീൻ തുറക്കും.</string>
+    <string name="settings_customize_remove_pin_locks">ഈ PIN ഉപയോഗിച്ച് ലോക്ക് ചെയ്ത എല്ലാ വിഭാഗങ്ങളും അൺലോക്ക് ആകും.</string>
     <string name="settings_customize_remove">നീക്കംചെയ്യുക</string>
     <string name="settings_customize_confirm_pin">പുതിയ PIN സ്ഥിരീകരിക്കുക</string>
     <string name="settings_customize_pin_mismatch">PIN-കൾ പൊരുത്തപ്പെടുന്നില്ല — വീണ്ടും നൽകുക</string>

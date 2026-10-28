@@ -85,6 +85,16 @@
     </plurals>
     <string name="content_category_restore_order">مسح الترتيب المخصّص</string>
     <string name="content_category_restore_nothing">الفئة في الوضع الافتراضي لقائمة التشغيل بالفعل</string>
+    <string name="content_category_lock">قفل برمز PIN</string>
+    <string name="content_category_locked_placeholder">هذه الفئة مقفلة</string>
+    <plurals name="content_category_pin_wait">
+        <item quantity="zero">محاولات PIN خاطئة كثيرة. حاول مرة أخرى بعد <xliff:g id="count">%1$d</xliff:g> ثانية</item>
+        <item quantity="one">محاولات PIN خاطئة كثيرة. حاول مرة أخرى بعد <xliff:g id="count">%1$d</xliff:g> ثانية</item>
+        <item quantity="two">محاولات PIN خاطئة كثيرة. حاول مرة أخرى بعد <xliff:g id="count">%1$d</xliff:g> ثانيتين</item>
+        <item quantity="few">محاولات PIN خاطئة كثيرة. حاول مرة أخرى بعد <xliff:g id="count">%1$d</xliff:g> ثوانٍ</item>
+        <item quantity="many">محاولات PIN خاطئة كثيرة. حاول مرة أخرى بعد <xliff:g id="count">%1$d</xliff:g> ثانية</item>
+        <item quantity="other">محاولات PIN خاطئة كثيرة. حاول مرة أخرى بعد <xliff:g id="count">%1$d</xliff:g> ثانية</item>
+    </plurals>
     <string name="content_move_to_category">نقل إلى فئة…</string>
     <string name="content_remove_from_category">إزالة من هذه الفئة</string>
     <string name="content_download">تنزيل</string>

@@ -712,6 +712,8 @@
     <string name="settings_customize_set_pin">🔒 Ezarri PINa</string>
     <string name="settings_customize_change_pin">🔒 Aldatu PINa</string>
     <string name="settings_customize_remove_lock">Kendu blokeoa</string>
+    <string name="settings_customize_settings_pin">Eskatu PINa Ezarpenak irekitzeko</string>
+    <string name="settings_customize_settings_pin_button">Eskatu PINa Ezarpenak irekitzeko: <xliff:g id="state">%1$s</xliff:g></string>
     <string name="settings_customize_description">Ezkutatu eta erakutsi kanalak, filmak eta telesailak, eta aldatu izena edo berrantolatu kategoriak profil honetarako. Birsinkronizazioak gainditzen ditu.</string>
     <string name="settings_customize_new_category_behavior">Kategoria berrien portaera</string>
     <string name="settings_customize_hide">Ezkutatu</string>
@@ -757,6 +759,7 @@
     <string name="settings_customize_rename_hint">Profil honetarako soilik. Utzi hutsik “<xliff:g id="name">%1$s</xliff:g>” berrezartzeko.</string>
     <string name="settings_customize_remove_pin_title">Kendu PIN blokeoa?</string>
     <string name="settings_customize_remove_pin_message">Pertsonalizatu pantaila PINik eskatu gabe irekiko da berriro.</string>
+    <string name="settings_customize_remove_pin_locks">PIN honekin blokeatutako kategoria guztiak ere desblokeatuko dira.</string>
     <string name="settings_customize_remove">Kendu</string>
     <string name="settings_customize_confirm_pin">Berretsi PIN berria</string>
     <string name="settings_customize_pin_mismatch">PINak ez datoz bat — idatzi berriro</string>

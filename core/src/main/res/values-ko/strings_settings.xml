@@ -611,6 +611,8 @@
     <string name="settings_customize_set_pin">🔒 PIN 설정</string>
     <string name="settings_customize_change_pin">🔒 PIN 변경</string>
     <string name="settings_customize_remove_lock">잠금 해제</string>
+    <string name="settings_customize_settings_pin">설정을 열 때 PIN 요청</string>
+    <string name="settings_customize_settings_pin_button">설정을 열 때 PIN 요청: <xliff:g id="state">%1$s</xliff:g></string>
     <string name="settings_customize_description">이 프로필의 채널, 영화 및 시리즈를 숨기거나 다시 표시하고 카테고리의 이름이나 순서를 변경합니다. 다시 동기화한 후에도 유지됩니다.</string>
     <string name="settings_customize_new_category_behavior">새 카테고리 동작</string>
     <string name="settings_customize_hide">숨기기</string>
@@ -655,6 +657,7 @@
     <string name="settings_customize_rename_hint">이 프로필에만 적용됩니다. 비워 두면 “<xliff:g id="name">%1$s</xliff:g>”(으)로 복원됩니다.</string>
     <string name="settings_customize_remove_pin_title">PIN 잠금을 해제하시겠습니까?</string>
     <string name="settings_customize_remove_pin_message">앞으로 맞춤 설정 화면을 열 때 PIN을 묻지 않습니다.</string>
+    <string name="settings_customize_remove_pin_locks">이 PIN으로 잠근 모든 카테고리도 잠금 해제됩니다.</string>
     <string name="settings_customize_remove">해제</string>
     <string name="settings_customize_confirm_pin">새 PIN 확인</string>
     <string name="settings_customize_pin_mismatch">PIN이 일치하지 않습니다. 다시 입력하세요</string>

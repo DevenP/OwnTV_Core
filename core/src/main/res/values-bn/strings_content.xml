@@ -65,6 +65,12 @@
     </plurals>
     <string name="content_category_restore_order">কাস্টম ক্রম মুছে ফেলা হবে</string>
     <string name="content_category_restore_nothing">বিভাগটি ইতিমধ্যে প্লেলিস্টের ডিফল্টে আছে</string>
+    <string name="content_category_lock">PIN দিয়ে লক করুন</string>
+    <string name="content_category_locked_placeholder">এই বিভাগটি লক করা আছে</string>
+    <plurals name="content_category_pin_wait">
+        <item quantity="one">অনেকবার ভুল PIN দেওয়া হয়েছে। <xliff:g id="count">%1$d</xliff:g> সেকেন্ড পরে আবার চেষ্টা করুন</item>
+        <item quantity="other">অনেকবার ভুল PIN দেওয়া হয়েছে। <xliff:g id="count">%1$d</xliff:g> সেকেন্ড পরে আবার চেষ্টা করুন</item>
+    </plurals>
     <string name="content_move_to_category">বিভাগে সরান…</string>
     <string name="content_remove_from_category">এই বিভাগ থেকে সরান</string>
     <string name="content_download">ডাউনলোড করুন</string>

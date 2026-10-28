@@ -620,6 +620,8 @@
     <string name="settings_customize_set_pin">🔒 Установить PIN</string>
     <string name="settings_customize_change_pin">🔒 Изменить PIN</string>
     <string name="settings_customize_remove_lock">Снять блокировку</string>
+    <string name="settings_customize_settings_pin">Запрашивать PIN для открытия настроек</string>
+    <string name="settings_customize_settings_pin_button">Запрашивать PIN для открытия настроек: <xliff:g id="state">%1$s</xliff:g></string>
     <string name="settings_customize_description">Скрывайте и показывайте каналы, фильмы и сериалы, а также переименовывайте или меняйте порядок категорий для этого профиля. Изменения сохраняются после повторной синхронизации.</string>
     <string name="settings_customize_new_category_behavior">Поведение новых категорий</string>
     <string name="settings_customize_hide">Скрыть</string>
@@ -667,6 +669,7 @@
     <string name="settings_customize_rename_hint">Только для этого профиля. Оставьте поле пустым, чтобы восстановить «<xliff:g id="name">%1$s</xliff:g>».</string>
     <string name="settings_customize_remove_pin_title">Снять блокировку с помощью PIN?</string>
     <string name="settings_customize_remove_pin_message">Экран настройки категорий и элементов будет открываться без запроса PIN.</string>
+    <string name="settings_customize_remove_pin_locks">Все категории, заблокированные этим PIN-кодом, тоже будут разблокированы.</string>
     <string name="settings_customize_remove">Удалить</string>
     <string name="settings_customize_confirm_pin">Подтвердите новый PIN</string>
     <string name="settings_customize_pin_mismatch">PIN не совпадают — введите снова</string>
