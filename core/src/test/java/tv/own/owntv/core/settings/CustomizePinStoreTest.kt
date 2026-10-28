@@ -1,39 +1,37 @@
 package tv.own.owntv.core.settings
 
-import androidx.datastore.preferences.core.PreferenceDataStoreFactory
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.cancel
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.emptyPreferences
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
-import org.junit.After
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
-import org.junit.Rule
 import org.junit.Test
-import org.junit.rules.TemporaryFolder
-import java.io.File
 import tv.own.owntv.core.util.Pin
 
 /** The Settings lock rides on the Customize PIN: per profile, off by default, gone with the PIN. */
 class CustomizePinStoreTest {
 
-    @get:Rule
-    val folder = TemporaryFolder()
-
-    private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
-
-    private val store by lazy {
-        CustomizePinStore(
-            PreferenceDataStoreFactory.create(scope = scope) { File(folder.root, "test.preferences_pb") },
-        )
+    /**
+     * In memory: a file-backed DataStore replaces its file by renaming over it, which Windows refuses
+     * while the old file exists, so every second write would fail on a Windows build machine.
+     */
+    private class MemoryDataStore : DataStore<Preferences> {
+        private val state = MutableStateFlow(emptyPreferences())
+        private val lock = Mutex()
+        override val data: Flow<Preferences> = state
+        override suspend fun updateData(transform: suspend (t: Preferences) -> Preferences): Preferences =
+            lock.withLock { transform(state.value).also { state.value = it } }
     }
 
-    @After
-    fun tearDown() = scope.cancel()
+    private val store = CustomizePinStore(MemoryDataStore())
 
     @Test
     fun `the Settings lock is off until switched on`() = runBlocking {
