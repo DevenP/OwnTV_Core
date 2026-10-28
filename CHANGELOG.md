@@ -24,6 +24,8 @@
 - **🚀 Start on the last channel in the TV Guide or Live TV** (community PR #49 by @Kevsosmooth)
 - **🏷️ Menu labels: off, when focused or always** (community PR #41 by @Kevsosmooth)
 - **🎤 Voice search** (community PR #42 by @Kevsosmooth)
+- **🔒 Lock a category with the Customize PIN** (community PR #37 by @Kevsosmooth)
+- **🔐 Ask for the PIN to open Settings** (community PR #47 by @Kevsosmooth)
 
 ### 🐛 Fixes
 
