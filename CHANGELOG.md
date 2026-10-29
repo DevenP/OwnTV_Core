@@ -41,6 +41,14 @@
 - **Xtream passwords with special characters play; short Xtream links and Stalker MACs masked in logs** (community PR #54 by @sarmadsoomro)
 - **Settings search: a hint while nothing is typed**
 - **Stalker re-sync no longer rewrites every live channel**
+- **An Xtream playlist with a refused password says so instead of syncing empty**
+- **A refused login answered with HTTP 513 shows the wrong-password message**
+- **A changed password, server, username or MAC re-syncs the playlist on save**
+- **Restore leaves Xtream playlists without a password unsynced and names them**
+- **A new playlist with a name already in use is numbered: "My IPTV 2"**
+- **Renamed channels, films and series keep their name on Home and in Continue**
+- **Stalker portals behind a redirect to another host stay signed in**
+- **Stalker posters sent as server paths load**
 
 ## core-1.0.69 — 2026-10-21
 

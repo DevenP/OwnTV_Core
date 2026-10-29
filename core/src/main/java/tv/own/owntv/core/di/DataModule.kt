@@ -242,6 +242,8 @@ val dataModule = module {
     single { tv.own.owntv.core.backup.UserDataWriter(get(), get(), get(), get(), get(), get()) }
     // sourceDao, syncManager, userDataResolver, channelDao, movieDao, seriesDao, categoryDao
     single { SourceRepository(get(), get(), get(), get(), get(), get(), get(), playbackQuirkDao = get(), playbackPrefsDao = get()) }
+    // sourceDao, stalkerAuthManager, catalogSyncScheduler, importFinalizer
+    single { tv.own.owntv.core.repository.SourceEditor(get(), get(), get(), get()) }
     // settings, sourceRepository, channelDao, movieDao, seriesDao
     single { tv.own.owntv.core.nav.NavVisibility(get(), get(), get(), get(), get()) }
     single {
@@ -379,7 +381,7 @@ val dataModule = module {
     // settings, sourceDao, channelDao, catalogSyncScheduler, importFinalizer
     single { tv.own.owntv.core.sync.M3uVodResort(get(), get(), get(), get(), get()) }
     // profileDao, sourceDao, sourceRepository, backup, settings, connectivity, importFinalizer,
-    // launcherIntegration, catalogSyncScheduler, stalkerAuth — onboarding: add a source, sync it,
-    // undo it when it fails. Factory, not single: each wizard run owns its own state machine.
-    factory { tv.own.owntv.core.setup.SourceImporter(get(), get(), get(), get(), get(), get(), get(), get(), get(), get(), get()) }
+    // launcherIntegration, catalogSyncScheduler, stalkerAuth, xtreamClient, context — onboarding: add a
+    // source, sync it, undo it when it fails. Factory, not single: each wizard run owns its own state machine.
+    factory { tv.own.owntv.core.setup.SourceImporter(get(), get(), get(), get(), get(), get(), get(), get(), get(), get(), get(), androidContext()) }
 }
