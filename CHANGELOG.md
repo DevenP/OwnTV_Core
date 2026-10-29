@@ -26,6 +26,7 @@
 - **🎤 Voice search** (community PR #42 by @Kevsosmooth)
 - **🔒 Lock a category with the Customize PIN** (community PR #37 by @Kevsosmooth)
 - **🔐 Ask for the PIN to open Settings** (community PR #47 by @Kevsosmooth)
+- **🪟 Picture-in-picture when leaving the app** (community PR #39 by @Kevsosmooth)
 
 ### 🐛 Fixes
 
