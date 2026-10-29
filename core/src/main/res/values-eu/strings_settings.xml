@@ -298,6 +298,8 @@
     <string name="settings_preview_audio_description">Erreproduzitu soinua Zuzeneko aurrebistan</string>
     <string name="settings_mini_player_root">Mini erreproduzigailua</string>
     <string name="settings_mini_player_root_description">Ainguratutako mini erreproduzigailuaren tamaina eta kokalekua</string>
+    <string name="settings_pip_on_leave">Irudi-barruko irudia aplikaziotik irtetean</string>
+    <string name="settings_pip_on_leave_description">Bideoak leiho txiki batean jarraitzen du Hasiera sakatzean</string>
     <string name="settings_prefer_sdr_description">Jario batek SDR eta HDR irudiak eskaintzen dituenean, SDR irudia erreproduzitzen da: HDRa margul edo ilunegi ikusten den telebistetarako. HDR soilik duen jarioa HDR geratzen da. ExoPlayer soilik.</string>
     <string name="settings_auto_frame_rate">Fotograma-maiztasun automatikoa</string>
     <string name="settings_auto_frame_rate_description">Egokitu telebistaren freskatze-maiztasuna bideoari (24/25/50/60 fps) pantaila osoan, Zuzeneko telebistan eta VODean, eta lehengoratu irtetean. Desaktibatu zure telebistak edo hartzaileak HDMI azkar berrehunkatzen badu kanal-aldaketa bakoitzean.</string>
@@ -585,6 +587,7 @@
     <string name="settings_line_autoplay">Eta hurrengo denboraldira</string>
     <string name="settings_line_tiles">Lauki bakoitza beste jario bat da</string>
     <string name="settings_line_mini">Tamaina eta kokalekua</string>
+    <string name="settings_line_pip">Jarraitu ikusten leiho txiki batean</string>
     <string name="settings_line_rec_reserve">Ez grabatu inoiz konexio guztietan</string>
     <string name="settings_line_rec_watching">Ez bigarren jario bat</string>
     <string name="settings_line_rec_pre_roll">Programa hasi aurretik</string>
@@ -1598,6 +1601,7 @@
     <string name="settings_help_timeshift_window">Berrikusterik gabeko kanal batean Pausatu eta atzeratu zuzeneko telebistak zenbat atzera egin dezakeen. Luzeagoak kanalaren zati handiago bat mantentzen du gailu honen biltegiratzean.</string>
     <string name="settings_help_resume">Galdetu jarraitzeko aukerak Jarraitu edo Hasi berriro eskaintzen du film edo atal batek gordetako posizioa duenean. Jarraitu beti gelditu zinen tokian jarraitzen du; Ez jarraitu inoiz hasieratik hasten da.</string>
     <string name="settings_help_mini">Arakatzen ari zaren bitartean kanal bat izkina batean martxan mantentzen duen erreproduzigailu txikia. Aukeratu bere tamaina eta kokatzen den izkina.</string>
+    <string name="settings_help_pip">Sakatu Hasiera edo ireki beste aplikazio bat bideo bat pantaila osoan edo mini erreproduzigailuan erreproduzitzen ari den bitartean, eta leiho txiki batean jarraituko du telebistaren gainerakoaren gainean. Ireki berriro OwnTV pantaila osora itzultzeko; itxi leihoa erreprodukzioa gelditzeko. Multiview OwnTV barruan geratzen da.</string>
     <string name="settings_key_palette">Paleta</string>
     <string name="settings_live_preview_note">Aldaketak hemen erakusten dira mugitzen zarenean, errenkada utzi aurretik.</string>
     <string name="settings_synced_at">Sinkronizatuta: <xliff:g id="when">%1$s</xliff:g></string>

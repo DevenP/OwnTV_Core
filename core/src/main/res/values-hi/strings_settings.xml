@@ -230,6 +230,8 @@
     <string name="settings_preview_audio_description">लाइव पूर्वावलोकन में ध्वनि चलाएँ</string>
     <string name="settings_mini_player_root">मिनी-प्लेयर</string>
     <string name="settings_mini_player_root_description">डॉक किए गए मिनी-प्लेयर का आकार और स्थिति</string>
+    <string name="settings_pip_on_leave">ऐप छोड़ने पर पिक्चर-इन-पिक्चर</string>
+    <string name="settings_pip_on_leave_description">होम दबाने पर वीडियो एक छोटी विंडो में चलता रहता है</string>
     <string name="settings_prefer_sdr_description">जब किसी स्ट्रीम में SDR और HDR दोनों तस्वीरें हों, तो SDR चलती है: उस टीवी के लिए जिस पर HDR फीका या बहुत गहरा दिखता है। सिर्फ़ HDR वाली स्ट्रीम HDR ही रहती है। सिर्फ़ ExoPlayer।</string>
     <string name="settings_auto_frame_rate">अपने-आप फ़्रेम दर मिलाना</string>
     <string name="settings_auto_frame_rate_description">फ़ुल स्क्रीन में लाइव टीवी और VOD के लिए TV की रीफ़्रेश दर को वीडियो (24/25/50/60 fps) से मिलाएँ और बाहर निकलने पर उसे पहले जैसा करें। यदि हर चैनल बदलने पर आपका TV या रिसीवर शोर के साथ फिर से HDMI हैंडशेक करता है, तो इसे बंद कर दें।</string>
@@ -1458,6 +1460,7 @@
     <string name="settings_line_autoplay">और अगले सीज़न में भी</string>
     <string name="settings_line_tiles">हर टाइल एक और स्ट्रीम है</string>
     <string name="settings_line_mini">आकार और स्थिति</string>
+    <string name="settings_line_pip">छोटी विंडो में देखना जारी रखें</string>
     <string name="settings_line_rec_reserve">कभी सभी कनेक्शन पर रिकॉर्ड न करें</string>
     <string name="settings_line_rec_watching">दूसरी स्ट्रीम नहीं</string>
     <string name="settings_line_rec_pre_roll">कार्यक्रम शुरू होने से पहले</string>
@@ -1500,6 +1503,7 @@
     <string name="settings_help_timeshift_window">बिना कैच-अप वाले चैनल पर लाइव टीवी रोकें और पीछे करें कितना पीछे जा सकता है। ज़्यादा रखने पर चैनल का ज़्यादा हिस्सा इस डिवाइस के स्टोरेज में रहता है।</string>
     <string name="settings_help_resume">पूछें, फ़िल्म या एपिसोड की सहेजी स्थिति होने पर फिर से शुरू या शुरुआत से चलाने का विकल्प देता है। हमेशा फिर से शुरू वहीं से चलाता है जहाँ रुके थे; कभी नहीं शुरू से चलाता है।</string>
     <string name="settings_help_mini">छोटा प्लेयर, जो ब्राउज़ करते समय कोने में चैनल चलाता रहता है। उसका आकार और कोना चुनें।</string>
+    <string name="settings_help_pip">फ़ुल स्क्रीन या मिनी-प्लेयर में वीडियो चलते समय होम दबाएँ या कोई दूसरा ऐप खोलें, तो वह टीवी के बाकी हिस्से के ऊपर एक छोटी विंडो में चलता रहेगा। फ़ुल स्क्रीन पर लौटाने के लिए OwnTV फिर से खोलें; प्लेबैक रोकने के लिए विंडो बंद करें। मल्टीव्यू OwnTV में ही रहता है।</string>
     <string name="settings_key_palette">पैलेट</string>
     <string name="settings_live_preview_note">बदलाव यहीं दिखते हैं, पंक्ति छोड़ने से पहले ही।</string>
     <string name="settings_synced_at"><xliff:g id="when">%1$s</xliff:g> सिंक हुआ</string>
