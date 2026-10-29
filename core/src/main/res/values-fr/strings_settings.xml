@@ -231,6 +231,8 @@
     <string name="settings_preview_audio_description">Lire le son dans l’aperçu en direct</string>
     <string name="settings_mini_player_root">Mini-lecteur</string>
     <string name="settings_mini_player_root_description">Taille et position du mini-lecteur ancré</string>
+    <string name="settings_pip_on_leave">Picture-in-picture en quittant l’app</string>
+    <string name="settings_pip_on_leave_description">La vidéo continue dans une petite fenêtre quand vous appuyez sur Accueil</string>
     <string name="settings_prefer_sdr_description">Quand un flux propose une image SDR et une image HDR, l’image SDR est lue : pour un téléviseur où le HDR paraît délavé ou trop sombre. Un flux uniquement HDR reste en HDR. ExoPlayer uniquement.</string>
     <string name="settings_auto_frame_rate">Fréquence d’images automatique</string>
     <string name="settings_auto_frame_rate_description">Adapter la fréquence de rafraîchissement du téléviseur à la vidéo (24/25/50/60 ips) en plein écran, pour la TV en direct et la VOD, puis la rétablir en quittant la lecture. Désactivez cette option si votre téléviseur ou récepteur relance bruyamment la négociation HDMI à chaque changement de chaîne.</string>
@@ -1486,6 +1488,7 @@
     <string name="settings_line_autoplay">Et jusqu’à la saison suivante</string>
     <string name="settings_line_tiles">Chaque vignette est un flux de plus</string>
     <string name="settings_line_mini">Taille et position</string>
+    <string name="settings_line_pip">Continuer à regarder dans une petite fenêtre</string>
     <string name="settings_line_rec_reserve">Ne jamais enregistrer sur toutes les connexions</string>
     <string name="settings_line_rec_watching">Sans second flux</string>
     <string name="settings_line_rec_pre_roll">Avant le début du programme</string>
@@ -1528,6 +1531,7 @@
     <string name="settings_help_timeshift_window">Jusqu’où Mettre en pause et revenir en arrière peut remonter sur une chaîne sans replay. Plus long garde davantage de la chaîne dans le stockage de l’appareil.</string>
     <string name="settings_help_resume">Demander propose Reprendre ou Recommencer quand un film ou un épisode a une position enregistrée. Toujours reprendre continue où vous vous êtes arrêté ; Ne jamais reprendre recommence au début.</string>
     <string name="settings_help_mini">Le petit lecteur qui garde une chaîne dans un coin pendant que vous naviguez. Choisissez sa taille et son coin.</string>
+    <string name="settings_help_pip">Appuyez sur Accueil ou ouvrez une autre app pendant qu’une vidéo est lue en plein écran ou dans le mini-lecteur : elle continue dans une petite fenêtre par-dessus le reste du téléviseur. Rouvrez OwnTV pour la retrouver en plein écran ; fermez la fenêtre pour arrêter la lecture. Multivue reste dans OwnTV.</string>
     <string name="settings_key_palette">Palette</string>
     <string name="settings_live_preview_note">Les changements s’affichent ici au fil de vos déplacements, avant de quitter la ligne.</string>
     <string name="settings_synced_at">Synchronisée <xliff:g id="when">%1$s</xliff:g></string>

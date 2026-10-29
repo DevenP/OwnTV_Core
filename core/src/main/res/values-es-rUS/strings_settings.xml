@@ -231,6 +231,8 @@
     <string name="settings_preview_audio_description">Reproduce sonido en la vista previa en vivo</string>
     <string name="settings_mini_player_root">Minirreproductor</string>
     <string name="settings_mini_player_root_description">Tamaño y posición del minirreproductor acoplado</string>
+    <string name="settings_pip_on_leave">Imagen en imagen al salir de la app</string>
+    <string name="settings_pip_on_leave_description">El video sigue en una ventana pequeña al presionar Inicio</string>
     <string name="settings_prefer_sdr_description">Si una transmisión ofrece imagen SDR y HDR, se reproduce la SDR: para televisores en los que el HDR se ve deslavado o demasiado oscuro. Una transmisión solo en HDR sigue en HDR. Solo ExoPlayer.</string>
     <string name="settings_auto_frame_rate">Frecuencia de fotogramas automática</string>
     <string name="settings_auto_frame_rate_description">Ajusta la frecuencia de actualización del televisor a la del video (24/25/50/60 fps) en pantalla completa para TV en vivo y VOD, y la restaura al salir. Desactívalo si tu televisor o receptor vuelve a negociar la conexión HDMI de forma molesta cada vez que cambias de canal.</string>
@@ -1486,6 +1488,7 @@
     <string name="settings_line_autoplay">Y también a la siguiente temporada</string>
     <string name="settings_line_tiles">Cada recuadro es otra transmisión</string>
     <string name="settings_line_mini">Tamaño y posición</string>
+    <string name="settings_line_pip">Sigue viendo en una ventana pequeña</string>
     <string name="settings_line_rec_reserve">Nunca grabar en todas las conexiones</string>
     <string name="settings_line_rec_watching">Sin una segunda transmisión</string>
     <string name="settings_line_rec_pre_roll">Antes de que empiece el programa</string>
@@ -1528,6 +1531,7 @@
     <string name="settings_help_timeshift_window">Hasta dónde puede retroceder Pausar y rebobinar la TV en vivo en un canal sin catch-up. Más tiempo guarda más del canal en el almacenamiento del dispositivo.</string>
     <string name="settings_help_resume">Preguntar ofrece Reanudar o Empezar de nuevo cuando una película o episodio tiene una posición guardada. Reanudar siempre continúa donde lo dejaste; No reanudar nunca empieza desde el principio.</string>
     <string name="settings_help_mini">El reproductor pequeño que mantiene un canal en una esquina mientras navegas. Elige su tamaño y la esquina donde va.</string>
+    <string name="settings_help_pip">Presiona Inicio o abre otra app mientras un video se reproduce en pantalla completa o en el minirreproductor y seguirá en una ventana pequeña sobre el resto de la TV. Abre OwnTV de nuevo para volver a pantalla completa; cierra la ventana para detener la reproducción. Multivista se queda en OwnTV.</string>
     <string name="settings_key_palette">Paleta</string>
     <string name="settings_live_preview_note">Los cambios se ven aquí mientras te mueves, antes de salir de la fila.</string>
     <string name="settings_synced_at">Sincronizada <xliff:g id="when">%1$s</xliff:g></string>

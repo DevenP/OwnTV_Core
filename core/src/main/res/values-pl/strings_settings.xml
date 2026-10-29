@@ -232,6 +232,8 @@
     <string name="settings_preview_audio_description">Odtwarzaj dźwięk w podglądzie na żywo</string>
     <string name="settings_mini_player_root">Miniodtwarzacz</string>
     <string name="settings_mini_player_root_description">Rozmiar i położenie zadokowanego miniodtwarzacza</string>
+    <string name="settings_pip_on_leave">Obraz w obrazie po wyjściu z aplikacji</string>
+    <string name="settings_pip_on_leave_description">Wideo gra dalej w małym oknie po naciśnięciu przycisku ekranu głównego</string>
     <string name="settings_prefer_sdr_description">Gdy strumień oferuje obraz SDR i HDR, odtwarzany jest SDR: dla telewizora, na którym HDR wygląda na wyblakły lub zbyt ciemny. Strumień tylko z HDR pozostaje w HDR. Tylko ExoPlayer.</string>
     <string name="settings_auto_frame_rate">Automatyczne dopasowanie klatek</string>
     <string name="settings_auto_frame_rate_description">Dopasuj częstotliwość odświeżania telewizora do filmu (24/25/50/60 kl./s) na pełnym ekranie w telewizji na żywo i VOD, a po zakończeniu przywróć poprzednią wartość. Wyłącz tę opcję, jeśli telewizor lub amplituner głośno ponawia uzgadnianie połączenia HDMI przy każdej zmianie kanału.</string>
@@ -1514,6 +1516,7 @@
     <string name="settings_line_autoplay">I dalej do następnego sezonu</string>
     <string name="settings_line_tiles">Każdy kafelek to kolejny strumień</string>
     <string name="settings_line_mini">Rozmiar i położenie</string>
+    <string name="settings_line_pip">Oglądaj dalej w małym oknie</string>
     <string name="settings_line_rec_reserve">Nigdy nie nagrywaj na wszystkich połączeniach</string>
     <string name="settings_line_rec_watching">Bez drugiego strumienia</string>
     <string name="settings_line_rec_pre_roll">Przed rozpoczęciem programu</string>
@@ -1556,6 +1559,7 @@
     <string name="settings_help_timeshift_window">Jak daleko wstecz może sięgnąć Wstrzymaj i przewiń TV na żywo na kanale bez catch-up. Dłużej oznacza więcej kanału w pamięci urządzenia.</string>
     <string name="settings_help_resume">Pytaj proponuje Wznów lub Od początku, gdy film lub odcinek ma zapisaną pozycję. Zawsze wznawiaj kontynuuje od miejsca zatrzymania; Nigdy nie wznawiaj zaczyna od początku.</string>
     <string name="settings_help_mini">Mały odtwarzacz, który podczas przeglądania odtwarza kanał w rogu. Wybierz jego rozmiar i róg.</string>
+    <string name="settings_help_pip">Naciśnij przycisk ekranu głównego lub otwórz inną aplikację, gdy wideo gra na pełnym ekranie lub w miniodtwarzaczu, a będzie grać dalej w małym oknie nad resztą telewizora. Otwórz ponownie OwnTV, aby wrócić do pełnego ekranu; zamknij okno, aby zatrzymać odtwarzanie. Multiview zostaje w OwnTV.</string>
     <string name="settings_key_palette">Paleta</string>
     <string name="settings_live_preview_note">Zmiany widać tutaj od razu, zanim opuścisz wiersz.</string>
     <string name="settings_synced_at">Zsynchronizowano: <xliff:g id="when">%1$s</xliff:g></string>
