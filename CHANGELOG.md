@@ -39,6 +39,7 @@
 - **Guide re-sync looks up what it already has in one read**
 - **Catch-up works with `${(b)…}` / `${(e)…}` templates** (community PR #53 by @sarmadsoomro)
 - **Xtream passwords with special characters play; short Xtream links and Stalker MACs masked in logs** (community PR #54 by @sarmadsoomro)
+- **Settings search: a hint while nothing is typed**
 - **Stalker re-sync no longer rewrites every live channel**
 
 ## core-1.0.69 — 2026-10-21
